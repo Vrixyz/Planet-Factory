@@ -9,6 +9,9 @@
 #include <QWidget>
 
 #include "GroupTools.hpp"
+#include "Planet.hpp"
+
+class MainWindow;
 
 class PlanetDetailsBox : public QGroupBox
 {
@@ -17,37 +20,39 @@ class PlanetDetailsBox : public QGroupBox
 
 public:
 
-    PlanetDetailsBox(QWidget *parent = 0);
+    PlanetDetailsBox(MainWindow *parent = 0);
     ~PlanetDetailsBox();
 
     void buildPosition();
     void buildPositionVector();
+
+    void setInfosDetails(Planet*);
 
 private:
 
     GroupTools  *_boxPosition;
     GroupTools  *_boxPositionVector;
 
-    QLabel *lName;
-    QLabel *lRadius;
-    QLabel *lType;
-    QLabel *lPosX;
-    QLabel *lPosY;
-    QLabel *lPosZ;
-    QLabel *lPosVecX;
-    QLabel *lPosVecY;
-    QLabel *lPosVecZ;
+    QLabel *_lName;
+    QLabel *_lRadius;
+    QLabel *_lType;
+    QLabel *_lPosX;
+    QLabel *_lPosY;
+    QLabel *_lPosZ;
+    QLabel *_lPosVecX;
+    QLabel *_lPosVecY;
+    QLabel *_lPosVecZ;
 
-    QSpinBox *ePosX;
-    QSpinBox *ePosY;
-    QSpinBox *ePosZ;
-    QSpinBox *ePosVecX;
-    QSpinBox *ePosVecY;
-    QSpinBox *ePosVecZ;
+    QSpinBox *_ePosX;
+    QSpinBox *_ePosY;
+    QSpinBox *_ePosZ;
+    QSpinBox *_ePosVecX;
+    QSpinBox *_ePosVecY;
+    QSpinBox *_ePosVecZ;
 
-    QLineEdit *eRadius;
-    QLineEdit *eName;
-    QComboBox *eType;
+    QSpinBox *_eRadius;
+    QLineEdit *_eName;
+    QComboBox *_eType;
 
 signals:
     

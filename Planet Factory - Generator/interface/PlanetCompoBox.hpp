@@ -7,6 +7,8 @@
 
 #include "GroupTools.hpp"
 
+class MainWindow;
+
 class PlanetCompoBox : public QGroupBox
 {
 
@@ -14,7 +16,7 @@ class PlanetCompoBox : public QGroupBox
 
 public:
 
-    PlanetCompoBox(QWidget *parent = 0);
+    PlanetCompoBox(MainWindow *parent = 0);
     ~PlanetCompoBox();
 
 private:

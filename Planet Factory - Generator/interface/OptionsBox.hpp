@@ -1,9 +1,12 @@
 #ifndef OPTIONSBOX_HPP
 #define OPTIONSBOX_HPP
 
-#include <QGroupBox>
+#include <QApplication>
 #include <QPushButton>
+#include <QGroupBox>
 #include <QWidget>
+
+class MainWindow;
 
 class OptionsBox : public QGroupBox
 {
@@ -12,7 +15,7 @@ class OptionsBox : public QGroupBox
 
 public:
 
-    OptionsBox(QWidget *parent = 0);
+    OptionsBox(MainWindow *parent = 0);
     ~OptionsBox();
 
 private:

@@ -1,6 +1,7 @@
 #include "PlanetCompoBox.hpp"
+#include "MainWindow.hpp"
 
-PlanetCompoBox::PlanetCompoBox(QWidget *parent) : QGroupBox(parent)
+PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QGroupBox(parent)
 {
     setGeometry(205, 405, 790, 290);
     setTitle("Planet Composition");

@@ -1,6 +1,7 @@
 #include "GroupTools.hpp"
+#include "MainWindow.hpp"
 
-GroupTools::GroupTools(QWidget *parent) : QGroupBox(parent)
+GroupTools::GroupTools(MainWindow *parent) : QGroupBox(parent)
 {
 }
 

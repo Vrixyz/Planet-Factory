@@ -4,6 +4,8 @@
 #include <QGroupBox>
 #include <QPainter>
 
+class MainWindow;
+
 class GroupTools : public QGroupBox
 {
 
@@ -11,7 +13,7 @@ class GroupTools : public QGroupBox
 
 public:
 
-    GroupTools(QWidget *parent = 0);
+    GroupTools(MainWindow *parent = 0);
     ~GroupTools();
 
 signals:

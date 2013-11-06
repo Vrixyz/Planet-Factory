@@ -2,9 +2,12 @@
 #define CELESTIALBOX_HPP
 
 #include <QPushButton>
+#include <QListWidget>
 #include <QListView>
 #include <QGroupBox>
 #include <QWidget>
+
+class MainWindow;
 
 class CelestialBox : public QGroupBox
 {
@@ -13,19 +16,23 @@ class CelestialBox : public QGroupBox
 
 public:
 
-    CelestialBox(QWidget *parent = 0);
+    CelestialBox(MainWindow *parent = 0);
     ~CelestialBox();
 
 private:
 
-    QListView    *_listObjects;
-    QPushButton  *_add;
-    QPushButton  *_del;
+    QListWidget   *_listObjects;
+    QPushButton *_add;
+    QPushButton *_del;
+
+    MainWindow  *_parent;
     
 signals:
     
 public slots:
-    
+
+    void        addObject();
+
 };
 
 #endif // CELESTIALBOX_HPP
