@@ -19,6 +19,8 @@ public:
     CelestialBox(MainWindow *parent = 0);
     ~CelestialBox();
 
+    void cleanAllFields();
+
 private:
 
     QListWidget   *_listObjects;

@@ -18,11 +18,11 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QGroupBox(parent)
     _lType->setGeometry(462, 43, 150, 15);
 
     _eName->setGeometry(63, 35, 100, 30);
-    _eName->setText("Planet A");
+    _eName->setText("");
     _eRadius->setGeometry(302, 35, 100, 30);
     _eRadius->setMinimum(1);
     _eRadius->setMaximum(1000000);
-    _eRadius->setValue(42000);
+    _eRadius->setValue(1);
     _eType->setGeometry(557, 35, 130, 30);
     _eType->addItem("Star");
     _eType->addItem("Telluric planet");
@@ -54,9 +54,16 @@ void PlanetDetailsBox::buildPosition()
     _lPosY = new QLabel("Y :", _boxPosition);
     _lPosZ = new QLabel("Z :", _boxPosition);
 
-    _ePosX->setGeometry(60, 53, 70, 25);
-    _ePosY->setGeometry(60, 103, 70, 25);
-    _ePosZ->setGeometry(60, 153, 70, 25);
+    _ePosX->setGeometry(60, 53, 100, 25);
+    _ePosX->setMinimum(-100000);
+    _ePosX->setMaximum(100000);
+    _ePosY->setGeometry(60, 103, 100, 25);
+    _ePosY->setMinimum(-100000);
+    _ePosY->setMaximum(100000);
+    _ePosZ->setGeometry(60, 153, 100, 25);
+    _ePosZ->setMinimum(-100000);
+    _ePosZ->setMaximum(100000);
+
     _lPosX->setGeometry(30, 58, 70, 15);
     _lPosY->setGeometry(30, 108, 70, 15);
     _lPosZ->setGeometry(30, 158, 70, 15);
@@ -71,9 +78,16 @@ void PlanetDetailsBox::buildPositionVector()
     _lPosVecY = new QLabel("Y :", _boxPositionVector);
     _lPosVecZ = new QLabel("Z :", _boxPositionVector);
 
-    _ePosVecX->setGeometry(60, 53, 70, 25);
-    _ePosVecY->setGeometry(60, 103, 70, 25);
-    _ePosVecZ->setGeometry(60, 153, 70, 25);
+    _ePosVecX->setGeometry(60, 53, 100, 25);
+    _ePosVecX->setMinimum(-100000);
+    _ePosVecX->setMaximum(100000);
+    _ePosVecY->setGeometry(60, 103, 100, 25);
+    _ePosVecY->setMinimum(-100000);
+    _ePosVecY->setMaximum(100000);
+    _ePosVecZ->setGeometry(60, 153, 100, 25);
+    _ePosVecZ->setMinimum(-100000);
+    _ePosVecZ->setMaximum(100000);
+
     _lPosVecX->setGeometry(30, 58, 70, 15);
     _lPosVecY->setGeometry(30, 108, 70, 15);
     _lPosVecZ->setGeometry(30, 158, 70, 15);

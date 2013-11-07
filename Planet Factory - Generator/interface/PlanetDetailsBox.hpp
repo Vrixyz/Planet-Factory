@@ -28,6 +28,17 @@ public:
 
     void setInfosDetails(Planet*);
 
+    QSpinBox *_ePosX;
+    QSpinBox *_ePosY;
+    QSpinBox *_ePosZ;
+    QSpinBox *_ePosVecX;
+    QSpinBox *_ePosVecY;
+    QSpinBox *_ePosVecZ;
+
+    QSpinBox *_eRadius;
+    QLineEdit *_eName;
+    QComboBox *_eType;
+
 private:
 
     GroupTools  *_boxPosition;
@@ -43,16 +54,6 @@ private:
     QLabel *_lPosVecY;
     QLabel *_lPosVecZ;
 
-    QSpinBox *_ePosX;
-    QSpinBox *_ePosY;
-    QSpinBox *_ePosZ;
-    QSpinBox *_ePosVecX;
-    QSpinBox *_ePosVecY;
-    QSpinBox *_ePosVecZ;
-
-    QSpinBox *_eRadius;
-    QLineEdit *_eName;
-    QComboBox *_eType;
 
 signals:
     
