@@ -32,6 +32,8 @@ signals:
 public slots:
 
     void        addObject();
+    void        delObject();
+    void        planetSelected(QListWidgetItem *);
 
 };
 
