@@ -27,7 +27,34 @@ CelestialBox::~CelestialBox()
 
 void CelestialBox::planetSelected(QListWidgetItem* currItem)
 {
+    std::list<Planet*>::iterator    it;
+    int                             *pos;
+    int                             *posVec;
+
     qDebug(currItem->text().toStdString().c_str());
+    it = _parent->_listPlanet->begin();
+    for (it = _parent->_listPlanet->begin(); it != _parent->_listPlanet->end(); ++it)
+        if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
+        {
+            _parent->getPlanetDetails()->_eName->setText((*it)->getName().c_str());
+	    if ((*it)->getType() == STAR)
+	      _parent->getPlanetDetails()->_eType->setCurrentIndex(0);
+	    else if ((*it)->getType() == TELLURIC)
+	      _parent->getPlanetDetails()->_eType->setCurrentIndex(1);
+	    else if ((*it)->getType() == GAZEOUS)
+	      _parent->getPlanetDetails()->_eType->setCurrentIndex(2);
+	    else if ((*it)->getType() == ASTEROID)
+	      _parent->getPlanetDetails()->_eType->setCurrentIndex(3);
+            pos = (*it)->getPosition();
+            posVec = (*it)->getPositionVec();
+            _parent->getPlanetDetails()->_eRadius->setValue((*it)->getRadius());
+            _parent->getPlanetDetails()->_ePosX->setValue(pos[0]);
+            _parent->getPlanetDetails()->_ePosY->setValue(pos[1]);
+            _parent->getPlanetDetails()->_ePosZ->setValue(pos[2]);
+            _parent->getPlanetDetails()->_ePosVecX->setValue(posVec[0]);
+            _parent->getPlanetDetails()->_ePosVecY->setValue(posVec[1]);
+            _parent->getPlanetDetails()->_ePosVecZ->setValue(posVec[2]);
+        }
 }
 
 void CelestialBox::delObject()
@@ -38,18 +65,17 @@ void CelestialBox::delObject()
 
         it = _parent->_listPlanet->begin();
         for (it = _parent->_listPlanet->begin(); it != _parent->_listPlanet->end(); ++it)
-        {
             if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
                 it = _parent->_listPlanet->erase(it);
-        }
         _listObjects->takeItem(_listObjects->row(_listObjects->currentItem()));
+        cleanAllFields();
     }
 }
 
 void CelestialBox::addObject()
 {
-    Planet *toAdd;
-    std::list<Planet*>::iterator it;
+    std::list<Planet*>::iterator    it;
+    Planet                          *toAdd;
 
     toAdd = new Planet();
     _parent->getPlanetDetails()->setInfosDetails(toAdd);
@@ -62,7 +88,11 @@ void CelestialBox::addObject()
     for (it = _parent->_listPlanet->begin(); it != _parent->_listPlanet->end(); ++it)
         if ((*it)->getName() == toAdd->getName())
         {
-            qDebug("Impossible d'ajouter un astre ayant le même nom qu'un astre déjà créé.");
+            (*it)->setName(_parent->getPlanetDetails()->_eName->text().toStdString().c_str());
+            (*it)->setRadius(_parent->getPlanetDetails()->_eRadius->value());
+            (*it)->setPosition(_parent->getPlanetDetails()->_ePosX->value(), _parent->getPlanetDetails()->_ePosY->value(), _parent->getPlanetDetails()->_ePosZ->value());
+            (*it)->setPositionVec(_parent->getPlanetDetails()->_ePosVecX->value(), _parent->getPlanetDetails()->_ePosVecY->value(), _parent->getPlanetDetails()->_ePosVecZ->value());
+            cleanAllFields();
             return;
         }
     _parent->_listPlanet->push_front(toAdd);
@@ -73,11 +103,12 @@ void CelestialBox::addObject()
 void CelestialBox::cleanAllFields()
 {
     _parent->getPlanetDetails()->_eName->setText("");
+    _parent->getPlanetDetails()->_eType->setCurrentIndex(0);
     _parent->getPlanetDetails()->_eRadius->setValue(1);
-    _parent->getPlanetDetails()->_ePosX->setValue(1);
-    _parent->getPlanetDetails()->_ePosY->setValue(1);
-    _parent->getPlanetDetails()->_ePosZ->setValue(1);
-    _parent->getPlanetDetails()->_ePosVecX->setValue(1);
-    _parent->getPlanetDetails()->_ePosVecY->setValue(1);
-    _parent->getPlanetDetails()->_ePosVecZ->setValue(1);
+    _parent->getPlanetDetails()->_ePosX->setValue(0);
+    _parent->getPlanetDetails()->_ePosY->setValue(0);
+    _parent->getPlanetDetails()->_ePosZ->setValue(0);
+    _parent->getPlanetDetails()->_ePosVecX->setValue(0);
+    _parent->getPlanetDetails()->_ePosVecY->setValue(0);
+    _parent->getPlanetDetails()->_ePosVecZ->setValue(0);
 }

@@ -15,7 +15,7 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QGroupBox(parent)
 
     _lName->setGeometry(10, 43, 100, 15);
     _lRadius->setGeometry(211, 43, 100, 15);
-    _lType->setGeometry(462, 43, 150, 15);
+    _lType->setGeometry(457, 43, 150, 15);
 
     _eName->setGeometry(63, 35, 100, 30);
     _eName->setText("");
@@ -23,7 +23,7 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QGroupBox(parent)
     _eRadius->setMinimum(1);
     _eRadius->setMaximum(1000000);
     _eRadius->setValue(1);
-    _eType->setGeometry(557, 35, 130, 30);
+    _eType->setGeometry(552, 35, 130, 30);
     _eType->addItem("Star");
     _eType->addItem("Telluric planet");
     _eType->addItem("Gazeous planet");
@@ -64,9 +64,9 @@ void PlanetDetailsBox::buildPosition()
     _ePosZ->setMinimum(-100000);
     _ePosZ->setMaximum(100000);
 
-    _lPosX->setGeometry(30, 58, 70, 15);
-    _lPosY->setGeometry(30, 108, 70, 15);
-    _lPosZ->setGeometry(30, 158, 70, 15);
+    _lPosX->setGeometry(30, 58, 20, 15);
+    _lPosY->setGeometry(30, 108, 20, 15);
+    _lPosZ->setGeometry(30, 158, 20, 15);
 }
 
 void PlanetDetailsBox::buildPositionVector()
@@ -88,13 +88,23 @@ void PlanetDetailsBox::buildPositionVector()
     _ePosVecZ->setMinimum(-100000);
     _ePosVecZ->setMaximum(100000);
 
-    _lPosVecX->setGeometry(30, 58, 70, 15);
-    _lPosVecY->setGeometry(30, 108, 70, 15);
-    _lPosVecZ->setGeometry(30, 158, 70, 15);
+    _lPosVecX->setGeometry(30, 58, 20, 15);
+    _lPosVecY->setGeometry(30, 108, 20, 15);
+    _lPosVecZ->setGeometry(30, 158, 20, 15);
 }
 
 void PlanetDetailsBox::setInfosDetails(Planet* toSet)
 {
     toSet->setName(_eName->text().toStdString());
     toSet->setRadius(_eRadius->value());
+    toSet->setPosition(_ePosX->value(), _ePosY->value(), _ePosZ->value());
+    toSet->setPositionVec(_ePosVecX->value(), _ePosVecY->value(), _ePosVecZ->value());
+    if (_eType->currentText().toStdString() == "Star")
+      toSet->setType(STAR);
+    else if (_eType->currentText().toStdString() == "Telluric planet")
+      toSet->setType(TELLURIC);
+    else if (_eType->currentText().toStdString() == "Gazeous planet")
+      toSet->setType(GAZEOUS);
+    else if (_eType->currentText().toStdString() == "Asteroid")
+      toSet->setType(ASTEROID);
 }

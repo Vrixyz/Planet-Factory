@@ -54,7 +54,6 @@ private:
     QLabel *_lPosVecY;
     QLabel *_lPosVecZ;
 
-
 signals:
     
 public slots:

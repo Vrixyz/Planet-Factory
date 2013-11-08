@@ -42,3 +42,27 @@ std::list<Component *> *Planet::getListCompo(void)
 {
     return (_listCompo);
 }
+
+void Planet::setPosition(int X, int Y, int Z)
+{
+    _pos[0] = X;
+    _pos[1] = Y;
+    _pos[2] = Z;
+}
+
+void Planet::setPositionVec(int X, int Y, int Z)
+{
+    _posVec[0] = X;
+    _posVec[1] = Y;
+    _posVec[2] = Z;
+}
+
+int *Planet::getPosition(void)
+{
+    return _pos;
+}
+
+int *Planet::getPositionVec(void)
+{
+    return _posVec;
+}
