@@ -2,10 +2,14 @@
 #define PLANETCOMPOBOX_HPP
 
 #include <QPushButton>
+#include <QLineEdit>
 #include <QGroupBox>
+#include <QSpinBox>
 #include <QWidget>
+#include <QLabel>
 
 #include "GroupTools.hpp"
+#include "Component.hpp"
 
 class MainWindow;
 
@@ -19,10 +23,23 @@ public:
     PlanetCompoBox(MainWindow *parent = 0);
     ~PlanetCompoBox();
 
+    void createCompoDetails(void);
+
+    QLineEdit   *_eName;
+    QSpinBox    *_eGazeousTemp;
+    QSpinBox    *_eSolidTemp;
+    QSpinBox    *_eHardness;
+
 private:
 
-    GroupTools   *_boxDetails;
-    GroupTools   *_boxList;
+    GroupTools  *_boxDetails;
+    GroupTools  *_boxList;
+
+    QLabel      *_lName;
+    QLabel      *_lGazeousTemp;
+    QLabel      *_lSolidTemp;
+    QLabel      *_lHardness;
+    QLabel      *_lMass;
 
 signals:
     

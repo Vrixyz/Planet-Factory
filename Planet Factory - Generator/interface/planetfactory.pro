@@ -12,22 +12,22 @@ TARGET =    planetfactory
 TEMPLATE =  app
 
 
-SOURCES +=  main.cpp\
-            MainWindow.cpp \
-            GroupTools.cpp \
-            Planet.cpp \
-            Component.cpp \
+SOURCES +=  PlanetDetailsBox.cpp \
             PlanetCompoBox.cpp \
             CelestialBox.cpp \
+            MainWindow.cpp \
             OptionsBox.cpp \
-            PlanetDetailsBox.cpp
+            GroupTools.cpp \
+            Component.cpp \
+            Planet.cpp \
+            main.cpp \
 
-HEADERS  += MainWindow.hpp \
-            include.hpp \
-            GroupTools.hpp \
-            Planet.hpp \
-            Component.hpp \
+HEADERS  += PlanetDetailsBox.hpp \
             PlanetCompoBox.hpp \
             CelestialBox.hpp \
+            MainWindow.hpp \
             OptionsBox.hpp \
-            PlanetDetailsBox.hpp
+            GroupTools.hpp \
+            Component.hpp \
+            include.hpp \
+            Planet.hpp \

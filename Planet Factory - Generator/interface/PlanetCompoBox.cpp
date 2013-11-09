@@ -19,3 +19,8 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QGroupBox(parent)
 PlanetCompoBox::~PlanetCompoBox()
 {
 }
+
+void PlanetCompoBox::createCompoDetails(void)
+{
+
+}
