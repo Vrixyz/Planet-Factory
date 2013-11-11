@@ -6,6 +6,14 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QGroupBox(parent)
     setGeometry(305, 105, 690, 295);
     setTitle("Planet Detail");
 
+    _boxPosition = new GroupTools(parent);
+    _boxPosition->setGeometry(315, 180, 330, 210);
+    _boxPosition->setTitle("Position");
+
+    _boxPositionVector = new GroupTools(parent);
+    _boxPositionVector->setGeometry(655, 180, 330, 210);
+    _boxPositionVector->setTitle("Position Vector");
+
     _lName = new QLabel("Name :", this);
     _lRadius = new QLabel("Radius (km) :", this);
     _lType = new QLabel("Planet Type :", this);
@@ -23,19 +31,12 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QGroupBox(parent)
     _eRadius->setMinimum(1);
     _eRadius->setMaximum(1000000);
     _eRadius->setValue(1);
+
     _eType->setGeometry(552, 35, 130, 30);
     _eType->addItem("Star");
     _eType->addItem("Telluric planet");
     _eType->addItem("Gazeous planet");
     _eType->addItem("Asteroid");
-
-    _boxPosition = new GroupTools(parent);
-    _boxPosition->setGeometry(315, 180, 330, 210);
-    _boxPosition->setTitle("Position");
-
-    _boxPositionVector = new GroupTools(parent);
-    _boxPositionVector->setGeometry(655, 180, 330, 210);
-    _boxPositionVector->setTitle("Position Vector");
 
     buildPosition();
     buildPositionVector();

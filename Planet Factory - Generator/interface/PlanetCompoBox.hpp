@@ -24,6 +24,7 @@ public:
     ~PlanetCompoBox();
 
     void createCompoDetails(void);
+    void createCompoList(void);
 
     QLineEdit   *_eName;
     QSpinBox    *_eGazeousTemp;

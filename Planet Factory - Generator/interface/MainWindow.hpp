@@ -18,6 +18,8 @@
 #include "GroupTools.hpp"
 #include "Planet.hpp"
 
+Q_DECLARE_METATYPE(PlanetType)
+
 class MainWindow : public QMainWindow
 {
 

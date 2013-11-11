@@ -37,14 +37,14 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
         if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
         {
             _parent->getPlanetDetails()->_eName->setText((*it)->getName().c_str());
-	    if ((*it)->getType() == STAR)
-	      _parent->getPlanetDetails()->_eType->setCurrentIndex(0);
-	    else if ((*it)->getType() == TELLURIC)
-	      _parent->getPlanetDetails()->_eType->setCurrentIndex(1);
-	    else if ((*it)->getType() == GAZEOUS)
-	      _parent->getPlanetDetails()->_eType->setCurrentIndex(2);
-	    else if ((*it)->getType() == ASTEROID)
-	      _parent->getPlanetDetails()->_eType->setCurrentIndex(3);
+            if ((*it)->getType() == STAR)
+                _parent->getPlanetDetails()->_eType->setCurrentIndex(0);
+            else if ((*it)->getType() == TELLURIC)
+                _parent->getPlanetDetails()->_eType->setCurrentIndex(1);
+            else if ((*it)->getType() == GAZEOUS)
+                _parent->getPlanetDetails()->_eType->setCurrentIndex(2);
+            else if ((*it)->getType() == ASTEROID)
+                _parent->getPlanetDetails()->_eType->setCurrentIndex(3);
             pos = (*it)->getPosition();
             posVec = (*it)->getPositionVec();
             _parent->getPlanetDetails()->_eRadius->setValue((*it)->getRadius());
@@ -92,6 +92,14 @@ void CelestialBox::addObject()
             (*it)->setRadius(_parent->getPlanetDetails()->_eRadius->value());
             (*it)->setPosition(_parent->getPlanetDetails()->_ePosX->value(), _parent->getPlanetDetails()->_ePosY->value(), _parent->getPlanetDetails()->_ePosZ->value());
             (*it)->setPositionVec(_parent->getPlanetDetails()->_ePosVecX->value(), _parent->getPlanetDetails()->_ePosVecY->value(), _parent->getPlanetDetails()->_ePosVecZ->value());
+            if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Star"))
+                (*it)->setType(STAR);
+            else if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Telluric planet"))
+                (*it)->setType(TELLURIC);
+            else if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Gazeous planet"))
+                (*it)->setType(GAZEOUS);
+            else if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Asteroid"))
+                (*it)->setType(ASTEROID);
             cleanAllFields();
             return;
         }
