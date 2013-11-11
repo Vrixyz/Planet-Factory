@@ -1,11 +1,13 @@
 #ifndef PLANETCOMPOBOX_HPP
 #define PLANETCOMPOBOX_HPP
 
+#include <QListWidget>
 #include <QPushButton>
 #include <QLineEdit>
 #include <QGroupBox>
 #include <QSpinBox>
 #include <QWidget>
+#include <QSlider>
 #include <QLabel>
 
 #include "GroupTools.hpp"
@@ -25,11 +27,19 @@ public:
 
     void createCompoDetails(void);
     void createCompoList(void);
+    void cleanAllFields(void);
 
+    QListWidget   *_listObjects;
     QLineEdit   *_eName;
     QSpinBox    *_eGazeousTemp;
     QSpinBox    *_eSolidTemp;
-    QSpinBox    *_eHardness;
+    QSlider     *_eHardness;
+    QSpinBox    *_eMass;
+
+    QPushButton *_add;
+    QPushButton *_del;
+
+    MainWindow  *_parent;
 
 private:
 
@@ -45,7 +55,11 @@ private:
 signals:
     
 public slots:
-    
+
+    void addCompo(void);
+    void delCompo(void);
+    void componentSelected(QListWidgetItem *);
+
 };
 
 #endif // PLANETCOMPOBOX_HPP

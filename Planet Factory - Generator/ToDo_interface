@@ -2,3 +2,5 @@ DORIAN :
 
  - Modifier QComboBox avec QVariant pour remplacer if/else if
  - Check la norme globale
+ - Check que les messages de bug soient bien sur la sortie d'erreur
+ - modifier core pour savoir quel est l'astre/composant en cours de séléction avec une seule méthode

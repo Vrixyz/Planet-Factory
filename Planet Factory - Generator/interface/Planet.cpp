@@ -2,6 +2,7 @@
 
 Planet::Planet()
 {
+    _listCompo = new std::list<Component*>();
 }
 
 Planet::~Planet()

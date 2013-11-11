@@ -8,13 +8,14 @@ CelestialBox::CelestialBox(MainWindow *parent) : QGroupBox(parent)
 
     _parent = parent;
     _listObjects = new QListWidget(this);
-    _listObjects->setGeometry(10, 30, 275, 225);
+    _listObjects->setGeometry(10, 30, 275, 205);
     _add = new QPushButton(this);
     _del = new QPushButton(this);
-    _add->setGeometry(10, 260, 135, 30);
-    _del->setGeometry(150, 260, 135, 30);
+    _add->setGeometry(10, 240, 135, 50);
+    _del->setGeometry(150, 240, 135, 50);
     _add->setText("Add / Edit");
     _del->setText("Delete");
+    _del->setEnabled(false);
 
     QObject::connect(_add, SIGNAL(clicked()), this, SLOT(addObject()));
     QObject::connect(_del, SIGNAL(clicked()), this, SLOT(delObject()));
@@ -27,14 +28,15 @@ CelestialBox::~CelestialBox()
 
 void CelestialBox::planetSelected(QListWidgetItem* currItem)
 {
+    std::list<Component*>::iterator it_compo;
     std::list<Planet*>::iterator    it;
+    std::list<Component*>           *toCheck;
     int                             *pos;
     int                             *posVec;
 
-    qDebug(currItem->text().toStdString().c_str());
     it = _parent->_listPlanet->begin();
     for (it = _parent->_listPlanet->begin(); it != _parent->_listPlanet->end(); ++it)
-        if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
+        if ((*it)->getName() == currItem->text().toStdString())
         {
             _parent->getPlanetDetails()->_eName->setText((*it)->getName().c_str());
             if ((*it)->getType() == STAR)
@@ -54,6 +56,14 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
             _parent->getPlanetDetails()->_ePosVecX->setValue(posVec[0]);
             _parent->getPlanetDetails()->_ePosVecY->setValue(posVec[1]);
             _parent->getPlanetDetails()->_ePosVecZ->setValue(posVec[2]);
+            _del->setEnabled(true);
+            _parent->getPlanetCompo()->_add->setEnabled(true);
+            _parent->getPlanetCompo()->_listObjects->clear();
+
+            toCheck = (*it)->getListCompo();
+            for (it_compo = toCheck->begin(); it_compo != toCheck->end(); ++it_compo)
+                _parent->getPlanetCompo()->_listObjects->addItem((*it_compo)->getName().c_str());
+            _parent->getPlanetCompo()->cleanAllFields();
         }
 }
 
@@ -119,4 +129,9 @@ void CelestialBox::cleanAllFields()
     _parent->getPlanetDetails()->_ePosVecX->setValue(0);
     _parent->getPlanetDetails()->_ePosVecY->setValue(0);
     _parent->getPlanetDetails()->_ePosVecZ->setValue(0);
+    _del->setEnabled(false);
+    _parent->getPlanetCompo()->_add->setEnabled(false);
+    _parent->getPlanetCompo()->_listObjects->clear();
+    _parent->getPlanetCompo()->cleanAllFields();
+
 }

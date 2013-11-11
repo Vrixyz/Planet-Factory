@@ -4,6 +4,15 @@ Component::Component()
 {
 }
 
+Component::Component(std::string name, int gazeousTemp, int solidTemp, int mass, int hardness)
+{
+    _name = name;
+    _gazeousTemp = gazeousTemp;
+    _solidTemp = solidTemp;
+    _hardness = hardness;
+    _mass = mass;
+}
+
 Component::~Component()
 {
 }

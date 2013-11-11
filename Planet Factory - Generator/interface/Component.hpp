@@ -9,6 +9,7 @@ class Component
 public:
 
     Component();
+    Component(std::string, int, int, int, int);
     ~Component();
 
     void setName(std::string);
