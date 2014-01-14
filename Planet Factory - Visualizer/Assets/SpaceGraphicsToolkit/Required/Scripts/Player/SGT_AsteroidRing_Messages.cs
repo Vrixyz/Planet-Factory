@@ -5,7 +5,7 @@ public partial class SGT_AsteroidRing
 {
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated("ringMaterial", "generatedMeshes") == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			ringMaterial    = SGT_Helper.CloneObject(ringMaterial);
 			generatedMeshes = SGT_Helper.CloneObjects(generatedMeshes);

@@ -5,7 +5,7 @@ public partial class SGT_GasGiant
 {
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated("atmosphereMaterial", "lightingTexture") == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			atmosphereMaterial = SGT_Helper.CloneObject(atmosphereMaterial);
 			lightingTexture    = SGT_Helper.CloneObject(lightingTexture);

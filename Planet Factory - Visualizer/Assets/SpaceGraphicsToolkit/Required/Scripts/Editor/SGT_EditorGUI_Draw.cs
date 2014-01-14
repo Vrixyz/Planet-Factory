@@ -163,27 +163,21 @@ public static partial class SGT_EditorGUI
 	{
 		var n = EditorGUI.Toggle(r, o);
 		
-		MarkModified(o != n, isField);
-		
-		return n;
+		MarkModified(o != n, isField); return n;
 	}
 	
 	public static int DrawEditableInt(Rect r, int o, bool isField = false)
 	{
-		var n = EditorGUI.IntField(FudgeRect(r), " ", o);
+		var n = EditorGUI.IntField(r, o);
 		
-		MarkModified(o != n, isField);
-		
-		return n;
+		MarkModified(o != n, isField); return n;
 	}
 	
 	public static int DrawEditableInt(Rect r, int o, int min, int max, bool isField = false)
 	{
-		var n = EditorGUI.IntSlider(FudgeRect(r), " ", o, min, max);
+		var n = EditorGUI.IntSlider(r, o, min, max);
 		
-		MarkModified(o != n, isField);
-		
-		return n;
+		MarkModified(o != n, isField); return n;
 	}
 	
 	public static int DrawEditableIntWithButton(Rect r, int o, string buttonText, out bool pressed, float buttonWidth = 25.0f, bool isField = false)
@@ -244,53 +238,52 @@ public static partial class SGT_EditorGUI
 	
 	public static Vector2 DrawEditableVector2(Rect r, Vector2 o, bool isField = false)
 	{
-		r.yMin -= 19.0f;
+		var s = SGT_RectHelper.HorizontalSlice(r, 2, 2);
+		var n = default(Vector2);
 		
-		var n = EditorGUI.Vector2Field(r, null, o);
+		n.x = EditorGUI.FloatField(s[0], o.x);
+		n.y = EditorGUI.FloatField(s[1], o.y);
 		
-		MarkModified(o != n, isField);
-		
-		return n;
+		MarkModified(n != o, isField); return n;
 	}
 	
 	public static Vector3 DrawEditableVector3(Rect r, Vector3 o, bool isField = false)
 	{
-		r.yMin -= 19.0f;
+		var s = SGT_RectHelper.HorizontalSlice(r, 3, 2);
+		var n = default(Vector3);
 		
-		var n = EditorGUI.Vector3Field(r, null, o);
+		n.x = EditorGUI.FloatField(s[0], o.x);
+		n.y = EditorGUI.FloatField(s[1], o.y);
+		n.z = EditorGUI.FloatField(s[2], o.z);
 		
-		MarkModified(o != n, isField);
-		
-		return n;
+		MarkModified(n != o, isField); return n;
 	}
 	
 	public static Vector4 DrawEditableVector4(Rect r, Vector4 o, bool isField = false)
 	{
-		r.yMin -= 19.0f;
+		var s = SGT_RectHelper.HorizontalSlice(r, 4, 2);
+		var n = default(Vector4);
 		
-		var n = EditorGUI.Vector4Field(r, null, o);
+		n.x = EditorGUI.FloatField(s[0], o.x);
+		n.y = EditorGUI.FloatField(s[1], o.y);
+		n.z = EditorGUI.FloatField(s[2], o.z);
+		n.w = EditorGUI.FloatField(s[3], o.w);
 		
-		MarkModified(o != n, isField);
-		
-		return n;
+		MarkModified(n != o, isField); return n;
 	}
 	
 	public static float DrawEditableFloat(Rect r, float o, bool isField = false)
 	{
-		var n = EditorGUI.FloatField(FudgeRect(r), " ", o);
+		var n = EditorGUI.FloatField(r, o);
 		
-		MarkModified(o != n, isField);
-		
-		return n;
+		MarkModified(o != n, isField); return n;
 	}
 	
 	public static float DrawEditableFloat(Rect r, float o, float min, float max, bool isField = false)
 	{
-		var n = EditorGUI.Slider(FudgeRect(r), " ", o, min, max);
+		var n = EditorGUI.Slider(r, o, min, max);
 		
-		MarkModified(o != n, isField);
-		
-		return n;
+		MarkModified(o != n, isField); return n;
 	}
 	
 	public static string DrawEditableString(Rect r, string o, bool wordWrap = false, bool isField = false)

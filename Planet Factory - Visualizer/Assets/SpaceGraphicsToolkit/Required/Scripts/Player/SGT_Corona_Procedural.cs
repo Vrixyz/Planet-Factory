@@ -115,6 +115,7 @@ public partial class SGT_Corona
 		}
 		
 		generatedMesh = new Mesh();
+		generatedMesh.hideFlags = HideFlags.DontSave;
 		generatedMesh.vertices  = positions;
 		generatedMesh.triangles = indices;
 		generatedMesh.uv        = uv0;
@@ -185,6 +186,7 @@ public partial class SGT_Corona
 		}
 		
 		generatedMesh = new Mesh();
+		generatedMesh.hideFlags = HideFlags.DontSave;
 		generatedMesh.vertices  = positions;
 		generatedMesh.triangles = indices;
 		generatedMesh.uv        = uv0;

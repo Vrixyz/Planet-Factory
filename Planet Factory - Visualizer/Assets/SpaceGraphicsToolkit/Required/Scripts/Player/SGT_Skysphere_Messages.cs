@@ -4,7 +4,7 @@ public partial class SGT_Skysphere
 {
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated("skysphereMaterial") == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			skysphereMaterial = SGT_Helper.CloneObject(skysphereMaterial);
 		}

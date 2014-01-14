@@ -17,12 +17,19 @@ public class SGT_Inspector_Starfield : SGT_Inspector<SGT_Starfield>
 		
 		SGT_EditorGUI.BeginGroup("Starfield");
 		{
-			Target.StarfieldStarCount    = SGT_EditorGUI.IntField("Star Count", "Amount of stars to generate in the starfield.", Target.StarfieldStarCount);
-			Target.StarfieldSeed         = SGT_EditorGUI.SeedField("Seed", "The random seed to use when generating the starfield.", Target.StarfieldSeed);
-			Target.StarfieldRenderQueue  = SGT_EditorGUI.IntField("Render Queue", "The render queue used by the starfield mesh.", Target.StarfieldRenderQueue);
-			Target.StarfieldCamera       = SGT_EditorGUI.ObjectField("Camera", "The camera rendering this.", Target.StarfieldCamera, true);
-			Target.StarfieldInBackground = SGT_EditorGUI.BoolField("In Background", "Push stars into background?", Target.StarfieldInBackground);
-			Target.StarfieldAutoRegen    = SGT_EditorGUI.BoolField("Auto Regen", null, Target.StarfieldAutoRegen);
+			Target.StarfieldStarCount     = SGT_EditorGUI.IntField("Star Count", "Amount of stars to generate in the starfield.", Target.StarfieldStarCount);
+			Target.StarfieldSeed          = SGT_EditorGUI.SeedField("Seed", "The random seed to use when generating the starfield.", Target.StarfieldSeed);
+			Target.StarfieldTexture       = SGT_EditorGUI.ObjectField("Texture", "The tilesheet used by the starfield.", Target.StarfieldTexture, true);
+			SGT_EditorGUI.BeginIndent();
+			{
+				Target.StarfieldTextureTilesX = SGT_EditorGUI.IntField("Tiles X", "The amount of horizontal tiles in the tilesheet.", Target.StarfieldTextureTilesX);
+				Target.StarfieldTextureTilesY = SGT_EditorGUI.IntField("Tiles Y", "The amount of vertical tiles in the tilesheet.", Target.StarfieldTextureTilesY);
+			}
+			SGT_EditorGUI.EndIndent();
+			Target.StarfieldRenderQueue   = SGT_EditorGUI.IntField("Render Queue", "The render queue used by the starfield mesh.", Target.StarfieldRenderQueue);
+			Target.StarfieldCamera        = SGT_EditorGUI.ObjectField("Camera", "The camera rendering this.", Target.StarfieldCamera, true);
+			Target.StarfieldInBackground  = SGT_EditorGUI.BoolField("In Background", "Push stars into background?", Target.StarfieldInBackground);
+			Target.StarfieldAutoRegen     = SGT_EditorGUI.BoolField("Auto Regen", null, Target.StarfieldAutoRegen);
 			
 			if (Target.StarfieldAutoRegen == false)
 			{
@@ -68,59 +75,6 @@ public class SGT_Inspector_Starfield : SGT_Inspector<SGT_Starfield>
 		
 		SGT_EditorGUI.Separator();
 		
-		SGT_EditorGUI.BeginGroup("Packer");
-		{
-			for (var i = 0; i < Target.Packer.InputCount; i++)
-			{
-				var input = Target.Packer.GetInput(i);
-				
-				SGT_EditorGUI.BeginIndent(true, 1);
-				{
-					input.Texture = SGT_EditorGUI.ObjectField("Texture", null, input.Texture);
-					
-					SGT_EditorGUI.MarkNextFieldAsBold(input.Tilesheet == true);
-					input.Tilesheet = SGT_EditorGUI.BoolField("Tilesheet", "Is this texture a tilesheet?", input.Tilesheet);
-					
-					if (input.Tilesheet == true)
-					{
-						SGT_EditorGUI.BeginIndent();
-						{
-							input.TilesheetTilesX = SGT_EditorGUI.IntField("Tiles X", "The amount of tiles in this texture on the x axis.", input.TilesheetTilesX);
-							input.TilesheetTilesY = SGT_EditorGUI.IntField("Tiles Y", "The amount of tiles in this texture on the y axis.", input.TilesheetTilesY);
-						}
-						SGT_EditorGUI.EndIndent();
-					}
-					
-					if (SGT_EditorGUI.Button("Remove") == true)
-					{
-						Target.Packer.RemoveInput(i);
-					}
-				}
-				SGT_EditorGUI.EndIndent();
-				
-				SGT_EditorGUI.Separator();
-			}
-			
-			SGT_EditorGUI.BeginIndent(true, 1);
-			{
-				SGT_EditorGUI.MarkNextFieldAsError(Target.Packer.InputCount == 0);
-				var newTexture = SGT_EditorGUI.ObjectField<Texture2D>("Add Texture", null, null);
-				
-				if (newTexture != null)
-				{
-					var pi = new SGT_PackerInput();
-					
-					pi.Texture = newTexture;
-					
-					Target.Packer.AddInput(pi);
-				}
-			}
-			SGT_EditorGUI.EndIndent();
-		}
-		SGT_EditorGUI.EndGroup();
-		
-		SGT_EditorGUI.Separator();
-		
 		SGT_EditorGUI.BeginGroup("Star");
 		{
 			Target.StarRadiusMin      = SGT_EditorGUI.FloatField("Radius Min", "The minimum radius of a star.", Target.StarRadiusMin);
@@ -137,123 +91,47 @@ public class SGT_Inspector_Starfield : SGT_Inspector<SGT_Starfield>
 			SGT_EditorGUI.MarkNextFieldAsBold();
 			editVariantIndex = SGT_EditorGUI.IntField("Index", "The star variant currently being edited.", editVariantIndex, 0, Target.StarVariantCount - 1);
 			
-			var sv = Target.GetStarVariant(editVariantIndex);
-			var po = Target.Packer.GetOutput(editVariantIndex);
+			var ssv = Target.GetStarVariant(editVariantIndex);
 			
-			if (sv != null && po != null)
+			SGT_EditorGUI.BeginIndent();
 			{
-				SGT_EditorGUI.BeginIndent();
-				{
-					SGT_EditorGUI.DrawFieldTexture("Preview", null, po.OutputTexture, po.Uv);
-					
-					sv.SpawnProbability = SGT_EditorGUI.FloatField("Spawn Probability", null, sv.SpawnProbability, 0.0f, 1.0f);
-					
-					if (sv.Custom == true)
-					{
-						SGT_EditorGUI.MarkNextFieldAsBold();
-					}
-					
-					var oldCustom = sv.Custom;
-					
-					sv.Custom = SGT_EditorGUI.BoolField("Custom", null, sv.Custom);
-					
-					if (sv.Custom == true)
-					{
-						if (oldCustom == false)
-						{
-							sv.CustomRadiusMin      = Target.StarRadiusMin;
-							sv.CustomRadiusMax      = Target.StarRadiusMax;
-							sv.CustomPulseRadiusMax = Target.StarPulseRadiusMax;
-							sv.CustomPulseRateMax   = Target.StarPulseRateMax;
-						}
-						
-						SGT_EditorGUI.BeginIndent();
-						{
-							sv.CustomRadiusMin      = SGT_EditorGUI.FloatField("Radius Min", null, sv.CustomRadiusMin);
-							sv.CustomRadiusMax      = SGT_EditorGUI.FloatField("Radius Max", null, sv.CustomRadiusMax);
-							sv.CustomPulseRadiusMax = SGT_EditorGUI.FloatField("Pulse Radius Max", null, sv.CustomPulseRadiusMax);
-							sv.CustomPulseRateMax   = SGT_EditorGUI.FloatField("Pulse Rate Max", null, sv.CustomPulseRateMax);
-						}
-						SGT_EditorGUI.EndIndent();
-					}
-				}
-				SGT_EditorGUI.EndIndent();
-			}
-		}
-		SGT_EditorGUI.EndToggleGroup();
-		
-		SGT_EditorGUI.Separator();
-		
-		editStar = SGT_EditorGUI.BeginToggleGroup("Edit Star", null, editStar);
-		{
-			SGT_EditorGUI.MarkNextFieldAsBold();
-			editStarIndex = SGT_EditorGUI.IntField("Index", "The star currently being edited.", editStarIndex, 0, Target.StarfieldStarCount - 1);
-			ssd           = Target.ReadStar(editStarIndex);
-			
-			if (ssd != null)
-			{
-				SGT_EditorGUI.BeginIndent();
-				{
-					ssd.Position     = SGT_EditorGUI.Vector3Field("Position", null, ssd.Position);
-					ssd.TextureIndex = SGT_EditorGUI.IntField("Texture Index", null, ssd.TextureIndex, 0, Target.Packer.OutputCount - 1);
-					ssd.Angle        = SGT_EditorGUI.FloatField("Angle", null, ssd.Angle, -Mathf.PI, Mathf.PI);
-					
-					SGT_EditorGUI.BeginGroup("Radius");
-					{
-						ssd.RadiusMin       = SGT_EditorGUI.FloatField("Min", null, ssd.RadiusMin);
-						ssd.RadiusMax       = SGT_EditorGUI.FloatField("Max", null, ssd.RadiusMax);
-						ssd.RadiusPulseRate = SGT_EditorGUI.FloatField("Pulse Rate", null, ssd.RadiusPulseRate, 0.0f, 1.0f);
-					}
-					SGT_EditorGUI.EndGroup();
-					
-					SGT_EditorGUI.Separator();
-					
-					if (SGT_EditorGUI.Button("Normalize Position") == true)
-					{
-						ssd.Position = ssd.Position.normalized * Target.DistributionRadius;
-					}
-					
-					if (SGT_EditorGUI.Button("Clamp Radius") == true)
-					{
-						ssd.RadiusMin = Mathf.Clamp(ssd.RadiusMin, Target.StarRadiusMin, Target.StarRadiusMax);
-						ssd.RadiusMax = Mathf.Clamp(ssd.RadiusMax, Target.StarRadiusMin, Target.StarRadiusMax);
-					}
-					
-					if (SGT_EditorGUI.Button("Duplicate") == true)
-					{
-						editStarIndex = Target.AddStar(ssd);
-					}
-					
-					Target.WriteStar(ssd, editStarIndex);
-					Target.ApplyStarChanges();
-				}
-				SGT_EditorGUI.EndIndent();
-			}
-			else
-			{
-				SGT_EditorGUI.HelpBox("Failed to read star data.", MessageType.Error);
-			}
-		}
-		SGT_EditorGUI.EndToggleGroup();
-		
-		SGT_EditorGUI.Separator();
-	}
-	
-	public void OnSceneGUI()
-	{
-		if (editStar == true && ssd != null && ssd.Transform != null)
-		{
-			var t = ssd.Transform;
-			var p = t.TransformPoint(ssd.Position);
-			var n = Handles.DoPositionHandle(p, Target.transform.rotation);
-			
-			if (n != p)
-			{
-				ssd.Position = t.InverseTransformPoint(n);
+				SGT_EditorGUI.DrawFieldTexture("Preview", null, Target.StarfieldTexture, ssv.Uv);
 				
-				Target.WriteStar(ssd, editStarIndex);
-				Target.ApplyStarChanges();
+				ssv.SpawnProbability = SGT_EditorGUI.FloatField("Spawn Probability", null, ssv.SpawnProbability, 0.0f, 1.0f);
+				
+				if (ssv.Custom == true)
+				{
+					SGT_EditorGUI.MarkNextFieldAsBold();
+				}
+				
+				var oldCustom = ssv.Custom;
+				
+				ssv.Custom = SGT_EditorGUI.BoolField("Custom", null, ssv.Custom);
+				
+				if (ssv.Custom == true)
+				{
+					if (oldCustom == false)
+					{
+						ssv.CustomRadiusMin      = Target.StarRadiusMin;
+						ssv.CustomRadiusMax      = Target.StarRadiusMax;
+						ssv.CustomPulseRadiusMax = Target.StarPulseRadiusMax;
+						ssv.CustomPulseRateMax   = Target.StarPulseRateMax;
+					}
+					
+					SGT_EditorGUI.BeginIndent();
+					{
+						ssv.CustomRadiusMin      = SGT_EditorGUI.FloatField("Radius Min", null, ssv.CustomRadiusMin);
+						ssv.CustomRadiusMax      = SGT_EditorGUI.FloatField("Radius Max", null, ssv.CustomRadiusMax);
+						ssv.CustomPulseRadiusMax = SGT_EditorGUI.FloatField("Pulse Radius Max", null, ssv.CustomPulseRadiusMax);
+						ssv.CustomPulseRateMax   = SGT_EditorGUI.FloatField("Pulse Rate Max", null, ssv.CustomPulseRateMax);
+					}
+					SGT_EditorGUI.EndIndent();
+				}
 			}
+			SGT_EditorGUI.EndIndent();
 		}
+		SGT_EditorGUI.EndToggleGroup();
+		
+		SGT_EditorGUI.Separator();
 	}
 }

@@ -7,7 +7,7 @@ public partial class SGT_Ring
 	[SerializeField]
 	private bool ringAutoRegen = true;
 	
-	[SerializeField]
+	/*[SerializeField]*/
 	private bool modified = true;
 	
 	[SerializeField]

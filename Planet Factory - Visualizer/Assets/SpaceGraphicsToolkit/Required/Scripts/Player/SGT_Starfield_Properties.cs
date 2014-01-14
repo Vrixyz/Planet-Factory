@@ -1,11 +1,9 @@
-using ObjectList  = System.Collections.Generic.List<UnityEngine.Object>;
-using VariantList = System.Collections.Generic.List<SGT_StarfieldStarVariant>;
-
 using UnityEngine;
+using System.Collections.Generic;
 
 public partial class SGT_Starfield
 {
-	[SerializeField]
+	/*[SerializeField]*/
 	private bool modified = true;
 	
 	[SerializeField]
@@ -15,9 +13,15 @@ public partial class SGT_Starfield
 	private SGT_MultiMesh starfieldMultiMesh;
 	
 	[SerializeField]
-	private SGT_Packer packer;
+	private Texture2D starfieldTexture;
 	
 	[SerializeField]
+	private int starfieldTextureTilesX = 1;
+	
+	[SerializeField]
+	private int starfieldTextureTilesY = 1;
+	
+	/*[SerializeField]*/
 	private Mesh[] meshes;
 	
 	[SerializeField]
@@ -27,10 +31,10 @@ public partial class SGT_Starfield
 	private string starfieldTechnique;
 	
 	[SerializeField]
-	private int starfieldStarCount = 1000;
+	private bool starfieldInBackground = true;
 	
 	[SerializeField]
-	private bool starfieldInBackground = true;
+	private int starfieldStarCount;
 	
 	[SerializeField]
 	private int starfieldSeed;
@@ -66,7 +70,7 @@ public partial class SGT_Starfield
 	private float starPulseRateMax = 1.0f;
 	
 	[SerializeField]
-	private VariantList starVariants;
+	private List<SGT_StarfieldStarVariant> starVariants = new List<SGT_StarfieldStarVariant>();
 	
 	[SerializeField]
 	private bool starfieldAutoRegen = true;
@@ -79,10 +83,13 @@ public partial class SGT_Starfield
 	
 	public bool Modified
 	{
+		set
+		{
+			modified = value;
+		}
+		
 		get
 		{
-			CheckForModifications();
-			
 			return modified;
 		}
 	}
@@ -138,9 +145,11 @@ public partial class SGT_Starfield
 	{
 		set
 		{
+			value = Mathf.Max(1, value);
+			
 			if (value != starfieldStarCount)
 			{
-				starfieldStarCount = Mathf.Max(1, value);
+				starfieldStarCount = value;
 				modified           = true;
 			}
 		}
@@ -270,17 +279,54 @@ public partial class SGT_Starfield
 		}
 	}
 	
-	public SGT_Packer Packer
+	public Texture StarfieldTexture
 	{
 		set
 		{
+			starfieldTexture = value as Texture2D;
 		}
 		
 		get
 		{
-			if (packer == null) packer = new SGT_Packer();
+			return starfieldTexture;
+		}
+	}
+	
+	public int StarfieldTextureTilesX
+	{
+		set
+		{
+			value = Mathf.Max(value, 1);
 			
-			return packer;
+			if (value != starfieldTextureTilesX)
+			{
+				starfieldTextureTilesX = value;
+				modified               = true;
+			}
+		}
+		
+		get
+		{
+			return starfieldTextureTilesX;
+		}
+	}
+	
+	public int StarfieldTextureTilesY
+	{
+		set
+		{
+			value = Mathf.Max(value, 1);
+			
+			if (value != starfieldTextureTilesY)
+			{
+				starfieldTextureTilesY = value;
+				modified               = true;
+			}
+		}
+		
+		get
+		{
+			return starfieldTextureTilesY;
 		}
 	}
 	
@@ -364,11 +410,11 @@ public partial class SGT_Starfield
 	{
 		get
 		{
-			return packer != null ? packer.OutputCount : 0;
+			return starfieldTextureTilesX * starfieldTextureTilesY;
 		}
 	}
 	
-	public override void BuildUndoTargets(ObjectList list)
+	public override void BuildUndoTargets(List<Object> list)
 	{
 		base.BuildUndoTargets(list);
 		

@@ -1,3 +1,7 @@
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_DASHBOARD_WIDGET || UNITY_STANDALONE_WIN || UNITY_STANDALONE_LINUX || UNITY_WEBPLAYER || UNITY_NACL || UNITY_FLASH
+#	define UNITY_MOUSE_SUPPORT
+#endif
+
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -74,7 +78,7 @@ public class SGT_Input : SGT_Singleton<SGT_Input>
 		{
 			RequireInstance();
 			
-#if UNITY_IPHONE == true || UNITY_ANDROID == true
+#if UNITY_MOUSE_SUPPORT == false
 			return 0.0f; // TODO: Code this
 #else
 			var a = new Vector2(newMousePosition.x - (float)(Screen.width / 2), newMousePosition.y - (float)(Screen.height / 2));
@@ -91,7 +95,7 @@ public class SGT_Input : SGT_Singleton<SGT_Input>
 		{
 			RequireInstance();
 			
-#if UNITY_IPHONE == true || UNITY_ANDROID == true
+#if UNITY_MOUSE_SUPPORT == false
 			var touches = Input.touches;
 			
 			if (touches != null && Input.touchCount == 1)
@@ -117,7 +121,7 @@ public class SGT_Input : SGT_Singleton<SGT_Input>
 		{
 			RequireInstance();
 			
-#if UNITY_IPHONE == true || UNITY_ANDROID == true
+#if UNITY_MOUSE_SUPPORT == false
 			var touches = Input.touches;
 			
 			if (touches != null && Input.touchCount == 1)
@@ -141,7 +145,7 @@ public class SGT_Input : SGT_Singleton<SGT_Input>
 	{
 		get
 		{
-#if UNITY_IPHONE == true || UNITY_ANDROID == true
+#if UNITY_MOUSE_SUPPORT == false
 			return 0.0f;
 #else
 			return Input.GetAxis("Mouse ScrollWheel");
@@ -153,7 +157,7 @@ public class SGT_Input : SGT_Singleton<SGT_Input>
 	{
 		get
 		{
-#if UNITY_IPHONE == true || UNITY_ANDROID == true
+#if UNITY_MOUSE_SUPPORT == false
 			return 0.0f;
 #else
 			return Input.GetAxisRaw("Horizontal");
@@ -165,7 +169,7 @@ public class SGT_Input : SGT_Singleton<SGT_Input>
 	{
 		get
 		{
-#if UNITY_IPHONE == true || UNITY_ANDROID == true
+#if UNITY_MOUSE_SUPPORT == false
 			return 0.0f;
 #else
 			return Input.GetAxisRaw("Vertical");
@@ -175,7 +179,7 @@ public class SGT_Input : SGT_Singleton<SGT_Input>
 	
 	public static bool GetKeyDown(KeyCode code, int equivalentTouchCount = 0)
 	{
-#if UNITY_IPHONE == true || UNITY_ANDROID == true
+#if UNITY_MOUSE_SUPPORT == false
 		if (equivalentTouchCount > 0)
 		{
 			var touches = Input.touches;
@@ -200,7 +204,7 @@ public class SGT_Input : SGT_Singleton<SGT_Input>
 	
 	public static bool GetKey(KeyCode code, int equivalentTouchCount = 0)
 	{
-#if UNITY_IPHONE == true || UNITY_ANDROID == true
+#if UNITY_MOUSE_SUPPORT == false
 		if (equivalentTouchCount > 0)
 		{
 			var touches = Input.touches;

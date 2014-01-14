@@ -38,9 +38,6 @@ public class SGT_SurfaceTessellatorCollider : SGT_MonoBehaviourUnique<SGT_Surfac
 	[SerializeField]
 	private int verticesPerMesh = 600;
 	
-	[SerializeField]
-	private Mesh lazyDupeCheck;
-	
 	public PhysicMaterial PhysicsMaterial
 	{
 		set
@@ -82,23 +79,6 @@ public class SGT_SurfaceTessellatorCollider : SGT_MonoBehaviourUnique<SGT_Surfac
 	
 	public void Awake()
 	{
-		switch (FindAwakeState("lazyDupeCheck"))
-		{
-			case AwakeState.AwakeOriginal:
-			{
-			}
-			break;
-			case AwakeState.AwakeDuplicate:
-			{
-			}
-			break;
-			case AwakeState.AwakeAgain:
-			{
-			}
-			break;
-		}
-		
-		if (lazyDupeCheck == null) lazyDupeCheck = new Mesh();
 	}
 	
 	public void OnEnable()

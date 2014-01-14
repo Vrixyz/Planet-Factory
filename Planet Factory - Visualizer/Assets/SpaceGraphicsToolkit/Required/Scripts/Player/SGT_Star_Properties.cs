@@ -99,10 +99,6 @@ public partial class SGT_Star
 	
 	public SGT_SurfaceMultiMesh SurfaceMesh
 	{
-		set
-		{
-		}
-		
 		get
 		{
 			if (surfaceMultiMesh == null) surfaceMultiMesh = new SGT_SurfaceMultiMesh();
@@ -113,10 +109,6 @@ public partial class SGT_Star
 	
 	public SGT_SurfaceTexture SurfaceTexture
 	{
-		set
-		{
-		}
-		
 		get
 		{
 			if (surfaceTexture == null) surfaceTexture = new SGT_SurfaceTexture();
@@ -188,10 +180,7 @@ public partial class SGT_Star
 	{
 		set
 		{
-			if (value > 0.0f)
-			{
-				atmosphereHeight = value;
-			}
+			atmosphereHeight = Mathf.Max(value, float.Epsilon);
 		}
 		
 		get
@@ -267,12 +256,10 @@ public partial class SGT_Star
 	
 	public SGT_ColourGradient AtmosphereDensityColour
 	{
-		set
-		{
-		}
-		
 		get
 		{
+			if (atmosphereDensityColour == null) atmosphereDensityColour = new SGT_ColourGradient(false, true);
+			
 			return atmosphereDensityColour;
 		}
 	}
@@ -285,7 +272,7 @@ public partial class SGT_Star
 			{
 				lutSize = value;
 				
-				atmosphereDensityColour.Modified = true;
+				AtmosphereDensityColour.Modified = true; // NOTE: Accessing property
 			}
 		}
 		
@@ -400,7 +387,7 @@ public partial class SGT_Star
 	{
 		base.BuildUndoTargets(list);
 		
-		if (surfaceMultiMesh    != null) surfaceMultiMesh.BuildUndoTargets(list);
-		if (atmosphereMesh != null) atmosphereMesh.BuildUndoTargets(list);
+		if (surfaceMultiMesh != null) surfaceMultiMesh.BuildUndoTargets(list);
+		if (atmosphereMesh   != null) atmosphereMesh.BuildUndoTargets(list);
 	}
 }

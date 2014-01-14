@@ -5,12 +5,10 @@ public partial class SGT_Starfield
 {
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated("starfieldMaterial", "meshes") == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			starfieldMaterial = SGT_Helper.CloneObject(starfieldMaterial);
 			meshes            = SGT_Helper.CloneObjects(meshes);
-			
-			if (packer != null) packer.Duplicated();
 		}
 	}
 	
@@ -19,17 +17,10 @@ public partial class SGT_Starfield
 		if (starfieldGameObject == null) starfieldGameObject = SGT_Helper.CreateGameObject("Starfield", gameObject);
 		if (starfieldMultiMesh  == null) starfieldMultiMesh  = new SGT_MultiMesh();
 		if (starfieldCamera     == null) StarfieldCamera     = SGT_Helper.FindCamera(); // NOTE: Assigning property
-		if (packer              == null) packer              = new SGT_Packer();
-		if (starVariants        == null) starVariants        = new VariantList();
 		
 		SGT_Helper.SetParent(starfieldGameObject, gameObject);
 		SGT_Helper.SetLayer(starfieldGameObject, gameObject.layer);
 		SGT_Helper.SetTag(starfieldGameObject, gameObject.tag);
-		
-		packer.AtlasFormat     = TextureFormat.RGB24;
-		packer.AtlasMaxSize    = SGT_SquareSize.Square2048;
-		packer.AtlasFilterMode = FilterMode.Trilinear;
-		packer.AtlasCountMax   = 1;
 		
 		if (starfieldAutoRegen == true)
 		{
@@ -69,7 +60,5 @@ public partial class SGT_Starfield
 		SGT_Helper.DestroyGameObject(starfieldGameObject);
 		SGT_Helper.DestroyObject(starfieldMaterial);
 		SGT_Helper.DestroyObjects(meshes);
-		
-		if (packer != null) packer.OnDestroy();
 	}
 }

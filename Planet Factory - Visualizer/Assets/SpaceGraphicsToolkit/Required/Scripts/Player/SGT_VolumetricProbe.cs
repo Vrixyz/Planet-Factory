@@ -42,7 +42,7 @@ public class SGT_VolumetricProbe : SGT_MonoBehaviourUnique<SGT_VolumetricProbe>
 	
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated("probeMaterial") == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			SGT_Helper.RemoveSharedMaterial(renderer, probeMaterial, probeRecursive);
 			

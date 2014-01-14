@@ -17,7 +17,7 @@ public partial class SGT_AsteroidRing
 	[SerializeField]
 	private string technique;
 	
-	[SerializeField]
+	/*[SerializeField]*/
 	private bool modified = true;
 	
 	[SerializeField]
@@ -147,11 +147,11 @@ public partial class SGT_AsteroidRing
 		}
 	}
 	
-	public Texture2D AsteroidTextureDay
+	public Texture AsteroidTextureDay
 	{
 		set
 		{
-			asteroidTextureDay = value;
+			asteroidTextureDay = value as Texture2D;
 		}
 		
 		get
@@ -160,11 +160,11 @@ public partial class SGT_AsteroidRing
 		}
 	}
 	
-	public Texture2D AsteroidTextureNight
+	public Texture AsteroidTextureNight
 	{
 		set
 		{
-			asteroidTextureNight = value;
+			asteroidTextureNight = value as Texture2D;
 		}
 		
 		get

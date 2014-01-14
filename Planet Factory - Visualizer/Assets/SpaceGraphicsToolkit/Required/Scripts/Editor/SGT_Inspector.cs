@@ -83,8 +83,12 @@ public abstract class SGT_Inspector<T> : Editor
 			
 			Target.BuildUndoTargets(undoTargets);
 			
+#if UNITY_3_5 || UNITY_4_0 || UNITY_4_0_1 || UNITY_4_1 || UNITY_4_2
 			Undo.SetSnapshotTarget(undoTargets.ToArray(), "Change to " + Target.name);
 			Undo.CreateSnapshot();
+#else
+			Undo.RecordObjects(undoTargets.ToArray(), "Change to " + Target.name);
+#endif
 		}
 		
 		SGT_EditorGUI.ResetAll();
@@ -97,7 +101,9 @@ public abstract class SGT_Inspector<T> : Editor
 			
 			if (snapshot == true)
 			{
+#if UNITY_3_5 || UNITY_4_0 || UNITY_4_0_1 || UNITY_4_1 || UNITY_4_2
 				Undo.RegisterSnapshot();
+#endif
 				
 				EditorUtility.SetDirty(target);
 			}

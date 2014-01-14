@@ -9,25 +9,6 @@ public partial class SGT_SurfaceTessellator
 		
 		sides              = null;
 		sideCombinedMeshes = null;
-		
-		switch (FindAwakeState("lazyDupeCheck"))
-		{
-			case AwakeState.AwakeOriginal:
-			{
-			}
-			break;
-			case AwakeState.AwakeDuplicate:
-			{
-				lazyDupeCheck = null;
-			}
-			break;
-			case AwakeState.AwakeAgain:
-			{
-			}
-			break;
-		}
-		
-		if (lazyDupeCheck == null) lazyDupeCheck = new Mesh();
 	}
 	
 	public void LateUpdate()

@@ -79,6 +79,7 @@ public partial class SGT_Ring
 		}
 		
 		generatedMesh = new Mesh();
+		generatedMesh.hideFlags = HideFlags.DontSave;
 		generatedMesh.name      = "Sliced Ring Mesh";
 		generatedMesh.vertices  = positions;
 		generatedMesh.triangles = indices;

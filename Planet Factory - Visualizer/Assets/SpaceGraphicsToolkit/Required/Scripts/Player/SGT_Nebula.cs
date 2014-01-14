@@ -35,7 +35,7 @@ public class SGT_Nebula : SGT_MonoBehaviourUnique<SGT_Nebula>
 	[SerializeField]
 	private bool nebulaAutoRegen = true;
 	
-	[SerializeField]
+	/*[SerializeField]*/
 	private bool nebulaModified = true;
 	
 	[SerializeField]
@@ -467,7 +467,7 @@ public class SGT_Nebula : SGT_MonoBehaviourUnique<SGT_Nebula>
 	
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated(new string[] { "nebulaMaterial", "generatedMesh" }) == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			nebulaMaterial = null;
 			generatedMesh  = null;
@@ -657,6 +657,7 @@ public class SGT_Nebula : SGT_MonoBehaviourUnique<SGT_Nebula>
 		
 		bounds.Expand(particleScale);
 		
+		generatedMesh.hideFlags = HideFlags.DontSave;
 		generatedMesh.name      = "Nebula";
 		generatedMesh.bounds    = bounds;
 		generatedMesh.vertices  = positions;

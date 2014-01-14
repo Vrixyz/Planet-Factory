@@ -4,8 +4,8 @@ using UnityEngine;
 [AddComponentMenu("Space Graphics Toolkit/Surface Displacement")]
 public class SGT_SurfaceDisplacement : SGT_MonoBehaviourUnique<SGT_SurfaceDisplacement>
 {
-	[SerializeField]
-	private bool modified;
+	/*[SerializeField]*/
+	private bool modified = true;
 	
 	[SerializeField]
 	private bool displacementAutoRegen = true;
@@ -33,9 +33,6 @@ public class SGT_SurfaceDisplacement : SGT_MonoBehaviourUnique<SGT_SurfaceDispla
 	
 	[SerializeField]
 	private SGT_SurfaceMultiMesh generatedSurfaceMesh;
-	
-	[SerializeField]
-	private Mesh lazyDupeCheck;
 	
 	public bool DisplacementAutoRegen
 	{
@@ -198,7 +195,7 @@ public class SGT_SurfaceDisplacement : SGT_MonoBehaviourUnique<SGT_SurfaceDispla
 	
 	public void Awake()
 	{
-		switch (FindAwakeState("lazyDupeCheck"))
+		switch (FindAwakeState())
 		{
 			case AwakeState.AwakeOriginal:
 			{
@@ -214,7 +211,6 @@ public class SGT_SurfaceDisplacement : SGT_MonoBehaviourUnique<SGT_SurfaceDispla
 			break;
 			case AwakeState.AwakeDuplicate:
 			{
-				lazyDupeCheck        = null;
 				generatedSurfaceMesh = null;
 				modified             = true;
 			}
@@ -224,8 +220,6 @@ public class SGT_SurfaceDisplacement : SGT_MonoBehaviourUnique<SGT_SurfaceDispla
 			}
 			break;
 		}
-		
-		if (lazyDupeCheck == null) lazyDupeCheck = new Mesh();
 	}
 	
 	public void Update()
@@ -347,6 +341,7 @@ public class SGT_SurfaceDisplacement : SGT_MonoBehaviourUnique<SGT_SurfaceDispla
 							if (mesh != null)
 							{
 								mesh = SGT_Helper.CloneObject(mesh);
+								mesh.hideFlags = HideFlags.DontSave;
 								
 								var positions      = mesh.vertices;
 								var uv0s           = mesh.uv;

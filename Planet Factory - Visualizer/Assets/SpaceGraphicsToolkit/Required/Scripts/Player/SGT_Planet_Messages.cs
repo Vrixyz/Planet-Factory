@@ -5,7 +5,7 @@ public partial class SGT_Planet
 {
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated("surfaceMaterials", "atmosphereMaterial", "cloudsMaterials", "surfaceLightingTexture", "atmosphereTexture", "atmosphereSurfaceTexture", "cloudsLightingTexture") == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			surfaceLightingTexture   = SGT_Helper.CloneObject(surfaceLightingTexture);
 			atmosphereTexture        = SGT_Helper.CloneObject(atmosphereTexture);

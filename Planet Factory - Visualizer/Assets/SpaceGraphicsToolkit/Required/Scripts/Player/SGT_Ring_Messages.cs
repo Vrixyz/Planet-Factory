@@ -5,7 +5,7 @@ public partial class SGT_Ring
 {
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated("ringMaterial", "ringMesh") == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			ringMaterial  = SGT_Helper.CloneObject(ringMaterial);
 			generatedMesh = SGT_Helper.CloneObject(generatedMesh);

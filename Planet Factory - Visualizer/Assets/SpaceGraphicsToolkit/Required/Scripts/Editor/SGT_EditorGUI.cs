@@ -120,13 +120,17 @@ public static partial class SGT_EditorGUI
 	
 	public static void MarkModified(bool mark, bool isField = true)
 	{
+		if (isField == true)
+		{
+			fieldModified = mark;
+		}
+		
 		if (mark == true)
 		{
 			GUI.changed = true;
 			
 			if (isField == true)
 			{
-				fieldModified     = true;
 				inspectorModified = true;
 			}
 		}

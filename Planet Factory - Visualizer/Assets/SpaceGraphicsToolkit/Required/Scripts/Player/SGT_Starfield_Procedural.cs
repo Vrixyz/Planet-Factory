@@ -5,20 +5,21 @@ using SGT_Internal;
 
 public partial class SGT_Starfield
 {
+	private static SGT_WeightedRandom weights;
+	
 	public void Regenerate()
 	{
-		if (modified == false) CheckForModifications();
-		
 		if (modified == true)
 		{
-			packer.Pack();
-			
 			DestroyGeneratedMeshes();
 			
-			if (packer.OutputCount > 0)
+			if (starVariants.Count > 0)
 			{
 				SGT_Helper.BeginRandomSeed(starfieldSeed);
 				{
+					RecalculateCoords();
+					RecalculateWeights();
+					
 					var remainingStars = starfieldStarCount;
 					var starsPerMesh   = SGT_Helper.MeshVertexLimit / 4;
 					var newMeshes      = new MeshList();
@@ -27,7 +28,7 @@ public partial class SGT_Starfield
 					{
 						var starsInMesh = Mathf.Min(remainingStars, starsPerMesh);
 						
-						newMeshes.Add(GenerateStarMesh(starsInMesh));
+						newMeshes.Add(GenerateStarMesh(starfieldStarCount - remainingStars, starsInMesh));
 						
 						remainingStars -= starsInMesh;
 					}
@@ -43,17 +44,38 @@ public partial class SGT_Starfield
 				SGT_Helper.EndRandomSeed();
 			}
 			
-			MarkAsUnmodified();
+			modified = false;
 		}
 	}
 	
 	private void DestroyGeneratedMeshes()
 	{
-		meshDatas = null;
-		meshes    = SGT_Helper.DestroyObjects(meshes);
+		meshes = SGT_Helper.DestroyObjects(meshes);
 	}
 	
-	private Mesh GenerateStarMesh(int starCount)
+	private void RecalculateCoords()
+	{
+		SGT_ArrayHelper.Resize(ref starVariants, starfieldTextureTilesX * starfieldTextureTilesY, false);
+		
+		for (var i = 0; i < starVariants.Count; i++)
+		{
+			GetStarVariant(i).RecalculateCoords(starfieldTextureTilesX, starfieldTextureTilesY, i);
+		}
+	}
+	
+	private void RecalculateWeights()
+	{
+		weights = new SGT_WeightedRandom(100);
+		
+		for (var i = 0; i < StarVariantCount; i++)
+		{
+			var ssv = GetStarVariant(i);
+			
+			weights.Add(i, ssv != null ? ssv.SpawnProbability : 1.0f);
+		}
+	}
+	
+	private Mesh GenerateStarMesh(int starOffset, int starCount)
 	{
 		var positions = new Vector3[starCount * 4];
 		var indices   = new int[starCount * 6];
@@ -62,14 +84,6 @@ public partial class SGT_Starfield
 		var normals   = new Vector3[starCount * 4];
 		var colours   = new Color[starCount * 4];
 		var bounds    = new Bounds();
-		var weights   = new SGT_WeightedRandom(100);
-		
-		for (var i = 0; i < StarVariantCount; i++)
-		{
-			var ssv = GetStarVariant(i);
-			
-			weights.Add(i, ssv != null ? ssv.SpawnProbability : 1.0f);
-		}
 		
 		for (var i = 0; i < starCount; i++)
 		{
@@ -94,36 +108,16 @@ public partial class SGT_Starfield
 			indices[i5] = v1;
 			
 			// Calculate star values
-			var position = GeneratePosition();
-			var index    = weights.RandomIndex;
-			var po       = packer.GetOutput(index);
-			var ssv      = GetStarVariant(index);
+			var starData    = GenerateStar();
+			var midRadius   = (starData.RadiusMin + starData.RadiusMax) * 0.5f;
+			var pulseRadius = (starData.RadiusMax - starData.RadiusMin) * 0.5f;
 			
-			float baseRadius, minRadius, maxRadius;
-			
-			if (ssv != null && ssv.Custom == true)
-			{
-				baseRadius = Random.Range(ssv.CustomRadiusMin, ssv.CustomRadiusMax);
-				minRadius  = Mathf.Max(baseRadius - ssv.CustomPulseRadiusMax, ssv.CustomRadiusMin);
-				maxRadius  = Mathf.Min(baseRadius + ssv.CustomPulseRadiusMax, ssv.CustomRadiusMax);
-			}
-			else
-			{
-				baseRadius = Random.Range(starRadiusMin, starRadiusMax);
-				minRadius  = Mathf.Max(baseRadius - starPulseRadiusMax, starRadiusMin);
-				maxRadius  = Mathf.Min(baseRadius + starPulseRadiusMax, starRadiusMax);
-			}
-			
-			var midRadius   = (minRadius + maxRadius) * 0.5f;
-			var pulseRadius = (maxRadius - minRadius) * 0.5f;
-			var pulseRate   = Random.Range(0.0f, 1.0f);
-			var pulseOffset = Random.Range(0.0f, 1.0f);
-			
-			var colour    = new Color(pulseRate, pulseOffset, 0.0f);
-			var uv1       = new Vector2(midRadius, pulseRadius);
-			var rollAngle = Random.Range(-Mathf.PI, Mathf.PI);
-			var right     = SGT_Helper.Rotate(Vector2.right * SGT_Helper.InscribedBox, rollAngle);
-			var up        = SGT_Helper.Rotate(Vector2.up    * SGT_Helper.InscribedBox, rollAngle);
+			var position = starData.Position;
+			var colour   = new Color(starData.RadiusPulseRate, starData.RadiusPulseOffset, 0.0f);
+			var uv0      = starData.Variant.Coords;
+			var uv1      = new Vector2(midRadius, pulseRadius);
+			var right    = SGT_Helper.Rotate(Vector2.right * SGT_Helper.InscribedBox, starData.Angle);
+			var up       = SGT_Helper.Rotate(Vector2.up    * SGT_Helper.InscribedBox, starData.Angle);
 			
 			bounds.Encapsulate(position);
 			
@@ -143,13 +137,10 @@ public partial class SGT_Starfield
 			colours[v2] = colour;
 			colours[v3] = colour;
 			
-			if (po != null)
-			{
-				uv0s[v0] = po.UvTopLeft;
-				uv0s[v1] = po.UvTopRight;
-				uv0s[v2] = po.UvBottomLeft;
-				uv0s[v3] = po.UvBottomRight;
-			}
+			uv0s[v0] = uv0[0];
+			uv0s[v1] = uv0[1];
+			uv0s[v2] = uv0[2];
+			uv0s[v3] = uv0[3];
 			
 			uv1s[v0] = uv1;
 			uv1s[v1] = uv1;
@@ -161,6 +152,7 @@ public partial class SGT_Starfield
 		
 		var starMesh = new Mesh();
 		
+		starMesh.hideFlags = HideFlags.DontSave;
 		starMesh.name      = "Starfield";
 		starMesh.bounds    = bounds;
 		starMesh.vertices  = positions;
@@ -173,9 +165,38 @@ public partial class SGT_Starfield
 		return starMesh;
 	}
 	
-	private Vector3 GeneratePosition()
+	private SGT_StarfieldStarData GenerateStar()
 	{
-		var position = Vector3.zero;
+		var starData    = new SGT_StarfieldStarData();
+		var starVariant = GetStarVariant(weights.RandomIndex);
+		
+		if (starVariant.Custom == true)
+		{
+			var baseRadius = Random.Range(starVariant.CustomRadiusMin, starVariant.CustomRadiusMax);
+			
+			starData.RadiusMin = Mathf.Max(baseRadius - starVariant.CustomPulseRadiusMax, starVariant.CustomRadiusMin);
+			starData.RadiusMax = Mathf.Min(baseRadius + starVariant.CustomPulseRadiusMax, starVariant.CustomRadiusMax);
+		}
+		else
+		{
+			var baseRadius = Random.Range(starRadiusMin, starRadiusMax);
+			
+			starData.RadiusMin = Mathf.Max(baseRadius - starPulseRadiusMax, starRadiusMin);
+			starData.RadiusMax = Mathf.Min(baseRadius + starPulseRadiusMax, starRadiusMax);
+		}
+		
+		starData.Variant           = starVariant;
+		starData.Position          = GenerateStarPosition();
+		starData.RadiusPulseRate   = Random.Range(0.0f, 1.0f);
+		starData.RadiusPulseOffset = Random.Range(0.0f, 1.0f);
+		starData.Angle             = Random.Range(-Mathf.PI, Mathf.PI);
+		
+		return starData;
+	}
+	
+	private Vector3 GenerateStarPosition()
+	{
+		var position = default(Vector3);
 		
 		switch (distribution)
 		{

@@ -20,7 +20,7 @@ public partial class SGT_Corona
 	[SerializeField]
 	private bool coronaAutoRegen = true;
 	
-	[SerializeField]
+	/*[SerializeField]*/
 	private bool modified = true;
 	
 	[SerializeField]

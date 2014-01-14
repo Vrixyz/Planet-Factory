@@ -4,7 +4,7 @@ public partial class SGT_Corona
 {
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated("generatedMesh", "coronaMaterial") == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			generatedMesh  = SGT_Helper.CloneObject(generatedMesh);
 			coronaMaterial = SGT_Helper.CloneObject(coronaMaterial);

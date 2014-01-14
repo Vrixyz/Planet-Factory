@@ -121,6 +121,7 @@ public partial class SGT_AsteroidRing
 		
 		var asteroidMesh = new Mesh();
 		
+		asteroidMesh.hideFlags = HideFlags.DontSave;
 		asteroidMesh.vertices  = positions;
 		asteroidMesh.triangles = indices;
 		asteroidMesh.normals   = normals;

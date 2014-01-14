@@ -74,9 +74,6 @@ public partial class SGT_SurfaceTessellator
 	[SerializeField]
 	private GameObject surface;
 	
-	[SerializeField]
-	private Mesh lazyDupeCheck;
-	
 	public int LevelDistanceCount
 	{
 		get

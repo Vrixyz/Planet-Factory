@@ -293,7 +293,7 @@ public class SGT_Dust : SGT_MonoBehaviourUnique<SGT_Dust>
 	
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated(new string[] { "dustMaterial", "generatedMesh" }) == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			dustMaterial  = null;
 			generatedMesh = null;

@@ -5,7 +5,7 @@ public partial class SGT_Star
 {
 	public void Awake()
 	{
-		if (ThisHasBeenDuplicated("atmosphereMaterial", "surfaceMaterials") == true)
+		if (ThisHasBeenDuplicated() == true)
 		{
 			surfaceMaterials         = SGT_Helper.CloneObjects(surfaceMaterials);
 			atmosphereMaterial       = SGT_Helper.CloneObject(atmosphereMaterial);

@@ -14,12 +14,18 @@ public partial class SGT_Starfield : SGT_MonoBehaviourUnique<SGT_Starfield>
 	
 	public SGT_StarfieldStarVariant GetStarVariant(int index)
 	{
-		if (packer != null)
+		SGT_ArrayHelper.Resize(ref starVariants, starfieldTextureTilesX * starfieldTextureTilesY, false);
+		
+		var starVariant = starVariants[index];
+		
+		if (starVariant == null)
 		{
-			SGT_ArrayHelper.Resize(ref starVariants, packer.OutputCount, true);
+			starVariant = starVariants[index] = new SGT_StarfieldStarVariant();
 		}
 		
-		return SGT_ArrayHelper.Index(starVariants, index);
+		starVariant.Parent = this;
+		
+		return starVariant;
 	}
 	
 	private void UpdateMaterial()
@@ -49,7 +55,7 @@ public partial class SGT_Starfield : SGT_MonoBehaviourUnique<SGT_Starfield>
 		
 		var roll = Quaternion.Euler(new Vector3(0.0f, 0.0f, starfieldCameraRoll));
 		
-		starfieldMaterial.SetTexture("starTexture", packer.GetAtlas());
+		starfieldMaterial.SetTexture("starTexture", starfieldTexture);
 		starfieldMaterial.SetFloat("starPulseRateMax", starPulseRateMax);
 		starfieldMaterial.SetMatrix("cameraRoll", SGT_MatrixHelper.Rotation(roll));
 	}
@@ -79,61 +85,6 @@ public partial class SGT_Starfield : SGT_MonoBehaviourUnique<SGT_Starfield>
 				SGT_Helper.SetLocalPosition(starfieldGameObject.transform, Vector3.zero);
 				SGT_Helper.SetLocalScale(starfieldGameObject.transform, Vector3.one);
 			}
-		}
-	}
-	
-	private void CheckForModifications()
-	{
-		if (modified == false)
-		{
-			if (packer.Modified == true)
-			{
-				modified = true;
-			}
-			else if (modified == false && starfieldMultiMesh.Count == 0)
-			{
-				modified = true;
-			}
-			else if (modified == false && SGT_Helper.ArrayFilled(meshes) == false)
-			{
-				modified = true;
-			}
-			else if (starVariants != null)
-			{
-				foreach (var variant in starVariants)
-				{
-					if (variant != null)
-					{
-						if (variant.Modified == true)
-						{
-							modified = true;
-							
-							break;
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	private void MarkAsUnmodified()
-	{
-		modified = false;
-		
-		if (starVariants != null)
-		{
-			foreach (var variant in starVariants)
-			{
-				if (variant != null)
-				{
-					variant.Modified = false;
-				}
-			}
-		}
-		
-		if (packer != null)
-		{
-			packer.Modified = false;
 		}
 	}
 }
