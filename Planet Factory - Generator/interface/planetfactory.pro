@@ -21,6 +21,8 @@ SOURCES +=  PlanetDetailsBox.cpp \
             Component.cpp \
             Planet.cpp \
             main.cpp \
+    System.cpp \
+    JsonFileManager.cpp
 
 HEADERS  += PlanetDetailsBox.hpp \
             PlanetCompoBox.hpp \
@@ -31,3 +33,14 @@ HEADERS  += PlanetDetailsBox.hpp \
             Component.hpp \
             include.hpp \
             Planet.hpp \
+    System.h \
+    jsonFileManager.h \
+    Jansson.h \
+    Jansson_config.h
+
+OTHER_FILES +=
+
+unix|win32: LIBS += -L$$PWD/ -ljansson
+
+INCLUDEPATH += $$PWD/
+DEPENDPATH += $$PWD/
