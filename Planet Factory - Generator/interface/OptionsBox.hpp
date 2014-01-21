@@ -19,7 +19,7 @@ public:
     ~OptionsBox();
 
 private:
-
+    MainWindow  *_parent;
     QPushButton *_launch;
     QPushButton *_reset;
     QPushButton *_save;
@@ -28,7 +28,7 @@ private:
 signals:
     
 public slots:
-    
+    void         loadConfSystem();
 };
 
 #endif // OPTIONSBOX_HPP

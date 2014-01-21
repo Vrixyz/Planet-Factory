@@ -10,13 +10,16 @@
 #include <QSpinBox>
 #include <QLabel>
 #include <QtGui>
+#include <QFileDialog>
 
 #include "PlanetDetailsBox.hpp"
 #include "PlanetCompoBox.hpp"
 #include "CelestialBox.hpp"
 #include "OptionsBox.hpp"
 #include "GroupTools.hpp"
+#include "System.h"
 #include "Planet.hpp"
+#include "JsonFileManager.h"
 
 Q_DECLARE_METATYPE(PlanetType)
 
@@ -34,7 +37,11 @@ public:
     PlanetCompoBox      *getPlanetCompo(void);
     CelestialBox        *getCelestial(void);
     OptionsBox          *getOptions(void);
+    SolarSystem         *getSystem(void);
 
+    void                setSystem(SolarSystem &);
+
+    //Déplacer dans System ? :}
     std::list<Planet*>  *_listPlanet;
 
 private:
@@ -47,6 +54,7 @@ private:
     GroupTools          *_boxPositionVector;
     GroupTools          *_boxPosition;
 
+    SolarSystem         *_solar;
 protected:
 
     void                keyPressEvent(QKeyEvent *event);

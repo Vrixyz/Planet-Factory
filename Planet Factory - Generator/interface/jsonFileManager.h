@@ -5,8 +5,8 @@
 #include <iostream>
 #include <sstream>
 #include "Jansson.h"
+#include "System.h"
 
-#include "system.h"
 
 enum jsonType
 {

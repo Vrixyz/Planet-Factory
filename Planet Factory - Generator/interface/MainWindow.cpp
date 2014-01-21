@@ -1,6 +1,6 @@
 #include "MainWindow.hpp"
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), _solar()
 {
     setStyleSheet("QMainWindow { background-image : url(bgcosmos.jpg);} QGroupBox { background-color: rgba(100%, 100%, 100%, 50%);}");
 
@@ -34,6 +34,16 @@ CelestialBox        *MainWindow::getCelestial(void)
 OptionsBox          *MainWindow::getOptions(void)
 {
     return (_boxOptions);
+}
+
+SolarSystem         *MainWindow::getSystem(void)
+{
+    return (_solar);
+}
+
+void                MainWindow::setSystem(SolarSystem & solar)
+{
+    _solar = new SolarSystem(solar);
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)

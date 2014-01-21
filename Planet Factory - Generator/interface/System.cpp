@@ -5,25 +5,25 @@ SolarSystem::SolarSystem(void)
 {
 }
 
-SolarSystem::SolarSystem(SolarSystem & SolarSystem)
+SolarSystem::SolarSystem(SolarSystem & solar)
 {
-	_date = SolarSystem.date();
+    _date = solar.date();
 }
 
 SolarSystem::~SolarSystem(void)
 {
 }
 
-SolarSystem & SolarSystem::operator=(SolarSystem & solarSystem)
+SolarSystem & SolarSystem::operator=(SolarSystem & solar)
 {
 	int		i;
 
-	_date = solarSystem.date();
-	_nbAstre = solarSystem.nbAstre();
+    _date = solar.date();
+    _nbAstre = solar.nbAstre();
 	_astres = new std::string[_nbAstre];
 	for (i = 0; i < _nbAstre; i++)
-		_astres[i] = solarSystem.retAstres(i);
-	_materials = solarSystem.materials();
+        _astres[i] = solar.retAstres(i);
+    _materials = solar.materials();
 	return *this;
 }
 

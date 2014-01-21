@@ -1,7 +1,7 @@
 #include "OptionsBox.hpp"
 #include "MainWindow.hpp"
 
-OptionsBox::OptionsBox(MainWindow *parent) : QGroupBox(parent)
+OptionsBox::OptionsBox(MainWindow *parent) : QGroupBox(parent), _parent(parent)
 {
     setGeometry(5, 405, 195, 290);
     setTitle("Options");
@@ -21,10 +21,21 @@ OptionsBox::OptionsBox(MainWindow *parent) : QGroupBox(parent)
 
     QObject::connect(_launch, SIGNAL(clicked()), qApp, SLOT(quit()));
     QObject::connect(_save, SIGNAL(clicked()), qApp, SLOT(quit()));
-    QObject::connect(_load, SIGNAL(clicked()), qApp, SLOT(quit()));
+    QObject::connect(_load, SIGNAL(clicked()), this, SLOT(loadConfSystem()));
     QObject::connect(_reset, SIGNAL(clicked()), qApp, SLOT(quit()));
 }
 
 OptionsBox::~OptionsBox()
 {
+}
+
+void        OptionsBox::loadConfSystem()
+{
+    QString path = QFileDialog::getOpenFileName(this, tr("Open File"),"",tr("Files (*.pf)"));
+    jsonFileManager json(path.toStdString());
+    SolarSystem solar = json.parse<SolarSystem>(J_SYSTEM);
+    _parent->setSystem(solar);
+    std::cout << "date : " << solar.date() << std::endl;
+    std::cout << "nbAstres : " << solar.nbAstre() << std::endl;
+    std::cout << "materials : " << solar.materials() << std::endl;
 }

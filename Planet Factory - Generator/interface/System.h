@@ -6,9 +6,9 @@ class SolarSystem
 {
 public:
 	SolarSystem(void);
-	SolarSystem(SolarSystem &);
+    SolarSystem(SolarSystem &);
 	~SolarSystem(void);
-	SolarSystem & operator=(SolarSystem &);
+    SolarSystem & operator=(SolarSystem &);
 
 	const std::string & date(void);
 	void	date(const std::string &);
