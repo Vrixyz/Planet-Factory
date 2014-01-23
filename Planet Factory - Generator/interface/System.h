@@ -17,11 +17,12 @@ public:
     int     nbMaterial(void);
     void    nbMaterial(int);
 	int		astres(void);
+    int     materials(void);
     const   std::string & retAstres(int);
     const   std::string & retMaterial(int i);
 	void	astres(int);
-	void	astres(int, const std::string &);
-    const   std::string & materials(int i);
+    void    materials(int);
+    void	astres(int, const std::string &);
     void	materials(int nb, const std::string &);
 private:
 	std::string _date;

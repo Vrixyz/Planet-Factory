@@ -150,7 +150,7 @@ int	jsonFileManager::_parseSystem(SolarSystem * solarSystem)
             json_decref(root);
             return 1;
         }
-        astre = json_object_get(data, "material");
+        material = json_object_get(data, "material");
         if (!json_is_string(material))
         {
             std::cout << "error: on material" << std::endl;

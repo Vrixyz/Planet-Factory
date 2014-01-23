@@ -1,7 +1,7 @@
 #include "System.h"
 
 SolarSystem::SolarSystem(void)
-	: _date(), _nbAstre(0), _astres(NULL)
+    : _date(), _nbAstre(0), _astres(NULL), _nbMaterial(0), _materials(NULL)
 {
 }
 
@@ -68,6 +68,16 @@ void	SolarSystem::astres(int nb)
 	_astres = new std::string[nb];
 }
 
+int		SolarSystem::materials()
+{
+    return _nbMaterial;
+}
+
+void	SolarSystem::materials(int nb)
+{
+    _materials = new std::string[nb];
+}
+
 const std::string & SolarSystem::retAstres(int i)
 {
 	return _astres[i];
@@ -82,12 +92,6 @@ void	SolarSystem::astres(int nb, const std::string & astre)
 {
 	_astres[nb] = astre;
 }
-
-const std::string & SolarSystem::materials(int i)
-{
-    return _materials[i];
-}
-
 void	SolarSystem::materials(int nb, const std::string & materials)
 {
     _materials[nb] = materials;
