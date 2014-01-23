@@ -23,7 +23,8 @@ SolarSystem & SolarSystem::operator=(SolarSystem & solar)
 	_astres = new std::string[_nbAstre];
 	for (i = 0; i < _nbAstre; i++)
         _astres[i] = solar.retAstres(i);
-    _materials = solar.materials();
+    for (i = 0; i < _nbMaterial; i++)
+        _materials[i] = solar.retMaterial(i);
 	return *this;
 }
 
@@ -47,6 +48,16 @@ void	SolarSystem::nbAstre(int nbAstre)
 	_nbAstre = nbAstre;
 }
 
+int     SolarSystem::nbMaterial(void)
+{
+    return _nbMaterial;
+}
+
+void    SolarSystem::nbMaterial(int i)
+{
+    _nbMaterial = i;
+}
+
 int		SolarSystem::astres()
 {
 	return _nbAstre;
@@ -62,17 +73,22 @@ const std::string & SolarSystem::retAstres(int i)
 	return _astres[i];
 }
 
+const std::string & SolarSystem::retMaterial(int i)
+{
+    return _materials[i];
+}
+
 void	SolarSystem::astres(int nb, const std::string & astre)
 {
 	_astres[nb] = astre;
 }
 
-const std::string & SolarSystem::materials(void)
+const std::string & SolarSystem::materials(int i)
 {
-	return _materials;
+    return _materials[i];
 }
 
-void	SolarSystem::materials(const std::string & materials)
+void	SolarSystem::materials(int nb, const std::string & materials)
 {
-	_materials = materials;
+    _materials[nb] = materials;
 }

@@ -37,5 +37,5 @@ void        OptionsBox::loadConfSystem()
     _parent->setSystem(solar);
     std::cout << "date : " << solar.date() << std::endl;
     std::cout << "nbAstres : " << solar.nbAstre() << std::endl;
-    std::cout << "materials : " << solar.materials() << std::endl;
+    std::cout << "nbMaterials : " << solar.nbMaterial() << std::endl;
 }
