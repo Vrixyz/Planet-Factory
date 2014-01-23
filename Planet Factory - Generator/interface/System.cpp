@@ -7,7 +7,17 @@ SolarSystem::SolarSystem(void)
 
 SolarSystem::SolarSystem(SolarSystem & solar)
 {
+    int		i;
+
     _date = solar.date();
+    _nbAstre = solar.nbAstre();
+    _astres = new std::string[_nbAstre];
+    for (i = 0; i < _nbAstre; i++)
+        _astres[i] = solar.retAstres(i);
+    _nbMaterial = solar.materials();
+    _materials = new std::string[_nbMaterial];
+    for (i = 0; i < _nbMaterial; i++)
+        _materials[i] = solar.retMaterial(i);
 }
 
 SolarSystem::~SolarSystem(void)
@@ -23,6 +33,8 @@ SolarSystem & SolarSystem::operator=(SolarSystem & solar)
 	_astres = new std::string[_nbAstre];
 	for (i = 0; i < _nbAstre; i++)
         _astres[i] = solar.retAstres(i);
+    _nbMaterial = solar.materials();
+    _materials = new std::string[_nbMaterial];
     for (i = 0; i < _nbMaterial; i++)
         _materials[i] = solar.retMaterial(i);
 	return *this;
@@ -73,7 +85,7 @@ int		SolarSystem::materials()
     return _nbMaterial;
 }
 
-void	SolarSystem::materials(int nb)
+void	SolarSystem::setMaterials(int nb)
 {
     _materials = new std::string[nb];
 }

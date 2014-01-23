@@ -68,7 +68,7 @@ int	jsonFileManager::_parseSystem(SolarSystem * solarSystem)
 	intTmp = json_integer_value(nbAstre);
 	solarSystem->nbAstre(intTmp);
 	solarSystem->astres(intTmp);
-	std::cout << "Parsing number astres, done" << std::endl;
+    std::cout << "Parsing number astres, done: " << intTmp << std::endl;
 
 	//astres, tableau
 	//astre
@@ -121,8 +121,8 @@ int	jsonFileManager::_parseSystem(SolarSystem * solarSystem)
     }
     intTmp = json_integer_value(nbMaterial);
     solarSystem->nbMaterial(intTmp);
-    solarSystem->materials(intTmp);
-    std::cout << "Parsing number materials, done" << std::endl;
+    solarSystem->setMaterials(intTmp);
+    std::cout << "Parsing number materials, done: " << intTmp << std::endl;
 
 	//materiaux
 	json_t *materials;
@@ -198,6 +198,7 @@ int jsonFileManager::_read(void)
 		return 1;
 	buffer << file.rdbuf();
     _text = buffer.str();
+    file.close();
 	return 0;
 }
 

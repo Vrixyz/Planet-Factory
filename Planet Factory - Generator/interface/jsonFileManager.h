@@ -88,7 +88,7 @@ private:
 	std::string _text;
 
 	bool	_isReadable(void);
-	int		_read(void);
+    int		_read(void);
 	int		_write(void);
 	int		_parseSystem(SolarSystem *);
 	int		_writeSystem(const SolarSystem &);

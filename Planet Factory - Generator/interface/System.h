@@ -21,7 +21,7 @@ public:
     const   std::string & retAstres(int);
     const   std::string & retMaterial(int i);
 	void	astres(int);
-    void    materials(int);
+    void    setMaterials(int);
     void	astres(int, const std::string &);
     void	materials(int nb, const std::string &);
 private:
