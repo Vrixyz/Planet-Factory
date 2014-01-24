@@ -22,7 +22,8 @@ SOURCES +=  PlanetDetailsBox.cpp \
             Planet.cpp \
             main.cpp \
     System.cpp \
-    JsonFileManager.cpp
+    JsonFileManager.cpp \
+    celestialobjects.cpp
 
 HEADERS  += PlanetDetailsBox.hpp \
             PlanetCompoBox.hpp \
@@ -36,7 +37,8 @@ HEADERS  += PlanetDetailsBox.hpp \
     System.h \
     jsonFileManager.h \
     Jansson.h \
-    Jansson_config.h
+    Jansson_config.h \
+    celestialobjects.h
 
 OTHER_FILES +=
 

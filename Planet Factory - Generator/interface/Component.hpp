@@ -9,7 +9,8 @@ class Component
 public:
 
     Component();
-    Component(std::string, int, int, int, int);
+    Component(const std::string &);
+    Component(std::string, int, int, int, int, const std::string &);
     ~Component();
 
     void setName(std::string);
@@ -17,12 +18,14 @@ public:
     void setGazeousTemp(int);
     void setHardness(int);
     void setMass(int);
+    void path(const std::string &);
 
     std::string getName(void);
     int         getSolidTemp(void);
     int         getGazeousTemp(void);
     int         getHardness(void);
     int         getMass(void);
+    const std::string & path(void);
 
 private:
 
@@ -31,6 +34,7 @@ private:
     int         _solidTemp;
     int         _hardness;
     int         _mass;
+    std::string _path;
 
 };
 

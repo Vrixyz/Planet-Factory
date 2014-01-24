@@ -121,7 +121,6 @@ int	jsonFileManager::_parseSystem(SolarSystem * solarSystem)
     }
     intTmp = json_integer_value(nbMaterial);
     solarSystem->nbMaterial(intTmp);
-    solarSystem->setMaterials(intTmp);
     std::cout << "Parsing number materials, done: " << intTmp << std::endl;
 
 	//materiaux
@@ -158,7 +157,8 @@ int	jsonFileManager::_parseSystem(SolarSystem * solarSystem)
             return 1;
         }
         tmp = json_string_value(material);
-        solarSystem->materials(i, tmp);
+        Component * component = new Component(tmp);
+        solarSystem->materials(component);
     }
     std::cout << "Parsing materials, done" << std::endl;
 	return 0;
