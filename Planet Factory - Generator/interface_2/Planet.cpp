@@ -39,7 +39,7 @@ int Planet::getRadius(void)
     return (_radius);
 }
 
-std::list<Component *> *Planet::getListCompo(void)
+std::list<Component *> *Planet::getComponentList(void)
 {
     return (_listCompo);
 }

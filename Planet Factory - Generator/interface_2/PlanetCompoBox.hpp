@@ -27,8 +27,14 @@ public:
 
     void createCompoDetails(void);
     void createCompoList(void);
-    void createWindowComponent(void);
     void updateListCompoSys(void);
+    void createWindowSysComponent(void);
+    void createWindowPlaComponent(void);
+
+    QLabel      *_compoName[8];
+    QSpinBox    *_compoValue[8];
+    QPushButton *_compoDel[8];
+    QPushButton *_compoAdd;
 
     QListWidget *_listObjects;
     QLineEdit   *_eName;
@@ -40,30 +46,41 @@ public:
     QPushButton *_add;
     QPushButton *_del;
     QPushButton *_edi;
-    QPushButton *_winAdd;
-    QPushButton *_winCan;
 
-    QDialog     *_win;
+    QPushButton *_winSysAdd;
+    QPushButton *_winSysCan;
+    QPushButton *_winPlaAdd;
+    QPushButton *_winPlaCan;
+
+    QDialog     *_winSys;
+    QDialog     *_winPla;
+
+    QListWidget *_listCompo;
 
     MainWindow  *_parent;
 
 private:
 
-    GroupTools  *_boxPlanet;
     GroupTools  *_boxSystem;
 
 signals:
     
 public slots:
 
-    void componentSelected();
+    void componentPlaSelected(void);
+    void componentSysSelected(void);
 
-    void windowEditCompo(void);
-    void windowAddCompo(void);
-    void windowCloseAndClean(void);
+    void windowSysEditCompo(void);
+    void windowSysAddCompo(void);
+    void windowPlaAddCompo(void);
+
+    void windowSysCloseAndClean(void);
+    void windowPlaCloseAndClean(void);
 
     void addCompoToSys(void);
     void delCompoToSys(void);
+    void addCompoToPla(void);
+    void delCompoToPla(void);
 
 };
 

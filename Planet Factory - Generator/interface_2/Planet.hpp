@@ -31,7 +31,7 @@ public:
     std::string             getName(void);
     PlanetType              getType(void);
     int                     getRadius(void);
-    std::list<Component*>   *getListCompo(void);
+    std::list<Component*>   *getComponentList(void);
     int                     *getPosition(void);
     int                     *getPositionVec(void);
 

@@ -30,7 +30,7 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
 {
     std::list<Component*>::iterator it_compo;
     std::list<Planet*>::iterator    it;
-    std::list<Component*>           *toCheck;
+    //std::list<Component*>           *toCheck;
     int                             *pos;
     int                             *posVec;
 
@@ -56,13 +56,8 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
             _parent->getPlanetDetails()->_ePosVecX->setValue(posVec[0]);
             _parent->getPlanetDetails()->_ePosVecY->setValue(posVec[1]);
             _parent->getPlanetDetails()->_ePosVecZ->setValue(posVec[2]);
-            _del->setEnabled(true);
-            _parent->getPlanetCompo()->_add->setEnabled(true);
-            _parent->getPlanetCompo()->_listObjects->clear();
-
-            toCheck = (*it)->getListCompo();
-            for (it_compo = toCheck->begin(); it_compo != toCheck->end(); ++it_compo)
-                _parent->getPlanetCompo()->_listObjects->addItem((*it_compo)->getName().c_str());
+            _del->setEnabled(TRUE);
+            _parent->getPlanetCompo()->_compoAdd->setEnabled(TRUE);
         }
 }
 
@@ -119,6 +114,7 @@ void CelestialBox::addObject()
 
 void CelestialBox::cleanAllFields()
 {
+    _parent->getPlanetCompo()->_compoAdd->setEnabled(FALSE);
     _parent->getPlanetDetails()->_eName->setText("");
     _parent->getPlanetDetails()->_eType->setCurrentIndex(0);
     _parent->getPlanetDetails()->_eRadius->setValue(1);
@@ -128,7 +124,5 @@ void CelestialBox::cleanAllFields()
     _parent->getPlanetDetails()->_ePosVecX->setValue(0);
     _parent->getPlanetDetails()->_ePosVecY->setValue(0);
     _parent->getPlanetDetails()->_ePosVecZ->setValue(0);
-    _del->setEnabled(false);
-    _parent->getPlanetCompo()->_add->setEnabled(false);
-    _parent->getPlanetCompo()->_listObjects->clear();
+    _del->setEnabled(FALSE);
 }
