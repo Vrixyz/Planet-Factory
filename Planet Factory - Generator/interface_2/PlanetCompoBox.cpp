@@ -28,6 +28,15 @@ PlanetCompoBox::~PlanetCompoBox()
 {
 }
 
+void PlanetCompoBox::updateListCompoSys()
+{
+    std::list<Component*>::iterator it;
+
+    _listObjects->clear();
+    for (it = _parent->getSystem()->getComponentList()->begin(); it != _parent->getSystem()->getComponentList()->end(); ++it)
+        _listObjects->addItem((*it)->getName().c_str());
+}
+
 void PlanetCompoBox::createCompoDetails(void)
 { 
     _listObjects = new QListWidget(_boxSystem);
@@ -42,14 +51,13 @@ void PlanetCompoBox::createCompoDetails(void)
     _add->setText("Add component\nto the system");
     _edi->setText("Edit selected\ncomponent");
     _del->setText("Delete selected\ncomponent");
-    _add->setEnabled(true);
-    _edi->setEnabled(false);
-    _del->setEnabled(false);
+    _add->setEnabled(TRUE);
+    _edi->setEnabled(FALSE);
+    _del->setEnabled(FALSE);
 
-    QObject::connect(_add, SIGNAL(clicked()), this, SLOT(cleanWindowCompoSys()));
-    QObject::connect(_del, SIGNAL(clicked()), this, SLOT(delCompo()));
-    QObject::connect(_edi, SIGNAL(clicked()), this, SLOT(delCompo()));
-    QObject::connect(_listObjects, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(componentSelected(QListWidgetItem*)));
+    QObject::connect(_add, SIGNAL(clicked()), this, SLOT(windowAddCompo()));
+    QObject::connect(_del, SIGNAL(clicked()), this, SLOT(delCompoToSys()));
+    QObject::connect(_listObjects, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(componentSelected()));
 }
 
 void PlanetCompoBox::createCompoList(void)
@@ -65,8 +73,6 @@ void PlanetCompoBox::createWindowComponent()
     QLabel      *lSolidTemp;
     QLabel      *lHardness;
     QLabel      *lMass;
-    QPushButton *add;
-    QPushButton *cancel;
 
     lName = new QLabel("Name :", _win);
     lName->setGeometry(10, 45, 100, 15);
@@ -94,132 +100,85 @@ void PlanetCompoBox::createWindowComponent()
     _eHardness->setMinimum(0);
     _eHardness->setMaximum(50);
 
-    add = new QPushButton("Add component", _win);
-    add->setGeometry(10, 240, 115, 30);
-    cancel = new QPushButton("Cancel", _win);
-    cancel->setGeometry(135, 240, 115, 30);
-    QObject::connect(add, SIGNAL(clicked()), this, SLOT(cleanWindowCompoSys()));
-    QObject::connect(cancel, SIGNAL(clicked()), this, SLOT(cleanWindowCompoSys()));
+    _winAdd = new QPushButton("Add component", _win);
+    _winAdd->setGeometry(10, 240, 115, 30);
+    _winCan = new QPushButton("Cancel", _win);
+    _winCan->setGeometry(135, 240, 115, 30);
+    QObject::connect(_winAdd, SIGNAL(clicked()), this, SLOT(addCompoToSys()));
+    QObject::connect(_winCan, SIGNAL(clicked()), this, SLOT(windowCloseAndClean()));
 }
 
-void PlanetCompoBox::cleanWindowCompoSys()
+void PlanetCompoBox::windowAddCompo()
 {
     _eName->setText("");
     _eGazeousTemp->setValue(0);
     _eSolidTemp->setValue(0);
     _eHardness->setValue(0);
     _eMass->setValue(0);
-    _del->setEnabled(false);
+    if (_win->isHidden() == TRUE)
+        _win->show();
+}
+
+void PlanetCompoBox::windowCloseAndClean()
+{
+    _eName->setText("");
+    _eGazeousTemp->setValue(0);
+    _eSolidTemp->setValue(0);
+    _eHardness->setValue(0);
+    _eMass->setValue(0);
+    if (_win->isHidden() == FALSE)
+        _win->hide();
+}
+
+void PlanetCompoBox::windowEditCompo()
+{
+    _eName->setText("");
+    _eGazeousTemp->setValue(0);
+    _eSolidTemp->setValue(0);
+    _eHardness->setValue(0);
+    _eMass->setValue(0);
     if (_win->isHidden() == TRUE)
         _win->show();
     else
         _win->hide();
 }
 
-void PlanetCompoBox::loadWindowCompoSys()
-{
-    _eName->setText("");
-    _eGazeousTemp->setValue(0);
-    _eSolidTemp->setValue(0);
-    _eHardness->setValue(0);
-    _eMass->setValue(0);
-    _del->setEnabled(false);
-}
-
 void PlanetCompoBox::addCompoToSys()
 {
+    std::list<Component*>::iterator it;
+    Component*                      toAdd;
 
+    for (it = _parent->getSystem()->getComponentList()->begin(); it != _parent->getSystem()->getComponentList()->end(); ++it)
+        if ((*it)->getName() == _eName->text().toStdString())
+            return;
+    /*    FAIRE POP FENETRE ERREUR A LA PLACE DE NE RIEN FAIRE --> FAIRE UNE FONCTION GENERIQUE POUR LES ERREURS    */
+    if (_win->isHidden() == FALSE)
+        _win->hide();
+    toAdd = new Component();
+    toAdd->setName(_eName->text().toStdString());
+    toAdd->setMass(_eMass->value());
+    toAdd->setHardness(_eHardness->value());
+    toAdd->setGazeousTemp(_eGazeousTemp->value());
+    toAdd->setSolidTemp(_eSolidTemp->value());
+    _parent->getSystem()->getComponentList()->push_front(toAdd);
+    updateListCompoSys();
 }
 
-void PlanetCompoBox::cleanAllFields(void)
+void PlanetCompoBox::delCompoToSys()
 {
+    std::list<Component*>::iterator it;
 
-}
-
-void PlanetCompoBox::addCompo(void)
-{
-    std::list<Planet*>::iterator        it;
-    Component                           *toAdd;
-
-    toAdd = new Component(_eName->text().toStdString(), _eGazeousTemp->value(), _eSolidTemp->value(), _eMass->value(), _eHardness->value(), "");
-    if (toAdd->getName().size() < 1)
-    {
-        qDebug("Un composant ne peut pas être créé sans un nom valide.");
-        return;
-    }
-    for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
-    {
-        if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
+    for (it = _parent->getSystem()->getComponentList()->begin(); it != _parent->getSystem()->getComponentList()->end(); ++it)
+        if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
         {
-            std::list<Component*> *toCheck;
-            toCheck = (*it)->getListCompo();
-            std::list<Component*>::iterator     it_compo;
-            for (it_compo = toCheck->begin(); it_compo != toCheck->end(); ++it_compo)
-            {
-                if ((*it_compo)->getName() == _parent->getPlanetCompo()->_eName->text().toStdString())
-                {
-                    (*it_compo)->setGazeousTemp(_eGazeousTemp->value());
-                    (*it_compo)->setSolidTemp(_eSolidTemp->value());
-                    (*it_compo)->setMass(_eMass->value());
-                    (*it_compo)->setHardness(_eHardness->value());
-                    cleanAllFields();
-                    return;
-                }
-            }
-            toCheck->push_front(toAdd);
-            _listObjects->addItem(QString(toAdd->getName().c_str()));
-            cleanAllFields();
+            _parent->getSystem()->getComponentList()->erase(it);
+            _del->setEnabled(FALSE);
+            updateListCompoSys();
             return;
         }
-    }
 }
 
-void PlanetCompoBox::componentSelected(QListWidgetItem* currItem)
+void PlanetCompoBox::componentSelected()
 {
-    std::list<Component*>::iterator     it_compo;
-    std::list<Planet*>::iterator        it;
-    std::list<Component*>               *toCheck;
-
-    for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
-    {
-        if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
-        {
-            toCheck = (*it)->getListCompo();
-            for (it_compo = toCheck->begin(); it_compo != toCheck->end(); ++it_compo)
-            {
-                if ((*it_compo)->getName() == currItem->text().toStdString())
-                {
-                    _parent->getPlanetCompo()->_eName->setText((*it_compo)->getName().c_str());
-                    _parent->getPlanetCompo()->_eGazeousTemp->setValue((*it_compo)->getGazeousTemp());
-                    _parent->getPlanetCompo()->_eSolidTemp->setValue((*it_compo)->getSolidTemp());
-                    _parent->getPlanetCompo()->_eHardness->setValue((*it_compo)->getHardness());
-                    _parent->getPlanetCompo()->_eMass->setValue((*it_compo)->getMass());
-                    _del->setEnabled(true);
-                    return;
-                }
-            }
-        }
-    }
+    _del->setEnabled(TRUE);
 }
-
-void PlanetCompoBox::delCompo(void)
-{
-    std::list<Component*>::iterator     it_compo;
-    std::list<Planet*>::iterator        it;
-    std::list<Component*>               *toCheck;
-
-    if (_listObjects->currentItem() != NULL)
-    {
-        for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
-            if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
-            {
-                toCheck = (*it)->getListCompo();
-                for (it_compo = toCheck->begin(); it_compo != toCheck->end(); ++it_compo)
-                    if ((*it_compo)->getName() == _listObjects->currentItem()->text().toStdString())
-                        it_compo = toCheck->erase(it_compo);
-            }
-        _listObjects->takeItem(_listObjects->row(_listObjects->currentItem()));
-        cleanAllFields();
-    }
-}
-

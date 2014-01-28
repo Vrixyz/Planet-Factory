@@ -28,9 +28,9 @@ public:
     void createCompoDetails(void);
     void createCompoList(void);
     void createWindowComponent(void);
-    void cleanAllFields(void);
+    void updateListCompoSys(void);
 
-    QListWidget   *_listObjects;
+    QListWidget *_listObjects;
     QLineEdit   *_eName;
     QSpinBox    *_eGazeousTemp;
     QSpinBox    *_eSolidTemp;
@@ -40,6 +40,8 @@ public:
     QPushButton *_add;
     QPushButton *_del;
     QPushButton *_edi;
+    QPushButton *_winAdd;
+    QPushButton *_winCan;
 
     QDialog     *_win;
 
@@ -54,13 +56,14 @@ signals:
     
 public slots:
 
-    void cleanWindowCompoSys(void);
-    void loadWindowCompoSys(void);
+    void componentSelected();
 
-    void addCompo(void);
+    void windowEditCompo(void);
+    void windowAddCompo(void);
+    void windowCloseAndClean(void);
+
     void addCompoToSys(void);
-    void delCompo(void);
-    void componentSelected(QListWidgetItem *);
+    void delCompoToSys(void);
 
 };
 

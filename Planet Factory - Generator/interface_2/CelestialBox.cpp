@@ -63,7 +63,6 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
             toCheck = (*it)->getListCompo();
             for (it_compo = toCheck->begin(); it_compo != toCheck->end(); ++it_compo)
                 _parent->getPlanetCompo()->_listObjects->addItem((*it_compo)->getName().c_str());
-            _parent->getPlanetCompo()->cleanAllFields();
         }
 }
 
@@ -132,6 +131,4 @@ void CelestialBox::cleanAllFields()
     _del->setEnabled(false);
     _parent->getPlanetCompo()->_add->setEnabled(false);
     _parent->getPlanetCompo()->_listObjects->clear();
-    _parent->getPlanetCompo()->cleanAllFields();
-
 }
