@@ -37,8 +37,9 @@ public:
     CelestialBox        *getCelestial(void);
     OptionsBox          *getOptions(void);
 
-//    std::list<Planet*>  *_listPlanet;
     System              *getSystem();
+
+    std::string         _currPlanet;
 
 private:
 

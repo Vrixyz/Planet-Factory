@@ -28,6 +28,7 @@ public:
     void createCompoDetails(void);
     void createCompoList(void);
     void updateListCompoSys(void);
+    void updateListCompoPla(void);
     void createWindowSysComponent(void);
     void createWindowPlaComponent(void);
 

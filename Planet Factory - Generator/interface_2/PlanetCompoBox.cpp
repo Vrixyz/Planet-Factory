@@ -57,11 +57,6 @@ void PlanetCompoBox::addCompoToPla()
         {
             std::list<Component*>::iterator    it_compo;
 
-            std::cout << "------" << std::endl;
-            for (it_compo = (*it)->getComponentList()->begin(); it_compo != (*it)->getComponentList()->end(); ++it_compo)
-            {
-                std::cout << (*it_compo)->getName() << std::endl;
-            }
             for (it_compo = (*it)->getComponentList()->begin(); it_compo != (*it)->getComponentList()->end(); ++it_compo)
             {
                 if ((*it_compo)->getName() == _listCompo->currentItem()->text().toStdString())
@@ -72,6 +67,7 @@ void PlanetCompoBox::addCompoToPla()
                 if ((*it_compo)->getName() == _listCompo->currentItem()->text().toStdString())
                 {
                     (*it)->getComponentList()->push_front(*it_compo);
+                    updateListCompoPla();
                     windowPlaCloseAndClean();
                     return;
                 }
@@ -118,19 +114,52 @@ void PlanetCompoBox::createCompoDetails(void)
     QObject::connect(_listObjects, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(componentSysSelected()));
 }
 
+void PlanetCompoBox::updateListCompoPla()
+{
+    std::list<Component*>::iterator     it_compo;
+    std::list<Planet*>::iterator        it;
+    int i;
+
+    std::cout << "000" << std::endl;
+    for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
+        if ((*it)->getName() == _parent->_currPlanet)
+        {
+            _compoAdd->show();
+            for (i = 0; i < 8; i++)
+            {
+                _compoName[i]->hide();
+                _compoValue[i]->hide();
+                _compoDel[i]->hide();
+            }
+            for (i = 0, it_compo = (*it)->getComponentList()->begin(); it_compo != (*it)->getComponentList()->end(); ++it_compo, i++)
+            {
+                _compoName[i]->setText((*it_compo)->getName().c_str());
+                _compoName[i]->show();
+                _compoValue[i]->show();
+                _compoDel[i]->show();
+            }
+            _compoAdd->setGeometry(20, (20 + (33 * i)), 360, 30);
+            if (i == 7)
+                _compoAdd->hide();
+            return;
+        }
+    std::cout << "001" << std::endl;
+}
+
 void PlanetCompoBox::createCompoList(void)
 {
     _compoAdd->setGeometry(20, 20, 360, 30);
 
     for (int i = 0; i < 8; i++)
     {
-        _compoName[i]->setGeometry(20, (20 + (33 * i)), 150, 30);
+        _compoName[i]->setGeometry(20, (15 + (33 * i)), 150, 30);
         _compoValue[i]->setGeometry(220, (20 + (33 * i)), 50, 25);
         _compoDel[i]->setGeometry(280, (20 + (33 * i)), 80, 25);
         _compoName[i]->hide();
         _compoValue[i]->hide();
         _compoDel[i]->hide();
     }
+
     QObject::connect(_compoAdd, SIGNAL(clicked()), this, SLOT(windowPlaAddCompo()));
 }
 
@@ -181,10 +210,16 @@ void PlanetCompoBox::createWindowSysComponent()
     _eName->setGeometry(100, 40, 150, 30);
     _eSolidTemp = new QSpinBox(_winSys);
     _eSolidTemp->setGeometry(100, 80, 150, 30);
+    _eSolidTemp->setMinimum(-10000);
+    _eSolidTemp->setMaximum(10000);
     _eGazeousTemp = new QSpinBox(_winSys);
     _eGazeousTemp->setGeometry(100, 120, 150, 30);
+    _eGazeousTemp->setMinimum(-10000);
+    _eGazeousTemp->setMaximum(10000);
     _eMass = new QSpinBox(_winSys);
     _eMass->setGeometry(100, 160, 150, 30);
+    _eMass->setMinimum(1);
+    _eMass->setMaximum(100000);
     _eHardness = new QSlider(Qt::Horizontal, _winSys);
     _eHardness->setGeometry(100, 200, 150, 30);
     _eHardness->setMinimum(0);
