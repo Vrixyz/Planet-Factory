@@ -10,12 +10,9 @@ public class ModifyPlanetHeight : MonoBehaviour {
 	void Start () {
 		displacement = new ArrayList ();
 		Texture2D t = this.gameObject.GetComponent<SGT_SurfaceDisplacement> ().DisplacementTexture.GetTexture2D(CubemapFace.PositiveX);
-		print ("t = " + t);
-		print ("t == null = " + (t == null));
+
 		displacement.Add(t);
 		Texture2D t2 = (Texture2D)Resources.Load ("Earth_old_displacement_sphere");
-		print ("t2 = " + t2);
-		print ("t2 == null = " + (t2 == null));
 		displacement.Add ( t2);
 	}
 	
