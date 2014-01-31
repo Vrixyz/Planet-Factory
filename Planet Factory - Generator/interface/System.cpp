@@ -1,7 +1,7 @@
 #include "System.h"
 
 SolarSystem::SolarSystem(void)
-    : _date(), _nbAstre(0), _astres(NULL), _nbMaterial(0), _materials(NULL)
+    : _date(), _nbAstre(0), _astres(NULL), _nbMaterial(0), _materials()
 {
 }
 
@@ -14,10 +14,11 @@ SolarSystem::SolarSystem(SolarSystem & solar)
     _astres = new std::string[_nbAstre];
     for (i = 0; i < _nbAstre; i++)
         _astres[i] = solar.retAstres(i);
-    _nbMaterial = solar.materials();
-    _materials = new std::string[_nbMaterial];
-    for (i = 0; i < _nbMaterial; i++)
-        _materials[i] = solar.retMaterial(i);
+    _nbMaterial = solar.nbMaterial();
+    //_materials = new std::vector<Component>;
+    //for (std::vector<Component>::iterator it = solar.materials().begin(); it != solar.materials().end(); ++it)
+    //    _materials.push_back(*it);
+    _materials = solar.materials();
 }
 
 SolarSystem::~SolarSystem(void)
@@ -33,10 +34,16 @@ SolarSystem & SolarSystem::operator=(SolarSystem & solar)
 	_astres = new std::string[_nbAstre];
 	for (i = 0; i < _nbAstre; i++)
         _astres[i] = solar.retAstres(i);
-    _nbMaterial = solar.materials();
-    _materials = new std::string[_nbMaterial];
+    _nbMaterial = solar.nbMaterial();
+
+    //for (std::vector<Component>::iterator it = solar.materials().begin(); it != solar.materials().end(); ++it)
+   //     _materials.push_back(*it);
+
+
+    _materials = solar.materials();
+    /**_materials = new std::string[_nbMaterial];
     for (i = 0; i < _nbMaterial; i++)
-        _materials[i] = solar.retMaterial(i);
+        _materials[i] = solar.retMaterial(i);**/
 	return *this;
 }
 
@@ -70,24 +77,9 @@ void    SolarSystem::nbMaterial(int i)
     _nbMaterial = i;
 }
 
-int		SolarSystem::astres()
-{
-	return _nbAstre;
-}
-
 void	SolarSystem::astres(int nb)
 {
 	_astres = new std::string[nb];
-}
-
-int		SolarSystem::materials()
-{
-    return _nbMaterial;
-}
-
-void	SolarSystem::setMaterials(int nb)
-{
-    _materials = new std::string[nb];
 }
 
 const std::string & SolarSystem::retAstres(int i)
@@ -95,7 +87,7 @@ const std::string & SolarSystem::retAstres(int i)
 	return _astres[i];
 }
 
-const std::string & SolarSystem::retMaterial(int i)
+Component SolarSystem::retMaterial(int i)
 {
     return _materials[i];
 }
@@ -104,7 +96,13 @@ void	SolarSystem::astres(int nb, const std::string & astre)
 {
 	_astres[nb] = astre;
 }
-void	SolarSystem::materials(int nb, const std::string & materials)
+void	SolarSystem::materials(Component * component)
 {
-    _materials[nb] = materials;
+    _materials.push_back(*component);
+}
+
+
+std::vector<Component> SolarSystem::materials(void)
+{
+    return _materials;
 }

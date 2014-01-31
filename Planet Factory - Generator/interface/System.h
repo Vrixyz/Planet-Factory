@@ -1,6 +1,9 @@
 #ifndef _SYSTEM
 # define _SYSTEM
-#include <string> 
+#include <string>
+#include <vector>
+
+#include "Component.hpp"
 
 class SolarSystem
 {
@@ -16,20 +19,19 @@ public:
 	void	nbAstre(int);
     int     nbMaterial(void);
     void    nbMaterial(int);
-	int		astres(void);
-    int     materials(void);
     const   std::string & retAstres(int);
-    const   std::string & retMaterial(int i);
-	void	astres(int);
-    void    setMaterials(int);
+    Component retMaterial(int i);
+    void	astres(int);
     void	astres(int, const std::string &);
-    void	materials(int nb, const std::string &);
+    void	materials(Component *);
+    std::vector<Component> materials(void);
 private:
 	std::string _date;
 	int			_nbAstre;
     int         _nbMaterial;
+
 	std::string * _astres;
-    std::string *_materials;
+    std::vector<Component> _materials;
 };
 
 #endif

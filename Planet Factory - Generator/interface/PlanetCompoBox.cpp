@@ -84,7 +84,7 @@ void PlanetCompoBox::addCompo(void)
     std::list<Planet*>::iterator        it;
     Component                           *toAdd;
 
-    toAdd = new Component(_eName->text().toStdString(), _eGazeousTemp->value(), _eSolidTemp->value(), _eMass->value(), _eHardness->value());
+    toAdd = new Component(_eName->text().toStdString(), _eGazeousTemp->value(), _eSolidTemp->value(), _eMass->value(), _eHardness->value(), "");
     if (toAdd->getName().size() < 1)
     {
         qDebug("Un composant ne peut pas être créé sans un nom valide.");
