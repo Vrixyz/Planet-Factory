@@ -1,0 +1,57 @@
+{
+	"evolutions": [
+		{
+			"date": 0,
+			"radius": 696342,
+			"rotation": 50,
+			"vectorRotation": {
+				"x": 0,
+				"y": 1,
+				"z": 0
+			}
+			"pos": {
+				"x": 10,
+				"y": 0,
+				"z": 0
+			},
+			"vec": {
+				"x": 10,
+				"y": 0,
+				"z": 0
+			},
+			"displacement":"./soleilDisplacement1.png",
+			"materials": "./soleilMaterial1.png"
+		},
+		{
+			"date": 5000,
+			"rotation": 90,
+			"pos": {
+				"x": 10,
+				"y": 10,
+				"z": 0
+			},
+			"vec": {
+				"x": 0,
+				"y": 0,
+				"z": -5
+			},
+			"displacement":"./soleilDisplacement.png"
+		},
+		{
+			"date": 7000,
+			"radius": 696342,
+			"rotation": 140,
+			"pos": {
+				"x": 10,
+				"y": 10,
+				"z": 10
+			},
+			"vec": {
+				"x": 0,
+				"y": -10,
+				"z": 0
+			},
+			"displacement":"./soleilDisplacement.png"
+		},
+	]
+}
