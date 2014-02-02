@@ -17,6 +17,7 @@ public:
     void setSolidTemp(int);
     void setGazeousTemp(int);
     void setHardness(int);
+    void setPercent(int);
     void setMass(int);
     void path(const std::string &);
 
@@ -24,6 +25,7 @@ public:
     int         getSolidTemp(void);
     int         getGazeousTemp(void);
     int         getHardness(void);
+    int         getPercent(void);
     int         getMass(void);
     const std::string & path(void);
 
@@ -33,6 +35,7 @@ private:
     int         _gazeousTemp;
     int         _solidTemp;
     int         _hardness;
+    int         _percent;
     int         _mass;
     std::string _path;
 

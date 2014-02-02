@@ -81,7 +81,7 @@ public slots:
     void addCompoToSys(void);
     void delCompoToSys(void);
     void addCompoToPla(void);
-    void delCompoToPla(void);
+    void delCompoToPla(int);
 
 };
 

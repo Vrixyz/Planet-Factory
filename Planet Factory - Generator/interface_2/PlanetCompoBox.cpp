@@ -3,10 +3,13 @@
 
 PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QGroupBox(parent)
 {
+    QSignalMapper* signalMapper;
+
     _parent = parent;
     setGeometry(205, 405, 790, 290);
     setTitle("System Composition");
 
+    signalMapper = new QSignalMapper(this);
     _winSys = new QDialog(_parent);
     _winSys->hide();
     _winSys->setFixedSize(265, 280);
@@ -26,7 +29,10 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QGroupBox(parent)
         _compoName[i] =  new QLabel("HELLO!", this);
         _compoValue[i] = new QSpinBox(this);
         _compoDel[i] = new QPushButton("Delete", this);
+        QObject::connect(_compoDel[i], SIGNAL(clicked()), signalMapper, SLOT(map()));
+        signalMapper->setMapping (_compoDel[i], i) ;
     }
+    QObject::connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(delCompoToPla(int))) ;
 
     createWindowSysComponent();
     createWindowPlaComponent();
@@ -77,9 +83,15 @@ void PlanetCompoBox::addCompoToPla()
     windowPlaCloseAndClean();
 }
 
-void PlanetCompoBox::delCompoToPla()
+void PlanetCompoBox::delCompoToPla(int pos)
 {
+    std::list<Planet*>::iterator    it;
 
+    for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
+        if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
+        {
+            (*it)->getComponentList();
+        }
 }
 
 void PlanetCompoBox::updateListCompoSys()
@@ -159,7 +171,6 @@ void PlanetCompoBox::createCompoList(void)
         _compoValue[i]->hide();
         _compoDel[i]->hide();
     }
-
     QObject::connect(_compoAdd, SIGNAL(clicked()), this, SLOT(windowPlaAddCompo()));
 }
 
