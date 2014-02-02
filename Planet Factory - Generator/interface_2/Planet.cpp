@@ -9,6 +9,17 @@ Planet::~Planet()
 {
 }
 
+
+QJsonArray    Planet::getJson()
+{
+    return _evo;
+}
+
+void    Planet::append(QJsonObject obj)
+{
+    _evo.append(obj);
+}
+
 void    Planet::setName(std::string name)
 {
     _name = name;

@@ -5,6 +5,9 @@
 #include <list>
 
 #include "Component.hpp"
+#include <QJsonArray>
+#include <QJsonObject>
+
 
 enum PlanetType
 {
@@ -27,6 +30,8 @@ public:
     void                    setRadius(int);
     void                    setPosition(int, int, int);
     void                    setPositionVec(int, int, int);
+    void                    append(QJsonObject);
+    QJsonArray              getJson();
 
     std::string             getName(void);
     PlanetType              getType(void);
@@ -36,7 +41,7 @@ public:
     int                     *getPositionVec(void);
 
 private:
-
+    QJsonArray              _evo;
     std::string             _name;
     int                     _radius;
     PlanetType              _type;

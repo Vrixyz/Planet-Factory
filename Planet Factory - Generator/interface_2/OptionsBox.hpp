@@ -29,6 +29,8 @@ signals:
     
 public slots:
     void         loadConfSystem();
+    void         saveConfSystem();
+    void         generate();
 };
 
 #endif // OPTIONSBOX_HPP
