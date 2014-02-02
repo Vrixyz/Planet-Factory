@@ -22,13 +22,10 @@ OptionsBox::OptionsBox(MainWindow *parent) : QGroupBox(parent), _parent(parent)
     _reset->setText("Reset");
     _reset->setEnabled(FALSE);
 
-<<<<<<< HEAD
-    QObject::connect(_launch, SIGNAL(clicked()), _parent, SLOT(createLaunchWindow()));
-    QObject::connect(_save, SIGNAL(clicked()), qApp, SLOT(quit()));
-=======
+//    QObject::connect(_launch, SIGNAL(clicked()), _parent, SLOT(createLaunchWindow()));
+//    QObject::connect(_save, SIGNAL(clicked()), qApp, SLOT(quit()));
     QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(generate()));
     QObject::connect(_save, SIGNAL(clicked()), this, SLOT(saveConfSystem()));
->>>>>>> 2c58d3e88deefb60a272e650ff29b1afe0709316
     QObject::connect(_load, SIGNAL(clicked()), this, SLOT(loadConfSystem()));
     QObject::connect(_reset, SIGNAL(clicked()), qApp, SLOT(quit()));
 }
@@ -62,23 +59,24 @@ void        OptionsBox::saveConfSystem()
       return;
 
     System *s = _parent->getSystem();
-    std::list<Component*>::iterator itc;
+    std::list<Component*>::iterator itc_sys;
+    std::map<Component*, int>::iterator itc_pla;
     std::list<Planet*>::iterator itp;
 
 
     //On cree l'array component
     QJsonArray component;
-    for (itc = s->getComponentList()->begin(); itc != s->getComponentList()->end(); ++itc)
+    for (itc_sys = s->getComponentList()->begin(); itc_sys != s->getComponentList()->end(); ++itc_sys)
     {
         QJsonObject obj;
 
-        QString name = (*itc)->getName().c_str();
+        QString name = (*itc_sys)->getName().c_str();
         obj.insert("name", name);
 
-        obj.insert("solid", (*itc)->getSolidTemp());
-        obj.insert("gas", (*itc)->getGazeousTemp());
-        obj.insert("mass", (*itc)->getMass());
-        obj.insert("hardness", (*itc)->getHardness());
+        obj.insert("solid", (*itc_sys)->getSolidTemp());
+        obj.insert("gas", (*itc_sys)->getGazeousTemp());
+        obj.insert("mass", (*itc_sys)->getMass());
+        obj.insert("hardness", (*itc_sys)->getHardness());
 
         //toto
         component.append(obj);
@@ -115,11 +113,11 @@ void        OptionsBox::saveConfSystem()
 
         //On cree l'array component de la planete
         QJsonArray planete_component;
-        for (itc = (*itp)->getComponentList()->begin(); itc != (*itp)->getComponentList()->end(); ++itc)
+        for (itc_pla = (*itp)->getComponentMap()->begin(); itc_pla != (*itp)->getComponentMap()->end(); ++itc_pla)
         {
             QJsonObject planete_obj;
 
-            QString name = (*itc)->getName().c_str();
+            QString name = itc_pla->first->getName().c_str();
             planete_obj.insert("name", name);
 
             planete_component.append(planete_obj);
