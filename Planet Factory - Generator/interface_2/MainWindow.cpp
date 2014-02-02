@@ -10,6 +10,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     _boxOptions = new OptionsBox(this);
 
     _system = new System();
+
+    _launchWindow = new QDialog();
+    _launchWindow->setFixedSize(200, 200);
+    _launchWindow->hide();
 }
 
 MainWindow::~MainWindow()
@@ -45,4 +49,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Escape)
         qApp->quit();
+}
+
+void MainWindow::createLaunchWindow(void)
+{
+    _launchWindow->show();
 }

@@ -51,11 +51,17 @@ private:
     GroupTools          *_boxPositionVector;
     GroupTools          *_boxPosition;
 
+    QDialog             *_launchWindow;
+
     System              *_system;
 
 protected:
 
     void                keyPressEvent(QKeyEvent *event);
+
+public slots:
+
+    void createLaunchWindow(void);
 
 };
 

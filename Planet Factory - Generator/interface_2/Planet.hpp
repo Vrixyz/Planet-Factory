@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <list>
+#include <map>
 
 #include "Component.hpp"
 
@@ -28,21 +29,22 @@ public:
     void                    setPosition(int, int, int);
     void                    setPositionVec(int, int, int);
 
-    std::string             getName(void);
-    PlanetType              getType(void);
-    int                     getRadius(void);
-    std::list<Component*>   *getComponentList(void);
-    int                     *getPosition(void);
-    int                     *getPositionVec(void);
+    std::string                 getName(void);
+    PlanetType                  getType(void);
+    int                         getRadius(void);
+    std::map<Component*, int>   *getComponentMap(void);
+    int                         *getPosition(void);
+    int                         *getPositionVec(void);
 
 private:
 
     std::string             _name;
     int                     _radius;
     PlanetType              _type;
-    std::list<Component*>   *_listCompo;
     int                     _pos[3];
     int                     _posVec[3];
+
+    std::map<Component*, int>   *_mapCompo;
 
 };
 

@@ -2,7 +2,7 @@
 
 Planet::Planet()
 {
-    _listCompo = new std::list<Component*>();
+    _mapCompo = new std::map<Component*, int>();
 }
 
 Planet::~Planet()
@@ -39,9 +39,9 @@ int Planet::getRadius(void)
     return (_radius);
 }
 
-std::list<Component *> *Planet::getComponentList(void)
+std::map<Component*, int> *Planet::getComponentMap(void)
 {
-    return (_listCompo);
+    return (_mapCompo);
 }
 
 void Planet::setPosition(int X, int Y, int Z)

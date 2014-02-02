@@ -3,13 +3,15 @@
 
 PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QGroupBox(parent)
 {
-    QSignalMapper* signalMapper;
+    QSignalMapper* signalMapperButton;
+    QSignalMapper* signalMapperSpinBox;
 
     _parent = parent;
     setGeometry(205, 405, 790, 290);
     setTitle("System Composition");
 
-    signalMapper = new QSignalMapper(this);
+    signalMapperButton = new QSignalMapper(this);
+    signalMapperSpinBox = new QSignalMapper(this);
     _winSys = new QDialog(_parent);
     _winSys->hide();
     _winSys->setFixedSize(265, 280);
@@ -29,10 +31,13 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QGroupBox(parent)
         _compoName[i] =  new QLabel("HELLO!", this);
         _compoValue[i] = new QSpinBox(this);
         _compoDel[i] = new QPushButton("Delete", this);
-        QObject::connect(_compoDel[i], SIGNAL(clicked()), signalMapper, SLOT(map()));
-        signalMapper->setMapping (_compoDel[i], i) ;
+        QObject::connect(_compoDel[i], SIGNAL(clicked()), signalMapperButton, SLOT(map()));
+        signalMapperButton->setMapping (_compoDel[i], i) ;
+        QObject::connect(_compoValue[i], SIGNAL(valueChanged(int)), signalMapperSpinBox, SLOT(map()));
+        signalMapperSpinBox->setMapping (_compoValue[i], i);
     }
-    QObject::connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(delCompoToPla(int))) ;
+    QObject::connect(signalMapperButton, SIGNAL(mapped(int)), this, SLOT(delCompoToPla(int))) ;
+    QObject::connect(signalMapperSpinBox, SIGNAL(mapped(int)), this, SLOT(changePercentCompo(int))) ;
 
     createWindowSysComponent();
     createWindowPlaComponent();
@@ -42,6 +47,21 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QGroupBox(parent)
 
 PlanetCompoBox::~PlanetCompoBox()
 {
+}
+
+void PlanetCompoBox::changePercentCompo(int pos)
+{
+    std::list<Planet*>::iterator    it;
+
+    for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
+        if ((*it)->getName() == _parent->_currPlanet)
+        {
+            std::map<Component*, int>::iterator    it_compo;
+            int i;
+
+            for (i = 0, it_compo = (*it)->getComponentMap()->begin(); it_compo != (*it)->getComponentMap()->end() && i < pos; ++it_compo, ++i);
+            it_compo->second = _compoValue[i]->value();
+        }
 }
 
 void PlanetCompoBox::windowPlaAddCompo()
@@ -61,18 +81,21 @@ void PlanetCompoBox::addCompoToPla()
     for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
         if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
         {
-            std::list<Component*>::iterator    it_compo;
+            std::map<Component*, int>::iterator itMapCompo;
+            std::list<Component*>::iterator     itListCompo;
 
-            for (it_compo = (*it)->getComponentList()->begin(); it_compo != (*it)->getComponentList()->end(); ++it_compo)
+            for (itMapCompo = (*it)->getComponentMap()->begin(); itMapCompo != (*it)->getComponentMap()->end(); ++itMapCompo)
             {
-                if ((*it_compo)->getName() == _listCompo->currentItem()->text().toStdString())
+                if ((itMapCompo->first)->getName() == _listCompo->currentItem()->text().toStdString())
                     return; /*  AJOUTER MSG ERREUR  */
             }
-            for (it_compo = _parent->getSystem()->getComponentList()->begin(); it_compo != _parent->getSystem()->getComponentList()->end(); ++it_compo)
+            for (itListCompo = _parent->getSystem()->getComponentList()->begin(); itListCompo != _parent->getSystem()->getComponentList()->end(); ++itListCompo)
             {
-                if ((*it_compo)->getName() == _listCompo->currentItem()->text().toStdString())
+                if ((*itListCompo)->getName() == _listCompo->currentItem()->text().toStdString())
                 {
-                    (*it)->getComponentList()->push_front(*it_compo);
+                    Component* compoToAdd = (*itListCompo);
+
+                    (*it)->getComponentMap()->insert(std::make_pair(compoToAdd, 0));
                     updateListCompoPla();
                     windowPlaCloseAndClean();
                     return;
@@ -90,8 +113,13 @@ void PlanetCompoBox::delCompoToPla(int pos)
     for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
         if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
         {
-            (*it)->getComponentList();
+            std::map<Component*, int>::iterator    it_compo;
+            int i;
+
+            for (i = 0, it_compo = (*it)->getComponentMap()->begin(); it_compo != (*it)->getComponentMap()->end() && i < pos; ++it_compo, ++i);
+            (*it)->getComponentMap()->erase(it_compo);
         }
+    updateListCompoPla();
 }
 
 void PlanetCompoBox::updateListCompoSys()
@@ -128,11 +156,10 @@ void PlanetCompoBox::createCompoDetails(void)
 
 void PlanetCompoBox::updateListCompoPla()
 {
-    std::list<Component*>::iterator     it_compo;
+    std::map<Component*, int>::iterator     it_compo;
     std::list<Planet*>::iterator        it;
     int i;
 
-    std::cout << "000" << std::endl;
     for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
         if ((*it)->getName() == _parent->_currPlanet)
         {
@@ -143,10 +170,11 @@ void PlanetCompoBox::updateListCompoPla()
                 _compoValue[i]->hide();
                 _compoDel[i]->hide();
             }
-            for (i = 0, it_compo = (*it)->getComponentList()->begin(); it_compo != (*it)->getComponentList()->end(); ++it_compo, i++)
+            for (i = 0, it_compo = (*it)->getComponentMap()->begin(); it_compo != (*it)->getComponentMap()->end(); ++it_compo, i++)
             {
-                _compoName[i]->setText((*it_compo)->getName().c_str());
+                _compoName[i]->setText(it_compo->first->getName().c_str());
                 _compoName[i]->show();
+                _compoValue[i]->setValue(it_compo->second);
                 _compoValue[i]->show();
                 _compoDel[i]->show();
             }
@@ -155,7 +183,6 @@ void PlanetCompoBox::updateListCompoPla()
                 _compoAdd->hide();
             return;
         }
-    std::cout << "001" << std::endl;
 }
 
 void PlanetCompoBox::createCompoList(void)

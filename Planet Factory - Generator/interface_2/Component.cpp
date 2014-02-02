@@ -43,11 +43,6 @@ void Component::setHardness(int hardness)
     _hardness = hardness;
 }
 
-void Component::setPercent(int percent)
-{
-    _percent = percent;
-}
-
 void Component::setMass(int mass)
 {
     _mass = mass;
@@ -76,11 +71,6 @@ int Component::getSolidTemp(void)
 int Component::getHardness(void)
 {
     return (_hardness);
-}
-
-int Component::getPercent(void)
-{
-    return (_percent);
 }
 
 int Component::getMass(void)
