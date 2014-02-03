@@ -39,7 +39,7 @@ public:
 
     System              *getSystem();
 
-    std::string         _currPlanet;
+    Planet              *_currPlanet;
 
 private:
 
@@ -51,8 +51,6 @@ private:
     GroupTools          *_boxPositionVector;
     GroupTools          *_boxPosition;
 
-    QDialog             *_launchWindow;
-
     System              *_system;
 
 protected:
@@ -60,8 +58,6 @@ protected:
     void                keyPressEvent(QKeyEvent *event);
 
 public slots:
-
-    void createLaunchWindow(void);
 
 };
 

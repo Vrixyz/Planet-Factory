@@ -28,9 +28,7 @@ CelestialBox::~CelestialBox()
 
 void CelestialBox::planetSelected(QListWidgetItem* currItem)
 {
-    std::list<Component*>::iterator it_compo;
     std::list<Planet*>::iterator    it;
-    //std::list<Component*>           *toCheck;
     int                             *pos;
     int                             *posVec;
 
@@ -39,7 +37,7 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
         if ((*it)->getName() == currItem->text().toStdString())
         {
             _parent->getPlanetDetails()->_eName->setText((*it)->getName().c_str());
-            _parent->_currPlanet = (*it)->getName();
+            _parent->_currPlanet = (*it);
             if ((*it)->getType() == STAR)
                 _parent->getPlanetDetails()->_eType->setCurrentIndex(0);
             else if ((*it)->getType() == TELLURIC)
@@ -57,9 +55,9 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
             _parent->getPlanetDetails()->_ePosVecX->setValue(posVec[0]);
             _parent->getPlanetDetails()->_ePosVecY->setValue(posVec[1]);
             _parent->getPlanetDetails()->_ePosVecZ->setValue(posVec[2]);
-            _del->setEnabled(TRUE);
             _parent->getPlanetCompo()->_compoAdd->setEnabled(TRUE);
             _parent->getPlanetCompo()->updateListCompoPla();
+            _del->setEnabled(TRUE);
         }
 }
 
@@ -75,7 +73,7 @@ void CelestialBox::delObject()
                 it = _parent->getSystem()->getPlanetList()->erase(it);
         _listObjects->takeItem(_listObjects->row(_listObjects->currentItem()));
         cleanAllFields();
-        _parent->_currPlanet = "";
+        _parent->_currPlanet = NULL;
         _parent->getPlanetCompo()->updateListCompoPla();
     }
 }

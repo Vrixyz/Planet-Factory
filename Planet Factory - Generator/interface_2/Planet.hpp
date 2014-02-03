@@ -9,7 +9,6 @@
 #include <QJsonArray>
 #include <QJsonObject>
 
-
 enum PlanetType
 {
     STAR,
@@ -42,6 +41,7 @@ public:
     int                         *getPositionVec(void);
 
 private:
+
     QJsonArray              _evo;
     std::string             _name;
     int                     _radius;

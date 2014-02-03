@@ -1,15 +1,10 @@
-﻿DORIAN :
+﻿	DORIAN :
+- Message d'erreur
+- Ajouter BOUTON validation suppression si matériau utilisé (et le suppirmé dans la liste de la planète)
+- Message d'erreur si les % ne sont pas égaux à 100%
 
+	Clean project :
  - Modifier QComboBox avec QVariant pour remplacer if/else if
  - Check la norme globale
  - Check que les messages de bug soient bien sur la sortie d'erreur
- - Modifier core pour savoir quel est l'astre/composant en cours de séléction avec une seule méthode (stocker le PlaCurrent dans une valeur de MainWindow)
- - Fonction récupération de pointeur sur planete ans la liste
- - Message d'erreur
- - Bouton "générer" :
-	- QDialog -> durée
-	- Précision -> interval entre les différents calculs
-	- Boutons -> Générer et Annuler
-- Ajouter BOUTON validation suppression si matériau utilisé (et le suppirmé dans la liste de la planète)
-- Message d'erreur si les % ne sont pas égaux à 100%
-- Design
+ - Design
