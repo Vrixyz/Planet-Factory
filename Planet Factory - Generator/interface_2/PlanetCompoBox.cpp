@@ -64,6 +64,11 @@ void PlanetCompoBox::changePercentCompo(int pos)
         }
 }
 
+void PlanetCompoBox::checkPercentPla()
+{
+
+}
+
 void PlanetCompoBox::windowPlaAddCompo()
 {
     std::list<Component*>::iterator it;
@@ -132,7 +137,7 @@ void PlanetCompoBox::updateListCompoSys()
 }
 
 void PlanetCompoBox::createCompoDetails(void)
-{ 
+{
     _listObjects = new QListWidget(_boxSystem);
     _listObjects->setGeometry(10, 20, 360, 185);
 
@@ -160,25 +165,37 @@ void PlanetCompoBox::updateListCompoPla()
     std::list<Planet*>::iterator        it;
     int i;
 
+    if (_parent->_currPlanet == "")
+    {
+        for (i = 0; i < 8; i++)
+        {
+            _compoValue[i]->hide();
+            _compoName[i]->hide();
+            _compoDel[i]->hide();
+        }
+        _compoAdd->setGeometry(20, 20, 360, 30);
+        _compoAdd->setEnabled(FALSE);
+    }
     for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
         if ((*it)->getName() == _parent->_currPlanet)
         {
             _compoAdd->show();
             for (i = 0; i < 8; i++)
             {
-                _compoName[i]->hide();
                 _compoValue[i]->hide();
+                _compoName[i]->hide();
                 _compoDel[i]->hide();
             }
             for (i = 0, it_compo = (*it)->getComponentMap()->begin(); it_compo != (*it)->getComponentMap()->end(); ++it_compo, i++)
             {
-                _compoName[i]->setText(it_compo->first->getName().c_str());
-                _compoName[i]->show();
                 _compoValue[i]->setValue(it_compo->second);
                 _compoValue[i]->show();
+                _compoName[i]->setText(it_compo->first->getName().c_str());
+                _compoName[i]->show();
                 _compoDel[i]->show();
             }
             _compoAdd->setGeometry(20, (20 + (33 * i)), 360, 30);
+            _compoAdd->setEnabled(TRUE);
             if (i == 7)
                 _compoAdd->hide();
             return;
@@ -338,15 +355,20 @@ void PlanetCompoBox::addCompoToSys()
 void PlanetCompoBox::delCompoToSys()
 {
     std::list<Component*>::iterator it;
+    std::list<Planet*>::iterator it_pla;
 
     for (it = _parent->getSystem()->getComponentList()->begin(); it != _parent->getSystem()->getComponentList()->end(); ++it)
         if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
         {
+            for (it_pla = _parent->getSystem()->getPlanetList()->begin(); it_pla != _parent->getSystem()->getPlanetList()->end(); ++it_pla)
+                (*it_pla)->getComponentMap()->erase(*it);
             _parent->getSystem()->getComponentList()->erase(it);
             _del->setEnabled(FALSE);
             updateListCompoSys();
+            updateListCompoPla();
             return;
         }
+    std::cout << "toto2" << std::endl;
 }
 
 void PlanetCompoBox::componentPlaSelected()

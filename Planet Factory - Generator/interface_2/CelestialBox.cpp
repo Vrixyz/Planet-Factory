@@ -76,6 +76,7 @@ void CelestialBox::delObject()
         _listObjects->takeItem(_listObjects->row(_listObjects->currentItem()));
         cleanAllFields();
         _parent->_currPlanet = "";
+        _parent->getPlanetCompo()->updateListCompoPla();
     }
 }
 

@@ -68,6 +68,7 @@ signals:
     
 public slots:
 
+    void checkPercentPla();
     void changePercentCompo(int);
 
     void componentPlaSelected(void);
