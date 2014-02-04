@@ -26,6 +26,16 @@ CelestialBox::~CelestialBox()
 {
 }
 
+void CelestialBox::updateListPlanet(void)
+{
+    std::list<Planet*>::iterator it;
+
+    _listObjects->clear();
+    for (it = _parent->getSystem()->getPlanetList()->begin();
+         it != _parent->getSystem()->getPlanetList()->end(); ++it)
+        _listObjects->addItem((*it)->getName().c_str());
+}
+
 void CelestialBox::planetSelected(QListWidgetItem* currItem)
 {
     std::list<Planet*>::iterator    it;

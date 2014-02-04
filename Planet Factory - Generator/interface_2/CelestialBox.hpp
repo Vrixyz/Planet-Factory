@@ -22,10 +22,11 @@ public:
     ~CelestialBox();
 
     void cleanAllFields();
+    void updateListPlanet();
 
 private:
 
-    QListWidget   *_listObjects;
+    QListWidget *_listObjects;
     QPushButton *_add;
     QPushButton *_del;
 
