@@ -26,7 +26,7 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QGroupBox(parent)
     _compoAdd = new QPushButton("Add component to selected planet", this);
     _compoAdd->setEnabled(FALSE);
 
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 7; i++)
     {
         _compoName[i] =  new QLabel("HELLO!", this);
         _compoValue[i] = new QSpinBox(this);
@@ -47,6 +47,7 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QGroupBox(parent)
 
 PlanetCompoBox::~PlanetCompoBox()
 {
+
 }
 
 void PlanetCompoBox::changePercentCompo(int pos)
@@ -58,11 +59,28 @@ void PlanetCompoBox::changePercentCompo(int pos)
          it_compo != _parent->_currPlanet->getComponentMap()->end() && i < pos;
          ++it_compo, ++i);
     it_compo->second = _compoValue[i]->value();
+    checkPercentPla();
 }
 
 void PlanetCompoBox::checkPercentPla()
 {
+    std::map<Component*, int>::iterator it_compo;
+    int                                 total;
 
+    for (total = 0, it_compo = _parent->_currPlanet->getComponentMap()->begin();
+         it_compo != _parent->_currPlanet->getComponentMap()->end();
+         ++it_compo)
+        total += it_compo->second;
+    if (total != 100)
+    {
+        _percentWarning->setStyleSheet("QLabel { color : red; }");
+        _percentWarning->setText("The sum of the % of all the components is not equal to 100%. :(");
+    }
+    else
+    {
+        _percentWarning->setStyleSheet("QLabel { color : green; }");
+        _percentWarning->setText("The sum of the % of all the components is equal to 100%. :)");
+    }
 }
 
 void PlanetCompoBox::windowPlaAddCompo()
@@ -110,6 +128,7 @@ void PlanetCompoBox::addCompoToPla()
             return;
         }
     windowPlaCloseAndClean();
+    checkPercentPla();
 }
 
 void PlanetCompoBox::delCompoToPla(int pos)
@@ -127,6 +146,7 @@ void PlanetCompoBox::delCompoToPla(int pos)
             (*it)->getComponentMap()->erase(it_compo);
         }
     updateListCompoPla();
+    checkPercentPla();
 }
 
 void PlanetCompoBox::updateListCompoSys()
@@ -168,7 +188,7 @@ void PlanetCompoBox::updateListCompoPla()
     std::list<Planet*>::iterator        it;
     int i;
 
-    for (i = 0; i < 8; i++)
+    for (i = 0; i < 7; i++)
     {
         _compoValue[i]->hide();
         _compoName[i]->hide();
@@ -192,17 +212,20 @@ void PlanetCompoBox::updateListCompoPla()
         }
         _compoAdd->setGeometry(20, (20 + (33 * i)), 360, 30);
         _compoAdd->setEnabled(TRUE);
+        _compoAdd->show();
         if (i == 7)
             _compoAdd->hide();
-        _compoAdd->show();
     }
+    checkPercentPla();
 }
 
 void PlanetCompoBox::createCompoList(void)
 {
+    _percentWarning = new QLabel("", this);
+    _percentWarning->setGeometry(20, 251, 340, 25);
+    _percentWarning->setAlignment(Qt::AlignCenter);
     _compoAdd->setGeometry(20, 20, 360, 30);
-
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 7; i++)
     {
         _compoName[i]->setGeometry(20, (15 + (33 * i)), 150, 30);
         _compoValue[i]->setGeometry(220, (20 + (33 * i)), 50, 25);
@@ -367,9 +390,9 @@ void PlanetCompoBox::delCompoToSys()
             _del->setEnabled(FALSE);
             updateListCompoSys();
             updateListCompoPla();
+            checkPercentPla();
             return;
         }
-    std::cout << "toto2" << std::endl;
 }
 
 void PlanetCompoBox::componentPlaSelected()

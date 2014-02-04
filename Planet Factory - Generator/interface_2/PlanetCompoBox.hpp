@@ -32,9 +32,10 @@ public:
     void createWindowSysComponent(void);
     void createWindowPlaComponent(void);
 
-    QLabel      *_compoName[8];
-    QSpinBox    *_compoValue[8];
-    QPushButton *_compoDel[8];
+    QLabel      *_percentWarning;
+    QLabel      *_compoName[7];
+    QSpinBox    *_compoValue[7];
+    QPushButton *_compoDel[7];
     QPushButton *_compoAdd;
 
     QListWidget *_listObjects;
