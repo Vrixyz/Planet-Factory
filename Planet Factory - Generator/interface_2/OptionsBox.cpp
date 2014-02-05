@@ -12,11 +12,11 @@ OptionsBox::OptionsBox(MainWindow *parent) : QGroupBox(parent), _parent(parent)
     _save = new QPushButton(this);
     _save->setGeometry(45, 105, 105, 40);
     _save->setText("Save");
-    _save->setEnabled(FALSE);
+    _save->setEnabled(TRUE);
     _load = new QPushButton(this);
     _load->setGeometry(45, 155, 105, 40);
     _load->setText("Load");
-    _load->setEnabled(FALSE);
+    _load->setEnabled(TRUE);
     _reset = new QPushButton(this);
     _reset->setGeometry(45, 205, 105, 40);
     _reset->setText("Reset");
