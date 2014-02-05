@@ -1,8 +1,36 @@
 #include "Planet.hpp"
+#include "System.h"
 
 Planet::Planet()
 {
     _mapCompo = new std::map<Component*, int>();
+}
+
+Planet::Planet(QJsonObject obj, System * s)
+{
+    _mapCompo = new std::map<Component*, int>();
+
+    _name = obj["name"].toString().toStdString();
+    _radius = obj["radius"].toInt();
+
+   QJsonObject vec = obj["vec"].toObject();
+   _posVec[0] = vec["x"].toInt();
+   _posVec[1] = vec["y"].toInt();
+   _posVec[2] = vec["z"].toInt();
+
+   QJsonObject pos = obj["pos"].toObject();
+   _pos[0] = pos["x"].toInt();
+   _pos[1] = pos["y"].toInt();
+   _pos[2] = pos["z"].toInt();
+
+   QJsonArray composant = obj["composant"].toArray();
+   foreach (QJsonValue value, composant)
+   {
+        QJsonObject comp = value.toObject();
+        Component *c = s->getComponentByName(comp["name"].toString().toStdString());
+
+       _mapCompo->insert(std::make_pair(c, comp["percent"].toInt()));
+   }
 }
 
 Planet::~Planet()

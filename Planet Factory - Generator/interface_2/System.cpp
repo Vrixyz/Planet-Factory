@@ -20,7 +20,11 @@ System::System(QJsonObject json)
     }
 
     //On get les planete
-
+    QJsonArray astres = json["astres"].toArray();
+    foreach (QJsonValue value, astres)
+    {
+        _listPlanet->push_front(new Planet(value.toObject(), this));
+    }
 }
 
 System::~System()

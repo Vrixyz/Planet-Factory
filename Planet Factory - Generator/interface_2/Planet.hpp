@@ -9,6 +9,8 @@
 #include <QJsonArray>
 #include <QJsonObject>
 
+class System;
+
 enum PlanetType
 {
     STAR,
@@ -23,6 +25,7 @@ class Planet
 public:
 
     Planet();
+    Planet(QJsonObject, System *);
     ~Planet();
 
     void                    setName(std::string);
