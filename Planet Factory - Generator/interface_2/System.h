@@ -20,6 +20,8 @@ public:
     void                    setComponentList(std::list<Component*>*);
     std::list<Planet*>      *getPlanetList(void);
     std::list<Component*>   *getComponentList(void);
+    Component               *getComponentByName(std::string);
+
     void                    initJson(QString);
     void                    endJson(QString);
 private:

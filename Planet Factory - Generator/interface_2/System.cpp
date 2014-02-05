@@ -30,6 +30,17 @@ std::list<Component*> *System::getComponentList(void)
     return _listCompo;
 }
 
+Component *System::getComponentByName(std::string toSearch)
+{
+    std::list<Component*>::iterator it;
+
+    for (it = getComponentList()->begin(); it != getComponentList()->end(); ++it)
+    {
+        if ((*it)->getName() == toSearch)
+            return (*it);
+    }
+    return NULL;
+}
 
 // TODO A MODIFIER SOON
 void System::initJson(QString path)

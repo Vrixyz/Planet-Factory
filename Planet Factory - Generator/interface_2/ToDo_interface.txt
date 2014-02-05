@@ -2,6 +2,7 @@
 
 - Messages d'erreur
 - Edition des matériaux
+- Bouton Reset
 
 Modifications secondaires :
 	
