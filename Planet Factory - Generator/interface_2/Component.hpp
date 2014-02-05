@@ -2,6 +2,7 @@
 #define COMPONENT_HPP
 
 #include <iostream>
+#include <QJsonObject>
 
 class Component
 {
@@ -9,6 +10,7 @@ class Component
 public:
 
     Component();
+    Component(QJsonObject);
     Component(const std::string &);
     Component(std::string, int, int, int, int, const std::string &);
     ~Component();

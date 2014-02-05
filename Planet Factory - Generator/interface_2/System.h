@@ -14,6 +14,7 @@ class System
 public:
 
     System();
+    System(QJsonObject);
     ~System();
 
     void                    setPlanetList(std::list<Planet*>*);

@@ -38,6 +38,7 @@ public:
     OptionsBox          *getOptions(void);
 
     System              *getSystem();
+    void                setSystem(System *);
 
     Planet              *_currPlanet;
 

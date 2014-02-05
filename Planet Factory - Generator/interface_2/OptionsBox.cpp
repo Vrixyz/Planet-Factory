@@ -105,6 +105,33 @@ void OptionsBox::windowLaunchClean(void)
 
 void        OptionsBox::loadConfSystem()
 {
+    QString path = QFileDialog::getOpenFileName(this, tr("Load File"),"",tr("PlaneteFactory (*.pf)"));
+    if (path.isEmpty())
+      return;
+
+    QFile file;
+    file.setFileName(path);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+
+    QByteArray jsonData = file.readAll();
+    QJsonDocument json;
+    QJsonParseError err;
+
+    json.fromJson(jsonData, &err);
+    if(err.error != 0)
+        qDebug() << err.errorString();
+    if(json.isObject())
+    {
+        _parent->setSystem(new System(json.object()));
+        _parent->getPlanetCompo()->updateListCompoSys();
+        _parent->getCelestial()->updateListPlanet();
+        _parent->_currPlanet = NULL;
+    }
+    else
+    {
+        qDebug() << "D'OU t'es PAS un OBJET salope!";
+        return;
+    }
 }
 
 void        OptionsBox::saveConfSystem()
@@ -131,8 +158,6 @@ void        OptionsBox::saveConfSystem()
         obj.insert("gas", (*itc_sys)->getGazeousTemp());
         obj.insert("mass", (*itc_sys)->getMass());
         obj.insert("hardness", (*itc_sys)->getHardness());
-
-        //toto
         component.append(obj);
     }
 
@@ -142,13 +167,10 @@ void        OptionsBox::saveConfSystem()
     {
         QJsonObject obj;
 
-
         QString name = (*itp)->getName().c_str();
         obj.insert("name", name);
-
 //        obj.insert("type", (*itc)->getSolidTemp());
         obj.insert("radius", (*itp)->getRadius());
-
 
         int *vec = (*itp)->getPositionVec();
         QJsonObject vector;
@@ -172,11 +194,10 @@ void        OptionsBox::saveConfSystem()
 
             QString name = itc_pla->first->getName().c_str();
             planete_obj.insert("name", name);
-
+            planete_obj.insert("percent", itc_pla->second);
             planete_component.append(planete_obj);
         }
-        obj.insert("materials", planete_component);
-
+        obj.insert("composant", planete_component);
         planete.append(obj);
     }
 

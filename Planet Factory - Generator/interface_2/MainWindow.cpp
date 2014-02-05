@@ -42,6 +42,12 @@ System              *MainWindow::getSystem()
     return _system;
 }
 
+
+void                MainWindow::setSystem(System *s)
+{
+   _system = s;
+}
+
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Escape)

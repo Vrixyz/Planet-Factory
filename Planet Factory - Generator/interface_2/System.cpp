@@ -6,6 +6,23 @@ System::System()
     _listCompo = new std::list<Component *>;
 }
 
+
+System::System(QJsonObject json)
+{
+    _listPlanet = new std::list<Planet *>;
+    _listCompo = new std::list<Component *>;
+
+    //On get la liste des materiaux
+    QJsonArray components = json["materials"].toArray();
+    foreach (QJsonValue value, components)
+    {
+        _listCompo->push_front(new Component(value.toObject()));
+    }
+
+    //On get les planete
+
+}
+
 System::~System()
 {
 }

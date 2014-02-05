@@ -4,6 +4,16 @@ Component::Component()
 {
 }
 
+
+Component::Component(QJsonObject obj)
+{
+    _name = obj["name"].toString().toStdString();
+    _gazeousTemp = obj["gas"].toInt();
+    _solidTemp = obj["solid"].toInt();
+    _hardness = obj["hardness"].toInt();
+    _mass = obj["mass"].toInt();
+}
+
 Component::Component(const std::string & path)
     :_name(""), _gazeousTemp(0), _solidTemp(0), _hardness(0), _mass(0), _path(path)
 {
