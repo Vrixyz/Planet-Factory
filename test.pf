@@ -1,0 +1,82 @@
+{
+    "astres": [
+        {
+            "composant": [
+                {
+                    "name": "HE",
+                    "percent": 50
+                },
+                {
+                    "name": "H",
+                    "percent": 50
+                }
+            ],
+            "name": "sun",
+            "pos": {
+                "x": -1000,
+                "y": -1000,
+                "z": -1000
+            },
+            "radius": 800,
+            "vec": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+        },
+        {
+            "composant": [
+                {
+                    "name": "Eau",
+                    "percent": 50
+                },
+                {
+                    "name": "fer",
+                    "percent": 50
+                }
+            ],
+            "name": "Terre",
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "radius": 600,
+            "vec": {
+                "x": 500,
+                "y": 500,
+                "z": 0
+            }
+        }
+    ],
+    "materials": [
+        {
+            "gas": 0,
+            "hardness": 0,
+            "mass": 1,
+            "name": "HE",
+            "solid": 0
+        },
+        {
+            "gas": 0,
+            "hardness": 0,
+            "mass": 1,
+            "name": "H",
+            "solid": 0
+        },
+        {
+            "gas": 100,
+            "hardness": 0,
+            "mass": 1,
+            "name": "Eau",
+            "solid": 0
+        },
+        {
+            "gas": 5000,
+            "hardness": 0,
+            "mass": 10,
+            "name": "fer",
+            "solid": 1538
+        }
+    ]
+}

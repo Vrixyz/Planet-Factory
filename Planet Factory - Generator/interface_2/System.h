@@ -24,6 +24,7 @@ public:
     Component               *getComponentByName(std::string);
 
     void                    initJson(QString);
+    void                    evolution(int);
     void                    endJson(QString);
 private:
 

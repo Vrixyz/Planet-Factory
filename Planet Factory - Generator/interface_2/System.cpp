@@ -63,6 +63,32 @@ Component *System::getComponentByName(std::string toSearch)
     return NULL;
 }
 
+void System::evolution(int duree)
+{
+    std::list<Planet*>::iterator itp;
+    for (itp = _listPlanet->begin(); itp != _listPlanet->end(); ++itp)
+    {
+
+        int *pos = (*itp)->getPosition();
+        int *vec = (*itp)->getPositionVec();
+
+        //Evolution MOVE V1
+        QJsonObject evo;
+        pos[0] += vec[0];
+        pos[1] += vec[1];
+        pos[2] += vec[2];
+        (*itp)->setPosition(pos[0], pos[1], pos[2]);
+        QJsonObject position;
+        position.insert("x", pos[0]);
+        position.insert("y", pos[1]);
+        position.insert("z", pos[2]);
+        evo.insert("pos", position);
+        evo.insert("date", duree);
+
+        (*itp)->append(evo);
+    }
+}
+
 // TODO A MODIFIER SOON
 void System::initJson(QString path)
 {
@@ -76,17 +102,17 @@ void System::initJson(QString path)
         QDir dir(path + "/" + name);
         if (!dir.exists())
           dir.mkdir(path + "/" + name);
-        planete.append(name);
+        planete.append("./" + name + ".json");
 
         //Infos fixe
         QJsonObject astre;
         astre.insert("name", name);
-
+        astre.insert("evolution",  "./" + name + "_evolution.json");
 
         QJsonDocument astre_json;
         astre_json.setObject(astre);
         QFile astre_file;
-        astre_file.setFileName(path + "/" + name + "/infos.json");
+        astre_file.setFileName(path + "/" + name + ".json");
         astre_file.open(QIODevice::WriteOnly | QIODevice::Truncate);
         astre_file.write(astre_json.toJson());
         astre_file.close();
@@ -99,6 +125,7 @@ void System::initJson(QString path)
         //Evolution
         QJsonObject evo;
         evo.insert("radius", (*itp)->getRadius());
+        evo.insert("date", 0);
 
         int *vec = (*itp)->getPositionVec();
         QJsonObject vector;
@@ -164,7 +191,7 @@ void System::endJson(QString path)
         astre_json.setObject(save);
 
         QFile astre_file;
-        astre_file.setFileName(path + "/" + name + "/evolution.json");
+        astre_file.setFileName(path + "/" + name + "_evolution.json");
         astre_file.open(QIODevice::WriteOnly | QIODevice::Truncate);
         astre_file.write(astre_json.toJson());
         astre_file.close();

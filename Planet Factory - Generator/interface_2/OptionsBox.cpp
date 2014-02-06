@@ -40,15 +40,21 @@ OptionsBox::~OptionsBox()
 void OptionsBox::generate()
 {
     _launchWindow->hide();
+
+    //jour
+    int inter = _interSpinBox[3]->value();
+    int duree = _timerSpinBox[3]->value();
+    qDebug() << "duree " << duree << " inter " << inter;
     QString path = QFileDialog::getExistingDirectory(this, tr("Chose save dir"));
     if (path.isEmpty())
       return;
 
     System *s = _parent->getSystem();
-    s->initJson(path);
-    s->endJson(path);
 
-    //s->evo();
+    s->initJson(path);
+    for (int i = 0; i < duree; i += inter)
+        s->evolution(i + inter);
+    s->endJson(path);
 }
 
 void OptionsBox::createWindowLaunch(void)
@@ -82,8 +88,8 @@ void OptionsBox::createWindowLaunch(void)
     {
         _interSpinBox[i] = new QSpinBox(_launchWindow);
         _timerSpinBox[i] = new QSpinBox(_launchWindow);
-        _interSpinBox[i]->setGeometry(60 + (i * 50), 85, 45, 25);
-        _timerSpinBox[i]->setGeometry(60 + (i * 50), 175, 45, 25);
+        _interSpinBox[i]->setGeometry(60 + (i * 50), 175, 45, 25);
+        _timerSpinBox[i]->setGeometry(60 + (i * 50), 85, 45, 25);
         _interSpinBox[i]->show();
         _timerSpinBox[i]->show();
     }
