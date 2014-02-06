@@ -109,17 +109,20 @@ void        OptionsBox::loadConfSystem()
     if (path.isEmpty())
       return;
 
+    QString settings;
     QFile file;
     file.setFileName(path);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
+    settings = file.readAll();
+    file.close();
 
-    QByteArray jsonData = file.readAll();
-    QJsonDocument json;
-    QJsonParseError err;
+    QJsonDocument json = QJsonDocument::fromJson(settings.toUtf8());
 
-    json.fromJson(jsonData, &err);
-    if(err.error != 0)
-        qDebug() << err.errorString();
+    if(json.isNull())
+    {
+        qDebug() << "NULL";
+        return;
+    }
     if(json.isObject())
     {
         _parent->setSystem(new System(json.object()));
@@ -129,7 +132,7 @@ void        OptionsBox::loadConfSystem()
     }
     else
     {
-        qDebug() << "D'OU t'es PAS un OBJET salope!";
+        qDebug() << "Fichier Json non compatible";
         return;
     }
 }
