@@ -13,6 +13,7 @@ public class ModifyPlanetHeight : MonoBehaviour {
 
 		displacement.Add(t);
 		Texture2D t2 = (Texture2D)Resources.Load ("Earth_old_displacement_sphere");
+		print("Texture print : " + t2);
 		displacement.Add ( t2);
 	}
 	

@@ -19,7 +19,7 @@
 				"y": 0,
 				"z": 0
 			},
-			"displacement":"./soleilDisplacement1.png",
+			"displacement":"Maps/soleilDisplacement1",
 			"materials": "./soleilMaterial1.png"
 		},
 		{
@@ -35,7 +35,7 @@
 				"y": 0,
 				"z": -5
 			},
-			"displacement":"./soleilDisplacement.png"
+			"displacement":"Maps/soleilDisplacement2"
 		},
 		{
 			"date": 7000,
@@ -51,7 +51,6 @@
 				"y": -10,
 				"z": 0
 			},
-			"displacement":"./soleilDisplacement.png"
 		},
 	]
 }
