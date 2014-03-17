@@ -2,11 +2,13 @@
 #include "System.h"
 
 Planet::Planet()
+    :_move(false), _evolve(false)
 {
     _mapCompo = new std::map<Component*, int>();
 }
 
 Planet::Planet(QJsonObject obj, System * s)
+    :_move(false), _evolve(false)
 {
     _mapCompo = new std::map<Component*, int>();
 
@@ -97,6 +99,16 @@ void Planet::setPositionVec(int X, int Y, int Z)
     _posVec[2] = Z;
 }
 
+void    Planet::move(bool b)
+{
+    _move = b;
+}
+
+void    Planet::evolve(bool b)
+{
+    _evolve = b;
+}
+
 int *Planet::getPosition(void)
 {
     return _pos;
@@ -105,4 +117,14 @@ int *Planet::getPosition(void)
 int *Planet::getPositionVec(void)
 {
     return _posVec;
+}
+
+bool    Planet::move(void) const
+{
+    return _move;
+}
+
+bool    Planet::evolve(void) const
+{
+    return _evolve;
 }
