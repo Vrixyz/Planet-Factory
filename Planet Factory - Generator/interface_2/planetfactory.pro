@@ -21,7 +21,10 @@ SOURCES +=  PlanetDetailsBox.cpp \
             Component.cpp \
             Planet.cpp \
             main.cpp \
-            System.cpp
+            System.cpp \
+    Generator.cpp \
+    Move.cpp \
+    Terrain.cpp
 
 HEADERS  += PlanetDetailsBox.hpp \
             PlanetCompoBox.hpp \
@@ -32,7 +35,10 @@ HEADERS  += PlanetDetailsBox.hpp \
             Component.hpp \
             include.hpp \
             Planet.hpp \
-            System.h
+            System.h \
+    Generator.h \
+    Move.h \
+    Terrain.h
 
 OTHER_FILES +=
 
