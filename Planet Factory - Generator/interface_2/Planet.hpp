@@ -1,6 +1,8 @@
 #ifndef PLANET_HPP
 #define PLANET_HPP
 
+#include <QMutex>
+
 #include <iostream>
 #include <list>
 #include <map>
@@ -48,7 +50,7 @@ public:
     bool                        evolve(void) const;
 
 private:
-
+    QMutex                  _mutex;
     QJsonArray              _evo;
     std::string             _name;
     int                     _radius;

@@ -7,6 +7,8 @@
 #include <QSpinBox>
 #include <QWidget>
 
+#include "Generator.h"
+
 class MainWindow;
 
 class OptionsBox : public QGroupBox

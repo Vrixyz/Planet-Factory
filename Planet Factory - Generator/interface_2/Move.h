@@ -2,6 +2,8 @@
 #define MOVE_H
 
 #include <QThread>
+#include <QtDebug>
+
 #include "System.h"
 
 class Move : public QThread

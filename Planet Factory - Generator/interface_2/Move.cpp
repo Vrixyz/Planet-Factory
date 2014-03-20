@@ -7,5 +7,5 @@ Move::Move(System * system)
 
 void    Move::run()
 {
-
+    qDebug() << "Moving...";
 }

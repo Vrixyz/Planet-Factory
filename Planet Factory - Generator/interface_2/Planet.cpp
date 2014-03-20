@@ -87,9 +87,11 @@ std::map<Component*, int> *Planet::getComponentMap(void)
 
 void Planet::setPosition(int X, int Y, int Z)
 {
+    _mutex.lock();
     _pos[0] = X;
     _pos[1] = Y;
     _pos[2] = Z;
+    _mutex.unlock();
 }
 
 void Planet::setPositionVec(int X, int Y, int Z)
@@ -101,7 +103,9 @@ void Planet::setPositionVec(int X, int Y, int Z)
 
 void    Planet::move(bool b)
 {
+    _mutex.lock();
     _move = b;
+    _mutex.unlock();
 }
 
 void    Planet::evolve(bool b)

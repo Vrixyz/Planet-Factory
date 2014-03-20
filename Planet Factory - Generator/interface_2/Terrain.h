@@ -2,6 +2,8 @@
 #define TERRAIN_H
 
 #include <QThread>
+#include <QtDebug>
+
 #include "Planet.hpp"
 
 class Terrain : public QThread

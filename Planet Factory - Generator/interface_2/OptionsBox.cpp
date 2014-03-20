@@ -50,11 +50,13 @@ void OptionsBox::generate()
       return;
 
     System *s = _parent->getSystem();
+    Generator * gen = new Generator(s, duree, inter);
 
     s->initJson(path);
-    for (int i = 0; i < duree; i += inter)
+    gen->run();
+    /*for (int i = 0; i < duree; i += inter)
         s->evolution(i + inter);
-    s->endJson(path);
+    s->endJson(path);*/
 }
 
 void OptionsBox::createWindowLaunch(void)
