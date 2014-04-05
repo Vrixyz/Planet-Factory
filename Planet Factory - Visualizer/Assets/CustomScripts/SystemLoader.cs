@@ -7,6 +7,8 @@ using System.Text;
 
 
 public class SystemLoader : MonoBehaviour {
+	public ArrayList planets = new ArrayList();
+	//public ArrayList materials = new ArrayList();
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +18,12 @@ public class SystemLoader : MonoBehaviour {
 		print(systemInfo);
 		var dict = Json.Deserialize (systemInfo) as Dictionary<string, object>;
 		print("dict['astres'][0]: " + ((List<object>) dict["astres"])[0]);
+
+
+		// store materials
+		//materials.Add (((Dictionary<string, object>)((List<object>)dict ["materials"]) [0]));
+
+
 
 		string astreInfo = Load ("Assets/Resources/System/1/" + ((List<object>) dict["astres"])[0]);
 		print(astreInfo);
@@ -34,14 +42,29 @@ public class SystemLoader : MonoBehaviour {
 		long z = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["z"];
 		instance.transform.position = new Vector3(x, y, z);
 
-		SGT_SurfaceDisplacement surfDisp = (SGT_SurfaceDisplacement)instance.AddComponent ("SGT_SurfaceDisplacement");
+		SGT_SurfaceDisplacement surfDisp = instance.AddComponent<SGT_SurfaceDisplacement>();
 		surfDisp.SourceSurfaceMesh.GetMultiMesh(CubemapFace.PositiveX).Add((Mesh)Resources.Load ("Sphere128 (Surface) (Sphere).asset"));
 
-		PlanetUpdater updater = (PlanetUpdater)instance.AddComponent ("PlanetUpdater");
+		PlanetUpdater updater = instance.AddComponent<PlanetUpdater>();
+
+		// materials evolution
+
+		List<object> materialsEvolution = (dictEvolution ["materials"]) as List<object>;
+
+		print (dictEvolution ["materials"]);
+		Dictionary<string, object> materialEvolution1 = materialsEvolution [0] as Dictionary<string, object>;
+		print (materialEvolution1);
+		print (materialEvolution1 ["name"].ToString ());
+		print (materialEvolution1 ["file"].ToString ());
+
+		updater.materials [ materialEvolution1["name"].ToString()] = (Texture2D)Resources.Load ("System/1/" + materialEvolution1["file"].ToString());
+		print (updater.materials [materialEvolution1 ["name"].ToString ()]);
+
 		updater.setEvolutions(evolutionList);
 		updater.definition = dictPlanet;
+		planets.Add (instance);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	
