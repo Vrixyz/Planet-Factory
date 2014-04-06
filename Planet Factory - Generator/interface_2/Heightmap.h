@@ -2,6 +2,11 @@
 #define HEIGHTMAP_H
 
 #include <string>
+#include <ctime>
+#include <cstdlib>
+#include <iostream>
+
+#include "MapInfo.h"
 
 class HeightMap
 {
@@ -11,11 +16,14 @@ public:
     int exportHeighMap(const std::string & name, const std::string & path);
     //Update map
     int changeAlt(int x, int y, int z);
+    //Create random zone
+    int PlateTectonic(int n);
 
     /**Getter **/
-    int ** map(void)const;
+    MapInfo *** map(void)const;
 private:
-    int ** _map;
+    int         _r;
+    MapInfo *** _map;
 
 };
 

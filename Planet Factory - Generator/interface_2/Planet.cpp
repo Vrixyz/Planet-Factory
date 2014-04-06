@@ -33,6 +33,8 @@ Planet::Planet(QJsonObject obj, System * s)
 
        _mapCompo->insert(std::make_pair(c, comp["percent"].toInt()));
    }
+    _hm = new HeightMap(_radius);
+    _hm->PlateTectonic(4);
 }
 
 Planet::~Planet()

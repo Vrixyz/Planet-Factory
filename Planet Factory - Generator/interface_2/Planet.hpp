@@ -7,9 +7,11 @@
 #include <list>
 #include <map>
 
-#include "Component.hpp"
 #include <QJsonArray>
 #include <QJsonObject>
+
+#include "Component.hpp"
+#include "Heightmap.h"
 
 class System;
 
@@ -61,6 +63,7 @@ private:
     bool                    _evolve;
 
     std::map<Component*, int>   *_mapCompo;
+    HeightMap *             _hm;
 
 };
 
