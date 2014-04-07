@@ -42,6 +42,7 @@ public:
     void                    append(QJsonObject);
     QJsonArray              getJson();
 
+    void                    init();
     std::string                 getName(void);
     PlanetType                  getType(void);
     int                         getRadius(void);

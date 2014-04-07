@@ -5,8 +5,11 @@
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
+#include <list>
 
 #include "MapInfo.h"
+
+#define RATIO_PLATE 25
 
 class HeightMap
 {
@@ -19,11 +22,18 @@ public:
     //Create random zone
     int PlateTectonic(int n);
 
+    void    printMap();
+
     /**Getter **/
     MapInfo *** map(void)const;
 private:
+    int         _n;
     int         _r;
+    int         _x;
+    int         _y;
     MapInfo *** _map;
+
+    void        _updateMap(int x, int y, int c);
 
 };
 

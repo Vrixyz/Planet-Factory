@@ -33,8 +33,6 @@ Planet::Planet(QJsonObject obj, System * s)
 
        _mapCompo->insert(std::make_pair(c, comp["percent"].toInt()));
    }
-    _hm = new HeightMap(_radius);
-    _hm->PlateTectonic(4);
 }
 
 Planet::~Planet()
@@ -80,6 +78,12 @@ PlanetType  Planet::getType(void)
 int Planet::getRadius(void)
 {
     return (_radius);
+}
+
+void    Planet::init()
+{
+    _hm = new HeightMap(_radius);
+    _hm->PlateTectonic(_radius % RATIO_PLATE);
 }
 
 std::map<Component*, int> *Planet::getComponentMap(void)

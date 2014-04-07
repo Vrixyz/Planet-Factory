@@ -11,7 +11,7 @@ class Terrain : public QThread
     Q_OBJECT
 public:
     Terrain(Planet *);
-
+    Planet * planet(void) const;
 private:
     void run();
     Planet * _planet;
