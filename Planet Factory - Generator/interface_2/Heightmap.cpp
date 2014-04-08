@@ -22,7 +22,7 @@ int HeightMap::PlateTectonic(int n)
     if (n == 0)
         n = 1;
     _n = n;
-    std::cout << "Radius of this planet " << _r << std::endl;
+    std::cout << "Radius of this planet " << _r << " Plate number : " << n << std::endl;
     srand(time(0));
     int x, y; //Plate init
     for (int i = 1; i <= n; i++)
@@ -49,14 +49,14 @@ int HeightMap::PlateTectonic(int n)
             bool find = false;
             if (_map[x][y]->n() != 0)//A plate found
             {
-                std::cout << "Plate found at " << x << " " << y << " " << _map[x][y]->n() << std::endl;
+                //std::cout << "Plate found at " << x << " " << y << " " << _map[x][y]->n() << std::endl;
                 std::list<int>::iterator it;
                 for (it = check.begin(); it != check.end(); it++)
                 {
-                    std::cout << "Check if already in the list" << std::endl;
+                    //std::cout << "Check if already in the list" << std::endl;
                     if ((*it) == _map[x][y]->n())
                     {
-                        std::cout << "Find..." << std::endl;
+                        //std::cout << "Find..." << std::endl;
                         find = true;
                         break;
                     }
@@ -66,12 +66,17 @@ int HeightMap::PlateTectonic(int n)
                     std::cout << "Not on list" << std::endl;
                     check.push_back(_map[x][y]->n());
                     //Upate tectonique plate
-                    _updateMap(x, y, _map[x][y]->n());
-                    x = 0;
-                    y = 0;
-                    counter++;
+                    if (_updateMap(x, y, _map[x][y]->n()) == 0)
+                    {
+                        counter++;
+                        x = 0;
+                        y = 0;
+                    }
                     if (counter == (_x * _y))
-                        break;
+                    {
+                        std::cout << "Counter : " << counter << std::endl;
+                        return 0;
+                    }
                 }
             }
             if (check.size() == (unsigned int)n) // list full
@@ -81,32 +86,59 @@ int HeightMap::PlateTectonic(int n)
             }
         }
     }
-    printMap();
     return 0;
 }
 
-void    HeightMap::_updateMap(int x, int y, int c)
+int    HeightMap::_updateMap(int x, int y, int c)
 {
     std::cout << "Update of the map..." << std::endl;
     int nx, ny;
-    if (x > 0 && x < _x)
+
+    //Left
+    if (x - 1 < 0)
+        nx = _x - 1;
+    else
+        nx = x - 1;
+    if (_map[nx][y]->n() == 0)
     {
-        if (y > 0 && y < _y)
-        {
-            for (nx = x - 1; nx <= x + 1; x++)
-            {
-                for (ny = y - 1; ny <= y + 1; y++)
-                {
-                    if (_map[nx][ny]->n() == 0)
-                    {
-                        std::cout << "Ajout de " << c << " en x: " << nx << " y: " << ny << std::endl;
-                        _map[nx][ny]->n(c);
-                        return;
-                    }
-                }
-            }
-        }
+        _map[nx][y]->n(c);
+        return 0;
     }
+
+    //Top
+    if (y - 1 < 0)
+        ny = _y - 1;
+    else
+        ny = y - 1;
+    if (_map[x][ny]->n() == 0)
+    {
+        _map[x][ny]->n(c);
+        return 0;
+    }
+
+    //Right
+    if (x + 1 >= _x)
+        nx = 0;
+    else
+        nx = x + 1;
+    if (_map[nx][y]->n() == 0)
+    {
+        _map[nx][y]->n(c);
+        return 0;
+    }
+
+
+    //Bot
+    if (y + 1 >= _y)
+        ny = 0;
+    else
+        ny = y + 1;
+    if (_map[x][ny]->n() == 0)
+    {
+        _map[x][ny]->n(c);
+        return 0;
+    }
+    return 1;
 }
 
 void    HeightMap::printMap()

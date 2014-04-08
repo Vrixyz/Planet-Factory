@@ -83,7 +83,8 @@ int Planet::getRadius(void)
 void    Planet::init()
 {
     _hm = new HeightMap(_radius);
-    _hm->PlateTectonic(_radius % RATIO_PLATE);
+    _hm->PlateTectonic(_radius / RATIO_PLATE + 1);
+    _hm->printMap();
 }
 
 std::map<Component*, int> *Planet::getComponentMap(void)

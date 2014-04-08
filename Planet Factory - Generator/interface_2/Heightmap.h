@@ -33,7 +33,7 @@ private:
     int         _y;
     MapInfo *** _map;
 
-    void        _updateMap(int x, int y, int c);
+    int _updateMap(int x, int y, int c);
 
 };
 
