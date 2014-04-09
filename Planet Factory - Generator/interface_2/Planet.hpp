@@ -7,9 +7,11 @@
 #include <list>
 #include <map>
 
-#include "Component.hpp"
 #include <QJsonArray>
 #include <QJsonObject>
+
+#include "Component.hpp"
+#include "Heightmap.h"
 
 class System;
 
@@ -40,6 +42,7 @@ public:
     void                    append(QJsonObject);
     QJsonArray              getJson();
 
+    void                    init();
     std::string                 getName(void);
     PlanetType                  getType(void);
     int                         getRadius(void);
@@ -61,6 +64,7 @@ private:
     bool                    _evolve;
 
     std::map<Component*, int>   *_mapCompo;
+    HeightMap *             _hm;
 
 };
 

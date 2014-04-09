@@ -8,6 +8,7 @@ Generator::Generator(System * system, int time, int inter)
 
 int     Generator::run()
 {
+    Terrain * t;
     qDebug() << "Starting generation...";
     //Construction de tout les threads, 1 par planète, 1 pour les déplacements
     qDebug() << "Creating threads...";
@@ -16,6 +17,7 @@ int     Generator::run()
     for(it = _system->getPlanetList()->begin(); it != _system->getPlanetList()->end(); ++it)
     {
         _terrains->push_front(new Terrain(*it));
+        (*it)->init();
     }
     qDebug() << "Threads creation done...";
     qDebug() << "Starting main loop...";
@@ -30,7 +32,7 @@ int     Generator::run()
         std::list<Terrain*>::iterator itT;
         for(itT = _terrains->begin(); itT != _terrains->end(); ++itT)
         {
-            Terrain * t = *itT;
+            t = *itT;
             t->start();
         }
     }
