@@ -10,6 +10,44 @@ public class SystemLoader : MonoBehaviour {
 	public ArrayList planets = new ArrayList();
 	//public ArrayList materials = new ArrayList();
 
+	void loadFromAstralInfo(Dictionary<string, object> dictPlanet) {
+		print("dictPlanet['name']: " + dictPlanet["name"]);
+		GameObject instance = Instantiate(Resources.Load("Prefabs/PlanetSphere")) as GameObject;
+		
+		string evolutionInfo = Load ("Assets/Resources/System/1/" + dictPlanet["evolution"]);
+		var dictEvolutions =  Json.Deserialize (evolutionInfo) as Dictionary<string, object>;
+		var evolutionList = dictEvolutions["evolutions"] as List< object >;
+		
+		var dictEvolution = evolutionList[0] as Dictionary<string, object>;
+		print("full position: " + ((Dictionary<string, object>)dictEvolution["pos"])["x"] + ";" + ((Dictionary<string, object>)dictEvolution["pos"])["y"] + ";" + ((Dictionary<string, object>)dictEvolution["pos"])["z"]);
+		long x = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["x"];
+		long y = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["y"];
+		long z = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["z"];
+		instance.transform.position = new Vector3(x, y, z);
+		
+		SGT_SurfaceDisplacement surfDisp = instance.AddComponent<SGT_SurfaceDisplacement>();
+		surfDisp.SourceSurfaceMesh.GetMultiMesh(CubemapFace.PositiveX).Add((Mesh)Resources.Load ("Sphere128 (Surface) (Sphere).asset"));
+		
+		PlanetUpdater updater = instance.AddComponent<PlanetUpdater>();
+		
+		// materials evolution
+		
+		List<object> materialsEvolution = (dictEvolution ["materials"]) as List<object>;
+		
+		print (dictEvolution ["materials"]);
+		Dictionary<string, object> materialEvolution1 = materialsEvolution [0] as Dictionary<string, object>;
+		print (materialEvolution1);
+		print (materialEvolution1 ["name"].ToString ());
+		print (materialEvolution1 ["file"].ToString ());
+		
+		updater.materials [ materialEvolution1["name"].ToString()] = (Texture2D)Resources.Load ("System/1/" + materialEvolution1["file"].ToString());
+		print (updater.materials [materialEvolution1 ["name"].ToString ()]);
+		
+		updater.setEvolutions(evolutionList);
+		updater.definition = dictPlanet;
+		planets.Add (instance);
+	}
+
 	// Use this for initialization
 	void Start () {
 		string systemInfo;
@@ -24,45 +62,12 @@ public class SystemLoader : MonoBehaviour {
 		//materials.Add (((Dictionary<string, object>)((List<object>)dict ["materials"]) [0]));
 
 
-
-		string astreInfo = Load ("Assets/Resources/System/1/" + ((List<object>) dict["astres"])[0]);
-		print(astreInfo);
-		var dictPlanet = Json.Deserialize (astreInfo) as Dictionary<string, object>;
-		print("dictPlanet['name']: " + dictPlanet["name"]);
-		GameObject instance = Instantiate(Resources.Load("Prefabs/PlanetSphere")) as GameObject;
-
-		string evolutionInfo = Load ("Assets/Resources/System/1/" + dictPlanet["evolution"]);
-		var dictEvolutions =  Json.Deserialize (evolutionInfo) as Dictionary<string, object>;
-		var evolutionList = dictEvolutions["evolutions"] as List< object >;
-
-		var dictEvolution = evolutionList[0] as Dictionary<string, object>;
-		print("full position: " + ((Dictionary<string, object>)dictEvolution["pos"])["x"] + ";" + ((Dictionary<string, object>)dictEvolution["pos"])["y"] + ";" + ((Dictionary<string, object>)dictEvolution["pos"])["z"]);
-		long x = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["x"];
-		long y = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["y"];
-		long z = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["z"];
-		instance.transform.position = new Vector3(x, y, z);
-
-		SGT_SurfaceDisplacement surfDisp = instance.AddComponent<SGT_SurfaceDisplacement>();
-		surfDisp.SourceSurfaceMesh.GetMultiMesh(CubemapFace.PositiveX).Add((Mesh)Resources.Load ("Sphere128 (Surface) (Sphere).asset"));
-
-		PlanetUpdater updater = instance.AddComponent<PlanetUpdater>();
-
-		// materials evolution
-
-		List<object> materialsEvolution = (dictEvolution ["materials"]) as List<object>;
-
-		print (dictEvolution ["materials"]);
-		Dictionary<string, object> materialEvolution1 = materialsEvolution [0] as Dictionary<string, object>;
-		print (materialEvolution1);
-		print (materialEvolution1 ["name"].ToString ());
-		print (materialEvolution1 ["file"].ToString ());
-
-		updater.materials [ materialEvolution1["name"].ToString()] = (Texture2D)Resources.Load ("System/1/" + materialEvolution1["file"].ToString());
-		print (updater.materials [materialEvolution1 ["name"].ToString ()]);
-
-		updater.setEvolutions(evolutionList);
-		updater.definition = dictPlanet;
-		planets.Add (instance);
+		foreach (string obj in ((List<object>) dict["astres"])) {
+						string astreInfo = Load ("Assets/Resources/System/1/" + obj);
+						print (astreInfo);
+						var dictPlanet = Json.Deserialize (astreInfo) as Dictionary<string, object>;
+						loadFromAstralInfo (dictPlanet);
+				}
 	}
 
 	// Update is called once per frame
