@@ -1,0 +1,6 @@
+{
+	"name": "Soleil",
+	"type": "sun",
+	"sunType": "G",
+	"evolution":"./soleilEvolution.json",
+}
