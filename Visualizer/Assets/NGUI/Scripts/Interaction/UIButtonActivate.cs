@@ -12,8 +12,23 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Button Activate")]
 public class UIButtonActivate : MonoBehaviour
 {
-    public GameObject target;
-    public bool state = true;
+	public string message = "";
+	public float alpha = 1.0f;
+	public char pathChar = '/';
+	
+	void Start () {
+		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer) {
+			pathChar = '\\';
+		}
+	}
+	
+	void OnClick () {
+		UniFileBrowser.use.OpenFileWindow (OpenFile);
+	}
+	
+	void OpenFile (string pathToFile) {
+		var fileIndex = pathToFile.LastIndexOf (pathChar);
+		message = "You selected file: " + pathToFile.Substring (fileIndex+1, pathToFile.Length-fileIndex-1);
+	}
 
-    void OnClick () { if (target != null) NGUITools.SetActive(target, state); }
 }
