@@ -1,7 +1,7 @@
 QMainWindow
 {
 	background-color: #303030;
-	background-image: url(../interface_2/bgcosmos2.jpg);
+	background-image: url(./res/bgcosmos2.jpg);
 }
 
 QGroupBox
