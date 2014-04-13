@@ -1,0 +1,15 @@
+QMainWindow
+{
+	background-color: #303030;
+	background-image: url(../interface_2/bgcosmos2.jpg);
+}
+
+QGroupBox
+{
+	color: white;
+}
+
+QLabel
+{
+	color: white;
+}

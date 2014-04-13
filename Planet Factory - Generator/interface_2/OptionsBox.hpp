@@ -44,6 +44,7 @@ public slots:
     void    loadConfSystem();
     void    saveConfSystem();
     void    windowLaunch();
+    void    resetAll();
     void    generate();
 
 };

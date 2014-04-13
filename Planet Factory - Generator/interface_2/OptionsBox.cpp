@@ -20,7 +20,7 @@ OptionsBox::OptionsBox(MainWindow *parent) : QGroupBox(parent), _parent(parent)
     _reset = new QPushButton(this);
     _reset->setGeometry(45, 205, 105, 40);
     _reset->setText("Reset");
-    _reset->setEnabled(FALSE);
+    _reset->setEnabled(TRUE);
 
     _launchWindow = new QDialog();
     _launchWindow->setFixedSize(300, 275);
@@ -28,13 +28,24 @@ OptionsBox::OptionsBox(MainWindow *parent) : QGroupBox(parent), _parent(parent)
     createWindowLaunch();
 
     QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(windowLaunch()));
+    QObject::connect(_reset, SIGNAL(clicked()), this, SLOT(resetAll()));
     QObject::connect(_save, SIGNAL(clicked()), this, SLOT(saveConfSystem()));
     QObject::connect(_load, SIGNAL(clicked()), this, SLOT(loadConfSystem()));
-    QObject::connect(_reset, SIGNAL(clicked()), qApp, SLOT(quit()));
 }
 
 OptionsBox::~OptionsBox()
 {
+}
+
+void OptionsBox::resetAll()
+{
+    _parent->getSystem()->getComponentList()->clear();
+    _parent->getSystem()->getPlanetList()->clear();
+    _parent->getCelestial()->cleanAllFields();
+    _parent->getCelestial()->updateListPlanet();
+    _parent->getPlanetCompo()->updateListCompoPla();
+    _parent->getPlanetCompo()->updateListCompoSys();
+    _parent->getPlanetCompo()->checkPercentPla();
 }
 
 void OptionsBox::generate()
@@ -126,12 +137,12 @@ void        OptionsBox::loadConfSystem()
 
     QJsonDocument json = QJsonDocument::fromJson(settings.toUtf8());
 
-    if(json.isNull())
+    if (json.isNull())
     {
         qDebug() << "NULL";
         return;
     }
-    if(json.isObject())
+    if (json.isObject())
     {
         _parent->setSystem(new System(json.object()));
         _parent->getPlanetCompo()->updateListCompoSys();
@@ -180,7 +191,7 @@ void        OptionsBox::saveConfSystem()
 
         QString name = (*itp)->getName().c_str();
         obj.insert("name", name);
-//        obj.insert("type", (*itc)->getSolidTemp());
+//      obj.insert("type", (*itc)->getSolidTemp());
         obj.insert("radius", (*itp)->getRadius());
 
         int *vec = (*itp)->getPositionVec();
