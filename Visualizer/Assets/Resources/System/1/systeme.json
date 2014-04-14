@@ -3,9 +3,7 @@
 	"nombreAstres": 4,
 	"astres": [
 		"./soleil.json",
-		"./terre.json",
-		"./gas.json",
-		"./asteroide.json"
+		"./moon.json"
 	],
 	"materials": {
 		"material": {

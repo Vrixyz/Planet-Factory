@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NGUI\Scripts\Interaction\UIButtonActivate.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CustomScripts\PlanetUpdater.cs">
     <Files>
-      <File FileName="Assets\UniFileBrowser Assets\Demo\UniFileBrowserExample.cs" Line="13" Column="15" />
-      <File FileName="Assets\NGUI\Scripts\Interaction\UIButtonActivate.cs" Line="26" Column="3" />
+      <File FileName="Assets\CustomScripts\SystemLoader.cs" Line="36" Column="3" />
+      <File FileName="Assets\CustomScripts\PlanetUpdater.cs" Line="72" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -23,7 +23,9 @@ public class SystemLoader : MonoBehaviour {
 		long x = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["x"];
 		long y = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["y"];
 		long z = (long)((Dictionary<string, object>)dictEvolution ["pos"]) ["z"];
+		long size = (long)dictEvolution ["radius"];
 		instance.transform.position = new Vector3(x, y, z);
+		instance.transform.localScale = new Vector3(size, size, size);
 		
 		SGT_SurfaceDisplacement surfDisp = instance.AddComponent<SGT_SurfaceDisplacement>();
 		surfDisp.SourceSurfaceMesh.GetMultiMesh(CubemapFace.PositiveX).Add((Mesh)Resources.Load ("Sphere128 (Surface) (Sphere).asset"));

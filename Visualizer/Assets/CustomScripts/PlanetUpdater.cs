@@ -39,6 +39,7 @@ public class PlanetUpdater : MonoBehaviour {
 		bool uRot = false;
 		bool uDisplacement = false;
 		Dictionary<string, object> nextPosition = new Dictionary<string, object>();
+		Dictionary<string, object> nextRotation = new Dictionary<string, object>();
 
 		for (int i = evolutions.Count - 1; i >= 0; --i) {
 			Dictionary<string, object> current = (Dictionary<string, object>)(evolutions[i]);
@@ -49,25 +50,31 @@ public class PlanetUpdater : MonoBehaviour {
 					long y = (long) ((Dictionary<string, object>)current["pos"]) ["y"];
 					long z = (long) ((Dictionary<string, object>)current["pos"]) ["z"];
 					// TODO: then extrapolate to the exact time.
-					Vector3 currentPosition = new Vector3(x, y, z);
+					Vector3 currentP = new Vector3(x, y, z);
 					if (nextPosition.ContainsKey("date"))
 					{
 						float progress = (((float)(time.timer.ElapsedMilliseconds) - (float)((long)current["date"])) / (((float)((long)nextPosition["date"]) - (float)((long)current["date"]))));
 						//print ("progress: " + progress);
-						currentPosition.x += ((long)(((Dictionary<string, object>)nextPosition["pos"])["x"]) - currentPosition.x) * progress;
-						currentPosition.y += ((long)(((Dictionary<string, object>)nextPosition["pos"])["y"]) - currentPosition.y) * progress;
-						currentPosition.z += ((long)(((Dictionary<string, object>)nextPosition["pos"])["z"]) - currentPosition.z) * progress;
+						currentP.x += ((long)(((Dictionary<string, object>)nextPosition["pos"])["x"]) - currentP.x) * progress;
+						currentP.y += ((long)(((Dictionary<string, object>)nextPosition["pos"])["y"]) - currentP.y) * progress;
+						currentP.z += ((long)(((Dictionary<string, object>)nextPosition["pos"])["z"]) - currentP.z) * progress;
 
 					}
-					this.gameObject.transform.position = currentPosition;
+					this.gameObject.transform.position = currentP;
 					uPos = true;
 				}
 				if (uRot == false && current.ContainsKey("rotation"))
 				{
-					long x = (long) (current["rotation"]);
+					float rot = (long) (current["rotation"]);
 					//print ("rotation: " + x);
-					// TODO: then extrapolate to the exact time.
-					this.gameObject.transform.eulerAngles = new Vector3(x, 0, 0);
+					if (nextPosition.ContainsKey("date"))
+					{
+						float progress = (((float)(time.timer.ElapsedMilliseconds) - (float)((long)current["date"])) / (((float)((long)nextRotation["date"]) - (float)((long)current["date"]))));
+						//print ("progress: " + progress);
+						rot += (((long)(nextRotation["rotation"])) - rot) * progress;
+
+					}
+					this.gameObject.transform.eulerAngles = new Vector3(0, rot, 0);
 					uRot = true;
 				}
 				if (uDisplacement == false && current.ContainsKey("displacement"))
@@ -80,6 +87,8 @@ public class PlanetUpdater : MonoBehaviour {
 			}
 			if (current.ContainsKey("pos"))
 				nextPosition = current;
+			if (current.ContainsKey("rotation"))
+				nextRotation = current;
 		}
 	}
 }
