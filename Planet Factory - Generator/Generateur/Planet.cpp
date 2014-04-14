@@ -65,6 +65,21 @@ void    Planet::setRadius(int radius)
     _radius = radius;
 }
 
+void    Planet::setTilt(int tilt)
+{
+    _tilt = tilt;
+}
+
+void    Planet::setRevo(int revo)
+{
+    _revo = revo;
+}
+
+void    Planet::setDistance(int distance)
+{
+    _distance = distance;
+}
+
 std::string Planet::getName(void)
 {
     return (_name);
@@ -78,6 +93,21 @@ PlanetType  Planet::getType(void)
 int Planet::getRadius(void)
 {
     return (_radius);
+}
+
+int Planet::getDistance(void)
+{
+    return (_distance);
+}
+
+int Planet::getRevo(void)
+{
+    return (_revo);
+}
+
+int Planet::getTilt(void)
+{
+    return (_tilt);
 }
 
 void    Planet::init()

@@ -35,6 +35,9 @@ public:
     void                    setName(std::string);
     void                    setType(PlanetType);
     void                    setRadius(int);
+    void                    setDistance(int);
+    void                    setRevo(int);
+    void                    setTilt(int);
     void                    setPosition(int, int, int);
     void                    setPositionVec(int, int, int);
     void                    move(bool);
@@ -46,6 +49,9 @@ public:
     std::string                 getName(void);
     PlanetType                  getType(void);
     int                         getRadius(void);
+    int                         getDistance(void);
+    int                         getRevo(void);
+    int                         getTilt(void);
     std::map<Component*, int>   *getComponentMap(void);
     int                         *getPosition(void);
     int                         *getPositionVec(void);
@@ -57,6 +63,9 @@ private:
     QJsonArray              _evo;
     std::string             _name;
     int                     _radius;
+    int                     _distance;
+    int                     _tilt;
+    int                     _revo;
     PlanetType              _type;
     int                     _pos[3];
     int                     _posVec[3];

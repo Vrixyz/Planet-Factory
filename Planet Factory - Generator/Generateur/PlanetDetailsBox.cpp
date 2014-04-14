@@ -6,6 +6,7 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QGroupBox(parent)
     setGeometry(305, 105, 690, 295);
     setTitle("Planet Detail");
 
+/*
     _boxPosition = new GroupTools(parent);
     _boxPosition->setGeometry(315, 180, 330, 210);
     _boxPosition->setTitle("Position");
@@ -13,33 +14,56 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QGroupBox(parent)
     _boxPositionVector = new GroupTools(parent);
     _boxPositionVector->setGeometry(655, 180, 330, 210);
     _boxPositionVector->setTitle("Position Vector");
+*/
 
     _lName = new QLabel("Name :", this);
     _lRadius = new QLabel("Radius (km) :", this);
     _lType = new QLabel("Planet Type :", this);
+    _lDistance = new QLabel("Distance (AU) :", this);
+    _lTilt = new QLabel("Tilt (°) :", this);
+    _lRevo = new QLabel("Period of revolution (days) :", this);
+
     _eName = new QLineEdit(this);
     _eRadius = new QSpinBox(this);
     _eType = new QComboBox(this);
+    _eDistance = new QSpinBox(this);
+    _eTilt = new QSpinBox(this);
+    _eRevo = new QSpinBox(this);
 
-    _lName->setGeometry(10, 43, 100, 15);
-    _lRadius->setGeometry(211, 43, 100, 15);
-    _lType->setGeometry(457, 43, 150, 15);
+    _lName->setGeometry(60, 43, 100, 15);
+    _lRadius->setGeometry(60, 143, 100, 15);
+    _lDistance->setGeometry(60, 243, 100, 15);
+    _lType->setGeometry(330, 43, 150, 15);
+    _lTilt->setGeometry(330, 143, 100, 15);
+    _lRevo->setGeometry(330, 243, 150, 15);
 
-    _eName->setGeometry(63, 35, 100, 30);
+    _eName->setGeometry(150, 35, 100, 30);
     _eName->setText("");
-    _eRadius->setGeometry(302, 35, 100, 30);
+    _eRadius->setGeometry(150, 135, 100, 30);
     _eRadius->setMinimum(1);
     _eRadius->setMaximum(1000000);
     _eRadius->setValue(1);
+    _eDistance->setGeometry(150, 235, 100, 30);
+    _eDistance->setMinimum(1);
+    _eDistance->setMaximum(1000000);
+    _eDistance->setValue(1);
+    _eTilt->setGeometry(502, 135, 100, 30);
+    _eTilt->setMinimum(1);
+    _eTilt->setMaximum(1000000);
+    _eTilt->setValue(1);
+    _eRevo->setGeometry(502, 235, 100, 30);
+    _eRevo->setMinimum(1);
+    _eRevo->setMaximum(1000000);
+    _eRevo->setValue(1);
 
-    _eType->setGeometry(552, 35, 130, 30);
+    _eType->setGeometry(474, 35, 130, 30);
     _eType->addItem("Star");
     _eType->addItem("Telluric planet");
     _eType->addItem("Gazeous planet");
     _eType->addItem("Asteroid");
 
-    buildPosition();
-    buildPositionVector();
+//    buildPosition();
+//    buildPositionVector();
 }
 
 PlanetDetailsBox::~PlanetDetailsBox()
@@ -98,8 +122,11 @@ void PlanetDetailsBox::setInfosDetails(Planet* toSet)
 {
     toSet->setName(_eName->text().toStdString());
     toSet->setRadius(_eRadius->value());
-    toSet->setPosition(_ePosX->value(), _ePosY->value(), _ePosZ->value());
-    toSet->setPositionVec(_ePosVecX->value(), _ePosVecY->value(), _ePosVecZ->value());
+    toSet->setDistance(_eDistance->value());
+    toSet->setTilt(_eTilt->value());
+    toSet->setRevo(_eRevo->value());
+//    toSet->setPosition(_ePosX->value(), _ePosY->value(), _ePosZ->value());
+//    toSet->setPositionVec(_ePosVecX->value(), _ePosVecY->value(), _ePosVecZ->value());
     if (_eType->currentText().toStdString() == "Star")
       toSet->setType(STAR);
     else if (_eType->currentText().toStdString() == "Telluric planet")

@@ -59,12 +59,15 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
             pos = (*it)->getPosition();
             posVec = (*it)->getPositionVec();
             _parent->getPlanetDetails()->_eRadius->setValue((*it)->getRadius());
-            _parent->getPlanetDetails()->_ePosX->setValue(pos[0]);
+            _parent->getPlanetDetails()->_eDistance->setValue((*it)->getDistance());
+            _parent->getPlanetDetails()->_eRevo->setValue((*it)->getRevo());
+            _parent->getPlanetDetails()->_eTilt->setValue((*it)->getTilt());
+/*            _parent->getPlanetDetails()->_ePosX->setValue(pos[0]);
             _parent->getPlanetDetails()->_ePosY->setValue(pos[1]);
             _parent->getPlanetDetails()->_ePosZ->setValue(pos[2]);
             _parent->getPlanetDetails()->_ePosVecX->setValue(posVec[0]);
             _parent->getPlanetDetails()->_ePosVecY->setValue(posVec[1]);
-            _parent->getPlanetDetails()->_ePosVecZ->setValue(posVec[2]);
+            _parent->getPlanetDetails()->_ePosVecZ->setValue(posVec[2]);*/
             _parent->getPlanetCompo()->_compoAdd->setEnabled(TRUE);
             _parent->getPlanetCompo()->updateListCompoPla();
             _del->setEnabled(TRUE);
@@ -106,8 +109,11 @@ void CelestialBox::addObject()
         {
             (*it)->setName(_parent->getPlanetDetails()->_eName->text().toStdString().c_str());
             (*it)->setRadius(_parent->getPlanetDetails()->_eRadius->value());
-            (*it)->setPosition(_parent->getPlanetDetails()->_ePosX->value(), _parent->getPlanetDetails()->_ePosY->value(), _parent->getPlanetDetails()->_ePosZ->value());
-            (*it)->setPositionVec(_parent->getPlanetDetails()->_ePosVecX->value(), _parent->getPlanetDetails()->_ePosVecY->value(), _parent->getPlanetDetails()->_ePosVecZ->value());
+            (*it)->setDistance(_parent->getPlanetDetails()->_eDistance->value());
+            (*it)->setRevo(_parent->getPlanetDetails()->_eRevo->value());
+            (*it)->setTilt(_parent->getPlanetDetails()->_eTilt->value());
+            //(*it)->setPosition(_parent->getPlanetDetails()->_ePosX->value(), _parent->getPlanetDetails()->_ePosY->value(), _parent->getPlanetDetails()->_ePosZ->value());
+            //(*it)->setPositionVec(_parent->getPlanetDetails()->_ePosVecX->value(), _parent->getPlanetDetails()->_ePosVecY->value(), _parent->getPlanetDetails()->_ePosVecZ->value());
             if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Star"))
                 (*it)->setType(STAR);
             else if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Telluric planet"))
@@ -130,11 +136,14 @@ void CelestialBox::cleanAllFields()
     _parent->getPlanetDetails()->_eName->setText("");
     _parent->getPlanetDetails()->_eType->setCurrentIndex(0);
     _parent->getPlanetDetails()->_eRadius->setValue(1);
-    _parent->getPlanetDetails()->_ePosX->setValue(0);
+    _parent->getPlanetDetails()->_eDistance->setValue(1);
+    _parent->getPlanetDetails()->_eRevo->setValue(1);
+    _parent->getPlanetDetails()->_eTilt->setValue(1);
+/*    _parent->getPlanetDetails()->_ePosX->setValue(0);
     _parent->getPlanetDetails()->_ePosY->setValue(0);
     _parent->getPlanetDetails()->_ePosZ->setValue(0);
     _parent->getPlanetDetails()->_ePosVecX->setValue(0);
     _parent->getPlanetDetails()->_ePosVecY->setValue(0);
-    _parent->getPlanetDetails()->_ePosVecZ->setValue(0);
+    _parent->getPlanetDetails()->_ePosVecZ->setValue(0);*/
     _del->setEnabled(FALSE);
 }

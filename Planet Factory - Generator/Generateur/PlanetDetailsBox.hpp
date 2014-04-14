@@ -39,6 +39,11 @@ public:
     QLineEdit *_eName;
     QComboBox *_eType;
 
+    QSpinBox *_eDistance;
+    QSpinBox *_eTilt;
+    QSpinBox *_eRevo;
+
+
 private:
 
     GroupTools  *_boxPosition;
@@ -47,6 +52,11 @@ private:
     QLabel *_lName;
     QLabel *_lRadius;
     QLabel *_lType;
+
+    QLabel *_lDistance;
+    QLabel *_lTilt;
+    QLabel *_lRevo;
+
     QLabel *_lPosX;
     QLabel *_lPosY;
     QLabel *_lPosZ;
