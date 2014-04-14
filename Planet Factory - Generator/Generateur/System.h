@@ -24,10 +24,9 @@ public:
     Component               *getComponentByName(std::string);
 
     void                    initJson(QString);
-    void                    evolution(int);
-    void                    endJson(QString);
+    void                    endJson();
 private:
-
+    QString _path;
     std::list<Planet*>      *_listPlanet;
     std::list<Component*>   *_listCompo;
 };

@@ -15,11 +15,6 @@ Planet::Planet(QJsonObject obj, System * s)
     _name = obj["name"].toString().toStdString();
     _radius = obj["radius"].toInt();
 
-   QJsonObject vec = obj["vec"].toObject();
-   _posVec[0] = vec["x"].toInt();
-   _posVec[1] = vec["y"].toInt();
-   _posVec[2] = vec["z"].toInt();
-
    QJsonObject pos = obj["pos"].toObject();
    _pos[0] = pos["x"].toInt();
    _pos[1] = pos["y"].toInt();
@@ -48,6 +43,27 @@ QJsonArray    Planet::getJson()
 void    Planet::append(QJsonObject obj)
 {
     _evo.append(obj);
+}
+
+
+void    Planet::calc_move(int duree)
+{
+    int delta = duree % _revo;
+    qreal PI = 3.14;
+    qreal rad = (2 * PI * delta) / (_revo);
+
+    qreal x =  _distance * qCos(rad);
+    qreal y =  _distance * qSin(rad);
+    setPosition(x, y, 0);
+
+    QJsonObject evo;
+    QJsonObject position;
+    position.insert("x", _pos[0]);
+    position.insert("y", _pos[1]);
+    position.insert("z", _pos[2]);
+    evo.insert("pos", position);
+    evo.insert("date", duree);
+    _evo.append(evo);
 }
 
 void    Planet::setName(std::string name)
@@ -131,13 +147,6 @@ void Planet::setPosition(int X, int Y, int Z)
     _mutex.unlock();
 }
 
-void Planet::setPositionVec(int X, int Y, int Z)
-{
-    _posVec[0] = X;
-    _posVec[1] = Y;
-    _posVec[2] = Z;
-}
-
 void    Planet::move(bool b)
 {
     _mutex.lock();
@@ -153,11 +162,6 @@ void    Planet::evolve(bool b)
 int *Planet::getPosition(void)
 {
     return _pos;
-}
-
-int *Planet::getPositionVec(void)
-{
-    return _posVec;
 }
 
 bool    Planet::move(void) const

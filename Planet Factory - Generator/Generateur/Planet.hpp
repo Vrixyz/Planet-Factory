@@ -9,6 +9,7 @@
 
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QtCore/qmath.h>
 
 #include "Component.hpp"
 #include "Heightmap.h"
@@ -31,32 +32,35 @@ public:
     Planet();
     Planet(QJsonObject, System *);
     ~Planet();
+    void                        calc_move(int);
+    void                        append(QJsonObject);
+    QJsonArray                  getJson();
+    void                        init();
+    std::map<Component*, int>   *getComponentMap(void);
 
-    void                    setName(std::string);
-    void                    setType(PlanetType);
-    void                    setRadius(int);
-    void                    setDistance(int);
-    void                    setRevo(int);
-    void                    setTilt(int);
-    void                    setPosition(int, int, int);
-    void                    setPositionVec(int, int, int);
+
+    //GETER SETER
+    bool                    move(void) const;
+    bool                    evolve(void) const;
+
     void                    move(bool);
     void                    evolve(bool);
-    void                    append(QJsonObject);
-    QJsonArray              getJson();
 
-    void                    init();
-    std::string                 getName(void);
-    PlanetType                  getType(void);
-    int                         getRadius(void);
-    int                         getDistance(void);
-    int                         getRevo(void);
-    int                         getTilt(void);
-    std::map<Component*, int>   *getComponentMap(void);
-    int                         *getPosition(void);
-    int                         *getPositionVec(void);
-    bool                        move(void) const;
-    bool                        evolve(void) const;
+    //
+    void                    setName(std::string);
+    std::string             getName(void);
+    void                    setType(PlanetType);
+    PlanetType              getType(void);
+    void                    setRadius(int);
+    int                     getRadius(void);
+    void                    setDistance(int);
+    int                     getDistance(void);
+    void                    setRevo(int);
+    int                     getRevo(void);
+    void                    setTilt(int);
+    int                     getTilt(void);
+    void                    setPosition(int, int, int);
+    int                     *getPosition(void);
 
 private:
     QMutex                  _mutex;
@@ -68,7 +72,6 @@ private:
     int                     _revo;
     PlanetType              _type;
     int                     _pos[3];
-    int                     _posVec[3];
     bool                    _move;
     bool                    _evolve;
 

@@ -52,9 +52,8 @@ void OptionsBox::generate()
 {
     _launchWindow->hide();
 
-    //jour
-    int inter = _interSpinBox[3]->value();
-    int duree = _timerSpinBox[3]->value();
+    int inter = _interSpinBox[1]->value() + _interSpinBox[0]->value() * 365;
+    int duree = _timerSpinBox[1]->value() + _timerSpinBox[0]->value() * 365;
     qDebug() << "duree " << duree << " inter " << inter;
     QString path = QFileDialog::getExistingDirectory(this, tr("Chose save dir"));
     if (path.isEmpty())
@@ -64,7 +63,7 @@ void OptionsBox::generate()
     Generator * gen = new Generator(s, duree, inter);
 
     s->initJson(path);
-    gen->run();
+    gen->launch();
     /*for (int i = 0; i < duree; i += inter)
         s->evolution(i + inter);
     s->endJson(path);*/
@@ -86,18 +85,18 @@ void OptionsBox::createWindowLaunch(void)
     timer = new QLabel("Durée totale de la génération :", _launchWindow);
     timer->setGeometry(0, 40, 300, 25);
     timer->setAlignment(Qt::AlignCenter);
-    timerSub = new QLabel(" Years       Months     Weeks       Days", _launchWindow);
+    timerSub = new QLabel(" Years       Days", _launchWindow);
     timerSub->setGeometry(65, 60, 300, 25);
     inter = new QLabel("Interval de génération :", _launchWindow);
     inter->setGeometry(0, 130, 300, 25);
     inter->setAlignment(Qt::AlignCenter);
-    interSub = new QLabel(" Years       Months     Weeks       Days", _launchWindow);
+    interSub = new QLabel(" Years       Days", _launchWindow);
     interSub->setGeometry(65, 150, 300, 25);
     generate = new QPushButton("Generate", _launchWindow);
     generate->setGeometry(45, 220, 100, 40);
     cancel = new QPushButton("Cancel", _launchWindow);
     cancel->setGeometry(155, 220, 100, 40);
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 2; i++)
     {
         _interSpinBox[i] = new QSpinBox(_launchWindow);
         _timerSpinBox[i] = new QSpinBox(_launchWindow);
@@ -193,13 +192,6 @@ void        OptionsBox::saveConfSystem()
         obj.insert("name", name);
 //      obj.insert("type", (*itc)->getSolidTemp());
         obj.insert("radius", (*itp)->getRadius());
-
-        int *vec = (*itp)->getPositionVec();
-        QJsonObject vector;
-        vector.insert("x", vec[0]);
-        vector.insert("y", vec[1]);
-        vector.insert("z", vec[2]);
-        obj.insert("vec", vector);
 
         int *pos = (*itp)->getPosition();
         QJsonObject position;

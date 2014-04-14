@@ -63,35 +63,10 @@ Component *System::getComponentByName(std::string toSearch)
     return NULL;
 }
 
-void System::evolution(int duree)
-{
-    std::list<Planet*>::iterator itp;
-    for (itp = _listPlanet->begin(); itp != _listPlanet->end(); ++itp)
-    {
-
-        int *pos = (*itp)->getPosition();
-        int *vec = (*itp)->getPositionVec();
-
-        //Evolution MOVE V1
-        QJsonObject evo;
-        pos[0] += vec[0];
-        pos[1] += vec[1];
-        pos[2] += vec[2];
-        (*itp)->setPosition(pos[0], pos[1], pos[2]);
-        QJsonObject position;
-        position.insert("x", pos[0]);
-        position.insert("y", pos[1]);
-        position.insert("z", pos[2]);
-        evo.insert("pos", position);
-        evo.insert("date", duree);
-
-        (*itp)->append(evo);
-    }
-}
-
 // TODO A MODIFIER SOON
 void System::initJson(QString path)
 {
+    _path = path;
     std::list<Planet*>::iterator itp;
 
     QJsonArray planete;
@@ -126,21 +101,6 @@ void System::initJson(QString path)
         QJsonObject evo;
         evo.insert("radius", (*itp)->getRadius());
         evo.insert("date", 0);
-
-        int *vec = (*itp)->getPositionVec();
-        QJsonObject vector;
-        vector.insert("x", vec[0]);
-        vector.insert("y", vec[1]);
-        vector.insert("z", vec[2]);
-        evo.insert("vec", vector);
-
-        int *pos = (*itp)->getPosition();
-        QJsonObject position;
-        position.insert("x", pos[0]);
-        position.insert("y", pos[1]);
-        position.insert("z", pos[2]);
-        evo.insert("pos", position);
-
         (*itp)->append(evo);
     }
 
@@ -176,8 +136,9 @@ void System::initJson(QString path)
 }
 
 
-void System::endJson(QString path)
+void System::endJson()
 {
+    QString path = _path;
     std::list<Planet*>::iterator itp;
 
     for (itp = _listPlanet->begin(); itp != _listPlanet->end(); ++itp)

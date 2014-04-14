@@ -39,8 +39,6 @@ void CelestialBox::updateListPlanet(void)
 void CelestialBox::planetSelected(QListWidgetItem* currItem)
 {
     std::list<Planet*>::iterator    it;
-    int                             *pos;
-    int                             *posVec;
 
     it = _parent->getSystem()->getPlanetList()->begin();
     for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
@@ -56,18 +54,10 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
                 _parent->getPlanetDetails()->_eType->setCurrentIndex(2);
             else if ((*it)->getType() == ASTEROID)
                 _parent->getPlanetDetails()->_eType->setCurrentIndex(3);
-            pos = (*it)->getPosition();
-            posVec = (*it)->getPositionVec();
             _parent->getPlanetDetails()->_eRadius->setValue((*it)->getRadius());
             _parent->getPlanetDetails()->_eDistance->setValue((*it)->getDistance());
             _parent->getPlanetDetails()->_eRevo->setValue((*it)->getRevo());
             _parent->getPlanetDetails()->_eTilt->setValue((*it)->getTilt());
-/*            _parent->getPlanetDetails()->_ePosX->setValue(pos[0]);
-            _parent->getPlanetDetails()->_ePosY->setValue(pos[1]);
-            _parent->getPlanetDetails()->_ePosZ->setValue(pos[2]);
-            _parent->getPlanetDetails()->_ePosVecX->setValue(posVec[0]);
-            _parent->getPlanetDetails()->_ePosVecY->setValue(posVec[1]);
-            _parent->getPlanetDetails()->_ePosVecZ->setValue(posVec[2]);*/
             _parent->getPlanetCompo()->_compoAdd->setEnabled(TRUE);
             _parent->getPlanetCompo()->updateListCompoPla();
             _del->setEnabled(TRUE);
