@@ -13,8 +13,3 @@ QLabel
 {
 	color: white;
 }
-
-QDialog
-{
-    background-color: #303030;
-}
