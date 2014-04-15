@@ -12,30 +12,38 @@ Generator::Generator(System *system, int time, int inter):_system(system), _time
     _move = new Move(_system);
     connect(_move, SIGNAL(thread_term()), this, SLOT(thread_term()));
 
-    /*std::list<Planet *>::iterator it;
+    std::list<Planet *>::iterator it;
     for(it = _system->getPlanetList()->begin(); it != _system->getPlanetList()->end(); ++it)
     {
-        _terrains->push_front(new Terrain(*it));
-        (*it)->init();
+        Terrain *t = new Terrain(*it);
+        _terrains->push_front(t);
+        connect(t, SIGNAL(thread_term()), this, SLOT(thread_term()));
     }
     qDebug() << "Threads creation done...";
-*/
-
-
-
 
     qDebug() << "Starting main loop...";
 }
 
 void     Generator::launch()
 {
-    _progress = new QProgressDialog("Generation in progress.", "Cancel", 0, _time);
+    _progress = new QProgressDialog("Generation des plaques", "Cancel", 0, _terrains->size());
     _progress->setWindowFlags(_progress->windowFlags() & ~Qt::WindowCloseButtonHint);
     _progress->setCancelButton(0);
     _progress->show();
-    run();
-}
 
+    //Un threat par planete
+    _thread_term = 0;
+    _nb_thread = 0;
+
+
+    qDebug() << "Calculating terrains...";
+    std::list<Terrain*>::iterator itT;
+    for(itT = _terrains->begin(); itT != _terrains->end(); ++itT)
+    {
+        (*itT)->start();
+        _nb_thread ++;
+    }
+}
 
 //Ils reçoivent system * et éditent tout les X temps la classe
 // system ou planet
@@ -51,6 +59,9 @@ void     Generator::run()
     if (_iteration <= _time)
     {
         _progress->setValue(_iteration);
+        _progress->setMaximum(_time);
+        _progress->setLabelText("Iteration de temps");
+
         qDebug() << "Cycle " << _iteration << "...";
 
         //Calculez les mouvements
@@ -62,7 +73,7 @@ void     Generator::run()
         _move->start();
         _nb_thread ++;
 
-        /*
+
         //Calculez les reliefs
         qDebug() << "Calculating terrains...";
         std::list<Terrain*>::iterator itT;
@@ -71,7 +82,7 @@ void     Generator::run()
             t = *itT;
             t->start();
             _nb_thread ++;
-        }*/
+        }
 
 
         //ecoulement du temps
@@ -89,6 +100,9 @@ void     Generator::run()
 void Generator::thread_term()
 {
     _thread_term++;
+
+     qDebug() << "THREAD TERM";
+
     if(_thread_term == _nb_thread)
     {
         qDebug() << "Fin de tout les thread";

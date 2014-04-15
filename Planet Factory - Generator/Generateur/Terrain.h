@@ -14,7 +14,11 @@ public:
     Planet * planet(void) const;
 private:
     void run();
+    bool _init;
     Planet * _planet;
+
+signals:
+    void thread_term();
 };
 
 #endif // TERRAIN_H
