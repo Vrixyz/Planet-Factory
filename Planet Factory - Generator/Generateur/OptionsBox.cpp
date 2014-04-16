@@ -102,6 +102,10 @@ void OptionsBox::createWindowLaunch(void)
         _timerSpinBox[i] = new QSpinBox(_launchWindow);
         _interSpinBox[i]->setGeometry(60 + (i * 50), 175, 45, 25);
         _timerSpinBox[i]->setGeometry(60 + (i * 50), 85, 45, 25);
+        _interSpinBox[i]->setMinimum(0);
+        _interSpinBox[i]->setMaximum(1000);
+        _timerSpinBox[i]->setMinimum(0);
+        _timerSpinBox[i]->setMaximum(1000);
         _interSpinBox[i]->show();
         _timerSpinBox[i]->show();
     }

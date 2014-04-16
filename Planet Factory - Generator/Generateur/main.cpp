@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     a.setStyleSheet(StyleSheet);
 
     w = new MainWindow(0);
-    w->setWindowFlags(Qt::FramelessWindowHint);
+    //w->setWindowFlags(Qt::FramelessWindowHint);
     w->setFixedSize(1000, 700);
     w->show();
 
