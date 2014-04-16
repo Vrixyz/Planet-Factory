@@ -46,7 +46,7 @@ int HeightMap::PlateTectonic(int n)
     std::cout << "Starting to fill the planet with plate..." << std::endl;
     int counter = 0;
     int nbCase = _x * _y;
-    int countMax = (nbCase / 4) * 2;
+    int countMax = (nbCase / 4);
     std::cout << "Count Max: " << countMax << std::endl;
     while (counter <= countMax)
     {

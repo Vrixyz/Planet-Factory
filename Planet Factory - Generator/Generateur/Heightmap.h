@@ -39,11 +39,6 @@ private:
     int _updateRight(int x, int y, int c);
     int _updateBot(int x, int y, int c);
     int _updateLeft(int x, int y, int c);
-
-
-
-
-
 };
 
 #endif // HEIGHTMAP_H
