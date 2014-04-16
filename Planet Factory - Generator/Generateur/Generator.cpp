@@ -43,6 +43,8 @@ void     Generator::launch()
         (*itT)->start();
         _nb_thread ++;
     }
+    if (_nb_thread == 0)
+        run();
 }
 
 //Ils reçoivent system * et éditent tout les X temps la classe
@@ -56,7 +58,7 @@ void     Generator::run()
 {
     Terrain * t;
 
-    if (_iteration <= _time)
+    if (_iteration < _time)
     {
         _progress->setValue(_iteration);
         _progress->setMaximum(_time);
@@ -93,6 +95,7 @@ void     Generator::run()
         //FIN de la generation.
         qDebug() << "Main loop finished...";
         _system->endJson();
+        _progress->hide();
     }
 }
 
