@@ -33,7 +33,10 @@ int HeightMap::PlateTectonic(int n)
         if ((_map[x][y])->n() == 0)
         {
             std::cout << "Create a Tectonic plate at " << x << " " << y << std::endl;
-            (_map[x][y])->n(i);
+            if (i == 1)
+                (_map[0][0])->n(i);
+            else
+                (_map[x][y])->n(i);
         }
         else
             i--;
@@ -43,7 +46,7 @@ int HeightMap::PlateTectonic(int n)
     std::cout << "Starting to fill the planet with plate..." << std::endl;
     int counter = 0;
     int nbCase = _x * _y;
-    int countMax = (nbCase / 4) * 3;
+    int countMax = (nbCase / 4) * 2;
     std::cout << "Count Max: " << countMax << std::endl;
     while (counter <= countMax)
     {
