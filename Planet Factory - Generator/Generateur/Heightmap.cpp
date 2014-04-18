@@ -8,7 +8,12 @@ HeightMap::HeightMap(int radius)
     {
         _map[i] = new MapInfo*[_y];
         for (int j = 0; j < _y; j++)
-            _map[i][j] = new MapInfo();
+        {
+            if (i == 0 && j == 0)
+                _map[i][j] = new MapInfo();
+            else
+                _map[i][j] = new MapInfo(i, j, _map);
+        }
     }
 }
 
@@ -226,7 +231,7 @@ void    HeightMap::printMap()
     {
         for (y = 0; y < _y; y++)
         {
-            std::cout << _map[x][y]->n();
+            std::cout << _map[x][y]->z() << '\t';
         }
         std::cout << std::endl;
     }

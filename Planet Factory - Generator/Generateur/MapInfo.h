@@ -5,7 +5,7 @@ class MapInfo
 {
 public:
     MapInfo();
-
+    MapInfo(int i, int j, MapInfo *** _map);
     /** Setter **/
     void z(int z);
     void n(int n);
