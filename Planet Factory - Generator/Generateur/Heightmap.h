@@ -6,7 +6,9 @@
 #include <cstdlib>
 #include <iostream>
 #include <list>
+#include <map>
 
+#include "Component.hpp"
 #include "MapInfo.h"
 
 #define RATIO_PLATE 25
@@ -20,7 +22,7 @@ public:
     //Update map
     int changeAlt(int x, int y, int z);
     //Create random zone
-    int PlateTectonic(int n);
+    int PlateTectonic(int n, std::map<Component *, int> * mapCompo);
 
     void    printMap();
 
@@ -33,6 +35,7 @@ private:
     int         _y;
     MapInfo *** _map;
 
+    int _fillComponent(std::map<Component*, int>   *mapCompo);
     int _updateMap(int x, int y, int c);
     int _updateMapSecondAlgo();
     int _updateTop(int x, int y, int c);

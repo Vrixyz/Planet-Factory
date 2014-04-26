@@ -3,13 +3,13 @@
 #include "MapInfo.h"
 
 MapInfo::MapInfo()
-    :_n(0)
+    :_n(0), _component(0)
 {
     _z = (rand() % 100) + 50;
 }
 
 MapInfo::MapInfo(int i, int j, MapInfo *** _map)
-    :_n(0)
+    :_n(0), _component(0)
 {
     int tmp = (rand() % 100) + 50;
     if (i == 0)
@@ -40,6 +40,11 @@ void MapInfo::n(int n)
     _n = n;
 }
 
+void MapInfo::component(Component * c)
+{
+    _component = c;
+}
+
 /** Getter **/
 int MapInfo::z(void)const
 {
@@ -48,4 +53,9 @@ int MapInfo::z(void)const
 int MapInfo::n(void)const
 {
     return _n;
+}
+
+Component * MapInfo::component(void) const
+{
+    return _component;
 }

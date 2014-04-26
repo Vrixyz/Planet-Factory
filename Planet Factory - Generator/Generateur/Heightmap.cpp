@@ -22,13 +22,28 @@ int HeightMap::exportHeighMap(const std::string & name, const std::string & path
     return 0;
 }
 
-int HeightMap::PlateTectonic(int n)
+int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
 {
+    for (int i = 0; i < _x; i++)
+    {
+        for (int j = 0; j < _y; j++)
+        {
+
+        }
+    }
+    return 0;
+}
+
+int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
+{
+    //Fill component
+    if (_fillComponent(mapCompo) == 1)
+        return 1;
     //n = 2;
     if (n == 0)
         n = 1;
     _n = n;
-    std::cout << "Radius of this planet " << _r << " Plate number : " << n << std::endl;
+    //std::cout << "Radius of this planet " << _r << " Plate number : " << n << std::endl;
     srand(time(0));
     int x, y; //Plate init
     for (int i = 1; i <= n; i++)
@@ -37,7 +52,7 @@ int HeightMap::PlateTectonic(int n)
         y = rand() % _y;
         if ((_map[x][y])->n() == 0)
         {
-            std::cout << "Create a Tectonic plate at " << x << " " << y << std::endl;
+            //std::cout << "Create a Tectonic plate at " << x << " " << y << std::endl;
             if (i == 1)
                 (_map[0][0])->n(i);
             else
@@ -48,11 +63,11 @@ int HeightMap::PlateTectonic(int n)
     }
     //Fill all planet with plate
     std::list<int> check;
-    std::cout << "Starting to fill the planet with plate..." << std::endl;
+    //std::cout << "Starting to fill the planet with plate..." << std::endl;
     int counter = 0;
     int nbCase = _x * _y;
     int countMax = (nbCase / 4);
-    std::cout << "Count Max: " << countMax << std::endl;
+    //std::cout << "Count Max: " << countMax << std::endl;
     while (counter <= countMax)
     {
         for (x = 0; x < _x; x++)
@@ -63,14 +78,14 @@ int HeightMap::PlateTectonic(int n)
                 bool find = false;
                 if (_map[x][y]->n() != 0)//A plate found
                 {
-                    std::cout << "Plate found at " << x << " " << y << " " << _map[x][y]->n() << std::endl;
+                    //std::cout << "Plate found at " << x << " " << y << " " << _map[x][y]->n() << std::endl;
                     std::list<int>::iterator it;
                     for (it = check.begin(); it != check.end(); it++)
                     {
-                        std::cout << "Check if already in the list" << std::endl;
+                        //std::cout << "Check if already in the list" << std::endl;
                         if ((*it) == _map[x][y]->n())
                         {
-                            std::cout << "Find..." << std::endl;
+                            //std::cout << "Find..." << std::endl;
                             find = true;
                             break;
                         }
@@ -83,15 +98,15 @@ int HeightMap::PlateTectonic(int n)
                         if (_updateMap(x, y, _map[x][y]->n()) == 0)
                         {
                             counter++;
-                            std::cout << "Counter : " << counter << std::endl;
+                            //std::cout << "Counter : " << counter << std::endl;
                         }
-                        else
-                            std::cout << "No more room..." << std::endl;
+                        //else
+                            //std::cout << "No more room..." << std::endl;
                     }
                 }
                 if (check.size() == (unsigned int)n) // list full
                 {
-                    std::cout << "Clear check list..." << std::endl;
+                    //std::cout << "Clear check list..." << std::endl;
                     check.clear();
                 }
             }
@@ -123,7 +138,7 @@ int    HeightMap::_updateMap(int x, int y, int c)
     int n = 0;
 
     printMap();
-    std::cout << "Update of the map... x: " << x << " y : " << y << " c : " << c << " i: " << i << std::endl;
+    //std::cout << "Update of the map... x: " << x << " y : " << y << " c : " << c << " i: " << i << std::endl;
     while(n < 4)
     {
         if(i == 0)//Left

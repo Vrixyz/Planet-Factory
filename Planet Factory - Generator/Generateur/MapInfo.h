@@ -1,6 +1,8 @@
 #ifndef MAPINFO_H
 #define MAPINFO_H
 
+#include "Component.hpp"
+
 class MapInfo
 {
 public:
@@ -9,14 +11,17 @@ public:
     /** Setter **/
     void z(int z);
     void n(int n);
+    void component(Component * c);
 
     /** Getter **/
     int z(void)const;
     int n(void)const;
+    Component * component(void) const;
 
 private:
     int _z;
     int _n;
+    Component * _component;
 };
 
 #endif // MAPINFO_H
