@@ -1,6 +1,6 @@
 {
 	"date": "12/06/2013",
-	"nombreAstres": 4,
+	"nombreAstres": 2,
 	"astres": [
 		"./soleil.json",
 		"./moon.json"

@@ -8,6 +8,7 @@ public class PlanetUpdater : MonoBehaviour {
 	UniverseTime time = new UniverseTime(); // TODO: make this a singleton
 	public Dictionary<string, Texture2D> materials = new Dictionary<string, Texture2D>();
 
+	public string folder = "System/1/";
 	// Use this for initialization
 	void Start () {
 	
@@ -26,7 +27,7 @@ public class PlanetUpdater : MonoBehaviour {
 				//print("cur disp: " + "System/1/" + current["displacement"]);
 				//print ((Texture2D)Resources.Load ( "System/1/" +  current["displacement"]));
 
-				displacements.Add ((string)current["displacement"], (Texture2D)Resources.Load ("System/1/" + current["displacement"]));
+				displacements.Add ((string)current["displacement"], (Texture2D)Resources.Load (folder + current["displacement"]));
 			}
 		}
 		//Texture2D t2 = (Texture2D)Resources.Load ("Assets/Resources/System/1/Maps/soleilDisplacement2.png");

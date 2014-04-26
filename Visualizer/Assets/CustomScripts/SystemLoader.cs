@@ -7,14 +7,17 @@ using System.Text;
 
 
 public class SystemLoader : MonoBehaviour {
+
 	public ArrayList planets = new ArrayList();
 	//public ArrayList materials = new ArrayList();
+	public string rootFolder = "Assets/Resources/System/1/";
+	public string resourceFolder = "System/1/";
 
 	void loadFromAstralInfo(Dictionary<string, object> dictPlanet) {
 		print("dictPlanet['name']: " + dictPlanet["name"]);
 		GameObject instance = Instantiate(Resources.Load("Prefabs/PlanetSphere")) as GameObject;
 		
-		string evolutionInfo = Load ("Assets/Resources/System/1/" + dictPlanet["evolution"]);
+		string evolutionInfo = Load (rootFolder + dictPlanet["evolution"]);
 		var dictEvolutions =  Json.Deserialize (evolutionInfo) as Dictionary<string, object>;
 		var evolutionList = dictEvolutions["evolutions"] as List< object >;
 		
@@ -31,7 +34,9 @@ public class SystemLoader : MonoBehaviour {
 		surfDisp.SourceSurfaceMesh.GetMultiMesh(CubemapFace.PositiveX).Add((Mesh)Resources.Load ("Sphere128 (Surface) (Sphere).asset"));
 		
 		PlanetUpdater updater = instance.AddComponent<PlanetUpdater>();
-		
+
+		updater.folder = resourceFolder;
+		print ("folder:" + updater.folder);
 		// materials evolution
 		
 		List<object> materialsEvolution = (dictEvolution ["materials"]) as List<object>;
@@ -42,7 +47,7 @@ public class SystemLoader : MonoBehaviour {
 		print (materialEvolution1 ["name"].ToString ());
 		print (materialEvolution1 ["file"].ToString ());
 		
-		updater.materials [ materialEvolution1["name"].ToString()] = (Texture2D)Resources.Load ("System/1/" + materialEvolution1["file"].ToString());
+		updater.materials [ materialEvolution1["name"].ToString()] = (Texture2D)Resources.Load (resourceFolder + materialEvolution1["file"].ToString());
 		print (updater.materials [materialEvolution1 ["name"].ToString ()]);
 		
 		updater.setEvolutions(evolutionList);
@@ -52,29 +57,33 @@ public class SystemLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		string systemInfo;
-
-		systemInfo = Load ("Assets/Resources/System/1/systeme.json");
-		print(systemInfo);
-		var dict = Json.Deserialize (systemInfo) as Dictionary<string, object>;
-		print("dict['astres'][0]: " + ((List<object>) dict["astres"])[0]);
-
-
-		// store materials
-		//materials.Add (((Dictionary<string, object>)((List<object>)dict ["materials"]) [0]));
-
-
-		foreach (string obj in ((List<object>) dict["astres"])) {
-						string astreInfo = Load ("Assets/Resources/System/1/" + obj);
-						print (astreInfo);
-						var dictPlanet = Json.Deserialize (astreInfo) as Dictionary<string, object>;
-						loadFromAstralInfo (dictPlanet);
-				}
 	}
 
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void initialize()
+	{
+		string systemInfo;
+		
+		systemInfo = Load (rootFolder + "systeme.json");
+		print(systemInfo);
+		var dict = Json.Deserialize (systemInfo) as Dictionary<string, object>;
+		print("dict['astres'][0]: " + ((List<object>) dict["astres"])[0]);
+		
+		
+		// store materials
+		//materials.Add (((Dictionary<string, object>)((List<object>)dict ["materials"]) [0]));
+		
+		
+		foreach (string obj in ((List<object>) dict["astres"])) {
+		string astreInfo = Load (rootFolder + obj);
+		print (astreInfo);
+		var dictPlanet = Json.Deserialize (astreInfo) as Dictionary<string, object>;
+		loadFromAstralInfo (dictPlanet);
+	}
 	}
 
 	string Load(string fileName)

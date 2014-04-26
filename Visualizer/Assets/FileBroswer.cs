@@ -16,6 +16,8 @@ public class FileBroswer : MonoBehaviour
 	public float alpha = 1.0f;
 	public char pathChar = '/';
 	public GameObject controler;
+	
+	private SystemLoader sysLoader;
 
 	void Start () {
 		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer) {
@@ -32,6 +34,15 @@ public class FileBroswer : MonoBehaviour
 		message = "You selected file: " + pathToFile.Substring (fileIndex+1, pathToFile.Length-fileIndex-1);
 		controler.SetActive(true);
 		controler.animation.Play();
+	
+		GameObject g = GameObject.Find ("Manager");
+		sysLoader = g.AddComponent<SystemLoader> ();
+		sysLoader.rootFolder = pathToFile.Substring (0, fileIndex + 1);
+		var index = sysLoader.rootFolder.LastIndexOf ("Resources") + 10;
+		string folder = sysLoader.rootFolder.Substring(index, sysLoader.rootFolder.Length - index);
+		folder = folder.Replace ('\\', '/');
+		sysLoader.resourceFolder = folder;
+		sysLoader.initialize ();
 	}
 	
 }

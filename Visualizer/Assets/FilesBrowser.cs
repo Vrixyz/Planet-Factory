@@ -15,7 +15,7 @@ public class UIButtonActivate : MonoBehaviour
 	public string message = "";
 	public float alpha = 1.0f;
 	public char pathChar = '/';
-	
+
 	void Start () {
 		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer) {
 			pathChar = '\\';
