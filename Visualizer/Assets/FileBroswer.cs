@@ -15,7 +15,8 @@ public class FileBroswer : MonoBehaviour
 	public string message = "";
 	public float alpha = 1.0f;
 	public char pathChar = '/';
-	
+	public GameObject controler;
+
 	void Start () {
 		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer) {
 			pathChar = '\\';
@@ -29,6 +30,8 @@ public class FileBroswer : MonoBehaviour
 	void OpenFile (string pathToFile) {
 		var fileIndex = pathToFile.LastIndexOf (pathChar);
 		message = "You selected file: " + pathToFile.Substring (fileIndex+1, pathToFile.Length-fileIndex-1);
+		controler.SetActive(true);
+		controler.animation.Play();
 	}
 	
 }

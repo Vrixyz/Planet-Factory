@@ -2,12 +2,23 @@
 using System.Collections;
 
 public class RayCastToPlanets : MonoBehaviour {
-
+	public GameObject controler;
+	private UILabel[] labels;
 	// Use this for initialization
 	void Start () {
 	
 	}
-	
+
+
+	void ShowInformations(float x, float y, PlanetUpdater pu) {
+
+		labels = controler.GetComponentsInChildren<UILabel>();
+		UILabel b = labels.Get(1);
+		b.text = x.ToString() + "," + y.ToString();
+		b = labels.Get(0);
+		b.text = pu.materials["rock"].GetPixel((int)x, (int)y).ToString();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButton("Fire1")) {
@@ -29,6 +40,8 @@ public class RayCastToPlanets : MonoBehaviour {
 					textureCoord.y *= pu.materials["rock"].height;
 					//print(hit.textureCoord);
 					print (pu.materials["rock"].GetPixel((int)textureCoord.x, (int)textureCoord.y));
+					if (controler.activeInHierarchy)
+						ShowInformations(Input.mousePosition.x, Input.mousePosition.y, pu);
 				}
 			
 			}
