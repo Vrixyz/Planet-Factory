@@ -22,13 +22,24 @@ int HeightMap::exportHeighMap(const std::string & name, const std::string & path
     return 0;
 }
 
+//prendre en compte les pourcentages
 int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
 {
+    srand(time(0));
+    int nb = mapCompo->size();
     for (int i = 0; i < _x; i++)
     {
         for (int j = 0; j < _y; j++)
         {
-
+            int x = rand() % nb;
+            for (std::map<Component*, int>::iterator it = mapCompo->begin(); it != mapCompo->end(); ++it)
+            {
+                if (it->second == x)
+                {
+                    _map[i][j]->component()->c(it->first);
+                    break;
+                }
+            }
         }
     }
     return 0;

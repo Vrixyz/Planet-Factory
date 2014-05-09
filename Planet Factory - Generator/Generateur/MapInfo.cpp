@@ -40,7 +40,7 @@ void MapInfo::n(int n)
     _n = n;
 }
 
-void MapInfo::component(Component * c)
+void MapInfo::component(MyComponent * c)
 {
     _component = c;
 }
@@ -55,7 +55,7 @@ int MapInfo::n(void)const
     return _n;
 }
 
-Component * MapInfo::component(void) const
+MyComponent * MapInfo::component(void) const
 {
     return _component;
 }

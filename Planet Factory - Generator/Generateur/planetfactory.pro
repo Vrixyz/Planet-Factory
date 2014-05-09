@@ -26,7 +26,8 @@ SOURCES +=  PlanetDetailsBox.cpp \
     Move.cpp \
     Terrain.cpp \
     Heightmap.cpp \
-    MapInfo.cpp
+    MapInfo.cpp \
+    MyComponent.cpp
 
 HEADERS  += PlanetDetailsBox.hpp \
             PlanetCompoBox.hpp \
@@ -42,7 +43,8 @@ HEADERS  += PlanetDetailsBox.hpp \
     Move.h \
     Terrain.h \
     Heightmap.h \
-    MapInfo.h
+    MapInfo.h \
+    MyComponent.h
 
 OTHER_FILES +=
 
