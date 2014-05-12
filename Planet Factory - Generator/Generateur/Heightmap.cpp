@@ -27,16 +27,32 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
 {
     srand(time(0));
     int nb = mapCompo->size();
+    //Creating temp std::map for calculating %
+    std::map<Component *, int> * temp(mapCompo);
+    std::map<Component*, int>::iterator itmp = temp->begin();
+    for (itmp; itmp != temp->end(); ++itmp)
+        itmp->second = 0;
+
+    float coef = _x *_y / 100;
+    //Adding component
     for (int i = 0; i < _x; i++)
     {
         for (int j = 0; j < _y; j++)
         {
-            int x = rand() % nb;
-            for (std::map<Component*, int>::iterator it = mapCompo->begin(); it != mapCompo->end(); ++it)
+            //Need ajout tag Checked + transformer int en float
+            while(1)
             {
-                if (it->second == x)
+                int x = rand() % nb;
+                //Choose random component
+                std::map<Component*, int>::iterator it = mapCompo->begin();
+                itmp = temp->begin();
+                std::advance(it, x);
+                std::advance(itmp, x);
+                //Check percent
+                if (itmp->second < it->second)
                 {
                     _map[i][j]->component()->c(it->first);
+                    itmp->second += coef;
                     break;
                 }
             }
