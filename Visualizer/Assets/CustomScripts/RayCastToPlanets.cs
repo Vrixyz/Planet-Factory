@@ -6,9 +6,10 @@ public class RayCastToPlanets : MonoBehaviour {
 	public GameObject controler;
 	private UILabel[] labels;
 	private UIPopupList[] pops;
+	public int x, y;
+	public PlanetUpdater pu;
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	
@@ -37,6 +38,20 @@ public class RayCastToPlanets : MonoBehaviour {
 		
 	}
 	
+	void OnSelectionChange (string val)
+	{
+		foreach (var t in pu.materials)
+		{
+			if (val == t.Key)
+			{
+				UILabel b = labels.Get(3);
+				Color c = ((Texture2D)t.Value).GetPixel (x, y);
+				b.text = t.Key + " : " + ((int)((c.r + c.g + c.b) / 3 * 100)).ToString() + 'p';
+				return;
+			}
+		}
+	
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -55,11 +70,13 @@ public class RayCastToPlanets : MonoBehaviour {
 						//Debug.DrawLine (ray.origin, hit.point);
 						//print ("hit! ");
 						Vector2 textureCoord = hit.textureCoord;
-						PlanetUpdater pu = ((GameObject)sys.planets [0]).GetComponent<PlanetUpdater>();
+						pu = ((GameObject)sys.planets [0]).GetComponent<PlanetUpdater>();
 						textureCoord.x *= pu.materials["rock"].width;
 						textureCoord.y *= pu.materials["rock"].height;
 						//print(hit.textureCoord);
-						print (pu.materials["rock"].GetPixel((int)textureCoord.x, (int)textureCoord.y));
+						x = (int)textureCoord.x;
+						y = (int)textureCoord.y;
+						print (pu.materials["rock"].GetPixel(x, y));
 						if (controler.activeInHierarchy)
 							ShowInformations(Input.mousePosition.x, Input.mousePosition.y, pu);
 					}
