@@ -6,14 +6,13 @@
 		"./moon.json"
 	],
 	"materials": {
-		"material": {
-			"name": "eau",
+		"rock": {
 			"solid": 0,
 			"gas": 100,
-			"minColor": "#ffffff",
-			"maxColor": "#0000ff",
-			"mass": 1,
-			"hardness": 50,
+			"minColor": 0,
+			"maxColor": 0,
+			"mass": 5,
+			"hardness": 100,
 		}
 	}
 }

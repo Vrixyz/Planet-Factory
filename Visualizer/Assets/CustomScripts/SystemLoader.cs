@@ -12,6 +12,7 @@ public class SystemLoader : MonoBehaviour {
 	//public ArrayList materials = new ArrayList();
 	public string rootFolder = "Assets/Resources/System/1/";
 	public string resourceFolder = "System/1/";
+	public Dictionary<string, object> materialsDefinition;
 
 	void loadFromAstralInfo(Dictionary<string, object> dictPlanet) {
 		print("dictPlanet['name']: " + dictPlanet["name"]);
@@ -48,6 +49,7 @@ public class SystemLoader : MonoBehaviour {
 		print (materialEvolution1 ["file"].ToString ());
 		
 		updater.materials [ materialEvolution1["name"].ToString()] = (Texture2D)Resources.Load (resourceFolder + materialEvolution1["file"].ToString());
+		print ("tried to load : " + resourceFolder + materialEvolution1["file"].ToString());
 		print (updater.materials [materialEvolution1 ["name"].ToString ()]);
 		
 		updater.setEvolutions(evolutionList);
@@ -67,23 +69,29 @@ public class SystemLoader : MonoBehaviour {
 	public void initialize()
 	{
 		string systemInfo;
-		
+		print("Loading system..");
 		systemInfo = Load (rootFolder + "systeme.json");
 		print(systemInfo);
 		var dict = Json.Deserialize (systemInfo) as Dictionary<string, object>;
 		print("dict['astres'][0]: " + ((List<object>) dict["astres"])[0]);
-		
-		
+		materialsDefinition = dict ["materials"] as Dictionary<string, object>;
+		print ("rock : " + materialsDefinition ["rock"]);
+		Dictionary<string, object> rmat = materialsDefinition ["rock"] as Dictionary<string, object>;
+		print ("rock : ");
+		foreach (var v in rmat) {
+			print(v.Key + " : " + v.Value);
+		}
+
 		// store materials
 		//materials.Add (((Dictionary<string, object>)((List<object>)dict ["materials"]) [0]));
 		
 		
 		foreach (string obj in ((List<object>) dict["astres"])) {
-		string astreInfo = Load (rootFolder + obj);
-		print (astreInfo);
-		var dictPlanet = Json.Deserialize (astreInfo) as Dictionary<string, object>;
-		loadFromAstralInfo (dictPlanet);
-	}
+			string astreInfo = Load (rootFolder + obj);
+			print (astreInfo);
+			var dictPlanet = Json.Deserialize (astreInfo) as Dictionary<string, object>;
+			loadFromAstralInfo (dictPlanet);
+		}
 	}
 
 	string Load(string fileName)
@@ -91,6 +99,7 @@ public class SystemLoader : MonoBehaviour {
 		// Handle any problems that might arise when reading the text
 		try
 		{
+            print("reading file");
 			string line = new string('c', 0);
 			string entireFile = new string('c', 0);
 			// Create a new StreamReader, tell it which file to read and what encoding the file
@@ -118,6 +127,8 @@ public class SystemLoader : MonoBehaviour {
 				
 				// Done reading, close the reader and return true to broadcast success    
 				theReader.Close();
+                print("file has been read");
+
 				return entireFile;
 			}
 		}
