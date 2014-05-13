@@ -296,7 +296,7 @@ function RefreshFileList () {
 }
 
 function SetDefaultPath () {
-	filePath = Application.dataPath;
+	filePath = Application.dataPath + "/Resources/System/1/";
 	switch (Application.platform) {
 		case RuntimePlatform.OSXEditor:
 			filePath = filePath.Substring (0, filePath.LastIndexOf (pathChar)) + pathChar;
@@ -313,7 +313,7 @@ function SetDefaultPath () {
 		case RuntimePlatform.WindowsPlayer:
 			pathChar = "\\"[0];	// A forward slash should work, but one user had some problems and this seemed part of the solution
 			filePath = filePath.Replace ("/", "\\");
-			filePath = filePath.Substring (0, filePath.LastIndexOf (pathChar)) + pathChar;
+			//filePath = filePath.Substring (0, filePath.LastIndexOf (pathChar)) + pathChar;
 			cmdKey1 = KeyCode.LeftControl; cmdKey2 = KeyCode.RightControl;
 			windowsSystem = true;
 			break;
