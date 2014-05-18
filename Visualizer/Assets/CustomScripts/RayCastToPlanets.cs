@@ -8,6 +8,8 @@ public class RayCastToPlanets : MonoBehaviour {
 	private UIPopupList[] pops;
 	public int x, y;
 	public PlanetUpdater pu;
+	public UILabel Pos;
+	public UILabel materiel;
 	// Use this for initialization
 	void Start () {
 	}
@@ -16,7 +18,7 @@ public class RayCastToPlanets : MonoBehaviour {
 	void ShowInformations(float x, float y, PlanetUpdater pu) {
 		labels = controler.GetComponentsInChildren<UILabel>();
 		UILabel b = labels.Get(2);
-		b.text = x.ToString() + "," + y.ToString();
+		Pos.text = x.ToString() + "," + y.ToString();
 		
 		pops = controler.GetComponentsInChildren<UIPopupList>();
 		UIPopupList p = pops.Get(0);
@@ -30,9 +32,8 @@ public class RayCastToPlanets : MonoBehaviour {
 		p.selection = "Rock";
 		foreach (var t in pu.materials)
 		{
-			b = labels.Get(3);
 			Color c = ((Texture2D)t.Value).GetPixel ((int)x, (int)y);
-			b.text = t.Key + " : " + ((int)((c.r + c.g + c.b) / 3 * 100)).ToString() + 'p';
+			materiel.text = t.Key + " : " + ((int)((c.r + c.g + c.b) / 3 * 100)).ToString() + 'p';
 			return;
 		}
 		
@@ -46,7 +47,7 @@ public class RayCastToPlanets : MonoBehaviour {
 			{
 				UILabel b = labels.Get(3);
 				Color c = ((Texture2D)t.Value).GetPixel (x, y);
-				b.text = t.Key + " : " + ((int)((c.r + c.g + c.b) / 3 * 100)).ToString() + 'p';
+				materiel.text = t.Key + " : " + ((int)((c.r + c.g + c.b) / 3 * 100)).ToString() + 'p';
 				return;
 			}
 		}
