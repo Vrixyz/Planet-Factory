@@ -9,10 +9,14 @@ using System.Text;
 public class SystemLoader : MonoBehaviour {
 
     private static SystemLoader _instance = null;
+    public bool hasLoaded = false;
 
     public static SystemLoader getInstance() {
         if (!_instance)
-            _instance = new SystemLoader();
+        {
+            GameObject manager = GameObject.Find("Manager");
+            _instance = manager.AddComponent<SystemLoader>();
+        }
         return _instance;
     }
 
@@ -22,7 +26,6 @@ public class SystemLoader : MonoBehaviour {
 	public string rootFolder = "Assets/Resources/System/1/";
 	public string resourceFolder = "System/1/";
 	public Dictionary<string, object> materialsDefinition;
-    public string flavour = "generated";
 
 
 
@@ -99,7 +102,6 @@ public class SystemLoader : MonoBehaviour {
 	public void initialize()
 	{
 		string systemInfo;
-		print("Loading system.. by a script " + flavour);
 		systemInfo = Load (rootFolder + "systeme.json");
 		print(systemInfo);
 		var dict = Json.Deserialize (systemInfo) as Dictionary<string, object>;
@@ -122,6 +124,8 @@ public class SystemLoader : MonoBehaviour {
 			var dictPlanet = Json.Deserialize (astreInfo) as Dictionary<string, object>;
             loadFromAstralInfo(dictPlanet);
 		}
+        print("System loaded");
+        hasLoaded = true;
     }
 
 	string Load(string fileName)

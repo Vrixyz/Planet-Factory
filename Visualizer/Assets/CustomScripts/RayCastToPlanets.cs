@@ -59,10 +59,16 @@ public class RayCastToPlanets : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 			
-			// TODO: singletooon !
-			GameObject manager = GameObject.Find ("Manager");
-			SystemLoader sys = (SystemLoader)manager.GetComponent ("SystemLoader");
-			if (controler.activeInHierarchy){
+            //// TODO: singletooon !
+            GameObject manager = GameObject.Find ("Manager");
+			SystemLoader sys = manager.GetComponent<SystemLoader>();
+            if (!sys || !sys.hasLoaded)
+            {
+                print("planet not leaded yet");
+                return;
+            }
+            if (controler.activeInHierarchy)
+            {
 				Collider planetCollider = ((GameObject)sys.planets [0]).collider;
 				
 				if (planetCollider.Raycast (ray, out hit, 1000.0f)) {
