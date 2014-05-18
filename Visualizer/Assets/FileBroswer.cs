@@ -36,7 +36,7 @@ public class FileBroswer : MonoBehaviour
 		controler.animation.Play();
 	
 		GameObject g = GameObject.Find ("Manager");
-		sysLoader = g.AddComponent<SystemLoader> ();
+        sysLoader = SystemLoader.getInstance();
 		sysLoader.rootFolder = pathToFile.Substring (0, fileIndex + 1);
 		var index = sysLoader.rootFolder.LastIndexOf ("Resources") + 10;
 		string folder = sysLoader.rootFolder.Substring(index, sysLoader.rootFolder.Length - index);

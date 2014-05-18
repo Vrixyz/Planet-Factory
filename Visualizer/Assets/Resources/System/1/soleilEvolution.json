@@ -21,9 +21,14 @@
 			},
 			"displacement":"Maps/soleilDisplacement1",
 			"materials": [ {
-				"name": "rock",
-				"file": "Maps/soleilMaterialRock1"
-			} ]
+					"name": "rock",
+					"file": "Maps/soleilMaterialRock1"
+				},
+				{
+					"name": "water",
+					"file": "Maps/soleilMaterialWater1"
+				},
+			]
 		},
 		{
 			"date": 5000,
