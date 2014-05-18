@@ -26,28 +26,46 @@ public class RayCastToPlanets : MonoBehaviour {
 		
 		//creation de la fenetre dynamic
 		b = labels.Get(1);
-		p.items.Clear();
-		foreach (var t in pu.materials)
-			p.items.Add(t.Key);
-		p.selection = "Rock";
-		foreach (var t in pu.materials)
-		{
-			Color c = ((Texture2D)t.Value).GetPixel ((int)x, (int)y);
-			materiel.text = t.Key + " : " + ((int)((c.r + c.g + c.b) / 3 * 100)).ToString() + 'p';
-			return;
-		}
+        p.items.Clear();
+        foreach (var t in pu.materials)
+        {
+            if (selectedMat == null || pu.materials[selectedMat] == null)
+                selectedMat = t.Key;
+            p.items.Add(t.Key);
+        }
+        p.selection = selectedMat;
+
+        Texture2D texture = pu.materials[selectedMat];
+
+        Color c = ((Texture2D)texture).GetPixel((int)x, (int)y);
+        //print("materiel selectionne : " + c.r + " " + c.g + " " + c.b);
+        materiel.text = selectedMat + " : " + ((int)(((c.r + c.g + c.b) / 3.0F * 100.0F))).ToString() + 'p';
+        //OnSelectionChange(selectedMat);
+        //foreach (var t in pu.materials)
+        //{
+        //    p.selection = t.Key;
+        //    Color c = ((Texture2D)t.Value).GetPixel ((int)x, (int)y);
+        //    print("materiel selectionne : " + c.r + " " + c.g + " " + c.b);
+        //    materiel.text = t.Key + " : " + ((int)(((c.r  + c.g  + c.b ) / 3.0F * 100.0F))).ToString() + 'p';
+        //    return;
+        //}
 		
 	}
-	
+    
+    string selectedMat;
+
 	void OnSelectionChange (string val)
 	{
+        selectedMat = val;
+        
 		foreach (var t in pu.materials)
 		{
-			if (val == t.Key)
+	        
+            if (val == t.Key)
 			{
-				UILabel b = labels.Get(3);
 				Color c = ((Texture2D)t.Value).GetPixel (x, y);
-				materiel.text = t.Key + " : " + ((int)((c.r + c.g + c.b) / 3 * 100)).ToString() + 'p';
+                print("materiel selectionne : " + c.r + " " + c.g + " " + c.b);
+                materiel.text = t.Key + " : " + ((int)(((c.r + c.g + c.b) / 3.0F) * 100.0F)).ToString() + 'p';
 				return;
 			}
 		}
@@ -83,9 +101,10 @@ public class RayCastToPlanets : MonoBehaviour {
 						//print(hit.textureCoord);
 						x = (int)textureCoord.x;
 						y = (int)textureCoord.y;
-						print (pu.materials["rock"].GetPixel(x, y));
-						if (controler.activeInHierarchy)
-							ShowInformations(Input.mousePosition.x, Input.mousePosition.y, pu);
+                        print("pixel rock : " + pu.materials["rock"].GetPixel(x, y));
+                        print("pixel water : " + pu.materials["water"].GetPixel(x, y));
+                        if (controler.activeInHierarchy)
+							ShowInformations(x, y, pu);
 					}
 				}
 			}
