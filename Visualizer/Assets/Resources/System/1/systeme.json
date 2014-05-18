@@ -6,13 +6,22 @@
 		"./moon.json"
 	],
 	"materials": {
-		"rock": {
+		"water": {
 			"solid": 0,
 			"gas": 100,
-			"minColor": 0,
-			"maxColor": 0,
+			"minColor": {"r": 180, "g": 150, "b": 120},
+			"maxColor": {"r": 20, "g": 100, "b": 200},
 			"mass": 5,
 			"hardness": 100,
 		}
+		"rock": {
+			"solid": 0,
+			"gas": 100,
+			"minColor": {"r": 180, "g": 150, "b": 120},
+			"maxColor": {"r": 180, "g": 150, "b": 120},
+			"mass": 5,
+			"hardness": 100,
+		}
+
 	}
 }
