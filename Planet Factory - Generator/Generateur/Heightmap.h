@@ -7,6 +7,7 @@
 #include <iostream>
 #include <list>
 #include <map>
+#include <QtDebug>
 
 #include "Component.hpp"
 #include "MapInfo.h"

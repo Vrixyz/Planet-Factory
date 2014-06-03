@@ -15,9 +15,14 @@ Generator::Generator(System *system, int time, int inter):_system(system), _time
     std::list<Planet *>::iterator it;
     for(it = _system->getPlanetList()->begin(); it != _system->getPlanetList()->end(); ++it)
     {
-        Terrain *t = new Terrain(*it);
-        _terrains->push_front(t);
-        connect(t, SIGNAL(thread_term()), this, SLOT(thread_term()));
+        if ((*it)->getType() == TELLURIC) //Si la planète est telluric
+        {
+            Terrain *t = new Terrain(*it);
+            _terrains->push_front(t);
+            connect(t, SIGNAL(thread_term()), this, SLOT(thread_term()));
+        }
+        else // Autre type d'astres
+            (*it)->initOther();
     }
     qDebug() << "Threads creation done...";
 

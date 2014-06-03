@@ -25,8 +25,9 @@ Planet::Planet(QJsonObject obj, System * s)
    {
         QJsonObject comp = value.toObject();
         Component *c = s->getComponentByName(comp["name"].toString().toStdString());
-
-       _mapCompo->insert(std::make_pair(c, comp["percent"].toInt()));
+        int tmp = comp["percent"].toInt();
+        qDebug() << "Pourcentage : " << tmp;
+       _mapCompo->insert(std::make_pair(c, tmp));
    }
 }
 
@@ -129,9 +130,35 @@ int Planet::getTilt(void)
 void    Planet::init()
 {
     _hm = new HeightMap(_radius);
-//    _hm->PlateTectonic(_radius / RATIO_PLATE + 1, _mapCompo);
+    _hm->PlateTectonic(_radius / RATIO_PLATE + 1, _mapCompo);
     _hm->printMap();
 }
+
+void    Planet::initOther()
+{
+    if (this->getType()== STAR)
+        this->_genHMStar();
+    else if (this->getType()== GAZEOUS)
+        this->_genHMGaz();
+    else // asteroid
+        this->_genHMAsteroid();
+}
+
+void    Planet::_genHMStar(void)
+{
+
+}
+
+void    Planet::_genHMGaz(void)
+{
+
+}
+
+void    Planet::_genHMAsteroid(void)
+{
+
+}
+
 
 std::map<Component*, int> *Planet::getComponentMap(void)
 {

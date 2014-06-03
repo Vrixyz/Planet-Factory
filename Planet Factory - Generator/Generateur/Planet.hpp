@@ -35,11 +35,11 @@ public:
     void                        calc_move(int);
     void                        append(QJsonObject);
     QJsonArray                  getJson();
-    void                        init();
+    void                        init(void);
+    void                        initOther(void);
     std::map<Component*, int>   *getComponentMap(void);
 
-
-    //GETER SETER
+    //GETTER SETTER
     bool                    move(void) const;
     bool                    evolve(void) const;
 
@@ -63,6 +63,10 @@ public:
     int                     *getPosition(void);
 
 private:
+    void                    _genHMStar(void);
+    void                    _genHMGaz(void);
+    void                    _genHMAsteroid(void);
+
     QMutex                  _mutex;
     QJsonArray              _evo;
     std::string             _name;

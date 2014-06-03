@@ -1,7 +1,14 @@
 #ifndef MAPINFO_H
 #define MAPINFO_H
 
-#include "MyComponent.h"
+#include "Component.hpp"
+
+enum e_etat
+{
+    LIQUID,
+    SOLID,
+    GAZ
+};
 
 class MapInfo
 {
@@ -11,17 +18,20 @@ public:
     /** Setter **/
     void z(int z);
     void n(int n);
-    void component(MyComponent * c);
+    void component(Component * c);
+    void        etat(e_etat);
 
     /** Getter **/
     int z(void)const;
     int n(void)const;
-    MyComponent * component(void) const;
+    Component * component(void) const;
+    e_etat      etat(void)const;
 
 private:
     int _z;
     int _n;
-    MyComponent * _component;
+    Component * _component;
+    e_etat      _etat;
 };
 
 #endif // MAPINFO_H

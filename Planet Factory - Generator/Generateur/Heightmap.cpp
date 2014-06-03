@@ -25,39 +25,50 @@ int HeightMap::exportHeighMap(const std::string & name, const std::string & path
 //prendre en compte les pourcentages
 int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
 {
+    qDebug() << "Filling planet with component...";
     srand(time(0));
-    int nb = mapCompo->size();
-    //Creating temp std::map for calculating %
-    std::map<Component *, int> * temp(mapCompo);
-    std::map<Component*, int>::iterator itmp = temp->begin();
-    for (itmp; itmp != temp->end(); ++itmp)
-        itmp->second = 0;
 
     float coef = _x *_y / 100;
+
+    //passer par un tableau de pourcentage pour savoir qui doit encore être placé
+    int size = mapCompo->size();
+    qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
+
+    float tmp[size];
+    for (int i = 0; i < size; i++)
+        tmp[i] = 0;
+
     //Adding component
     for (int i = 0; i < _x; i++)
     {
         for (int j = 0; j < _y; j++)
         {
-            //Need ajout tag Checked + transformer int en float
-            while(1)
+            //Choose random component
+            bool find = false;
+            while (find == false)
             {
-                int x = rand() % nb;
-                //Choose random component
                 std::map<Component*, int>::iterator it = mapCompo->begin();
-                itmp = temp->begin();
+                int x = rand() % size;
                 std::advance(it, x);
-                std::advance(itmp, x);
-                //Check percent
-                if (itmp->second < it->second)
+                if (tmp[x] < it->second) // Si le composant est tjs dispo
                 {
-                    _map[i][j]->component()->c(it->first);
-                    itmp->second += coef;
-                    break;
+                    qDebug() << "[" << i << "][" << j << "] random: " << x
+                             << " composant: " << it->first->getName().c_str()
+                             << " percent: " << it->second
+                             << " actual:" << tmp[x];
+                    _map[i][j]->component(it->first);
+                    tmp[x] += 1.0 / coef;
+                    find = true;
                 }
+                float total = 0;
+                for (x = 0; x < size; x++)
+                    total += tmp[x];
+                if (total >= 100)
+                    return 0;
             }
         }
     }
+    qDebug() << "Done.";
     return 0;
 }
 
@@ -273,7 +284,8 @@ void    HeightMap::printMap()
     {
         for (y = 0; y < _y; y++)
         {
-            std::cout << _map[x][y]->z() << '\t';
+            //std::cout << _map[x][y]->z() << '\t';
+            std::cout << _map[x][y]->component()->getName() << '\t';
         }
         std::cout << std::endl;
     }
