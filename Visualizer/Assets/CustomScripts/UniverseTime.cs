@@ -17,6 +17,18 @@ public class UniverseTime : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-	
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (timer.IsRunning)
+            {
+                print("Stop !");
+                timer.Stop();
+            }
+            else
+            {
+                print("Start !");
+                timer.Start();
+            }
+        }
 	}
 }

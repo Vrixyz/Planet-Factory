@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PlanetUpdater : MonoBehaviour {
 	public Dictionary<string, object> definition;
 	public List<object> evolutions;
-	UniverseTime time = new UniverseTime(); // TODO: make this a singleton
+	UniverseTime time = null;
 	public Dictionary<string, Texture2D> materials = new Dictionary<string, Texture2D>();
     public Dictionary<string, object> materialsDefinition = null;
 
@@ -16,8 +16,9 @@ public class PlanetUpdater : MonoBehaviour {
 	}
 
 	Dictionary<string, Texture2D> displacements;
-	public void setEvolutions(List<object> evol)
+	public void setEvolutions(List<object> evol, UniverseTime t)
 	{
+        time = t;
 		evolutions = evol;
 		//print ("evol: " + evolutions);
 		displacements = new Dictionary<string, Texture2D> ();

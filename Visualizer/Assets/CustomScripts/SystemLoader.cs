@@ -10,6 +10,7 @@ public class SystemLoader : MonoBehaviour {
 
     private static SystemLoader _instance = null;
     public bool hasLoaded = false;
+    UniverseTime time;
 
     public static SystemLoader getInstance() {
         if (!_instance)
@@ -72,8 +73,8 @@ public class SystemLoader : MonoBehaviour {
 		    print ("tried to load : " + resourceFolder + materialEvolution["file"].ToString());
 		    print (updater.materials [materialEvolution ["name"].ToString ()]);
 		}
-
-		updater.setEvolutions(evolutionList);
+        time = this.gameObject.AddComponent<UniverseTime>();
+		updater.setEvolutions(evolutionList, time);
 		updater.definition = dictPlanet;
         updater.materialsDefinition = new Dictionary<string,object>(materialsDefinition);
         
