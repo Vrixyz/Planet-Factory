@@ -302,3 +302,8 @@ MapInfo *** HeightMap::map(void)const
 {
     return _map;
 }
+
+int HeightMap::exportHeightmap(int ** tab, const std::string & path, const std::string & name)
+{
+    return 0;
+}

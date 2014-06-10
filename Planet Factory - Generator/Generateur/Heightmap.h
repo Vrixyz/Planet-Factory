@@ -25,6 +25,9 @@ public:
     //Create random zone
     int PlateTectonic(int n, std::map<Component *, int> * mapCompo);
 
+    //export heightmap
+    int exportHeightmap(int ** tab, const std::string & path, const std::string & name);
+
     void    printMap();
 
     /**Getter **/
