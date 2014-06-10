@@ -146,17 +146,17 @@ void    Planet::initOther()
 
 void    Planet::_genHMStar(void)
 {
-    QDebug() << "Generating star...";
+    qDebug() << "Generating star...";
 }
 
 void    Planet::_genHMGaz(void)
 {
-    QDebug() << "Generating gazeous planet...";
+    qDebug() << "Generating gazeous planet...";
 }
 
 void    Planet::_genHMAsteroid(void)
 {
-    QDebug() << "Generating asteroid...";
+    qDebug() << "Generating asteroid...";
 }
 
 
