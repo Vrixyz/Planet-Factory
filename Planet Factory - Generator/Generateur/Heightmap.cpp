@@ -17,11 +17,6 @@ HeightMap::HeightMap(int radius)
     }
 }
 
-int HeightMap::exportHeighMap(const std::string & name, const std::string & path)
-{
-    return 0;
-}
-
 //prendre en compte les pourcentages
 int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
 {

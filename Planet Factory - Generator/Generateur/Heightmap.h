@@ -18,8 +18,6 @@ class HeightMap
 {
 public:
     HeightMap(int radius);
-    //Create heightmap picture
-    int exportHeighMap(const std::string & name, const std::string & path);
     //Update map
     int changeAlt(int x, int y, int z);
     //Create random zone
