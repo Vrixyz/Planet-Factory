@@ -18,12 +18,13 @@ class HeightMap
 {
 public:
     HeightMap(int radius);
-    //Create heightmap picture
-    int exportHeighMap(const std::string & name, const std::string & path);
     //Update map
     int changeAlt(int x, int y, int z);
     //Create random zone
     int PlateTectonic(int n, std::map<Component *, int> * mapCompo);
+
+    //export heightmap
+    int exportHeightmap(int ** tab, const std::string & path, const std::string & name);
 
     void    printMap();
 
