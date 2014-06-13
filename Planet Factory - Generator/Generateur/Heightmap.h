@@ -14,6 +14,18 @@
 
 #define RATIO_PLATE 25
 
+enum e_tectoDirect
+{
+    NORTH,
+    NE,
+    EAST,
+    SE,
+    SOUTH,
+    SW,
+    WEST,
+    NW
+};
+
 class HeightMap
 {
 public:
@@ -36,6 +48,7 @@ private:
     int         _x;
     int         _y;
     MapInfo *** _map;
+    e_tectoDirect * _tectoDirect;
 
     int _fillComponent(std::map<Component*, int>   *mapCompo);
     int _updateMap(int x, int y, int c);
