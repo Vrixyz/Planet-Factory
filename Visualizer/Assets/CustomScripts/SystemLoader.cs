@@ -10,7 +10,7 @@ public class SystemLoader : MonoBehaviour {
 
     private static SystemLoader _instance = null;
     public bool hasLoaded = false;
-    UniverseTime time;
+    UniverseTime time = null;
 
     public static SystemLoader getInstance() {
         if (!_instance)
