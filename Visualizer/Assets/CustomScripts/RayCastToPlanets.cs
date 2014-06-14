@@ -88,24 +88,26 @@ public class RayCastToPlanets : MonoBehaviour {
             }
             if (controler.activeInHierarchy)
             {
-				Collider planetCollider = ((GameObject)sys.planets [0]).collider;
-				
-				if (planetCollider.Raycast (ray, out hit, 1000.0f)) {
-					{
-						//Debug.DrawLine (ray.origin, hit.point);
-						//print ("hit! ");
-						Vector2 textureCoord = hit.textureCoord;
-						pu = ((GameObject)sys.planets [0]).GetComponent<PlanetUpdater>();
-						textureCoord.x *= pu.materials["rock"].width;
-						textureCoord.y *= pu.materials["rock"].height;
-						//print(hit.textureCoord);
-						x = (int)textureCoord.x;
-						y = (int)textureCoord.y;
-                        print("pixel rock : " + pu.materials["rock"].GetPixel(x, y));
-                        print("pixel water : " + pu.materials["water"].GetPixel(x, y));
-                        if (controler.activeInHierarchy)
-							ShowInformations(x, y, pu);
-					}
+                foreach (GameObject p in sys.planets)
+				{
+                    Collider planetCollider = p.collider;
+				    if (planetCollider.Raycast (ray, out hit, 1000.0f)) {
+					    {
+						    //Debug.DrawLine (ray.origin, hit.point);
+						    //print ("hit! ");
+						    Vector2 textureCoord = hit.textureCoord;
+						    pu = ((GameObject)sys.planets [0]).GetComponent<PlanetUpdater>();
+						    textureCoord.x *= pu.materials["rock"].width;
+						    textureCoord.y *= pu.materials["rock"].height;
+						    //print(hit.textureCoord);
+						    x = (int)textureCoord.x;
+						    y = (int)textureCoord.y;
+                            print("pixel rock : " + pu.materials["rock"].GetPixel(x, y));
+                            print("pixel water : " + pu.materials["water"].GetPixel(x, y));
+                            if (controler.activeInHierarchy)
+							    ShowInformations(x, y, pu);
+					    }
+                    }
 				}
 			}
 		}	

@@ -17,6 +17,7 @@ public class SystemLoader : MonoBehaviour {
         {
             GameObject manager = GameObject.Find("Manager");
             _instance = manager.AddComponent<SystemLoader>();
+            
         }
         return _instance;
     }
@@ -73,7 +74,6 @@ public class SystemLoader : MonoBehaviour {
 		    print ("tried to load : " + resourceFolder + materialEvolution["file"].ToString());
 		    print (updater.materials [materialEvolution ["name"].ToString ()]);
 		}
-        time = this.gameObject.AddComponent<UniverseTime>();
 		updater.setEvolutions(evolutionList, time);
 		updater.definition = dictPlanet;
         updater.materialsDefinition = new Dictionary<string,object>(materialsDefinition);
@@ -83,9 +83,10 @@ public class SystemLoader : MonoBehaviour {
         Texture2D t = TextureGenerator.generate(updater.materials, updater.materialsDefinition);
         // if (t == null)
         // WTF ???
-        print("should be white");
+
         instance.GetComponent<SGT_Planet>().SurfaceTextureDay.SetTexture(t, 0);
-        
+        Texture2D t_n = TextureGenerator.MakeNight(t);
+        instance.GetComponent<SGT_Planet>().SurfaceTextureNight.SetTexture(t_n, 0);
         planets.Add (instance);
 	}
 
@@ -102,10 +103,13 @@ public class SystemLoader : MonoBehaviour {
 
 	public void initialize()
 	{
-		string systemInfo;
+        time = this.gameObject.AddComponent<UniverseTime>();
+        
+        string systemInfo;
 		systemInfo = Load (rootFolder + "systeme.json");
 		print(systemInfo);
 		var dict = Json.Deserialize (systemInfo) as Dictionary<string, object>;
+        time.totalTime = (long)dict["totalTime"];
 		print("dict['astres'][0]: " + ((List<object>) dict["astres"])[0]);
 		materialsDefinition = dict ["materials"] as Dictionary<string, object>;
 		print ("rock : " + materialsDefinition ["rock"]);

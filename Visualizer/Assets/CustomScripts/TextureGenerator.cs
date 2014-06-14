@@ -14,6 +14,31 @@ public class TextureGenerator : MonoBehaviour {
 	void Update () {
 	
 	}
+    
+    public static Texture2D MakeNight(Texture2D t_d)
+    {
+        Texture2D t_n = new Texture2D(t_d.width, t_d.height, t_d.format, false);
+
+        for (int x = 0; x < t_n.width; x++) {
+			for (int y = 0; y < t_n.height; y++)
+			{
+
+                Color pixel = t_n.GetPixel(x, y);
+                Color pixel_day = t_d.GetPixel(x, y);
+
+                pixel.r = pixel_day.r * 0.3f;
+
+                pixel.g = pixel_day.g * 0.3f;
+
+                pixel.b = pixel_day.b * 0.3f;
+                
+                t_n.SetPixel(x,y, pixel);
+				//print("pixel white");
+			}
+		}
+        t_n.Apply();
+        return t_n;
+    }
 
 	public static Texture2D generate(Dictionary<string, Texture2D> mat_textures, Dictionary<string, object> mat_def)
 	{

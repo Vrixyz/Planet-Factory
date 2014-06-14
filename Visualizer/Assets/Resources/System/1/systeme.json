@@ -1,5 +1,5 @@
 {
-	"date": "12/06/2013",
+	"totalTime": 100,
 	"nombreAstres": 2,
 	"astres": [
 		"./soleil.json",
