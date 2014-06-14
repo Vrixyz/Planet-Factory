@@ -24,8 +24,6 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     srand(time(0));
 
     float coef = _x *_y / 100;
-
-    //passer par un tableau de pourcentage pour savoir qui doit encore être placé
     int size = mapCompo->size();
     qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
 
@@ -45,16 +43,21 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                 std::map<Component*, int>::iterator it = mapCompo->begin();
                 int x = rand() % size;
                 std::advance(it, x);
-                if (tmp[x] < it->second) // Si le composant est tjs dispo
+                if (tmp[x] <= it->second) // If componant still ok
                 {
                     qDebug() << "[" << i << "][" << j << "] random: " << x
                              << " composant: " << it->first->getName().c_str()
                              << " percent: " << it->second
                              << " actual:" << tmp[x];
                     _map[i][j]->component(it->first);
-                    tmp[x] += 1.0 / coef;
+                    if (coef < 1)
+                        tmp[x] += 1.0 * coef;
+                    else
+                        tmp[x] += 1.0 / coef;
                     find = true;
                 }
+
+                //Check total percent
                 float total = 0;
                 for (x = 0; x < size; x++)
                     total += tmp[x];
@@ -76,8 +79,12 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
     if (n == 0)
         n = 1;
     _n = n;
-    //std::cout << "Radius of this planet " << _r << " Plate number : " << n << std::endl;
     srand(time(0));
+    //Give to plate random direction
+    for (int i = 0; i < n; i++)
+        _tectoDirect[i] = static_cast<e_tectoDirect>(rand() % NW);
+
+    //std::cout << "Radius of this planet " << _r << " Plate number : " << n << std::endl;
     int x, y; //Plate init
     for (int i = 1; i <= n; i++)
     {
@@ -100,52 +107,41 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
     int counter = 0;
     int nbCase = _x * _y;
     int countMax = (nbCase / 4);
-    //std::cout << "Count Max: " << countMax << std::endl;
     while (counter <= countMax)
     {
         for (x = 0; x < _x; x++)
         {
             for (y = 0; y < _y; y++)
             {
-                //std::cout << "x: " << x << " y: " << y << std::endl;
                 bool find = false;
                 if (_map[x][y]->n() != 0)//A plate found
                 {
-                    //std::cout << "Plate found at " << x << " " << y << " " << _map[x][y]->n() << std::endl;
                     std::list<int>::iterator it;
                     for (it = check.begin(); it != check.end(); it++)
                     {
-                        //std::cout << "Check if already in the list" << std::endl;
                         if ((*it) == _map[x][y]->n())
                         {
-                            //std::cout << "Find..." << std::endl;
                             find = true;
                             break;
                         }
                     }
                     if (find == false)// No in the check list
                     {
-                        //std::cout << "Not on list" << std::endl;
                         check.push_back(_map[x][y]->n());
                         //Upate tectonique plate
                         if (_updateMap(x, y, _map[x][y]->n()) == 0)
-                        {
                             counter++;
-                            //std::cout << "Counter : " << counter << std::endl;
-                        }
-                        //else
-                            //std::cout << "No more room..." << std::endl;
                     }
                 }
                 if (check.size() == (unsigned int)n) // list full
-                {
-                    //std::cout << "Clear check list..." << std::endl;
                     check.clear();
-                }
             }
         }
     }
     _updateMapSecondAlgo();
+    qDebug() << "Direction:";
+    for (int i = 0; i < n; i++)
+        qDebug() << _tectoDirect[i];
     return 0;
 }
 
@@ -278,10 +274,21 @@ void    HeightMap::printMap()
     for (x = 0; x < _x; x++)
     {
         for (y = 0; y < _y; y++)
-        {
-            //std::cout << _map[x][y]->z() << '\t';
             std::cout << _map[x][y]->component()->getName() << '\t';
-        }
+        std::cout << std::endl;
+    }
+
+    for (x = 0; x < _x; x++)
+    {
+        for (y = 0; y < _y; y++)
+            std::cout << _map[x][y]->z() << '\t';
+        std::cout << std::endl;
+    }
+
+    for (x = 0; x < _x; x++)
+    {
+        for (y = 0; y < _y; y++)
+            std::cout << _map[x][y]->n() << '\t';
         std::cout << std::endl;
     }
 }
