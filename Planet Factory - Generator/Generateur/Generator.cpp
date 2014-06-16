@@ -21,7 +21,7 @@ Generator::Generator(System *system, int time, int inter):_system(system), _time
             _terrains->push_front(t);
             connect(t, SIGNAL(thread_term()), this, SLOT(thread_term()));
         }
-        else // Autre type d'astres
+        else // other object
             (*it)->initOther();
     }
     qDebug() << "Threads creation done...";

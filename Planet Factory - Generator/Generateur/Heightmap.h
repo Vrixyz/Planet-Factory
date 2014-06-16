@@ -16,7 +16,7 @@
 
 enum e_tectoDirect
 {
-    NORTH,
+    NORTH = 0,
     NE,
     EAST,
     SE,
@@ -32,12 +32,11 @@ public:
     HeightMap(int radius);
     //Update map
     int changeAlt(int x, int y, int z);
-    //Create random zone
+    //Create plates
     int PlateTectonic(int n, std::map<Component *, int> * mapCompo);
-
     //export heightmap
     int exportHeightmap(int ** tab, const std::string & path, const std::string & name);
-
+    //Print in qDebug the different heightmap
     void    printMap();
 
     /**Getter **/

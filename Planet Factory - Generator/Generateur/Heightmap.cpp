@@ -25,7 +25,7 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
 
     float coef = _x *_y / 100;
     int size = mapCompo->size();
-    qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
+    //qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
 
     float tmp[size];
     for (int i = 0; i < size; i++)
@@ -43,12 +43,12 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                 std::map<Component*, int>::iterator it = mapCompo->begin();
                 int x = rand() % size;
                 std::advance(it, x);
-                if (tmp[x] <= it->second) // If componant still ok
+                if (tmp[x] < it->second) // If componant still ok
                 {
-                    qDebug() << "[" << i << "][" << j << "] random: " << x
+                    /*qDebug() << "[" << i << "][" << j << "] random: " << x
                              << " composant: " << it->first->getName().c_str()
                              << " percent: " << it->second
-                             << " actual:" << tmp[x];
+                             << " actual:" << tmp[x];*/
                     _map[i][j]->component(it->first);
                     if (coef < 1)
                         tmp[x] += 1.0 * coef;
@@ -62,12 +62,15 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                 for (x = 0; x < size; x++)
                     total += tmp[x];
                 if (total >= 100)
+                {
+                    qDebug() << "Done.";
                     return 0;
+                }
             }
         }
     }
-    qDebug() << "Done.";
-    return 0;
+    qDebug() << "Error.";
+    return 1;
 }
 
 int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
@@ -75,39 +78,42 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
     //Fill component
     if (_fillComponent(mapCompo) == 1)
         return 1;
-    //n = 2;
+
+    qDebug() << "Initialization of plates number...";
     if (n == 0)
         n = 1;
     _n = n;
+    qDebug() << "Done.";
+
+    qDebug() << "Giving to each plates a random direction...";
     srand(time(0));
-    //Give to plate random direction
+    _tectoDirect = new e_tectoDirect[n];
     for (int i = 0; i < n; i++)
         _tectoDirect[i] = static_cast<e_tectoDirect>(rand() % NW);
+    qDebug() << "Done.";
 
-    //std::cout << "Radius of this planet " << _r << " Plate number : " << n << std::endl;
-    int x, y; //Plate init
-    for (int i = 1; i <= n; i++)
+    //Plate init
+    qDebug() << "Placing starting point of each plates...";
+    int x, y;
+    (_map[0][0])->n(1);
+    for (int i = 2; i <= n; i++)
     {
         x = rand() % _x;
         y = rand() % _y;
         if ((_map[x][y])->n() == 0)
-        {
-            //std::cout << "Create a Tectonic plate at " << x << " " << y << std::endl;
-            if (i == 1)
-                (_map[0][0])->n(i);
-            else
-                (_map[x][y])->n(i);
-        }
+            (_map[x][y])->n(i);
         else
             i--;
     }
-    //Fill all planet with plate
+    qDebug() << "Done.";
+
+    //Fill all planet with plate with random
+    qDebug() << "Starting to fill the planet with plate...";
     std::list<int> check;
-    //std::cout << "Starting to fill the planet with plate..." << std::endl;
     int counter = 0;
     int nbCase = _x * _y;
     int countMax = (nbCase / 4);
-    while (counter <= countMax)
+    while (counter <= countMax) //check if all the planet if filled
     {
         for (x = 0; x < _x; x++)
         {
@@ -138,10 +144,19 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
             }
         }
     }
-    _updateMapSecondAlgo();
-    qDebug() << "Direction:";
-    for (int i = 0; i < n; i++)
-        qDebug() << _tectoDirect[i];
+    //Finish to fill the planet after the random part
+    //_updateMapSecondAlgo();
+    int last = 0;
+    for (int x = 0; x < _x; x++)
+    {
+        for (int y = 0; y < _y; y++)
+        {
+            if (_map[x][y]->n() != 0)//A plate found
+               last = _map[x][y]->n();
+            else if (_map[x][y]->n() == 0 && last != 0)
+                _map[x][y]->n(last);
+        }
+    }
     return 0;
 }
 
@@ -166,8 +181,7 @@ int    HeightMap::_updateMap(int x, int y, int c)
     int i = rand() % 4;
     int n = 0;
 
-    printMap();
-    //std::cout << "Update of the map... x: " << x << " y : " << y << " c : " << c << " i: " << i << std::endl;
+    //printMap();
     while(n < 4)
     {
         if(i == 0)//Left
