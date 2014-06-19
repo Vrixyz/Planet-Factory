@@ -33,8 +33,11 @@ public class SystemLoader : MonoBehaviour {
 
 	void loadFromAstralInfo(Dictionary<string, object> dictPlanet) {
 		print("dictPlanet['name']: " + dictPlanet["name"]);
-		GameObject instance = Instantiate(Resources.Load("Prefabs/PlanetSphere")) as GameObject;
-		
+        GameObject instance;
+        if (dictPlanet["type"].Equals("star"))
+		    instance = Instantiate(Resources.Load("Prefabs/Star")) as GameObject;
+		else
+            instance = Instantiate(Resources.Load("Prefabs/PlanetSphere")) as GameObject;
 		string evolutionInfo = Load (rootFolder + dictPlanet["evolution"]);
 		var dictEvolutions =  Json.Deserialize (evolutionInfo) as Dictionary<string, object>;
 		var evolutionList = dictEvolutions["evolutions"] as List< object >;
@@ -47,47 +50,54 @@ public class SystemLoader : MonoBehaviour {
 		long size = (long)dictEvolution ["radius"];
 		instance.transform.position = new Vector3(x, y, z);
 		instance.transform.localScale = new Vector3(size, size, size);
-		
-		SGT_SurfaceDisplacement surfDisp = instance.AddComponent<SGT_SurfaceDisplacement>();
-		surfDisp.SourceSurfaceMesh.GetMultiMesh(CubemapFace.PositiveX).Add((Mesh)Resources.Load ("Sphere128 (Surface) (Sphere).asset"));
-		
-		PlanetUpdater updater = instance.AddComponent<PlanetUpdater>();
 
-		updater.folder = resourceFolder;
-		print ("folder:" + updater.folder);
-		// materials evolution
-		
-		List<object> materialsEvolution = (dictEvolution ["materials"]) as List<object>;
-		
-        //TODO: load all materials and evolutions
+        // print(dictPlanet["name"] + " : " + dictPlanet["type"] + "    (dictPlanet[\"type\"].Equals(\"star\") = " +  (dictPlanet["type"].Equals("star") ? "true" : "false"));
+        PlanetUpdater updater = instance.AddComponent<PlanetUpdater>();
 
-		print (dictEvolution ["materials"]);
-        for (int i = 0; i < materialsEvolution.Count; ++i)
+        updater.folder = resourceFolder;
+        updater.setEvolutions(evolutionList, time);
+        updater.definition = dictPlanet;
+
+        if (!dictPlanet["type"].Equals("star"))
         {
-		    Dictionary<string, object> materialEvolution = materialsEvolution [i] as Dictionary<string, object>;
-		    print (materialEvolution);
-		    print (materialEvolution ["name"].ToString ());
-		    print (materialEvolution ["file"].ToString ());
+            //Surface Displacement
+		    SGT_SurfaceDisplacement surfDisp = instance.AddComponent<SGT_SurfaceDisplacement>();
+		    surfDisp.SourceSurfaceMesh.GetMultiMesh(CubemapFace.PositiveX).Add((Mesh)Resources.Load ("Sphere128 (Surface) (Sphere).asset"));
 		
-		    updater.materials [ materialEvolution["name"].ToString()] = (Texture2D)Resources.Load (resourceFolder + materialEvolution["file"].ToString());
+            //print ("folder:" + updater.folder);
+		    
+            // materials evolution
+            List<object> materialsEvolution = (dictEvolution["materials"]) as List<object>;
 
-		    print ("tried to load : " + resourceFolder + materialEvolution["file"].ToString());
-		    print (updater.materials [materialEvolution ["name"].ToString ()]);
-		}
-		updater.setEvolutions(evolutionList, time);
-		updater.definition = dictPlanet;
-        updater.materialsDefinition = new Dictionary<string,object>(materialsDefinition);
-        
-        //TODO : put that in updater to update if materials evolve
+            //TODO: load all materials and evolutions
 
-        Texture2D t = TextureGenerator.generate(updater.materials, updater.materialsDefinition);
-        // if (t == null)
-        // WTF ???
+            print(dictEvolution["materials"]);
+            for (int i = 0; i < materialsEvolution.Count; ++i)
+            {
+                Dictionary<string, object> materialEvolution = materialsEvolution[i] as Dictionary<string, object>;
+              //  print(materialEvolution);
+                //print(materialEvolution["name"].ToString());
+                //print(materialEvolution["file"].ToString());
 
-        instance.GetComponent<SGT_Planet>().SurfaceTextureDay.SetTexture(t, 0);
-        Texture2D t_n = TextureGenerator.MakeNight(t);
-        instance.GetComponent<SGT_Planet>().SurfaceTextureNight.SetTexture(t_n, 0);
-        planets.Add (instance);
+                updater.materials[materialEvolution["name"].ToString()] = (Texture2D)Resources.Load(resourceFolder + materialEvolution["file"].ToString());
+
+                //print("tried to load : " + resourceFolder + materialEvolution["file"].ToString());
+                //print(updater.materials[materialEvolution["name"].ToString()]);
+            }
+            
+            updater.materialsDefinition = new Dictionary<string, object>(materialsDefinition);
+
+            //TODO : put that in updater to update if materials evolve
+
+            Texture2D t = TextureGenerator.generate(updater.materials, updater.materialsDefinition);
+            // if (t == null)
+            // WTF ???
+
+            instance.GetComponent<SGT_Planet>().SurfaceTextureDay.SetTexture(t, 0);
+            Texture2D t_n = TextureGenerator.MakeNight(t);
+            instance.GetComponent<SGT_Planet>().SurfaceTextureNight.SetTexture(t_n, 0);
+        }
+        planets.Add(instance);
 	}
 
 	// Use this for initialization

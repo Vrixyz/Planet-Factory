@@ -4,6 +4,7 @@
 	"astres": [
 		"./soleil.json",
 		"./moon.json"
+		"./star.json"
 	],
 	"materials": {
 		"water": {

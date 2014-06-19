@@ -61,7 +61,6 @@ public class PlanetUpdater : MonoBehaviour {
 						currentP.x += ((long)(((Dictionary<string, object>)nextPosition["pos"])["x"]) - currentP.x) * progress;
 						currentP.y += ((long)(((Dictionary<string, object>)nextPosition["pos"])["y"]) - currentP.y) * progress;
 						currentP.z += ((long)(((Dictionary<string, object>)nextPosition["pos"])["z"]) - currentP.z) * progress;
-
 					}
 					this.gameObject.transform.position = currentP;
 					uPos = true;
@@ -80,7 +79,7 @@ public class PlanetUpdater : MonoBehaviour {
 					this.gameObject.transform.eulerAngles = new Vector3(0, rot, 0);
 					uRot = true;
 				}
-				if (uDisplacement == false && current.ContainsKey("displacement"))
+                if (!definition["type"].Equals("star") && uDisplacement == false && current.ContainsKey("displacement"))
 				{
 					// TODO: probably no extrapolation to do, then update it differently
 
@@ -93,19 +92,19 @@ public class PlanetUpdater : MonoBehaviour {
 			if (current.ContainsKey("rotation"))
 				nextRotation = current;
 		}
-        print("ca va planter !");
-        Dictionary<string, object> mat_def = materialsDefinition;
+        //print("ca va planter !");
+        //Dictionary<string, object> mat_def = materialsDefinition;
 
-        print(definition["name"]);
-        if (mat_def == null)
-            print("it's null");
-        print(" mat_def : " + mat_def["rock"]);
-        Dictionary<string, object> rmat = mat_def["rock"] as Dictionary<string, object>;
-        print("rock : ");
-        foreach (var v in rmat)
-        {
-            print(v.Key + " : " + v.Value);
-        }
+        //print(definition["name"]);
+        //if (mat_def == null)
+        //    print("it's null");
+        //print(" mat_def : " + mat_def["rock"]);
+        //Dictionary<string, object> rmat = mat_def["rock"] as Dictionary<string, object>;
+        //print("rock : ");
+        //foreach (var v in rmat)
+        //{
+        //    print(v.Key + " : " + v.Value);
+        //}
         //return;
         //Texture2D t = TextureGenerator.generate(materials, mat_def);
         //// if (t == null)

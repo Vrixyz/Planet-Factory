@@ -1,0 +1,6 @@
+{
+	"name": "Star",
+	"type": "star",
+	"sunType": "G",
+	"evolution":"./starEvolution.json",
+}

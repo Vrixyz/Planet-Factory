@@ -91,7 +91,7 @@ public class RayCastToPlanets : MonoBehaviour {
                 foreach (GameObject p in sys.planets)
 				{
                     Collider planetCollider = p.collider;
-				    if (planetCollider.Raycast (ray, out hit, 1000.0f)) {
+				    if (planetCollider != null && planetCollider.Raycast (ray, out hit, 1000.0f)) {
 					    {
 						    //Debug.DrawLine (ray.origin, hit.point);
 						    //print ("hit! ");
