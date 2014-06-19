@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>res/background.png</file>
+        <file>res/stylesheet.qss</file>
+        <file>res/facebook.png</file>
+        <file>res/twitter.png</file>
+        <file>res/save_button.png</file>
+        <file>res/load_button.png</file>
+        <file>res/reset_button.png</file>
+        <file>res/launch_button.png</file>
+    </qresource>
+</RCC>
