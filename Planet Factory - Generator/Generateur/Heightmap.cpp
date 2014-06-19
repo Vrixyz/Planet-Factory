@@ -17,7 +17,6 @@ HeightMap::HeightMap(int radius)
     }
 }
 
-//prendre en compte les pourcentages
 int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
 {
     qDebug() << "Filling planet with component...";
@@ -45,10 +44,10 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                 std::advance(it, x);
                 if (tmp[x] < it->second) // If componant still ok
                 {
-                    /*qDebug() << "[" << i << "][" << j << "] random: " << x
+                    qDebug() << "[" << i << "][" << j << "] random: " << x
                              << " composant: " << it->first->getName().c_str()
                              << " percent: " << it->second
-                             << " actual:" << tmp[x];*/
+                             << " actual:" << tmp[x];
                     _map[i][j]->component(it->first);
                     if (coef < 1)
                         tmp[x] += 1.0 * coef;
@@ -69,8 +68,8 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
             }
         }
     }
-    qDebug() << "Error.";
-    return 1;
+    qDebug() << "Done normaly.";
+    return 0;
 }
 
 int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
@@ -80,8 +79,8 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
         return 1;
 
     qDebug() << "Initialization of plates number...";
-    if (n == 0)
-        n = 1;
+    if (n < 4)
+        n = 4;
     _n = n;
     qDebug() << "Done.";
 
@@ -145,23 +144,6 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
         }
     }
     //Finish to fill the planet after the random part
-    //_updateMapSecondAlgo();
-    int last = 0;
-    for (int x = 0; x < _x; x++)
-    {
-        for (int y = 0; y < _y; y++)
-        {
-            if (_map[x][y]->n() != 0)//A plate found
-               last = _map[x][y]->n();
-            else if (_map[x][y]->n() == 0 && last != 0)
-                _map[x][y]->n(last);
-        }
-    }
-    return 0;
-}
-
-int     HeightMap::_updateMapSecondAlgo()
-{
     int last = 0;
     for (int x = 0; x < _x; x++)
     {

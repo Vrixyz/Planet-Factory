@@ -51,7 +51,6 @@ private:
 
     int _fillComponent(std::map<Component*, int>   *mapCompo);
     int _updateMap(int x, int y, int c);
-    int _updateMapSecondAlgo();
     int _updateTop(int x, int y, int c);
     int _updateRight(int x, int y, int c);
     int _updateBot(int x, int y, int c);
