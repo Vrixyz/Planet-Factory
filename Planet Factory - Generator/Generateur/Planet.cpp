@@ -165,6 +165,11 @@ std::map<Component*, int> *Planet::getComponentMap(void)
     return (_mapCompo);
 }
 
+HeightMap *             Planet::getHeightMap(void)
+{
+    return _hm;
+}
+
 void Planet::setPosition(int X, int Y, int Z)
 {
     _mutex.lock();

@@ -32,12 +32,20 @@ public:
     HeightMap(int radius);
     //Update map
     int changeAlt(int x, int y, int z);
+
     //Create plates
     int PlateTectonic(int n, std::map<Component *, int> * mapCompo);
+
+    //Create terrain
+    int terrain();
+
     //export heightmap
     int exportHeightmap(int ** tab, const std::string & path, const std::string & name);
+
     //Print in qDebug the different heightmap
     void    printMap();
+
+
 
     /**Getter **/
     MapInfo *** map(void)const;
@@ -55,6 +63,9 @@ private:
     int _updateRight(int x, int y, int c);
     int _updateBot(int x, int y, int c);
     int _updateLeft(int x, int y, int c);
+
+    //return border MapInfo if exist
+    MapInfo * _isBorder(MapInfo * coord);
 };
 
 #endif // HEIGHTMAP_H

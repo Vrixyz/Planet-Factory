@@ -51,6 +51,7 @@ public:
     std::string             getName(void);
     void                    setType(PlanetType);
     PlanetType              getType(void);
+    HeightMap *             getHeightMap(void);
     void                    setRadius(int);
     int                     getRadius(void);
     void                    setDistance(int);

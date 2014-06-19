@@ -158,6 +158,37 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
     return 0;
 }
 
+int HeightMap::terrain()
+{
+    //Stocker les cases de frontières 2, par 2, la 1ère et celle qui est dans le sens influer
+    qDebug() << "Checking border...";
+    std::map<MapInfo*, MapInfo*> borders;
+    for (int x = 0; x < _x; x++)
+    {
+        for (int y = 0; y < _y; y++)
+        {
+            MapInfo * tmp = _isBorder(_map[x][y]);
+            if (tmp)
+            {
+                borders[_map[x][y]] = tmp;
+            }
+        }
+    }
+    qDebug() << "Done.";
+
+    //Influer le mouvement des plaques
+
+
+    //Export Heightmap
+
+    return 0;
+}
+
+MapInfo * HeightMap::_isBorder(MapInfo * coord)
+{
+    return 0;
+}
+
 int    HeightMap::_updateMap(int x, int y, int c)
 {
     int i = rand() % 4;
@@ -284,7 +315,7 @@ void    HeightMap::printMap()
     for (x = 0; x < _x; x++)
     {
         for (y = 0; y < _y; y++)
-            std::cout << _map[x][y]->n() << '\t';
+            std::cout << _map[x][y]->n();
         std::cout << std::endl;
     }
 }
