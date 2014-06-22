@@ -10,6 +10,8 @@ public class RayCastToPlanets : MonoBehaviour {
 	public PlanetUpdater pu;
 	public UILabel Pos;
 	public UILabel materiel;
+	public UILabel planet;
+	public GameObject menuInGame;
 	// Use this for initialization
 	void Start () {
 	}
@@ -17,15 +19,14 @@ public class RayCastToPlanets : MonoBehaviour {
 	
 	void ShowInformations(float x, float y, PlanetUpdater pu) {
 		labels = controler.GetComponentsInChildren<UILabel>();
-		UILabel b = labels.Get(2);
-		Pos.text = x.ToString() + "," + y.ToString();
 		
+		Pos.text = x.ToString() + "," + y.ToString();
+		planet.text = pu.name.ToString();
 		pops = controler.GetComponentsInChildren<UIPopupList>();
 		UIPopupList p = pops.Get(0);
 		
 		
 		//creation de la fenetre dynamic
-		b = labels.Get(1);
         p.items.Clear();
         foreach (var t in pu.materials)
         {
@@ -74,6 +75,19 @@ public class RayCastToPlanets : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if (menuInGame.GetComponent<UIPanel>().alpha == 0)
+			{
+				menuInGame.GetComponent<UIPanel>().alpha = 1;
+				menuInGame.SetActive(true);
+			}
+			else
+			{
+				menuInGame.GetComponent<UIPanel>().alpha = 0;
+			}
+		}
 		if (Input.GetButton("Fire1")) {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;

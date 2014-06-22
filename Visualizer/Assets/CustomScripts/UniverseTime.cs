@@ -3,40 +3,58 @@ using System.Diagnostics;
 using System.Collections;
 
 public class UniverseTime : MonoBehaviour {
-	public Stopwatch timer = Stopwatch.StartNew ();
-    public float totalTime = 10.0f;
-
+	public float totalTime = 10.0f; // in seconds
+	private bool running = false;
+	private float elapsed = 0.0f; // in seconds
 	// Use this for initialization
-	void Start () {
-		reset ();
-		timer.Start ();
+	public void Start () {
+		running = true;
 	}
-
-	void reset() {
-		timer.Stop ();
-		timer.Reset ();
+	public void Stop () {
+		running = false;
 	}
-
+	
+	public bool IsRunning () {
+		return running;
+	}
+	
+	public void Reset() {
+		elapsed = 0.0f;
+	}
+	
+	public void setElapsed(float e)
+	{
+		elapsed = e;
+	}
+	public float getElapsed()
+	{
+		return elapsed;
+	}
+	
 	// Update is called once per frame
 	void Update () {
-        if (timer.Elapsed.Seconds > totalTime)
-        {
-            timer.Stop();
-            return;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (timer.IsRunning)
-            {
-                print("Stop !");
-                timer.Stop();
-            }
-            else
-            {
-                print("Start !");
-                timer.Start();
-            }
-        }
+		print ("time.deltatime: " + Time.deltaTime);
+		if (running && elapsed <= totalTime)
+		{
+			elapsed += Time.deltaTime;
+		}
+		else
+		{
+			running = false;
+			return;
+		}
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			if (running)
+			{
+				print("Stop !");
+				running = false;
+			}
+			else
+			{
+				print("Start !");
+				running = true;
+			}
+		}
 	}
 }

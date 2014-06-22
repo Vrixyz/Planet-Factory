@@ -46,7 +46,7 @@ public class PlanetUpdater : MonoBehaviour {
 
 		for (int i = evolutions.Count - 1; i >= 0; --i) {
 			Dictionary<string, object> current = (Dictionary<string, object>)(evolutions[i]);
-			if ((long)current["date"] < time.timer.ElapsedMilliseconds) {
+			if ((long)current["date"] < time.getElapsed() * 1000) {
 				if (uPos == false && current.ContainsKey("pos"))
 				{
 					long x = (long) ((Dictionary<string, object>)current["pos"]) ["x"];
@@ -56,7 +56,7 @@ public class PlanetUpdater : MonoBehaviour {
 					Vector3 currentP = new Vector3(x, y, z);
 					if (nextPosition.ContainsKey("date"))
 					{
-						float progress = (((float)(time.timer.ElapsedMilliseconds) - (float)((long)current["date"])) / (((float)((long)nextPosition["date"]) - (float)((long)current["date"]))));
+						float progress = (((float)(time.getElapsed() * 1000) - (float)((long)current["date"])) / (((float)((long)nextPosition["date"]) - (float)((long)current["date"]))));
 						//print ("progress: " + progress);
 						currentP.x += ((long)(((Dictionary<string, object>)nextPosition["pos"])["x"]) - currentP.x) * progress;
 						currentP.y += ((long)(((Dictionary<string, object>)nextPosition["pos"])["y"]) - currentP.y) * progress;
@@ -71,7 +71,7 @@ public class PlanetUpdater : MonoBehaviour {
 					//print ("rotation: " + x);
 					if (nextPosition.ContainsKey("date"))
 					{
-						float progress = (((float)(time.timer.ElapsedMilliseconds) - (float)((long)current["date"])) / (((float)((long)nextRotation["date"]) - (float)((long)current["date"]))));
+						float progress = (((float)(time.getElapsed() * 1000) - (float)((long)current["date"])) / (((float)((long)nextPosition["date"]) - (float)((long)current["date"]))));
 						//print ("progress: " + progress);
 						rot += (((long)(nextRotation["rotation"])) - rot) * progress;
 
