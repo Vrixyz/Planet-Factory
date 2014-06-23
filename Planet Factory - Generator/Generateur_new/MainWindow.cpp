@@ -1,11 +1,11 @@
 #include "MainWindow.hpp"
-#include "Menu.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     _menu = new Menu(this);
-    _menu->setGeometry(50,330,100,210);
-    _menu->show();
+    _celestialBox = new CelestialBox(this);
+    _planetCompoBox = new PlanetCompoBox(this);
+    _planetDetailsBox = new PlanetDetailsBox(this);
 }
 
 MainWindow::~MainWindow()

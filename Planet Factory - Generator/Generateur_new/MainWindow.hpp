@@ -10,13 +10,14 @@
 #include <QSpinBox>
 #include <QLabel>
 #include <QtGui>
-#include <QFileDialog>
 
-class Menu;
+#include "PlanetDetailsBox.hpp"
+#include "PlanetCompoBox.hpp"
+#include "CelestialBox.hpp"
+#include "Menu.hpp"
 
 class MainWindow : public QMainWindow
 {
-
     Q_OBJECT
 
 public:
@@ -26,6 +27,9 @@ public:
 
 private:
     Menu *_menu;
+    CelestialBox *_celestialBox;
+    PlanetCompoBox *_planetCompoBox;
+    PlanetDetailsBox *_planetDetailsBox;
 
 protected:
 

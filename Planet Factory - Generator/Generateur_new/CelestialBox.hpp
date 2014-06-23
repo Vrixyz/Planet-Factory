@@ -1,21 +1,20 @@
 #ifndef CELESTIALBOX_HPP
 #define CELESTIALBOX_HPP
 
+#include <QMainWindow>
 #include <QPushButton>
 #include <QListWidget>
 #include <QListView>
 #include <QGroupBox>
 #include <QWidget>
 
-#include "Planet.hpp"
+class MainWindow;
 
-class CelestialBox : public QGroupBox
+class CelestialBox : public QWidget
 {
-
     Q_OBJECT
 
 public:
-
     CelestialBox(MainWindow *parent = 0);
     ~CelestialBox();
 
@@ -23,21 +22,20 @@ public:
     void updateListPlanet();
 
 private:
-
     QListWidget *_listObjects;
     QPushButton *_add;
     QPushButton *_del;
 
     MainWindow  *_parent;
-    
-signals:
-    
-public slots:
 
+signals:
+
+public slots:
+/*
     void        addObject();
     void        delObject();
     void        planetSelected(QListWidgetItem *);
-
+*/
 };
 
 #endif // CELESTIALBOX_HPP

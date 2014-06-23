@@ -1,4 +1,35 @@
 QMainWindow
 {
-        background-image: url(:/res/background.png);
+    background-image: url(:/res/background.png);
 }
+
+QLineEdit
+{
+    border: none;
+}
+
+QSpinBox
+{
+    border: none;
+    text-align: center;
+}
+
+QPushButton
+{
+    border: none;
+}
+
+QPushButton#syscompo_add { background-image: url(:/res/syscompo_add.png); }
+QPushButton#syscompo_edi { background-image: url(:/res/syscompo_edi.png); }
+QPushButton#syscompo_del { background-image: url(:/res/syscompo_del.png); }
+
+QPushButton#menu_save { background-image: url(:/res/save_button.png); }
+QPushButton#menu_load { background-image: url(:/res/load_button.png); }
+QPushButton#menu_launch { background-image: url(:/res/launch_button.png); }
+QPushButton#menu_reset { background-image: url(:/res/reset_button.png); }
+QPushButton#menu_facebook { background-image: url(:/res/facebook.png); }
+QPushButton#menu_twitter { background-image: url(:/res/twitter.png); }
+
+QPushButton#planetcompo_add { background-image: url(:/res/planetcompo_add.png) }
+
+QWidget#planetDetail { background-image: url(:/res/background_planetdetail.png) }

@@ -14,7 +14,10 @@ TEMPLATE =  app
 
 SOURCES +=  main.cpp \
     MainWindow.cpp \
-    Menu.cpp
+    Menu.cpp \
+    CelestialBox.cpp \
+    PlanetCompoBox.cpp \
+    PlanetDetailsBox.cpp
 
 OTHER_FILES +=
 
@@ -23,7 +26,10 @@ DEPENDPATH += $$PWD/
 
 HEADERS += \
     MainWindow.hpp \
-    Menu.h
+    Menu.hpp \
+    CelestialBox.hpp \
+    PlanetCompoBox.hpp \
+    PlanetDetailsBox.hpp
 
 RESOURCES   += \
     resources.qrc
