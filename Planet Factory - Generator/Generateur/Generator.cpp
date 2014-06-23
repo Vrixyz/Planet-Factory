@@ -25,8 +25,6 @@ Generator::Generator(System *system, int time, int inter):_system(system), _time
             (*it)->initOther();
     }
     qDebug() << "Threads creation done...";
-
-    qDebug() << "Starting main loop...";
 }
 
 void     Generator::launch()
@@ -63,6 +61,7 @@ void     Generator::run()
 {
     Terrain * t;
 
+    qDebug() << "Starting main loop...";
     if (_iteration < _time)
     {
         _progress->setValue(_iteration);
