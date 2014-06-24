@@ -12,9 +12,11 @@ CelestialBox::CelestialBox(MainWindow *parent) : QWidget(parent)
     _add = new QPushButton(this);
     _del = new QPushButton(this);
     _add->setGeometry(0, 210, 141, 30);
-    _add->setStyleSheet("QPushButton { background-image: url(:/res/celestial_add.png); border: none }");
+    _add->setText("Add / Edit");
+//    _add->setObjectName("celestial_add");
     _del->setGeometry(147, 210, 141, 30);
-    _del->setStyleSheet("QPushButton { background-image: url(:/res/celestial_delete.png); border: none }");
+    _del->setText("Delete");
+//    _del->setObjectName("celestial_del");
     _del->setEnabled(false);
 
     QObject::connect(_add, SIGNAL(clicked()), this, SLOT(addObject()));
@@ -26,7 +28,7 @@ CelestialBox::~CelestialBox()
 {
 
 }
-/*
+
 void CelestialBox::updateListPlanet(void)
 {
     std::list<Planet*>::iterator it;
@@ -103,8 +105,6 @@ void CelestialBox::addObject()
             (*it)->setDistance(_parent->getPlanetDetails()->_eDistance->value());
             (*it)->setRevo(_parent->getPlanetDetails()->_eRevo->value());
             (*it)->setTilt(_parent->getPlanetDetails()->_eTilt->value());
-            //(*it)->setPosition(_parent->getPlanetDetails()->_ePosX->value(), _parent->getPlanetDetails()->_ePosY->value(), _parent->getPlanetDetails()->_ePosZ->value());
-            //(*it)->setPositionVec(_parent->getPlanetDetails()->_ePosVecX->value(), _parent->getPlanetDetails()->_ePosVecY->value(), _parent->getPlanetDetails()->_ePosVecZ->value());
             if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Star"))
                 (*it)->setType(STAR);
             else if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Telluric planet"))
@@ -132,4 +132,4 @@ void CelestialBox::cleanAllFields()
     _parent->getPlanetDetails()->_eTilt->setValue(1);
     _del->setEnabled(FALSE);
 }
-*/
+

@@ -14,6 +14,8 @@
 #include <QWidget>
 #include <QLabel>
 
+#include "Planet.hpp"
+
 class MainWindow;
 
 class PlanetDetailsBox : public QWidget
@@ -26,12 +28,7 @@ public:
     PlanetDetailsBox(MainWindow *parent = 0);
     ~PlanetDetailsBox();
 
-/*
-    void buildPosition();
-    void buildPositionVector();
-
     void setInfosDetails(Planet*);
-*/
 
     QSpinBox *_eRadius;
     QLineEdit *_eName;

@@ -17,7 +17,16 @@ SOURCES +=  main.cpp \
     Menu.cpp \
     CelestialBox.cpp \
     PlanetCompoBox.cpp \
-    PlanetDetailsBox.cpp
+    PlanetDetailsBox.cpp \
+    Component.cpp \
+    Planet.cpp \
+    System.cpp \
+    Generator.cpp \
+    HeightMap.cpp \
+    MapInfo.cpp \
+    Move.cpp \
+    MyComponent.cpp \
+    Terrain.cpp
 
 OTHER_FILES +=
 
@@ -29,7 +38,16 @@ HEADERS += \
     Menu.hpp \
     CelestialBox.hpp \
     PlanetCompoBox.hpp \
-    PlanetDetailsBox.hpp
+    PlanetDetailsBox.hpp \
+    Component.hpp \
+    Planet.hpp \
+    System.hpp \
+    Generator.hpp \
+    HeightMap.hpp \
+    MapInfo.hpp \
+    Move.hpp \
+    MyComponent.hpp \
+    Terrain.hpp
 
 RESOURCES   += \
     resources.qrc

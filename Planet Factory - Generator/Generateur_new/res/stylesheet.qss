@@ -3,6 +3,16 @@ QMainWindow
     background-image: url(:/res/background.png);
 }
 
+QDialog
+{
+    background-color: #2d2d2d;
+}
+
+QLabel
+{
+    color: white;
+}
+
 QLineEdit
 {
     border: none;
@@ -17,11 +27,19 @@ QSpinBox
 QPushButton
 {
     border: none;
+    color: white;
+    background-color: #2c586d;
 }
 
-QPushButton#syscompo_add { background-image: url(:/res/syscompo_add.png); }
-QPushButton#syscompo_edi { background-image: url(:/res/syscompo_edi.png); }
-QPushButton#syscompo_del { background-image: url(:/res/syscompo_del.png); }
+QPushButton:hover
+{
+    background-color: #0074ad;
+}
+
+QPushButton:disabled
+{
+    background-color: #4c4c4c;
+}
 
 QPushButton#menu_save { background-image: url(:/res/save_button.png); }
 QPushButton#menu_load { background-image: url(:/res/load_button.png); }
@@ -29,7 +47,5 @@ QPushButton#menu_launch { background-image: url(:/res/launch_button.png); }
 QPushButton#menu_reset { background-image: url(:/res/reset_button.png); }
 QPushButton#menu_facebook { background-image: url(:/res/facebook.png); }
 QPushButton#menu_twitter { background-image: url(:/res/twitter.png); }
-
-QPushButton#planetcompo_add { background-image: url(:/res/planetcompo_add.png) }
 
 QWidget#planetDetail { background-image: url(:/res/background_planetdetail.png) }

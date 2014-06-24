@@ -71,3 +71,20 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QWidget(parent)
 PlanetDetailsBox::~PlanetDetailsBox()
 {
 }
+
+void PlanetDetailsBox::setInfosDetails(Planet* toSet)
+{
+    toSet->setName(_eName->text().toStdString());
+    toSet->setRadius(_eRadius->value());
+    toSet->setDistance(_eDistance->value());
+    toSet->setTilt(_eTilt->value());
+    toSet->setRevo(_eRevo->value());
+    if (_eType->currentText().toStdString() == "Star")
+      toSet->setType(STAR);
+    else if (_eType->currentText().toStdString() == "Telluric planet")
+      toSet->setType(TELLURIC);
+    else if (_eType->currentText().toStdString() == "Gazeous planet")
+      toSet->setType(GAZEOUS);
+    else if (_eType->currentText().toStdString() == "Asteroid")
+      toSet->setType(ASTEROID);
+}

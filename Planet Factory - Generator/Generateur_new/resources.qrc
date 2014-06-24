@@ -8,17 +8,11 @@
         <file>res/load_button.png</file>
         <file>res/reset_button.png</file>
         <file>res/launch_button.png</file>
-        <file>res/celestial_add.png</file>
-        <file>res/celestial_delete.png</file>
         <file>res/label_planet_compo.png</file>
-        <file>res/planetcompo_add.png</file>
         <file>res/background_planetdetail.png</file>
         <file>res/name_planettype.png</file>
         <file>res/radius_degrees.png</file>
         <file>res/distance_revolution.png</file>
         <file>res/central_star.png</file>
-        <file>res/syscompo_add.png</file>
-        <file>res/syscompo_edi.png</file>
-        <file>res/syscompo_del.png</file>
-    </qresource>
+		</qresource>
 </RCC>

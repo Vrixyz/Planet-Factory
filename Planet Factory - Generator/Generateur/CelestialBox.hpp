@@ -9,6 +9,8 @@
 
 #include "Planet.hpp"
 
+class MainWindow;
+
 class CelestialBox : public QGroupBox
 {
 

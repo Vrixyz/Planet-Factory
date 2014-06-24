@@ -14,6 +14,8 @@
 #include "PlanetDetailsBox.hpp"
 #include "PlanetCompoBox.hpp"
 #include "CelestialBox.hpp"
+#include "Planet.hpp"
+#include "System.hpp"
 #include "Menu.hpp"
 
 class MainWindow : public QMainWindow
@@ -25,13 +27,28 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    PlanetDetailsBox    *getPlanetDetails(void);
+    PlanetCompoBox      *getPlanetCompo(void);
+    CelestialBox        *getCelestial(void);
+    Menu                *getMenu(void);
+
+    System              *getSystem();
+    void                setSystem(System *);
+
+    Planet              *_currPlanet;
+
 private:
-    Menu *_menu;
-    CelestialBox *_celestialBox;
-    PlanetCompoBox *_planetCompoBox;
-    PlanetDetailsBox *_planetDetailsBox;
+
+    PlanetDetailsBox    *_boxPlanetDetails;
+    PlanetCompoBox      *_boxPlanetCompo;
+    CelestialBox        *_boxCelestial;
+    Menu                *_menu;
+
+    System              *_system;
 
 protected:
+
+    void                keyPressEvent(QKeyEvent *event);
 
 public slots:
 

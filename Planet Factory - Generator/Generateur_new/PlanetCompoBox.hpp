@@ -60,12 +60,10 @@ public:
 
 private:
 
-//    GroupTools  *_boxSystem;
-
 signals:
 
 public slots:
-/*
+
     void checkPercentPla();
     void changePercentCompo(int);
 
@@ -83,7 +81,7 @@ public slots:
     void delCompoToSys(void);
     void addCompoToPla(void);
     void delCompoToPla(int);
-*/
+
 };
 
 #endif // PLANETCOMPOBOX_HPP
