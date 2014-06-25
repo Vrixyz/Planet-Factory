@@ -7,7 +7,7 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QWidget(parent)
     QSignalMapper* signalMapperSpinBox;
 
     _parent = parent;
-    setGeometry(218, 331, 756, 243);
+    setGeometry(218, 331, 756, 273);
 
     signalMapperButton = new QSignalMapper(this);
     signalMapperSpinBox = new QSignalMapper(this);
@@ -64,6 +64,7 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QWidget(parent)
     createWindowSysComponent();
     createWindowPlaComponent();
     createCompoList();
+    checkPercentPla();
 }
 
 PlanetCompoBox::~PlanetCompoBox()
@@ -88,6 +89,7 @@ void PlanetCompoBox::checkPercentPla()
     std::map<Component*, int>::iterator it_compo;
     int                                 total;
 
+    qDebug("1");
     if (_parent->_currPlanet == NULL)
     {
         _percentWarning->setStyleSheet("QLabel { color : red; }");
@@ -95,21 +97,26 @@ void PlanetCompoBox::checkPercentPla()
     }
     else
     {
+        qDebug("2");
         for (total = 0, it_compo = _parent->_currPlanet->getComponentMap()->begin();
              it_compo != _parent->_currPlanet->getComponentMap()->end();
              ++it_compo)
             total += it_compo->second;
+        qDebug("3");
         if (total != 100)
         {
+            qDebug("4");
             _percentWarning->setStyleSheet("QLabel { color : red; }");
             _percentWarning->setText("The sum of the % of all the components is not equal to 100%. :(");
         }
         else
         {
             _percentWarning->setStyleSheet("QLabel { color : green; }");
+            qDebug("5");
             _percentWarning->setText("The sum of the % of all the components is equal to 100%. :)");
         }
     }
+    qDebug("10");
 }
 
 void PlanetCompoBox::windowPlaAddCompo()
@@ -226,7 +233,7 @@ void PlanetCompoBox::updateListCompoPla()
 void PlanetCompoBox::createCompoList(void)
 {
     _percentWarning = new QLabel("", this);
-    _percentWarning->setGeometry(20, 251, 340, 25);
+    _percentWarning->setGeometry(0, 248, 360, 20);
     _percentWarning->setAlignment(Qt::AlignCenter);
     for (int i = 0; i < 7; i++)
     {

@@ -52,7 +52,7 @@ void Menu::linkFacebook()
 
 void Menu::linkTwitter()
 {
-    QDesktopServices::openUrl(QUrl("https://www.twitter.com/"));
+    QDesktopServices::openUrl(QUrl("https://www.twitter.com/planet_factory"));
 }
 
 void Menu::resetAll()

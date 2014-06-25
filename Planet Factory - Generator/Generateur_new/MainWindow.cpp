@@ -2,13 +2,13 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
+    _currPlanet = NULL;
+    _system = new System();
+
     _menu = new Menu(this);
     _boxCelestial = new CelestialBox(this);
-    _boxPlanetCompo = new PlanetCompoBox(this);
     _boxPlanetDetails = new PlanetDetailsBox(this);
-
-    _currPlanet = new Planet();
-    _system = new System();
+    _boxPlanetCompo = new PlanetCompoBox(this);
 }
 
 MainWindow::~MainWindow()

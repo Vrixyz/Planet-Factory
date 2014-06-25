@@ -65,6 +65,7 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
             _parent->getPlanetCompo()->updateListCompoPla();
             _del->setEnabled(TRUE);
         }
+    _parent->getPlanetCompo()->checkPercentPla();
 }
 
 void CelestialBox::delObject()
@@ -82,6 +83,7 @@ void CelestialBox::delObject()
         _parent->_currPlanet = NULL;
         _parent->getPlanetCompo()->updateListCompoPla();
     }
+    _parent->getPlanetCompo()->checkPercentPla();
 }
 
 void CelestialBox::addObject()
