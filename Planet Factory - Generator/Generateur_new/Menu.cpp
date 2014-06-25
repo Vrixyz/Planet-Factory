@@ -28,6 +28,11 @@ Menu::Menu(MainWindow *parent) : QWidget(parent)
     _facebook->setObjectName("menu_facebook");
     _twitter->setObjectName("menu_twitter");
 
+    _launchWindow = new QDialog();
+    _launchWindow->setFixedSize(300, 275);
+    _launchWindow->hide();
+    createWindowLaunch();
+
     QObject::connect(_facebook, SIGNAL(clicked()), this, SLOT(linkFacebook()));
     QObject::connect(_twitter, SIGNAL(clicked()), this, SLOT(linkTwitter()));
     QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(windowLaunch()));
