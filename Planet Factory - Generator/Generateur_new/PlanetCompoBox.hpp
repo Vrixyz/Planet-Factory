@@ -12,6 +12,8 @@
 #include <QWidget>
 #include <QLabel>
 
+#include "Component.hpp"
+
 class MainWindow;
 
 class PlanetCompoBox : public QWidget
@@ -47,6 +49,7 @@ public:
     QPushButton *_edi;
 
     QPushButton *_winSysAdd;
+    QPushButton *_winSysEdi;
     QPushButton *_winSysCan;
     QPushButton *_winPlaAdd;
     QPushButton *_winPlaCan;
@@ -54,9 +57,13 @@ public:
     QDialog     *_winSys;
     QDialog     *_winPla;
 
+    QLabel      *_lTitle;
+
     QListWidget *_listCompo;
 
     MainWindow  *_parent;
+
+    Component   *_currComponent;
 
 private:
 
@@ -70,7 +77,7 @@ public slots:
     void componentPlaSelected(void);
     void componentSysSelected(void);
 
-    void windowSysEditCompo(void);
+    void windowSysEdiCompo(void);
     void windowSysAddCompo(void);
     void windowPlaAddCompo(void);
 
@@ -78,6 +85,7 @@ public slots:
     void windowPlaCloseAndClean(void);
 
     void addCompoToSys(void);
+    void ediCompoToSys(void);
     void delCompoToSys(void);
     void addCompoToPla(void);
     void delCompoToPla(int);

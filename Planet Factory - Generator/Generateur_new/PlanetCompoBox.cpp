@@ -20,7 +20,7 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QWidget(parent)
 
     QLabel *infos = new QLabel(this);
     infos->setPixmap(QPixmap(":/res/label_planet_compo.png"));
-    infos->setGeometry(0, 0, 362, 24);
+    infos->setGeometry(-17, 0, 362, 24);
 
     _listObjects = new QListWidget(this);
     _listObjects->setGeometry(394, 0, 362, 207);
@@ -31,9 +31,13 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QWidget(parent)
     _edi = new QPushButton(this);
     _edi->setGeometry(513, 212, 114, 30);
     _edi->setText("Edit Component");
+    _edi->setEnabled(FALSE);
     _del = new QPushButton(this);
     _del->setGeometry(632, 212, 124, 30);
     _del->setText("Delete Component");
+    _del->setEnabled(FALSE);
+
+    _currComponent = NULL;
 
     _compoAdd = new QPushButton(this);
     _compoAdd->setGeometry(0, 213, 362, 30);
@@ -53,6 +57,7 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QWidget(parent)
     QObject::connect(signalMapperButton, SIGNAL(mapped(int)), this, SLOT(delCompoToPla(int))) ;
     QObject::connect(signalMapperSpinBox, SIGNAL(mapped(int)), this, SLOT(changePercentCompo(int))) ;
     QObject::connect(_add, SIGNAL(clicked()), this, SLOT(windowSysAddCompo()));
+    QObject::connect(_edi, SIGNAL(clicked()), this, SLOT(windowSysEdiCompo()));
     QObject::connect(_del, SIGNAL(clicked()), this, SLOT(delCompoToSys()));
     QObject::connect(_listObjects, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(componentSysSelected()));
 
@@ -213,7 +218,7 @@ void PlanetCompoBox::updateListCompoPla()
         _compoAdd->setEnabled(TRUE);
         _compoAdd->show();
         if (i == 7)
-            _compoAdd->hide();
+            _compoAdd->setEnabled(FALSE);
     }
     //checkPercentPla();
 }
@@ -225,10 +230,10 @@ void PlanetCompoBox::createCompoList(void)
     _percentWarning->setAlignment(Qt::AlignCenter);
     for (int i = 0; i < 7; i++)
     {
-        _compoName[i]->setGeometry(17, (18 + (26 * i)), 150, 30);
+        _compoName[i]->setGeometry(0, (18 + (26 * i)), 150, 30);
         _compoName[i]->setAlignment(Qt::AlignCenter);
-        _compoValue[i]->setGeometry(211, (23 + (26 * i)), 50, 25);
-        _compoDel[i]->setGeometry(286, (23 + (26 * i)), 80, 25);
+        _compoValue[i]->setGeometry(194, (23 + (26 * i)), 50, 25);
+        _compoDel[i]->setGeometry(269, (23 + (26 * i)), 80, 25);
         _compoName[i]->hide();
         _compoValue[i]->hide();
         _compoDel[i]->hide();
@@ -260,7 +265,6 @@ void PlanetCompoBox::createWindowPlaComponent()
 void PlanetCompoBox::createWindowSysComponent()
 {
     QLabel      *lName;
-    QLabel      *lTitle;
     QLabel      *lGazeousTemp;
     QLabel      *lSolidTemp;
     QLabel      *lHardness;
@@ -268,8 +272,8 @@ void PlanetCompoBox::createWindowSysComponent()
 
     lName = new QLabel("Name :", _winSys);
     lName->setGeometry(10, 45, 100, 15);
-    lTitle = new QLabel("Choose the paramters of the new component", _winSys);
-    lTitle->setGeometry(20, 10, 250, 15);
+    _lTitle = new QLabel("Choose the paramters of the new component", _winSys);
+    _lTitle->setGeometry(20, 10, 250, 15);
     lSolidTemp = new QLabel("Solid < (°C)", _winSys);
     lSolidTemp->setGeometry(10, 85, 100, 15);
     lGazeousTemp = new QLabel("Gazeous > (°C)", _winSys);
@@ -300,9 +304,13 @@ void PlanetCompoBox::createWindowSysComponent()
 
     _winSysAdd = new QPushButton("Add component", _winSys);
     _winSysAdd->setGeometry(10, 240, 115, 30);
+    _winSysEdi = new QPushButton("Edit component", _winSys);
+    _winSysEdi->setGeometry(10, 240, 115, 30);
+    _winSysEdi->hide();
     _winSysCan = new QPushButton("Cancel", _winSys);
     _winSysCan->setGeometry(135, 240, 115, 30);
     QObject::connect(_winSysAdd, SIGNAL(clicked()), this, SLOT(addCompoToSys()));
+    QObject::connect(_winSysEdi, SIGNAL(clicked()), this, SLOT(ediCompoToSys()));
     QObject::connect(_winSysCan, SIGNAL(clicked()), this, SLOT(windowSysCloseAndClean()));
 }
 
@@ -310,12 +318,38 @@ void PlanetCompoBox::windowSysAddCompo()
 {
     if (_winSys->isHidden() == TRUE)
     {
+        _lTitle->setText("Choose the paramters of the new component");
+        _winSysAdd->show();
+        _winSysEdi->hide();
         _eName->setText("");
         _eGazeousTemp->setValue(0);
         _eSolidTemp->setValue(0);
         _eHardness->setValue(0);
         _eMass->setValue(0);
         _winSys->show();
+    }
+}
+
+void PlanetCompoBox::windowSysEdiCompo()
+{
+    std::list<Component*>::iterator it;
+
+    if (_winSys->isHidden() == TRUE)
+    {
+        for (it = _parent->getSystem()->getComponentList()->begin();
+             it != _parent->getSystem()->getComponentList()->end(); ++it)
+            if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
+            {
+                _lTitle->setText("Edit the parameters of the choosen component");
+                _winSysEdi->show();
+                _winSysAdd->hide();
+                _winSys->show();
+                _eName->setText(QString((*it)->getName().c_str()));
+                _eGazeousTemp->setValue((*it)->getGazeousTemp());
+                _eSolidTemp->setValue((*it)->getSolidTemp());
+                _eHardness->setValue((*it)->getHardness());
+                _eMass->setValue((*it)->getMass());
+            }
     }
 }
 
@@ -335,19 +369,6 @@ void PlanetCompoBox::windowSysCloseAndClean()
     _eHardness->setValue(0);
     _eMass->setValue(0);
     if (_winSys->isHidden() == FALSE)
-        _winSys->hide();
-}
-
-void PlanetCompoBox::windowSysEditCompo()
-{
-    _eName->setText("");
-    _eGazeousTemp->setValue(0);
-    _eSolidTemp->setValue(0);
-    _eHardness->setValue(0);
-    _eMass->setValue(0);
-    if (_winSys->isHidden() == TRUE)
-        _winSys->show();
-    else
         _winSys->hide();
 }
 
@@ -387,11 +408,23 @@ void PlanetCompoBox::delCompoToSys()
                 (*it_pla)->getComponentMap()->erase(*it);
             _parent->getSystem()->getComponentList()->erase(it);
             _del->setEnabled(FALSE);
+            _edi->setEnabled(FALSE);
+            _currComponent = NULL;
             updateListCompoSys();
             updateListCompoPla();
             checkPercentPla();
             return;
         }
+}
+
+void PlanetCompoBox::ediCompoToSys()
+{
+    _currComponent->setName(_eName->text().toStdString().c_str());
+    _currComponent->setGazeousTemp(_eGazeousTemp->value());
+    _currComponent->setSolidTemp(_eSolidTemp->value());
+    _currComponent->setHardness(_eHardness->value());
+    _currComponent->setMass(_eMass->value());
+    _winSys->hide();
 }
 
 void PlanetCompoBox::componentPlaSelected()
@@ -401,5 +434,11 @@ void PlanetCompoBox::componentPlaSelected()
 
 void PlanetCompoBox::componentSysSelected()
 {
+    std::list<Component*>::iterator it;
+
+    for (it = _parent->getSystem()->getComponentList()->begin(); it != _parent->getSystem()->getComponentList()->end(); ++it)
+        if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
+            _currComponent = (*it);
     _del->setEnabled(TRUE);
+    _edi->setEnabled(TRUE);
 }
