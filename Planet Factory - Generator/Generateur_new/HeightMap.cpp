@@ -1,4 +1,4 @@
-#include "Heightmap.hpp"
+#include "HeightMap.hpp"
 
 HeightMap::HeightMap(int radius)
     :_r(radius), _x(radius * 4), _y(radius * 2)
