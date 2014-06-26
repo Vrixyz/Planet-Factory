@@ -12,6 +12,7 @@ GenWin::GenWin(System *s, QString path, int time, int inter, QWidget *parent) : 
     _nb_thread = 0;
 
     setGeometry(400, 200, 1024, 768);
+    setObjectName("genWin");
 
     //Global progress
     _GlobalText = new QLabel(this);
