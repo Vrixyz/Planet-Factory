@@ -26,7 +26,8 @@ SOURCES +=  main.cpp \
     MapInfo.cpp \
     Move.cpp \
     MyComponent.cpp \
-    Terrain.cpp
+    Terrain.cpp \
+    GenWin.cpp
 
 OTHER_FILES +=
 
@@ -47,7 +48,8 @@ HEADERS += \
     MapInfo.hpp \
     Move.hpp \
     MyComponent.hpp \
-    Terrain.hpp
+    Terrain.hpp \
+    GenWin.hpp
 
 RESOURCES   += \
     resources.qrc

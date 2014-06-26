@@ -1,5 +1,6 @@
 #include "Menu.hpp"
 #include "MainWindow.hpp"
+#include "GenWin.hpp"
 
 Menu::Menu(MainWindow *parent) : QWidget(parent)
 {
@@ -20,8 +21,11 @@ Menu::Menu(MainWindow *parent) : QWidget(parent)
     _facebook->setGeometry(13, 180, 32, 32);
     _twitter = new QPushButton(this);
     _twitter->setGeometry(55, 180, 32, 32);
+    _exit = new QPushButton(_parent);
+    _exit->setGeometry(980, 5, 15, 15);
 
     _save->setObjectName("menu_save");
+    _exit->setObjectName("menu_exit");
     _load->setObjectName("menu_load");
     _launch->setObjectName("menu_launch");
     _reset->setObjectName("menu_reset");
@@ -35,7 +39,9 @@ Menu::Menu(MainWindow *parent) : QWidget(parent)
 
     QObject::connect(_facebook, SIGNAL(clicked()), this, SLOT(linkFacebook()));
     QObject::connect(_twitter, SIGNAL(clicked()), this, SLOT(linkTwitter()));
-    QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(windowLaunch()));
+    QObject::connect(_exit, SIGNAL(clicked()), _parent, SLOT(close()));
+//    QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(windowLaunch()));
+    QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(test()));
     QObject::connect(_reset, SIGNAL(clicked()), this, SLOT(resetAll()));
     QObject::connect(_save, SIGNAL(clicked()), this, SLOT(saveConfSystem()));
     QObject::connect(_load, SIGNAL(clicked()), this, SLOT(loadConfSystem()));
@@ -66,6 +72,17 @@ void Menu::resetAll()
     _parent->getPlanetCompo()->checkPercentPla();
 }
 
+void Menu::test()
+{
+    QString path = QFileDialog::getExistingDirectory(this, tr("Chose save dir"));
+    if (path.isEmpty())
+      return;
+
+    System *s = _parent->getSystem();
+    GenWin *gen = new GenWin(s, path, 10, 1);
+    gen->launch();
+}
+
 void Menu::generate()
 {
     _launchWindow->hide();
@@ -78,13 +95,8 @@ void Menu::generate()
       return;
 
     System *s = _parent->getSystem();
-    Generator * gen = new Generator(s, duree, inter);
-
-    s->initJson(path);
+    GenWin *gen = new GenWin(s, path, duree, inter);
     gen->launch();
-    /*for (int i = 0; i < duree; i += inter)
-        s->evolution(i + inter);
-    s->endJson(path);*/
 }
 
 void Menu::createWindowLaunch(void)

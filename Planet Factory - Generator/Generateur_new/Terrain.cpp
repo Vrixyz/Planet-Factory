@@ -16,6 +16,7 @@ void    Terrain::run()
         _planet->init();
         _init = true;
         qDebug() << "Initialization of the planet : Done.";
+        emit step2sign();
     }
     else
     {
@@ -31,8 +32,9 @@ void    Terrain::run()
         std::string name = "";
         _planet->getHeightMap()->exportHeightmap(tmp, path, name);
         qDebug() << "Generating terrain : Done.";
+        emit step3sign();
     }
-    emit thread_term();
+
 }
 
 Planet * Terrain::planet(void) const

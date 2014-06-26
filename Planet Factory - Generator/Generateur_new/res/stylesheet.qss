@@ -13,6 +13,11 @@ QLabel
     color: white;
 }
 
+QWidget#genWin
+{
+    background-color: #2d2d2d;
+}
+
 QLineEdit
 {
     border: none;
@@ -42,6 +47,8 @@ QPushButton:disabled
 }
 
 QPushButton#menu_save { background-image: url(:/res/save_button.png); }
+QPushButton#menu_exit { background-image: url(:/res/button_exit.png); background-color: none; }
+QPushButton:hover#menu_exit { background-image: url(:/res/button_exit_hover.png); background-color: none; }
 QPushButton#menu_load { background-image: url(:/res/load_button.png); }
 QPushButton#menu_launch { background-image: url(:/res/launch_button.png); }
 QPushButton#menu_reset { background-image: url(:/res/reset_button.png); }
