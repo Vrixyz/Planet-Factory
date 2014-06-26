@@ -41,9 +41,9 @@ GenWin::GenWin(System *s, QString path, int time, int inter, QWidget *parent) : 
 
 
     _textArea = new QScrollArea(this);
-    _textArea->setObjectName("genWin");
+    _textArea->setObjectName("gen");
     _textInfo = new QTextEdit(_textArea);
-    _textInfo->setObjectName("genWin");
+    _textInfo->setObjectName("gen");
     _textArea->setGeometry(10, 120, 1004, 635);
     _textInfo->setGeometry(0, 0, 1004, 635);
 
@@ -68,7 +68,7 @@ void GenWin::launch()
 
 void GenWin::step1()
 {
-    appendInfo("Initialise json file...");
+    appendInfo("Initialize JSON file...");
     _system->initJson(_path);
     _progressCurrent->setValue(1);
     step2();
@@ -134,7 +134,7 @@ void GenWin::step2prog()
     _progressCurrent->setValue(_progressCurrent->value() + 1);
     if(_thread_term == _nb_thread)
     {
-        qDebug() << "Fin de tout les thread";
+        qDebug() << "End of all threads";
         connectTerrain();
     }
 }
@@ -150,13 +150,13 @@ void GenWin::step3()
         //Calculez les mouvements
         _thread_term = 0;
         _nb_thread = 0;
-        appendInfo("Calculating movement...");
+        appendInfo("Calculating movement... ");
         _move->setTime(_iteration);
         _move->start();
         _nb_thread ++;
 
         //Calculez les reliefs
-        appendInfo("Calculating terrains...");
+        appendInfo("Calculating grounds... ");
         std::list<Terrain*>::iterator itT;
         for(itT = _terrains->begin(); itT != _terrains->end(); ++itT)
         {
@@ -164,7 +164,7 @@ void GenWin::step3()
             t->start();
             _nb_thread ++;
         }
-        appendInfo("Number of thread waiting..." + QString::number(_nb_thread));
+        appendInfo("Number of thread waiting... " + QString::number(_nb_thread));
         _iteration += _inter;
     }
     else
@@ -177,11 +177,11 @@ void GenWin::step3prog()
 {
     _thread_term++;
     _progressCurrent->setValue(_iteration);
-    appendInfo("Number of thread end..." + QString::number(_thread_term));
+    appendInfo("Number of thread end... " + QString::number(_thread_term));
 
     if(_thread_term == _nb_thread)
     {
-        appendInfo("Fin de tout les thread");
+        appendInfo("End of all threads");
         step3();
     }
 }
