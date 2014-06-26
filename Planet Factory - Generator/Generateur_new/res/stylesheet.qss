@@ -8,6 +8,11 @@ QDialog
     background-color: #2d2d2d;
 }
 
+QWidget
+{
+    background-color: #2d2d2d;
+}
+
 QLabel
 {
     color: white;

@@ -57,6 +57,9 @@ public slots:
     void    resetAll();
     void    generate();
 
+
+    void    test();
+
 };
 
 #endif // MENU_HPP

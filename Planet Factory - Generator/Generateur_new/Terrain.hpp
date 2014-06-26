@@ -18,7 +18,8 @@ private:
     Planet * _planet;
 
 signals:
-    void thread_term();
+    void step2sign();
+    void step3sign();
 };
 
 #endif // TERRAIN_HPP
