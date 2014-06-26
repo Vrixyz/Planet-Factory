@@ -7,28 +7,28 @@ Planet::Planet()
     _mapCompo = new std::map<Component*, int>();
 }
 
-Planet::Planet(QJsonObject obj, System * s)
-    :_move(false), _evolve(false)
+Planet::Planet(QJsonObject obj, System * s) :_move(false), _evolve(false)
 {
     _mapCompo = new std::map<Component*, int>();
 
+    //On get les infos du fichier Json
     _name = obj["name"].toString().toStdString();
     _radius = obj["radius"].toInt();
+    _tilt = obj["tilt"].toInt();
+    _distance = obj["distance"].toInt();
+    _revo = obj["period"].toInt();
 
-   QJsonObject pos = obj["pos"].toObject();
-   _pos[0] = pos["x"].toInt();
-   _pos[1] = pos["y"].toInt();
-   _pos[2] = pos["z"].toInt();
+    _pos[0] = 0;
+    _pos[1] = 0;
+    _pos[2] = 0;
 
-   QJsonArray composant = obj["composant"].toArray();
-   foreach (QJsonValue value, composant)
-   {
+    QJsonArray composant = obj["composant"].toArray();
+    foreach (QJsonValue value, composant)
+    {
         QJsonObject comp = value.toObject();
         Component *c = s->getComponentByName(comp["name"].toString().toStdString());
-        int tmp = comp["percent"].toInt();
-        qDebug() << "Pourcentage : " << tmp;
-       _mapCompo->insert(std::make_pair(c, tmp));
-   }
+        _mapCompo->insert(std::make_pair(c, comp["percent"].toInt()));
+    }
 }
 
 Planet::~Planet()

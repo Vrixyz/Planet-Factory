@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QProgressBar>
 #include <QLabel>
+#include <QTextEdit>
 #include <QScrollArea>
 #include "Move.hpp"
 #include "System.hpp"
@@ -18,6 +19,7 @@ public:
     void        step1();
     void        step2();
     void        step3();
+    void        step4();
     void        connectTerrain();
     void        appendInfo(QString);
 signals:
@@ -32,7 +34,7 @@ private:
     QProgressBar        *_progressCurrent;
     QLabel              *_CurrentText;
     QScrollArea         *_textArea;
-    QLabel              *_textInfo;
+    QTextEdit              *_textInfo;
 
 
     std::list<Terrain*> *_terrains;

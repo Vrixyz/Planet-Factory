@@ -19,7 +19,7 @@ private:
     int _time;
 
 signals:
-    void thread_term();
+    void step3sign();
 };
 
 #endif // MOVE_HPP

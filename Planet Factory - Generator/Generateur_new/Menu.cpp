@@ -37,7 +37,6 @@ Menu::Menu(MainWindow *parent) : QWidget(parent)
     QObject::connect(_facebook, SIGNAL(clicked()), this, SLOT(linkFacebook()));
     QObject::connect(_twitter, SIGNAL(clicked()), this, SLOT(linkTwitter()));
     QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(windowLaunch()));
-//    QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(test()));
     QObject::connect(_reset, SIGNAL(clicked()), this, SLOT(resetAll()));
     QObject::connect(_save, SIGNAL(clicked()), this, SLOT(saveConfSystem()));
     QObject::connect(_load, SIGNAL(clicked()), this, SLOT(loadConfSystem()));
@@ -66,17 +65,6 @@ void Menu::resetAll()
     _parent->getPlanetCompo()->updateListCompoPla();
     _parent->getPlanetCompo()->updateListCompoSys();
     _parent->getPlanetCompo()->checkPercentPla();
-}
-
-void Menu::test()
-{
-    QString path = QFileDialog::getExistingDirectory(this, tr("Chose save dir"));
-    if (path.isEmpty())
-      return;
-
-    System *s = _parent->getSystem();
-    GenWin *gen = new GenWin(s, path, 10, 1);
-    gen->launch();
 }
 
 void Menu::generate()
@@ -187,48 +175,49 @@ void        Menu::loadConfSystem()
 
 void        Menu::saveConfSystem()
 {
+    //Init of iterator
+    std::list<Component*>::iterator itc_sys;
+    std::map<Component*, int>::iterator itc_pla;
+    std::list<Planet*>::iterator itp;
+
+
+    //Choose a file to save
     QString path = QFileDialog::getSaveFileName(this, tr("Save File"),"",tr("PlaneteFactory (*.pf)"));
     if (path.isEmpty())
       return;
 
+    //First get the system
     System *s = _parent->getSystem();
-    std::list<Component*>::iterator itc_sys;
-    std::map<Component*, int>::iterator itc_pla;
-    std::list<Planet*>::iterator itp;
 
     //On cree l'array component
     QJsonArray component;
     for (itc_sys = s->getComponentList()->begin(); itc_sys != s->getComponentList()->end(); ++itc_sys)
     {
         QJsonObject obj;
-
         QString name = (*itc_sys)->getName().c_str();
-        obj.insert("name", name);
 
+        obj.insert("name", name);
         obj.insert("solid", (*itc_sys)->getSolidTemp());
         obj.insert("gas", (*itc_sys)->getGazeousTemp());
         obj.insert("mass", (*itc_sys)->getMass());
         obj.insert("hardness", (*itc_sys)->getHardness());
+
         component.append(obj);
     }
 
-    //On cree l'array planete
+    //Create array of all planet
     QJsonArray planete;
     for (itp = s->getPlanetList()->begin(); itp != s->getPlanetList()->end(); ++itp)
     {
         QJsonObject obj;
-
         QString name = (*itp)->getName().c_str();
-        obj.insert("name", name);
-//      obj.insert("type", (*itc)->getSolidTemp());
-        obj.insert("radius", (*itp)->getRadius());
 
-        int *pos = (*itp)->getPosition();
-        QJsonObject position;
-        position.insert("x", pos[0]);
-        position.insert("y", pos[1]);
-        position.insert("z", pos[2]);
-        obj.insert("pos", position);
+        obj.insert("name", name);
+        //      obj.insert("type", (*itc)->getSolidTemp());
+        obj.insert("radius", (*itp)->getRadius());
+        obj.insert("tilt", (*itp)->getTilt());
+        obj.insert("distance", (*itp)->getDistance());
+        obj.insert("period", (*itp)->getRevo());
 
         //On cree l'array component de la planete
         QJsonArray planete_component;

@@ -20,5 +20,5 @@ void    Move::run()
     {
         (*itp)->calc_move(_time);
     }
-    emit thread_term();
+    emit step3sign();
 }

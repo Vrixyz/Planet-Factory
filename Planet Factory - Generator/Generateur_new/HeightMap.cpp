@@ -198,6 +198,7 @@ int    HeightMap::_updateMap(int x, int y, int c)
     while(n < 4)
     {
         if(i == 0)//Left
+        {
             if (_updateLeft(x, y, c) == 0)
                 return 0;
             else
@@ -205,7 +206,9 @@ int    HeightMap::_updateMap(int x, int y, int c)
                 i++;
                 n++;
             }
+        }
         else if(i == 1)//Top
+        {
             if (_updateTop(x, y, c) == 0)
                 return 0;
             else
@@ -213,7 +216,9 @@ int    HeightMap::_updateMap(int x, int y, int c)
                 i++;
                 n++;
             }
+        }
         else if(i == 2)//Right
+        {
             if (_updateRight(x, y, c) == 0)
                 return 0;
             else
@@ -221,7 +226,9 @@ int    HeightMap::_updateMap(int x, int y, int c)
                 i++;
                 n++;
             }
+        }
         else if(i == 3)//Bot
+        {
             if (_updateBot(x, y, c) == 0)
                 return 0;
             else
@@ -229,6 +236,7 @@ int    HeightMap::_updateMap(int x, int y, int c)
                 i = 0;
                 n++;
             }
+        }
     }
     return 1;
 }
