@@ -18,6 +18,13 @@
 #include "System.hpp"
 #include "Menu.hpp"
 
+#ifdef __linux__
+    #define TRUE true
+    #define FALSE false
+#endif
+
+
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

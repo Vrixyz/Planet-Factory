@@ -12,7 +12,7 @@
 #include <QtCore/qmath.h>
 
 #include "Component.hpp"
-#include "Heightmap.hpp"
+#include "HeightMap.hpp"
 
 class System;
 
