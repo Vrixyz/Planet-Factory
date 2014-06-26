@@ -12,6 +12,25 @@ Planet::Planet(QJsonObject obj, System * s) :_move(false), _evolve(false)
     _mapCompo = new std::map<Component*, int>();
 
     //On get les infos du fichier Json
+    int type = obj["type"].toInt();
+    switch (type)
+    {
+        case STAR:
+            _type = STAR;
+        break;
+
+        case TELLURIC:
+            _type = TELLURIC;
+        break;
+
+        case GAZEOUS:
+            _type = GAZEOUS;
+        break;
+
+        case ASTEROID:
+            _type = ASTEROID;
+        break;
+    }
     _name = obj["name"].toString().toStdString();
     _radius = obj["radius"].toInt();
     _tilt = obj["tilt"].toInt();
@@ -34,6 +53,8 @@ Planet::Planet(QJsonObject obj, System * s) :_move(false), _evolve(false)
 Planet::~Planet()
 {
 }
+
+
 
 
 QJsonArray    Planet::getJson()

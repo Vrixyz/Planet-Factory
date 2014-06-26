@@ -120,7 +120,7 @@ void GenWin::connectTerrain()
     std::list<Terrain*>::iterator itT;
     for(itT = _terrains->begin(); itT != _terrains->end(); ++itT)
     {
-        connect((*itT), SIGNAL(step3sign()), this, SLOT(step3sign()));
+        connect((*itT), SIGNAL(step3sign()), this, SLOT(step3prog()));
     }
     _move = new Move(_system);
     connect(_move, SIGNAL(step3sign()), this, SLOT(step3prog()));

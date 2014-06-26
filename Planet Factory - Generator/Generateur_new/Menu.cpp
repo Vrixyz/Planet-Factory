@@ -217,7 +217,7 @@ void        Menu::saveConfSystem()
         QString name = (*itp)->getName().c_str();
 
         obj.insert("name", name);
-        //      obj.insert("type", (*itc)->getSolidTemp());
+        obj.insert("type", (*itp)->getType());
         obj.insert("radius", (*itp)->getRadius());
         obj.insert("tilt", (*itp)->getTilt());
         obj.insert("distance", (*itp)->getDistance());
