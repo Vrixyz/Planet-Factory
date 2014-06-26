@@ -1,0 +1,99 @@
+{
+    "astres": [
+        {
+            "composant": [
+                {
+                    "name": "Mineraux",
+                    "percent": 99
+                },
+                {
+                    "name": "Eau",
+                    "percent": 1
+                }
+            ],
+            "distance": 2,
+            "name": "Mars",
+            "period": 686,
+            "radius": 60,
+            "tilt": 25,
+            "type": 1
+        },
+        {
+            "composant": [
+                {
+                    "name": "Hydrgoene",
+                    "percent": 85
+                },
+                {
+                    "name": "Hélium",
+                    "percent": 15
+                }
+            ],
+            "distance": 1,
+            "name": "Soleil",
+            "period": 1,
+            "radius": 60,
+            "tilt": 67,
+            "type": 0
+        },
+        {
+            "composant": [
+                {
+                    "name": "Mineraux",
+                    "percent": 80
+                },
+                {
+                    "name": "Fer",
+                    "percent": 15
+                },
+                {
+                    "name": "Eau",
+                    "percent": 5
+                }
+            ],
+            "distance": 1,
+            "name": "Terre",
+            "period": 365,
+            "radius": 60,
+            "tilt": 23,
+            "type": 1
+        }
+    ],
+    "materials": [
+        {
+            "gas": -80,
+            "hardness": 0,
+            "mass": 2,
+            "name": "Hélium",
+            "solid": -9999
+        },
+        {
+            "gas": -80,
+            "hardness": 0,
+            "mass": 2,
+            "name": "Hydrgoene",
+            "solid": -9999
+        },
+        {
+            "gas": 9999,
+            "hardness": 47,
+            "mass": 2500,
+            "name": "Fer",
+            "solid": 900
+        },
+        {
+            "gas": 100,
+            "hardness": 5,
+            "mass": 1000,
+            "name": "Eau",
+            "solid": 0
+        },
+        {
+            "gas": 9999,
+            "hardness": 37,
+            "mass": 1500,
+            "name": "Mineraux",
+            "solid": 900
+        }
+    ]
+}
