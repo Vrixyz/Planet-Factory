@@ -43,7 +43,7 @@ GenWin::GenWin(System *s, QString path, int time, int inter, QWidget *parent) : 
     _textArea = new QScrollArea(this);
     _textInfo = new QLabel(_textArea);
     _textInfo->setText("");
-    _textArea->setGeometry(10, 110, 1004, 660);
+    _textArea->setGeometry(10, 110, 1004, 650);
 
     show();
 }
