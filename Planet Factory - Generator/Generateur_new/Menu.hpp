@@ -32,6 +32,7 @@ private:
 
     QPushButton* _save;
     QPushButton* _load;
+    QPushButton* _exit;
     QPushButton* _reset;
     QPushButton* _launch;
     QPushButton* _facebook;

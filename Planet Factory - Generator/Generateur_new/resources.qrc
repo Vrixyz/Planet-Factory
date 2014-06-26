@@ -8,6 +8,8 @@
         <file>res/load_button.png</file>
         <file>res/reset_button.png</file>
         <file>res/launch_button.png</file>
+        <file>res/button_exit.png</file>
+        <file>res/button_exit_hover.png</file>
         <file>res/label_planet_compo.png</file>
         <file>res/background_planetdetail.png</file>
         <file>res/name_planettype.png</file>

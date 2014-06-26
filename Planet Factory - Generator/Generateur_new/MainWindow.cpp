@@ -2,6 +2,8 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
+    setWindowFlags(Qt::FramelessWindowHint);
+
     _currPlanet = NULL;
     _system = new System();
 
