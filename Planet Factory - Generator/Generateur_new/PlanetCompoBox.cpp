@@ -89,7 +89,6 @@ void PlanetCompoBox::checkPercentPla()
     std::map<Component*, int>::iterator it_compo;
     int                                 total;
 
-    qDebug("1");
     if (_parent->_currPlanet == NULL)
     {
         _percentWarning->setStyleSheet("QLabel { color : red; }");
@@ -97,26 +96,21 @@ void PlanetCompoBox::checkPercentPla()
     }
     else
     {
-        qDebug("2");
         for (total = 0, it_compo = _parent->_currPlanet->getComponentMap()->begin();
              it_compo != _parent->_currPlanet->getComponentMap()->end();
              ++it_compo)
             total += it_compo->second;
-        qDebug("3");
         if (total != 100)
         {
-            qDebug("4");
             _percentWarning->setStyleSheet("QLabel { color : red; }");
             _percentWarning->setText("The sum of the % of all the components is not equal to 100%. :(");
         }
         else
         {
             _percentWarning->setStyleSheet("QLabel { color : green; }");
-            qDebug("5");
             _percentWarning->setText("The sum of the % of all the components is equal to 100%. :)");
         }
     }
-    qDebug("10");
 }
 
 void PlanetCompoBox::windowPlaAddCompo()
