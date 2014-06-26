@@ -44,10 +44,10 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                 std::advance(it, x);
                 if (tmp[x] < it->second) // If componant still ok
                 {
-                    qDebug() << "[" << i << "][" << j << "] random: " << x
+                    /*qDebug() << "[" << i << "][" << j << "] random: " << x
                              << " composant: " << it->first->getName().c_str()
                              << " percent: " << it->second
-                             << " actual:" << tmp[x];
+                             << " actual:" << tmp[x];*/
                     _map[i][j]->component(it->first);
                     if (coef < 1)
                         tmp[x] += 1.0 * coef;
