@@ -36,8 +36,8 @@ Menu::Menu(MainWindow *parent) : QWidget(parent)
 
     QObject::connect(_facebook, SIGNAL(clicked()), this, SLOT(linkFacebook()));
     QObject::connect(_twitter, SIGNAL(clicked()), this, SLOT(linkTwitter()));
-//    QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(windowLaunch()));
-    QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(test()));
+    QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(windowLaunch()));
+//    QObject::connect(_launch, SIGNAL(clicked()), this, SLOT(test()));
     QObject::connect(_reset, SIGNAL(clicked()), this, SLOT(resetAll()));
     QObject::connect(_save, SIGNAL(clicked()), this, SLOT(saveConfSystem()));
     QObject::connect(_load, SIGNAL(clicked()), this, SLOT(loadConfSystem()));
