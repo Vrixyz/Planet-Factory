@@ -57,3 +57,8 @@ Component * MapInfo::component(void) const
 {
     return _component;
 }
+
+e_etat      MapInfo::etat(void)const
+{
+    return _etat;
+}

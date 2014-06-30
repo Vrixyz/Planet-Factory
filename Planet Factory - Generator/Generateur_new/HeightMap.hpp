@@ -65,7 +65,7 @@ private:
     int _updateLeft(int x, int y, int c);
 
     //return border MapInfo if exist
-    MapInfo * _isBorder(MapInfo * coord);
+    MapInfo * _isBorder(int x, int y);
 };
 
 #endif // HEIGHTMAP_HPP

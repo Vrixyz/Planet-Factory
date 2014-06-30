@@ -167,25 +167,142 @@ int HeightMap::terrain()
     {
         for (int y = 0; y < _y; y++)
         {
-            MapInfo * tmp = _isBorder(_map[x][y]);
+            MapInfo * tmp = _isBorder(x, y);
             if (tmp)
             {
                 borders[_map[x][y]] = tmp;
             }
         }
     }
-    qDebug() << "Done.";
+    qDebug() << "Checking border, done.";
 
     //Influer le mouvement des plaques
-
-
-    //Export Heightmap
-
+    qDebug() << "Move plates...";
+    if (borders.size() == 0)
+    {
+        qDebug() << "Move plates, error : No border.";
+        return 1;
+    }
+    std::map<MapInfo*, MapInfo*>::iterator it;
+    for (it = borders.begin(); it != borders.end(); it++)
+    {
+        Component * c1 = it->first->component();
+        Component * c2 = it->second->component();
+        e_etat e1 = it->first->etat();
+        e_etat e2 = it->second->etat();
+    }
+    qDebug() << "Move plates, done.";
     return 0;
 }
 
-MapInfo * HeightMap::_isBorder(MapInfo * coord)
+MapInfo * HeightMap::_isBorder(int x, int y)
 {
+    e_tectoDirect direction = _tectoDirect[(_map[x][y])->n()];
+    switch (direction)
+    {
+        case NORTH: {
+            int nx;
+            if (x - 1 < 0)
+                nx = _x - 1;
+            else
+                nx = x - 1;
+            if (_map[x][y]->n() != _map[nx][y]->n())
+                return _map[nx][y];
+            break;
+        }
+        case NE: {
+            int nx;
+            if (x - 1 < 0)
+                nx = _x - 1;
+            else
+                nx = x - 1;
+            int ny;
+            if (y + 1 >= _y)
+                ny = 0;
+            else
+                ny = y + 1;
+            if (_map[x][y]->n() != _map[nx][ny]->n())
+                return _map[nx][ny];
+            break;
+        }
+        case EAST: {
+            int ny;
+            if (y + 1 >= _y)
+                ny = 0;
+            else
+                ny = y + 1;
+            if (_map[x][y]->n() != _map[x][ny]->n())
+                return _map[x][ny];
+            break;
+        }
+        case SE: {
+            int nx;
+            if (x + 1 >= _x)
+                nx = 0;
+            else
+                nx = x + 1;
+            int ny;
+            if (y + 1 >= _y)
+                ny = 0;
+            else
+                ny = y + 1;
+            if (_map[x][y]->n() != _map[nx][ny]->n())
+                return _map[nx][ny];
+            break;
+        }
+        case SOUTH: {
+            int nx;
+            if (x + 1 >= _x)
+                nx = 0;
+            else
+                nx = x + 1;
+            if (_map[x][y]->n() != _map[nx][y]->n())
+                return _map[nx][y];
+            break;
+        }
+        case SW: {
+            int nx;
+            if (x + 1 >= _x)
+                nx = 0;
+            else
+                nx = x + 1;
+            int ny;
+            if (y - 1 < 0)
+                ny = _y - 1;
+            else
+                ny = y - 1;
+            if (_map[x][y]->n() != _map[nx][ny]->n())
+                return _map[nx][ny];
+            break;
+        }
+        case WEST: {
+            int ny;
+            if (y - 1 < 0)
+                ny = _y - 1;
+            else
+                ny = y - 1;
+            if (_map[x][y]->n() != _map[x][ny]->n())
+                return _map[x][ny];
+            break;
+        }
+        case NW: {
+            int nx;
+            if (x - 1 < 0)
+                nx = _x - 1;
+            else
+                nx = x - 1;
+            int ny;
+            if (y - 1 < 0)
+                ny = _y - 1;
+            else
+                ny = y - 1;
+            if (_map[x][y]->n() != _map[nx][ny]->n())
+                return _map[nx][ny];
+            break;
+        }
+
+    }
+
     return 0;
 }
 
