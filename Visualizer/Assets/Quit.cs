@@ -9,7 +9,8 @@ public class Quit : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Onclick () {
+	void OnClick ()
+	{
 		Application.Quit();
 	}
 }
