@@ -8,6 +8,7 @@
 #include <list>
 #include <map>
 #include <QtDebug>
+#include <QtGui/qimage.h>
 
 #include "Component.hpp"
 #include "MapInfo.hpp"
@@ -39,8 +40,14 @@ public:
     //Create terrain
     int terrain();
 
+    //Create a int **tab from heightMap
+    int **mapToTab();
+
+    // Save the pic
+    bool fillPic(int **tab, int _x, int _y, const std::string & path, const std::string & name);
+
     //export heightmap
-    int exportHeightmap(int ** tab, const std::string & path, const std::string & name);
+    void exportHeightMap(const std::string & path, const std::string & name);
 
     //Print in qDebug the different heightmap
     void    printMap();

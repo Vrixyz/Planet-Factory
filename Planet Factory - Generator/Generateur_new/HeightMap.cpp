@@ -457,7 +457,48 @@ MapInfo *** HeightMap::map(void)const
     return _map;
 }
 
-int HeightMap::exportHeightmap(int ** tab, const std::string & path, const std::string & name)
+int **HeightMap::mapToTab()
 {
-    return 0;
+    int x, y, **tab;
+
+    for (x = 0; x < _x; x++)
+    {
+        for (y = 0; y < _y; y++)
+            tab[x][y] = _map[x][y]->z();
+    }
+    return tab;
+}
+
+bool HeightMap::fillPic(int **tab, int _x, int _y, const std::string & path, const std::string & name)
+{
+    QImage pic(_x, _y, QImage::Format_RGB32);
+
+    for (int x = 0; x < _x; x++)
+    {
+        for (int y = 0; y < _y; y++)
+        {
+            int value = tab[x][y];
+            QRgb color = qRgb(value, value, value);
+            pic.setPixel(x, y, color);
+        }
+    }
+
+    QString completePath = "";
+    QString _path(path.c_str());
+    QString _name(name.c_str());
+
+    completePath += _path;
+    completePath += _name;
+
+    if (!pic.save(completePath))
+        std::cerr << "Error: pics not saved!" << std::endl;
+    return true;
+}
+
+void HeightMap::exportHeightMap(const std::string & path, const std::string & name)
+{
+    int **tab = mapToTab();
+
+    //printTab(tab, sizeX, sizeY);
+    fillPic(tab, _x, _y, path, name);
 }
