@@ -4,7 +4,8 @@ using System.Collections;
 
 public class RayCastToPlanets : MonoBehaviour {
 	public GameObject controler;
-	private UILabel[] labels;
+    public GameObject indicator; 
+    private UILabel[] labels;
 	private UIPopupList[] pops;
 	public int x, y;
 	public PlanetUpdater pu;
@@ -12,12 +13,19 @@ public class RayCastToPlanets : MonoBehaviour {
 	public UILabel materiel;
 	public UILabel planet;
 	public GameObject menuInGame;
+
+    GameObject priv_indicator;
+    float initial_particle_speed;
 	// Use this for initialization
 	void Start () {
-	}
+        priv_indicator = (GameObject)GameObject.Instantiate(indicator);
+        initial_particle_speed = priv_indicator.GetComponentInChildren<ParticleSystem>().startSpeed;
+    }
 	
 	
 	void ShowInformations(float x, float y, PlanetUpdater pu) {
+
+
 		labels = controler.GetComponentsInChildren<UILabel>();
 		
 		Pos.text = x.ToString() + "," + y.ToString();
@@ -110,16 +118,38 @@ public class RayCastToPlanets : MonoBehaviour {
 						    //Debug.DrawLine (ray.origin, hit.point);
 						    //print ("hit! ");
 						    Vector2 textureCoord = hit.textureCoord;
-						    pu = ((GameObject)sys.planets [0]).GetComponent<PlanetUpdater>();
+						    pu = p.GetComponent<PlanetUpdater>();
 						    textureCoord.x *= pu.materials["rock"].width;
 						    textureCoord.y *= pu.materials["rock"].height;
 						    //print(hit.textureCoord);
 						    x = (int)textureCoord.x;
 						    y = (int)textureCoord.y;
-                            print("pixel rock : " + pu.materials["rock"].GetPixel(x, y));
-                            print("pixel water : " + pu.materials["water"].GetPixel(x, y));
+                            //print("pixel rock : " + pu.materials["rock"].GetPixel(x, y));
+                            //print("pixel water : " + pu.materials["water"].GetPixel(x, y));
                             if (controler.activeInHierarchy)
-							    ShowInformations(x, y, pu);
+                            {
+                                ShowInformations(x, y, pu);
+
+                                // update the local indicator
+
+                                
+                                priv_indicator.transform.parent = pu.gameObject.transform;
+                                priv_indicator.transform.localPosition = Vector3.zero;
+                                priv_indicator.transform.localRotation = Quaternion.Euler(Vector3.zero); 
+                                priv_indicator.transform.localScale = new Vector3(1, 1, 1);
+                                // average of each scales (x and y and z)
+
+                                
+                                priv_indicator.GetComponentInChildren<ParticleSystem>().startSpeed = initial_particle_speed * priv_indicator.transform.parent.localScale.x;
+                                print(hit.normal);
+                                Quaternion quatHit = Quaternion.FromToRotation(Vector3.up, hit.point - pu.transform.position);
+                     
+                                print("quatHit: " + quatHit);
+
+                                priv_indicator.transform.rotation = quatHit;
+                                print("rotation: " + priv_indicator.transform.rotation);
+
+                            }
 					    }
                     }
 				}

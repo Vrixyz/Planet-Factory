@@ -33,7 +33,7 @@ public class UniverseTime : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print ("time.deltatime: " + Time.deltaTime);
+		//print ("time.deltatime: " + Time.deltaTime);
 		if (running && elapsed <= totalTime)
 		{
 			elapsed += Time.deltaTime;
