@@ -1,6 +1,5 @@
 {
-	"name": "Soleil",
+	"name": "Terre",
 	"type": "planet",
-	"sunType": "G",
 	"evolution":"./soleilEvolution.json",
 }

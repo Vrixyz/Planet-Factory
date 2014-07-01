@@ -20,6 +20,7 @@ public class RayCastToPlanets : MonoBehaviour {
 	void Start () {
         priv_indicator = (GameObject)GameObject.Instantiate(indicator);
         initial_particle_speed = priv_indicator.GetComponentInChildren<ParticleSystem>().startSpeed;
+        priv_indicator.SetActive(false);
     }
 	
 	
@@ -131,7 +132,7 @@ public class RayCastToPlanets : MonoBehaviour {
                                 ShowInformations(x, y, pu);
 
                                 // update the local indicator
-
+                                priv_indicator.SetActive(true);
                                 
                                 priv_indicator.transform.parent = pu.gameObject.transform;
                                 priv_indicator.transform.localPosition = Vector3.zero;

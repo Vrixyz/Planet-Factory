@@ -50,7 +50,7 @@ public class SystemLoader : MonoBehaviour {
 		long size = (long)dictEvolution ["radius"];
 		instance.transform.position = new Vector3(x, y, z);
 		instance.transform.localScale = new Vector3(size, size, size);
-
+        instance.name = (string)dictPlanet["name"];
         // print(dictPlanet["name"] + " : " + dictPlanet["type"] + "    (dictPlanet[\"type\"].Equals(\"star\") = " +  (dictPlanet["type"].Equals("star") ? "true" : "false"));
         PlanetUpdater updater = instance.AddComponent<PlanetUpdater>();
 
