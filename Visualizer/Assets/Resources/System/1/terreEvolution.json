@@ -1,0 +1,42 @@
+{
+	"evolutions": [
+		{
+			"date": 0,
+			"radius": 50,
+			"rotation": 0,
+			"vectorRotation": {
+				"x": 0,
+				"y": 1,
+				"z": 0
+			}
+			"pos": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"displacement":"Maps/terreDisplacement1",
+			"materials": [ {
+					"name": "rock",
+					"file": "Maps/terreMaterialRock1"
+				},
+				{
+					"name": "water",
+					"file": "Maps/terreMaterialWater1"
+				},
+			]
+		},
+		{
+			"date": 5000,
+			"displacement":"Maps/terreDisplacement2"
+		},
+		{
+			"date": 40000,
+			"rotation": 360,
+			"pos": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+		},
+	]
+}

@@ -1,8 +1,7 @@
 {
 	"totalTime": 100,
-	"nombreAstres": 2,
 	"astres": [
-		"./soleil.json",
+		"./terre.json",
 		"./moon.json"
 		"./star.json"
 	],
