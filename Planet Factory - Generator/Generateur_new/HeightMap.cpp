@@ -74,6 +74,7 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
 
 int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
 {
+    _cmp = mapCompo;
     //Fill component
     if (_fillComponent(mapCompo) == 1)
         return 1;
@@ -457,19 +458,7 @@ MapInfo *** HeightMap::map(void)const
     return _map;
 }
 
-int **HeightMap::mapToTab()
-{
-    int x, y, **tab;
-
-    for (x = 0; x < _x; x++)
-    {
-        for (y = 0; y < _y; y++)
-            tab[x][y] = _map[x][y]->z();
-    }
-    return tab;
-}
-
-bool HeightMap::fillPic(int **tab, int _x, int _y, const std::string & path, const std::string & name)
+void HeightMap::exportHeightMap(const std::string & path, const std::string & name)
 {
     QImage pic(_x, _y, QImage::Format_RGB32);
 
@@ -477,7 +466,7 @@ bool HeightMap::fillPic(int **tab, int _x, int _y, const std::string & path, con
     {
         for (int y = 0; y < _y; y++)
         {
-            int value = tab[x][y];
+            int value = _map[x][y]->z();
             QRgb color = qRgb(value, value, value);
             pic.setPixel(x, y, color);
         }
@@ -488,17 +477,66 @@ bool HeightMap::fillPic(int **tab, int _x, int _y, const std::string & path, con
     QString _name(name.c_str());
 
     completePath += _path;
+    completePath += "/";
     completePath += _name;
+    completePath += ".png";
 
     if (!pic.save(completePath))
-        std::cerr << "Error: pics not saved!" << std::endl;
-    return true;
+        qDebug() << "Error: pics not saved!";
+    else
+        qDebug() << "IMG save: " << completePath;
 }
 
-void HeightMap::exportHeightMap(const std::string & path, const std::string & name)
+ void HeightMap::genCompImg(const std::string & name, const std::string & path, const std::string & file)
 {
-    int **tab = mapToTab();
+    QImage pic(_x, _y, QImage::Format_RGB32);
 
-    //printTab(tab, sizeX, sizeY);
-    fillPic(tab, _x, _y, path, name);
+    for (int x = 0; x < _x; x++)
+    {
+        for (int y = 0; y < _y; y++)
+        {
+            std::string tmp = _map[x][y]->component()->getName();
+            QRgb color;
+            if (tmp == name)
+                color = qRgb(255, 255, 255);
+            else
+                color = qRgb(0, 0, 0);
+            pic.setPixel(x, y, color);
+        }
+    }
+
+    QString completePath = "";
+    QString _path(path.c_str());
+    QString _name(file.c_str());
+
+    completePath += _path;
+    completePath += "/";
+    completePath += _name;
+    completePath += ".png";
+
+    if (!pic.save(completePath))
+        qDebug() << "Error: pics not saved!: " << completePath;
+    else
+        qDebug() << "IMG save: " << completePath;
+}
+
+QJsonObject HeightMap::exportComposentMap(const std::string & path, int iteration, QJsonObject evo, QString folder)
+{
+    std::map<Component*, int>::iterator it;
+    QJsonArray materials;
+
+    for(it = _cmp->begin(); it != _cmp->end(); it++)
+    {
+        Component* comp = it->first;
+        QJsonObject obj;
+        QString file = QString("Material") + comp->getName().c_str() + QString::number(iteration);
+        QString file_path = folder + "/" + file;
+
+        obj.insert("name", comp->getName().c_str());
+        obj.insert("file", file_path);
+        materials.append(obj);
+        genCompImg(comp->getName(), path, file.toStdString());
+    }
+    evo.insert("materials", materials);
+    return evo;
 }

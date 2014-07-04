@@ -23,14 +23,6 @@ void    Terrain::run()
         //Gen terrain
         qDebug() << "Generating terrain...";
         _planet->getHeightMap()->terrain();
-
-        //Create temp int ** to export heigtmap
-        int ** tmp;
-
-        //Export heightmap
-        //std::string path = "";
-        //std::string name = "";
-        //_planet->getHeightMap()->exportHeightmap(tmp, path, name);
         qDebug() << "Generating terrain : Done.";
         emit step3sign();
     }

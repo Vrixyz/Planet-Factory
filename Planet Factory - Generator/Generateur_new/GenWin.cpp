@@ -120,6 +120,8 @@ void GenWin::connectTerrain()
     std::list<Terrain*>::iterator itT;
     for(itT = _terrains->begin(); itT != _terrains->end(); ++itT)
     {
+        (*itT)->planet()->addHmToEvo(_path);
+        (*itT)->planet()->addCmToEvo(_path);
         connect((*itT), SIGNAL(step3sign()), this, SLOT(step3prog()));
     }
     _move = new Move(_system);

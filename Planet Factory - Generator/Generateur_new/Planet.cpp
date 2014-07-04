@@ -5,6 +5,7 @@ Planet::Planet()
     :_move(false), _evolve(false)
 {
     _mapCompo = new std::map<Component*, int>();
+    _mapIteration = 0;
 }
 
 Planet::Planet(QJsonObject obj, System * s) :_move(false), _evolve(false)
@@ -36,6 +37,8 @@ Planet::Planet(QJsonObject obj, System * s) :_move(false), _evolve(false)
     _tilt = obj["tilt"].toInt();
     _distance = obj["distance"].toInt();
     _revo = obj["period"].toInt();
+
+    _mapIteration = 0;
 
     _pos[0] = 0;
     _pos[1] = 0;
@@ -87,6 +90,30 @@ void    Planet::calc_move(int duree)
     evo.insert("date", duree);
     _evo.append(evo);
 }
+
+void    Planet::addHmToEvo(QString path)
+{
+    QString folder = _name.c_str();
+    QString file = "Displacement" + QString::number(_mapIteration);
+    QJsonObject evo = _evo.first().toObject();
+    _mapIteration++;
+
+    _evo.erase(_evo.begin());
+    _hm->exportHeightMap(path.toStdString()+"/"+_name, file.toStdString());
+    evo.insert("displacement", folder+"/"+file);
+    _evo.append(evo);
+}
+
+void    Planet::addCmToEvo(QString path)
+{
+    QString folder = _name.c_str();
+    QJsonObject evo = _evo.first().toObject();
+
+    _evo.erase(_evo.begin());
+    evo = _hm->exportComposentMap(path.toStdString()+"/"+_name, _mapIteration, evo, folder);
+    _evo.append(evo);
+}
+
 
 void    Planet::setName(std::string name)
 {
@@ -153,6 +180,7 @@ void    Planet::init()
     _hm = new HeightMap(_radius);
     _hm->PlateTectonic(_radius / RATIO_PLATE + 1, _mapCompo);
     _hm->printMap();
+    //_evolve = true;
 }
 
 void    Planet::initOther()

@@ -9,6 +9,7 @@
 #include <map>
 #include <QtDebug>
 #include <QtGui/qimage.h>
+#include <QJsonArray>
 
 #include "Component.hpp"
 #include "MapInfo.hpp"
@@ -40,14 +41,13 @@ public:
     //Create terrain
     int terrain();
 
-    //Create a int **tab from heightMap
-    int **mapToTab();
-
     // Save the pic
-    bool fillPic(int **tab, int _x, int _y, const std::string & path, const std::string & name);
+    bool fillPic(const std::string & path, const std::string & name);
 
     //export heightmap
-    void exportHeightMap(const std::string & path, const std::string & name);
+    void        exportHeightMap(const std::string & path, const std::string & name);
+    QJsonObject exportComposentMap(const std::string & path, int iteration, QJsonObject evo, QString name);
+    void        genCompImg(const std::string & name, const std::string & path, const std::string & file);
 
     //Print in qDebug the different heightmap
     void    printMap();
@@ -62,6 +62,7 @@ private:
     int         _x;
     int         _y;
     MapInfo *** _map;
+    std::map<Component*, int> *_cmp;
     e_tectoDirect * _tectoDirect;
 
     int _fillComponent(std::map<Component*, int>   *mapCompo);

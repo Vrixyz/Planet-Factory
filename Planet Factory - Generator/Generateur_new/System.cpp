@@ -135,6 +135,10 @@ void System::initJson(QString path)
     file.close();
 }
 
+QString System::getJsonPath()
+{
+    return _path;
+}
 
 void System::endJson()
 {

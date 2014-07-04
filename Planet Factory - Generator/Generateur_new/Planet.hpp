@@ -38,6 +38,8 @@ public:
     void                        init(void);
     void                        initOther(void);
     std::map<Component*, int>   *getComponentMap(void);
+    void                        addHmToEvo(QString path);
+    void                        addCmToEvo(QString path);
 
     //GETTER SETTER
     bool                    move(void) const;
@@ -71,6 +73,7 @@ private:
     QMutex                  _mutex;
     QJsonArray              _evo;
     std::string             _name;
+    int                     _mapIteration;
     int                     _radius;
     int                     _distance;
     int                     _tilt;
@@ -81,7 +84,7 @@ private:
     bool                    _evolve;
 
     std::map<Component*, int>   *_mapCompo;
-    HeightMap *             _hm;
+    HeightMap *                 _hm;
 
 };
 
