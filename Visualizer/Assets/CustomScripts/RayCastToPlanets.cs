@@ -150,6 +150,14 @@ public class RayCastToPlanets : MonoBehaviour {
                                 priv_indicator.transform.rotation = quatHit;
                                 print("rotation: " + priv_indicator.transform.rotation);
 
+                                // parent the camera to the object looked at
+
+                                GameObject cam = GameObject.Find("Main Camera");
+                                Transform transform = cam.transform;
+                                GameObject.Find("Main Camera").transform.parent = pu.gameObject.transform;
+                                cam.transform.position = transform.position;
+                                cam.transform.rotation = transform.rotation;
+                                return;
                             }
 					    }
                     }
