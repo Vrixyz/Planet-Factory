@@ -5,7 +5,19 @@ MyComponent::MyComponent()
 {
 }
 
-void    MyComponent::c(Component *c)
+MyComponent::MyComponent(Component *c, int p, e_etat e)
+    : _c(c), _p(p), _etat(e)
+{
+}
+
+//** Setter **//
+void        MyComponent::percent(int p)
+{
+    _p = p;
+}
+
+
+void    MyComponent::component(Component *c)
 {
     _c = c;
 }
@@ -14,6 +26,8 @@ void    MyComponent::etat(e_etat e)
 {
     _etat = e;
 }
+
+//** Getter **//
 
 e_etat  MyComponent::etat(void)const
 {
@@ -24,4 +38,9 @@ e_etat  MyComponent::etat(void)const
 Component * MyComponent::component(void)const
 {
     return _c;
+}
+
+int       MyComponent::percent(void)const
+{
+    return _p;
 }

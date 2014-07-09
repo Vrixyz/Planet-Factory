@@ -28,6 +28,22 @@ MapInfo::MapInfo(int i, int j, MapInfo *** _map)
     }
 }
 
+int MapInfo::editComponent(Component *c, int percent, e_etat etat)
+{
+    std::list<MyComponent *>::iterator it;
+
+    for (it = _components.begin(); it != _components.end(); it++)
+    {
+        if ((*it)->component()->getName() == c->getName())
+        {
+            (*it)->percent(percent);
+            (*it)->etat(etat);
+            return 0;
+        }
+    }
+    return 1;
+}
+
 /** Setter **/
 void MapInfo::z(int z)
 {
