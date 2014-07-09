@@ -9,6 +9,7 @@ MapInfo::MapInfo()
 MapInfo::MapInfo(int i, int j, MapInfo *** _map)
     :_n(0), _component(0)
 {
+
     int tmp = (rand() % 100) + 50;
     if (i == 0)
     {

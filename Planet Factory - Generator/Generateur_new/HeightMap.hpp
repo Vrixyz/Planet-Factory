@@ -11,6 +11,9 @@
 #include <QtGui/qimage.h>
 #include <QJsonArray>
 
+#include <libNoise/include/noise/noise.h>
+#include <libNoise/noiseutils/noiseutils.h>
+
 #include "Component.hpp"
 #include "MapInfo.hpp"
 
