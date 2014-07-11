@@ -57,6 +57,7 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     for (it; it != mapCompo->end(); it++)
     {
         int total = 0;
+        int last = 0;
         //In each case of the map
         for (int i = 0; i <_x; i++)
         {
@@ -67,7 +68,21 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                 if (libre > 0)
                 {
                     int p = 0;
-
+                    // If we can still put some of this component on the planet
+                    if (total != 100)
+                    {
+                        if (last <= 0)
+                            p = rand() % 100;
+                        else
+                        {
+                            p = rand() % last;
+                            last -= (1 + p);
+                        }
+                        if (p > libre)
+                            p = libre;
+                        else if (total + p > 100)
+                            p = 100 - total;
+                    }
                     _map[i][j]->editComponent(it->first, p, SOLID);
                     total += p;
                 }
