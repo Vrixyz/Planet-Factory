@@ -21,6 +21,7 @@ public:
     MapInfo(int i, int j, MapInfo *** _map);
 
     int editComponent(Component *c, int percent, e_etat etat);
+    int freeSpace(void);
 
     /** Setter **/
     void z(int z);

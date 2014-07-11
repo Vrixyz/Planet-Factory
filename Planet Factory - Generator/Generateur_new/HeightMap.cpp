@@ -45,9 +45,41 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     int size = mapCompo->size();
     //qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
 
+    //Temp component array to check percent
     float tmp[size];
     for (int i = 0; i < size; i++)
         tmp[i] = 0;
+
+    //New component system
+
+    //For each component
+    std::map<Component*, int>::iterator it = mapCompo->begin();
+    for (it; it != mapCompo->end(); it++)
+    {
+        int total = 0;
+        //In each case of the map
+        for (int i = 0; i <_x; i++)
+        {
+            for (int j = 0; j < _y; j++)
+            {
+                //Calc a random percent, can't > 100% for case and total > 100%
+                int libre = _map[i][j]->freeSpace();
+                if (libre > 0)
+                {
+                    int p = 0;
+
+                    _map[i][j]->editComponent(it->first, p, SOLID);
+                    total += p;
+                }
+                else
+                    _map[i][j]->editComponent(it->first, 0, SOLID);
+
+            }
+        }
+    }
+
+
+    qDebug() << "Filling planet with component... BIS";
 
     //Adding component
     for (int i = 0; i < _x; i++)
@@ -163,7 +195,7 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
             }
         }
     }
-    //Finish to fill the planet after the random part
+        //Finish to fill the planet after the random part
     int last = 0;
     for (int x = 0; x < _x; x++)
     {

@@ -44,6 +44,18 @@ int MapInfo::editComponent(Component *c, int percent, e_etat etat)
     return 1;
 }
 
+int MapInfo::freeSpace(void)
+{
+    int libre = 100;
+    std::list<MyComponent*>::iterator it = _components.begin();
+
+    for (it; it != _components.end(); it++)
+    {
+        libre -= (*it)->percent();
+    }
+    return libre;
+}
+
 /** Setter **/
 void MapInfo::z(int z)
 {
