@@ -7,6 +7,8 @@ public class RayCastToPlanets : MonoBehaviour {
     public GameObject indicator; 
     private UILabel[] labels;
 	private UIPopupList[] pops;
+	public UIPopupList mat;
+	public UIPopupList astre;
 	public int x, y;
 	public PlanetUpdater pu;
 	public UILabel Pos;
@@ -31,19 +33,16 @@ public class RayCastToPlanets : MonoBehaviour {
 		
 		Pos.text = x.ToString() + "," + y.ToString();
 		planet.text = pu.name.ToString();
-		pops = controler.GetComponentsInChildren<UIPopupList>();
-		UIPopupList p = pops.Get(0);
-		
-		
+				
 		//creation de la fenetre dynamic
-        p.items.Clear();
+		mat.items.Clear();
         foreach (var t in pu.materials)
         {
             if (selectedMat == null || pu.materials[selectedMat] == null)
                 selectedMat = t.Key;
-            p.items.Add(t.Key);
+			mat.items.Add(t.Key);
         }
-        p.selection = selectedMat;
+		mat.selection = selectedMat;
 
         Texture2D texture = pu.materials[selectedMat];
 
@@ -82,8 +81,41 @@ public class RayCastToPlanets : MonoBehaviour {
 	
 	}
 
+	void initPlanetList()
+	{
+		if (astre.items.Count != 0)
+			return;
+		GameObject manager = GameObject.Find ("Manager");
+		SystemLoader sys = manager.GetComponent<SystemLoader>();
+		foreach (GameObject p in sys.planets)
+		{
+			astre.items.Add(p.name);
+		}
+
+	}
+
+	void OnSelectionAstre(string val)
+	{
+		GameObject manager = GameObject.Find ("Manager");
+		SystemLoader sys = manager.GetComponent<SystemLoader>();
+		foreach (GameObject p in sys.planets)
+		{
+			if (val == p.name)
+			{
+				PlanetUpdater po = p.GetComponent<PlanetUpdater>();
+				GameObject cam = GameObject.Find("Main Camera");
+				Transform transform = cam.transform;
+				GameObject.Find("Main Camera").transform.parent = po.gameObject.transform;
+				cam.transform.position = transform.position;
+				cam.transform.rotation = transform.rotation;
+			}
+		}
+
+	}
+
 	// Update is called once per frame
 	void Update () {
+		
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
@@ -111,6 +143,7 @@ public class RayCastToPlanets : MonoBehaviour {
             }
             if (controler.activeInHierarchy)
             {
+				initPlanetList();
                 foreach (GameObject p in sys.planets)
 				{
                     Collider planetCollider = p.collider;
