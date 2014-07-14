@@ -1,0 +1,32 @@
+{
+    "evolutions": [
+        {
+            "date": 0,
+            "displacement": "Terre/Displacement0",
+            "materials": [
+                {
+                    "file": "Terre/MaterialRock1",
+                    "name": "Rock"
+                },
+                {
+                    "file": "Terre/MaterialWater1",
+                    "name": "Water"
+                }
+            ],
+            "radius": 50
+, "pos": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            }
+        },
+        {
+            "date": 49,
+            "pos": {
+                "x": 0,
+                "y": 20,
+                "z": -50
+            }
+        }
+    ]
+}

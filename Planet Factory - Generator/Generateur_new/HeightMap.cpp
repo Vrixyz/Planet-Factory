@@ -26,7 +26,7 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     int size = mapCompo->size();
     //qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
 
-    float tmp[size];
+    float* tmp = (float*)malloc(size * sizeof(tmp));
     for (int i = 0; i < size; i++)
         tmp[i] = 0;
 

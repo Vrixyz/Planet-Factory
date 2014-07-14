@@ -1,0 +1,4 @@
+{
+    "type": "star", "evolution": "./Star_evolution.json",
+    "name": "Star"
+}

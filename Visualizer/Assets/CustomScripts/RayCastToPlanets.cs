@@ -120,8 +120,13 @@ public class RayCastToPlanets : MonoBehaviour {
 						    //print ("hit! ");
 						    Vector2 textureCoord = hit.textureCoord;
 						    pu = p.GetComponent<PlanetUpdater>();
-						    textureCoord.x *= pu.materials["rock"].width;
-						    textureCoord.y *= pu.materials["rock"].height;
+                            foreach (var t in pu.materials)
+                            {
+                                if (selectedMat == null || pu.materials[selectedMat] == null)
+                                    selectedMat = t.Key;
+                            }
+                            textureCoord.x *= pu.materials[selectedMat].width;
+                            textureCoord.y *= pu.materials[selectedMat].height;
 						    //print(hit.textureCoord);
 						    x = (int)textureCoord.x;
 						    y = (int)textureCoord.y;

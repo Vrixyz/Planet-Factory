@@ -84,7 +84,6 @@ public class SystemLoader : MonoBehaviour {
                 //print("tried to load : " + resourceFolder + materialEvolution["file"].ToString());
                 //print(updater.materials[materialEvolution["name"].ToString()]);
             }
-            
             updater.materialsDefinition = new Dictionary<string, object>(materialsDefinition);
 
             //TODO : put that in updater to update if materials evolve
@@ -122,12 +121,12 @@ public class SystemLoader : MonoBehaviour {
         time.totalTime = (long)dict["totalTime"];
 		print("dict['astres'][0]: " + ((List<object>) dict["astres"])[0]);
 		materialsDefinition = dict ["materials"] as Dictionary<string, object>;
-		print ("rock : " + materialsDefinition ["rock"]);
-		Dictionary<string, object> rmat = materialsDefinition ["rock"] as Dictionary<string, object>;
+		//print ("rock : " + materialsDefinition ["rock"]);
+		/*Dictionary<string, object> rmat = materialsDefinition ["rock"] as Dictionary<string, object>;
 		print ("rock, each key...");
 		foreach (var v in rmat) {
 			print(v.Key + " : " + v.Value);
-		}
+		} */
         print("materialsDefinition is null? " + (materialsDefinition == null));
 		// store materials
 		//materials.Add (((Dictionary<string, object>)((List<object>)dict ["materials"]) [0]));
