@@ -9,6 +9,7 @@ MapInfo::MapInfo()
 MapInfo::MapInfo(int i, int j, MapInfo *** _map)
     :_n(0), _component(0)
 {
+
     int tmp = (rand() % 100) + 50;
     if (i == 0)
     {
@@ -25,6 +26,34 @@ MapInfo::MapInfo(int i, int j, MapInfo *** _map)
             _z = (tmp + _map[i - 1][j]->z() + _map[i][j - 1]->z()) / 3;
         }
     }
+}
+
+int MapInfo::editComponent(Component *c, int percent, e_etat etat)
+{
+    std::list<MyComponent *>::iterator it;
+
+    for (it = _components.begin(); it != _components.end(); it++)
+    {
+        if ((*it)->component()->getName() == c->getName())
+        {
+            (*it)->percent(percent);
+            (*it)->etat(etat);
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int MapInfo::freeSpace(void)
+{
+    int libre = 100;
+    std::list<MyComponent*>::iterator it = _components.begin();
+
+    for (it; it != _components.end(); it++)
+    {
+        libre -= (*it)->percent();
+    }
+    return libre;
 }
 
 /** Setter **/

@@ -4,6 +4,25 @@ HeightMap::HeightMap(int radius)
     :_r(radius), _x(radius * 4), _y(radius * 2)
 {
     _map = new MapInfo**[_x];
+
+    //test libnoise
+    /*noise::module::Perlin perlin;
+    noise::utils::NoiseMap noiseMap;
+    noise::utils::NoiseMapBuilderPlane heightMapBuilder;
+
+    heightMapBuilder.SetSourceModule(perlin);
+    heightMapBuilder.SetDestNoiseMap(noiseMap);
+    heightMapBuilder.SetDestSize (_x, _y);
+    heightMapBuilder.SetBounds(0, _x, 0, _y);
+    heightMapBuilder.Build();
+
+    for (int x = 0; x < _x; x++)
+    {
+        for (int y = 0; y < _y; y++)
+        {
+            _map[x][y]->z(perlin.GetValue(x, y, 0.5));
+        }
+    }*/
     for (int i = 0; i < _x; i++)
     {
         _map[i] = new MapInfo*[_y];
@@ -26,9 +45,58 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     int size = mapCompo->size();
     //qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
 
+    //Temp component array to check percent
     float* tmp = (float*)malloc(size * sizeof(tmp));
+
+    //Temp component array to check percent
     for (int i = 0; i < size; i++)
         tmp[i] = 0;
+
+    //New component system
+
+    //For each component
+    std::map<Component*, int>::iterator it = mapCompo->begin();
+    for (it; it != mapCompo->end(); it++)
+    {
+        int total = 0;
+        int last = 0;
+        //In each case of the map
+        for (int i = 0; i <_x; i++)
+        {
+            for (int j = 0; j < _y; j++)
+            {
+                //Calc a random percent, can't > 100% for case and total > 100%
+                int libre = _map[i][j]->freeSpace();
+                if (libre > 0)
+                {
+                    int p = 0;
+                    // If we can still put some of this component on the planet
+                    if (total != 100)
+                    {
+                        if (last <= 0)
+                            p = rand() % 100;
+                        else
+                        {
+                            p = rand() % last;
+                            last -= (1 + p);
+                        }
+                        if (p > libre)
+                            p = libre;
+                        else if (total + p > 100)
+                            p = 100 - total;
+                    }
+                    _map[i][j]->editComponent(it->first, p, SOLID);
+                    total += p;
+                }
+                else
+                    _map[i][j]->editComponent(it->first, 0, SOLID);
+
+            }
+        }
+    }
+
+
+    qDebug() << "Filling planet with component... BIS";
 
     //Adding component
     for (int i = 0; i < _x; i++)
@@ -144,7 +212,7 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
             }
         }
     }
-    //Finish to fill the planet after the random part
+        //Finish to fill the planet after the random part
     int last = 0;
     for (int x = 0; x < _x; x++)
     {
@@ -532,7 +600,7 @@ QJsonObject HeightMap::exportComposentMap(const std::string & path, int iteratio
         QString file = QString("Material") + comp->getName().c_str() + QString::number(iteration);
         QString file_path = folder + "/" + file;
 
-        obj.insert("name", comp->getName().c_str());
+        //obj.insert("name", comp->getName().c_str());
         obj.insert("file", file_path);
         materials.append(obj);
         genCompImg(comp->getName(), path, file.toStdString());

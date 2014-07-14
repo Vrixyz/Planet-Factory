@@ -12,6 +12,7 @@ public:
     Component();
     Component(QJsonObject);
     Component(const std::string &);
+    Component(Component *c);
     Component(std::string, int, int, int, int, const std::string &);
     ~Component();
 

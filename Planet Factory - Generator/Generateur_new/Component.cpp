@@ -19,6 +19,16 @@ Component::Component(const std::string & path)
 {
 }
 
+Component::Component(Component *c)
+{
+    _name = c->getName();
+    _gazeousTemp = c->getGazeousTemp();
+    _solidTemp = c->getSolidTemp();
+    _hardness = c->getHardness();
+    _mass = c->getMass();
+    _path = c->path();
+}
+
 Component::Component(std::string name, int gazeousTemp, int solidTemp, int mass, int hardness, const std::string & path)
     : _path(path)
 {
