@@ -67,23 +67,21 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
             {
                 //Calc a random percent, can't > 100% for case and total > 100%
                 int libre = _map[i][j]->freeSpace();
+                int p = 0;
                 if (libre > 0)
                 {
-                    int p = 0;
                     // If we can still put some of this component on the planet
                     if (total != 100)
                     {
-                        if (last <= 0)
-                            p = rand() % 100;
+                        //if it is the last component of the list
+                        if (it == mapCompo->end())
+                            p = libre;
                         else
                         {
-                            p = rand() % last;
-                            last -= (1 + p);
+                            p = rand() % libre;
+                            if (total + p > 100)
+                                p = 100 - total;
                         }
-                        if (p > libre)
-                            p = libre;
-                        else if (total + p > 100)
-                            p = 100 - total;
                     }
                     _map[i][j]->editComponent(it->first, p, SOLID);
                     total += p;
@@ -96,7 +94,8 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     }
 
 
-    qDebug() << "Filling planet with component... BIS";
+    //Old component system
+    qDebug() << "Filling planet with component... Old";
 
     //Adding component
     for (int i = 0; i < _x; i++)
