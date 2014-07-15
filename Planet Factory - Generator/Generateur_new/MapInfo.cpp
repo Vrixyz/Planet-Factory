@@ -91,3 +91,8 @@ e_etat      MapInfo::etat(void)const
 {
     return _etat;
 }
+
+std::list<MyComponent*> MapInfo::components()
+{
+    return _components;
+}

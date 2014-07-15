@@ -93,7 +93,6 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
         }
     }
 
-
     //Old component system
     qDebug() << "Filling planet with component... Old";
 
