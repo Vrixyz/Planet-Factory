@@ -553,7 +553,7 @@ void HeightMap::exportHeightMap(const std::string & path, const std::string & na
         qDebug() << "IMG save: " << completePath;
 }
 
- void HeightMap::genCompImg(const std::string & name, const std::string & path, const std::string & file)
+void HeightMap::genCompImg(const std::string & name, const std::string & path, const std::string & file)
 {
     QImage pic(_x, _y, QImage::Format_RGB32);
 
@@ -602,7 +602,52 @@ QJsonObject HeightMap::exportComposentMap(const std::string & path, int iteratio
         obj.insert("file", file_path);
         materials.append(obj);
         genCompImg(comp->getName(), path, file.toStdString());
+        genCompImgV2(comp->getName(), path, file.toStdString());
     }
     evo.insert("materials", materials);
     return evo;
 }
+
+
+
+void HeightMap::genCompImgV2(const std::string & name, const std::string & path, const std::string & file)
+{
+    QImage pic(_x, _y, QImage::Format_RGB32);
+    std::list<MyComponent *> comp_list;
+    QRgb black = qRgb(0, 0, 0);
+
+    for (int x = 0; x < _x; x++)
+    {
+        for (int y = 0; y < _y; y++)
+        {
+            QRgb color = black;
+            comp_list = _map[x][y]->components();
+            for (std::list<MyComponent *>::iterator it = comp_list.begin(); it != comp_list.end(); ++it)
+            {
+                std::string tmp = (*it)->component()->getName();
+                if (tmp == name)
+                {
+                    int percent = (*it)->percent();
+                    int value = (255 * percent) / 100;
+                    color = qRgb(value, value, value);
+                }
+            }
+           pic.setPixel(x, y, color);
+        }
+    }
+
+    QString completePath = "";
+    QString _path(path.c_str());
+    QString _name(file.c_str());
+
+    completePath += _path;
+    completePath += "/";
+    completePath += _name;
+    completePath += "V2.png";
+
+    if (!pic.save(completePath))
+        qDebug() << "Error: pics not saved!: " << completePath;
+    else
+        qDebug() << "IMG save: " << completePath;
+}
+

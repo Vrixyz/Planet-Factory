@@ -51,6 +51,7 @@ public:
     void        exportHeightMap(const std::string & path, const std::string & name);
     QJsonObject exportComposentMap(const std::string & path, int iteration, QJsonObject evo, QString name);
     void        genCompImg(const std::string & name, const std::string & path, const std::string & file);
+    void        genCompImgV2(const std::string & name, const std::string & path, const std::string & file);
 
     //Print in qDebug the different heightmap
     void    printMap();
