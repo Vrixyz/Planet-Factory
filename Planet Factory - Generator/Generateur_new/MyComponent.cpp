@@ -11,7 +11,7 @@ MyComponent::MyComponent(Component *c, int p, e_etat e)
 }
 
 //** Setter **//
-void        MyComponent::percent(int p)
+void        MyComponent::percent(float p)
 {
     _p = p;
 }
@@ -40,7 +40,7 @@ Component * MyComponent::component(void)const
     return _c;
 }
 
-int       MyComponent::percent(void)const
+float MyComponent::percent(void)const
 {
     return _p;
 }

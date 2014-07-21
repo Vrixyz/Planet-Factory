@@ -58,16 +58,15 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     std::map<Component*, int>::iterator it = mapCompo->begin();
     for (it; it != mapCompo->end(); it++)
     {
-        int total = 0;
-        int last = 0;
+        float total = 0;
         //In each case of the map
         for (int i = 0; i <_x; i++)
         {
             for (int j = 0; j < _y; j++)
             {
                 //Calc a random percent, can't > 100% for case and total > 100%
-                int libre = _map[i][j]->freeSpace();
-                int p = 0;
+                float libre = _map[i][j]->freeSpace();
+                float p = 0;
                 if (libre > 0)
                 {
                     // If we can still put some of this component on the planet
@@ -78,17 +77,22 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                             p = libre;
                         else
                         {
-                            p = rand() % libre;
+                            if (libre > 10)
+                                libre = libre / 100;
+                            p = static_cast <float> (rand()) / static_cast <float> (RAND_MAX / libre);
                             if (total + p > 100)
                                 p = 100 - total;
                         }
                     }
+                    qDebug() << "Filling [" << i << ";" << j << "] with " << p << "%. Total : " << total;
                     _map[i][j]->editComponent(it->first, p, SOLID);
                     total += p;
                 }
                 else
+                {
+                    qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << total;
                     _map[i][j]->editComponent(it->first, 0, SOLID);
-
+                }
             }
         }
     }
@@ -607,8 +611,6 @@ QJsonObject HeightMap::exportComposentMap(const std::string & path, int iteratio
     evo.insert("materials", materials);
     return evo;
 }
-
-
 
 void HeightMap::genCompImgV2(const std::string & name, const std::string & path, const std::string & file)
 {
