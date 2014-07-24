@@ -21,7 +21,6 @@ SOURCES +=  main.cpp \
     Component.cpp \
     Planet.cpp \
     System.cpp \
-    Generator.cpp \
     HeightMap.cpp \
     MapInfo.cpp \
     Move.cpp \
@@ -43,7 +42,6 @@ HEADERS += \
     Component.hpp \
     Planet.hpp \
     System.hpp \
-    Generator.hpp \
     HeightMap.hpp \
     MapInfo.hpp \
     Move.hpp \

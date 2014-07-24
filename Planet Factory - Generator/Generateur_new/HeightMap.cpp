@@ -1,9 +1,10 @@
 #include "HeightMap.hpp"
 
-HeightMap::HeightMap(int radius)
+HeightMap::HeightMap(int radius, Planet *p)
     :_r(radius), _x(radius * 4), _y(radius * 2)
 {
     _map = new MapInfo**[_x];
+    _planet = p;
 
     //test libnoise
     /*noise::module::Perlin perlin;
@@ -55,8 +56,8 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     //New component system
 
     //For each component
-    std::map<Component*, int>::iterator it = mapCompo->begin();
-    for (it; it != mapCompo->end(); it++)
+    std::map<Component*, int>::iterator it;
+    for (it = mapCompo->begin(); it != mapCompo->end(); it++)
     {
         float total = 0;
         //In each case of the map
@@ -257,10 +258,10 @@ int HeightMap::terrain()
     std::map<MapInfo*, MapInfo*>::iterator it;
     for (it = borders.begin(); it != borders.end(); it++)
     {
-        Component * c1 = it->first->component();
+        /*Component * c1 = it->first->component();
         Component * c2 = it->second->component();
         e_etat e1 = it->first->etat();
-        e_etat e2 = it->second->etat();
+        e_etat e2 = it->second->etat();*/
     }
     qDebug() << "Move plates, done.";
     return 0;
@@ -526,6 +527,11 @@ int HeightMap::changeAlt(int x, int y, int z)
 MapInfo *** HeightMap::map(void)const
 {
     return _map;
+}
+
+Planet* HeightMap::planet(void)const
+{
+    return _planet;
 }
 
 void HeightMap::exportHeightMap(const std::string & path, const std::string & name)

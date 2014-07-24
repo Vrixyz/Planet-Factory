@@ -63,6 +63,23 @@ Component *System::getComponentByName(std::string toSearch)
     return NULL;
 }
 
+QString System::getTypeString(Planet *p)
+{
+    switch (p->getType())
+    {
+    case STAR:
+        return "star";
+    case TELLURIC:
+        return "planet";
+    case GAZEOUS:
+        return "gazeous";
+    case ASTEROID:
+        return "asteroid";
+    default:
+        return "bad type";
+    }
+}
+
 // TODO A MODIFIER SOON
 void System::initJson(QString path)
 {
@@ -82,6 +99,7 @@ void System::initJson(QString path)
         //Infos fixe
         QJsonObject astre;
         astre.insert("name", name);
+        astre.insert("type", getTypeString(*itp));
         astre.insert("evolution",  "./" + name + "_evolution.json");
 
         QJsonDocument astre_json;
@@ -106,19 +124,18 @@ void System::initJson(QString path)
 
     std::list<Component*>::iterator itc;
     //On cree l'array component
-    QJsonArray component;
+    QJsonObject component;
     for (itc = _listCompo->begin(); itc != _listCompo->end(); ++itc)
     {
         QJsonObject obj;
 
         QString name = (*itc)->getName().c_str();
-        obj.insert("name", name);
 
         obj.insert("solid", (*itc)->getSolidTemp());
         obj.insert("gas", (*itc)->getGazeousTemp());
         obj.insert("mass", (*itc)->getMass());
         obj.insert("hardness", (*itc)->getHardness());
-        component.append(obj);
+        component.insert(name, obj);
     }
 
     QJsonObject save;

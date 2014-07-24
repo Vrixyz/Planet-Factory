@@ -24,6 +24,7 @@ public:
     std::list<Component*>   *getComponentList(void);
     Component               *getComponentByName(std::string);
     QString                 getJsonPath();
+    QString                 getTypeString(Planet *p);
 
     void                    initJson(QString);
     void                    endJson();

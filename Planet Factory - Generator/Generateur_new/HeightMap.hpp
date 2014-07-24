@@ -11,8 +11,8 @@
 #include <QtGui/qimage.h>
 #include <QJsonArray>
 
-#include <libNoise/include/noise/noise.h>
-#include <libNoise/noiseutils/noiseutils.h>
+//#include <libNoise/include/noise/noise.h>
+//#include <libNoise/noiseutils/noiseutils.h>
 
 #include "Component.hpp"
 #include "MapInfo.hpp"
@@ -31,10 +31,12 @@ enum e_tectoDirect
     NW
 };
 
+class Planet;
+
 class HeightMap
 {
 public:
-    HeightMap(int radius);
+    HeightMap(int radius, Planet *);
     //Update map
     int changeAlt(int x, int y, int z);
 
@@ -56,10 +58,9 @@ public:
     //Print in qDebug the different heightmap
     void    printMap();
 
-
-
     /**Getter **/
-    MapInfo *** map(void)const;
+    MapInfo *** map(void) const;
+    Planet*     planet(void) const;
 private:
     int         _n;
     int         _r;
@@ -68,6 +69,7 @@ private:
     MapInfo *** _map;
     std::map<Component*, int> *_cmp;
     e_tectoDirect * _tectoDirect;
+    Planet      *_planet;
 
     int _fillComponent(std::map<Component*, int>   *mapCompo);
     int _updateMap(int x, int y, int c);

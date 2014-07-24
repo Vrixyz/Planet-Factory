@@ -12,8 +12,6 @@
 #include <QLabel>
 #include <QtGui>
 
-#include "Generator.hpp"
-
 class MainWindow;
 
 class Menu : public QWidget

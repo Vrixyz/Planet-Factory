@@ -53,7 +53,6 @@ GenWin::GenWin(System *s, QString path, int time, int inter, QWidget *parent) : 
 void GenWin::appendInfo(QString txt)
 {
     QString info = _textInfo->toHtml();
-    //info.append("<br/>");
     info.append(txt);
     _textInfo->setHtml(info);
 }

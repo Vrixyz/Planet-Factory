@@ -81,24 +81,40 @@ void    Planet::calc_move(int duree)
     qreal y =  _distance * qSin(rad);
     setPosition(x, y, 0);
 
-    QJsonObject evo;
+
+    //End of calc
     QJsonObject position;
     position.insert("x", _pos[0]);
     position.insert("y", _pos[1]);
     position.insert("z", _pos[2]);
-    evo.insert("pos", position);
-    evo.insert("date", duree);
-    _evo.append(evo);
+
+    QJsonObject last;
+    last = _evo.last().toObject();
+    int test = last["duree"].toInt();
+
+    if (test == duree)
+    {
+        last.insert("pos", position);
+        _evo.pop_back();
+        _evo.append(last);
+    }
+    else
+    {
+        QJsonObject evo;
+        evo.insert("pos", position);
+        evo.insert("date", duree);
+        _evo.append(evo);
+    }
 }
 
 void    Planet::addHmToEvo(QString path)
 {
     QString folder = _name.c_str();
     QString file = "Displacement" + QString::number(_mapIteration);
-    QJsonObject evo = _evo.first().toObject();
-    _mapIteration++;
+    QJsonObject evo = _evo.last().toObject();
 
-    _evo.erase(_evo.begin());
+    _mapIteration++;
+    _evo.pop_back();
     _hm->exportHeightMap(path.toStdString()+"/"+_name, file.toStdString());
     evo.insert("displacement", folder+"/"+file);
     _evo.append(evo);
@@ -107,9 +123,9 @@ void    Planet::addHmToEvo(QString path)
 void    Planet::addCmToEvo(QString path)
 {
     QString folder = _name.c_str();
-    QJsonObject evo = _evo.first().toObject();
+    QJsonObject evo = _evo.last().toObject();
 
-    _evo.erase(_evo.begin());
+    _evo.pop_back();
     evo = _hm->exportComposentMap(path.toStdString()+"/"+_name, _mapIteration, evo, folder);
     _evo.append(evo);
 }
@@ -177,7 +193,7 @@ int Planet::getTilt(void)
 
 void    Planet::init()
 {
-    _hm = new HeightMap(_radius);
+    _hm = new HeightMap(_radius, this);
     _hm->PlateTectonic(_radius / RATIO_PLATE + 1, _mapCompo);
     _hm->printMap();
     //_evolve = true;
