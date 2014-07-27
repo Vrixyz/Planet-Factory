@@ -30,7 +30,6 @@ public class SystemLoader : MonoBehaviour {
 	public Dictionary<string, object> materialsDefinition;
 
 
-
 	void loadFromAstralInfo(Dictionary<string, object> dictPlanet) {
 		print("dictPlanet['name']: " + dictPlanet["name"]);
         GameObject instance;
@@ -69,17 +68,18 @@ public class SystemLoader : MonoBehaviour {
             // materials evolution
             List<object> materialsEvolution = (dictEvolution["materials"]) as List<object>;
 
-            //TODO: load all materials and evolutions
 
             print(dictEvolution["materials"]);
             for (int i = 0; i < materialsEvolution.Count; ++i)
             {
                 Dictionary<string, object> materialEvolution = materialsEvolution[i] as Dictionary<string, object>;
-              //  print(materialEvolution);
-                //print(materialEvolution["name"].ToString());
-                //print(materialEvolution["file"].ToString());
-
-                updater.materials[materialEvolution["name"].ToString()] = (Texture2D)Resources.Load(resourceFolder + materialEvolution["file"].ToString());
+            
+                 // TODO : this won't work on linux !
+                var path = "file://" + Application.dataPath + "/Resources/" + resourceFolder + materialEvolution["file"].ToString() + ".png";
+                print("path : " + path);
+                var www = new WWW(path);
+                while (!www.isDone) ;
+                updater.materials[materialEvolution["name"].ToString()] = www.texture;
 
                 //print("tried to load : " + resourceFolder + materialEvolution["file"].ToString());
                 //print(updater.materials[materialEvolution["name"].ToString()]);

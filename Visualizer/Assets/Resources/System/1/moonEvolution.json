@@ -19,7 +19,6 @@
 				"y": 0,
 				"z": 0
 			},
-			"displacement":"Maps/moonDisplacement1",
 			"materials": [ {
 				"name": "rock",
 				"file": "Maps/moonMaterialRock1"
@@ -38,7 +37,6 @@
 				"y": 0,
 				"z": -5
 			},
-			"displacement":"Maps/moonDisplacement2"
 		},
 		{
 			"date": 20000,

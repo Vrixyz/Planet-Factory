@@ -28,8 +28,14 @@ public class PlanetUpdater : MonoBehaviour {
 			{
 				//print("cur disp: " + "System/1/" + current["displacement"]);
 				//print ((Texture2D)Resources.Load ( "System/1/" +  current["displacement"]));
-
-				displacements.Add ((string)current["displacement"], (Texture2D)Resources.Load (folder + current["displacement"]));
+                GameObject manager = GameObject.Find("Manager");
+                SystemLoader sys = manager.GetComponent<SystemLoader>();
+                // TODO : this won't work on linux !
+                var path = "file://" + Application.dataPath + "/Resources/" + sys.resourceFolder + current["displacement"] + ".png";
+                print("path for displacement : " + path);
+                var www = new WWW(path);
+                while (!www.isDone) ;
+                displacements.Add((string)current["displacement"], www.texture);
 			}
 		}
 		//Texture2D t2 = (Texture2D)Resources.Load ("Assets/Resources/System/1/Maps/soleilDisplacement2.png");
