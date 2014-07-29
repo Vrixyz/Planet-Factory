@@ -1,10 +1,10 @@
 #include "HeightMap.hpp"
 
-HeightMap::HeightMap(int radius)
+HeightMap::HeightMap(int radius, Planet *p)
     :_r(radius), _x(radius * 4), _y(radius * 2)
 {
     _map = new MapInfo**[_x];
-
+    _planet = p;
     //test libnoise
     /*noise::module::Perlin perlin;
     noise::utils::NoiseMap noiseMap;
@@ -58,39 +58,39 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     std::map<Component*, int>::iterator it = mapCompo->begin();
     for (it; it != mapCompo->end(); it++)
     {
-        float total = 0;
+        float totalFree = 0;
         //In each case of the map
         for (int i = 0; i <_x; i++)
         {
             for (int j = 0; j < _y; j++)
             {
                 //Calc a random percent, can't > 100% for case and total > 100%
-                float libre = _map[i][j]->freeSpace();
+                float free = _map[i][j]->freeSpace();
                 float p = 0;
-                if (libre > 0)
+                if (free > 0)
                 {
                     // If we can still put some of this component on the planet
-                    if (total != 100)
+                    if (totalFree != 100)
                     {
                         //if it is the last component of the list
                         if (it == mapCompo->end())
-                            p = libre;
+                            p = free;
                         else
                         {
-                            if (libre > 10)
-                                libre = libre / 100;
-                            p = static_cast <float> (rand()) / static_cast <float> (RAND_MAX / libre);
-                            if (total + p > 100)
-                                p = 100 - total;
+                            if (free > 10)
+                                free = free / 100;
+                            p = static_cast <float> (rand()) / static_cast <float> (RAND_MAX / free);
+                            if (totalFree + p > 100)
+                                p = 100 - totalFree;
                         }
                     }
-                    qDebug() << "Filling [" << i << ";" << j << "] with " << p << "%. Total : " << total;
+                    qDebug() << "Filling [" << i << ";" << j << "] with " << p << "%. Total : " << totalFree;
                     _map[i][j]->editComponent(it->first, p, SOLID);
-                    total += p;
+                    totalFree += p;
                 }
                 else
                 {
-                    qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << total;
+                    qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << totalFree;
                     _map[i][j]->editComponent(it->first, 0, SOLID);
                 }
             }
@@ -653,3 +653,7 @@ void HeightMap::genCompImgV2(const std::string & name, const std::string & path,
         qDebug() << "IMG save: " << completePath;
 }
 
+Planet* HeightMap::planet(void)const
+{
+    return _planet;
+}
