@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include <list>
+#include <QtDebug>
 
 #include "Component.hpp"
 #include "MyComponent.hpp"
@@ -20,18 +21,19 @@ public:
     MapInfo();
     MapInfo(int i, int j, MapInfo *** _map);
 
-    int editComponent(Component *c, int percent, e_etat etat);
-    float freeSpace(void);
+    int         editComponent(Component *c, float percent, e_etat etat);
+    float       freeSpace(void);
 
     /** Setter **/
-    void z(int z);
-    void n(int n);
-    void component(Component * c);
+    void        z(int z);
+    void        n(int n);
+    void        component(Component * c);
+    void        components(std::map<Component*, int> * mapCompo);
     void        etat(e_etat);
 
     /** Getter **/
-    int z(void)const;
-    int n(void)const;
+    int         z(void)const;
+    int         n(void)const;
     Component * component(void) const;
     e_etat      etat(void)const;
     std::list<MyComponent*> components(void);

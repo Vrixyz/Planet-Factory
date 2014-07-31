@@ -41,7 +41,17 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     qDebug() << "Filling planet with component...";
     srand(time(0));
 
+    //Set componentn list in mapInfo
+    for (int i = 0; i < _x; i++)
+    {
+        for (int j = 0; j < _y; j++)
+        {
+            _map[i][j]->components(mapCompo);
+        }
+    }
+
     float coef = _x *_y / 100;
+    int mapSize = _x * _y;
     int size = mapCompo->size();
     //qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
 
@@ -64,29 +74,33 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
         {
             for (int j = 0; j < _y; j++)
             {
-                //Calc a random percent, can't > 100% for case and total > 100%
-                float free = _map[i][j]->freeSpace();
-                float p = 0;
-                if (free > 0)
+                // If we can still put some of this component on the planet
+                if (totalFree != 100)
                 {
-                    // If we can still put some of this component on the planet
-                    if (totalFree != 100)
+                    //Calc a random percent, can't > 100% for case and total > 100%
+                    float free = _map[i][j]->freeSpace();
+                    float p = 0;
+                    if (free > 0)
                     {
-                        //if it is the last component of the list
+                        //if it is the last component of the list p = all the free space
                         if (it == mapCompo->end())
                             p = free;
                         else
                         {
-                            if (free > 10)
-                                free = free / 100;
                             p = static_cast <float> (rand()) / static_cast <float> (RAND_MAX / free);
-                            if (totalFree + p > 100)
+                            if (totalFree + (p / mapSize) > 100)
                                 p = 100 - totalFree;
                         }
+                        qDebug() << "Filling [" << i << ";" << j << "] with " << p << "%. Total : " << totalFree;
+                        if ((_map[i][j]->editComponent(it->first, p, SOLID)) == 0)
+                            qDebug() << "Edit Ok";
+                        totalFree += (p / mapSize);
                     }
-                    qDebug() << "Filling [" << i << ";" << j << "] with " << p << "%. Total : " << totalFree;
-                    _map[i][j]->editComponent(it->first, p, SOLID);
-                    totalFree += p;
+                    else
+                    {
+                        qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << totalFree;
+                        _map[i][j]->editComponent(it->first, 0, SOLID);
+                    }
                 }
                 else
                 {
@@ -226,6 +240,7 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
                 _map[x][y]->n(last);
         }
     }
+    qDebug() << "Done.";
     return 0;
 }
 

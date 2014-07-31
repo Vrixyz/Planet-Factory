@@ -28,12 +28,13 @@ MapInfo::MapInfo(int i, int j, MapInfo *** _map)
     }
 }
 
-int MapInfo::editComponent(Component *c, int percent, e_etat etat)
+int MapInfo::editComponent(Component *c, float percent, e_etat etat)
 {
     std::list<MyComponent *>::iterator it;
 
     for (it = _components.begin(); it != _components.end(); it++)
     {
+        qDebug() << "Component : " << (*it)->component()->getName().c_str() << " <=> " << c->getName().c_str();
         if ((*it)->component()->getName() == c->getName())
         {
             (*it)->percent(percent);
@@ -70,6 +71,16 @@ void MapInfo::n(int n)
 void MapInfo::component(Component * c)
 {
     _component = c;
+}
+
+void MapInfo::components(std::map<Component*, int> * mapCompo)
+{
+    std::map<Component*, int>::iterator it = mapCompo->begin();
+    for (it; it != mapCompo->end(); it++)
+    {
+        MyComponent * c = new MyComponent(it->first, 0, SOLID);
+        _components.push_back(c);
+    }
 }
 
 /** Getter **/
