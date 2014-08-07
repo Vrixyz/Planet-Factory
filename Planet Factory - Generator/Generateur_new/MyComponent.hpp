@@ -5,8 +5,8 @@
 
 enum e_etat
 {
-    LIQUID,
     SOLID,
+    LIQUID,
     GAZ
 };
 

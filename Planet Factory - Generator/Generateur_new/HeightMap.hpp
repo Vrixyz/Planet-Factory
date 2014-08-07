@@ -78,6 +78,8 @@ private:
     int _updateBot(int x, int y, int c);
     int _updateLeft(int x, int y, int c);
 
+    int _calcTerrain(std::list<MyComponent*>, std::list<MyComponent*>);
+
     //return border MapInfo if exist
     MapInfo * _isBorder(int x, int y);
 };

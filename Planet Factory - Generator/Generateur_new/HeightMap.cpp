@@ -249,6 +249,7 @@ int HeightMap::terrain()
     //Stocker les cases de frontières 2, par 2, la 1ère et celle qui est dans le sens influer
     qDebug() << "Checking border...";
     std::map<MapInfo*, MapInfo*> borders;
+    int nb = 0;
     for (int x = 0; x < _x; x++)
     {
         for (int y = 0; y < _y; y++)
@@ -257,10 +258,11 @@ int HeightMap::terrain()
             if (tmp)
             {
                 borders[_map[x][y]] = tmp;
+                nb++;
             }
         }
     }
-    qDebug() << "Checking border, done.";
+    qDebug() << "Checking border, done, " << nb << " borders found.";
 
     //Influer le mouvement des plaques
     qDebug() << "Move plates...";
@@ -270,16 +272,84 @@ int HeightMap::terrain()
         return 1;
     }
     std::map<MapInfo*, MapInfo*>::iterator it;
+    qDebug() << "Map before...";
+    this->printMap();
     for (it = borders.begin(); it != borders.end(); it++)
     {
-        Component * c1 = it->first->component();
-        Component * c2 = it->second->component();
-        e_etat e1 = it->first->etat();
-        e_etat e2 = it->second->etat();
+        std::list<MyComponent*> c1 = it->first->components();
+        std::list<MyComponent*> c2 = it->first->components();
+        _calcTerrain(c1, c2);
     }
+    qDebug() << "Map after...";
+    this->printMap();
     qDebug() << "Move plates, done.";
     return 0;
 }
+
+int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> c2)
+{
+    //Look for the best component in each list to calc, SOLID > LIQUID > GAZ
+    std::list<MyComponent*>::iterator i1 = c1.begin();
+    //List of component that will be use
+    std::list<MyComponent*> l1;
+    e_etat maxEtat = GAZ;
+    MyComponent * temp = NULL;
+    qDebug() << "Check states...";
+    for (i1; i1 != c1.end(); i1++)
+    {
+        if (temp == NULL || temp->etat() >= (*i1)->etat())
+        {
+            temp = (*i1);
+            l1.push_back(temp);
+            if (maxEtat > temp->etat())
+                maxEtat = temp->etat();
+        }
+    }
+
+    //delete component with bad stat
+    i1 = l1.begin();
+    for (i1; i1 != l1.end(); i1++)
+    {
+        if ((*i1)->etat() > maxEtat)
+            l1.erase(i1);
+    }
+
+    std::list<MyComponent*>::iterator i2 = c2.begin();
+    std::list<MyComponent*> l2;
+    maxEtat = GAZ;
+    temp = NULL;
+    for (i2; i2 != c2.end(); i2++)
+    {
+        if (temp == NULL || temp->etat() >= (*i2)->etat())
+        {
+            temp = (*i1);
+            l2.push_back(temp);
+            if (maxEtat > temp->etat())
+                maxEtat = temp->etat();
+        }
+    }
+
+    i2 = l2.begin();
+    for (i2; i2 != l2.end(); i2++)
+    {
+        if ((*i2)->etat() > maxEtat)
+            l2.erase(i2);
+    }
+    qDebug() << "Done.";
+
+
+    //Look the Percent if component have same stade
+
+
+    //Look the mass if component have same percent
+
+
+    //Calc with the second list
+
+
+    return 0;
+}
+
 
 MapInfo * HeightMap::_isBorder(int x, int y)
 {
@@ -386,6 +456,9 @@ MapInfo * HeightMap::_isBorder(int x, int y)
                 return _map[nx][ny];
             break;
         }
+    default: {
+        return 0;
+    }
 
     }
 
@@ -509,12 +582,12 @@ int     HeightMap::_updateLeft(int x, int y, int c)
 void    HeightMap::printMap()
 {
     int x, y;
-    for (x = 0; x < _x; x++)
+    /*for (x = 0; x < _x; x++)
     {
         for (y = 0; y < _y; y++)
             std::cout << _map[x][y]->component()->getName() << '\t';
         std::cout << std::endl;
-    }
+    }*/
 
     for (x = 0; x < _x; x++)
     {
@@ -523,12 +596,12 @@ void    HeightMap::printMap()
         std::cout << std::endl;
     }
 
-    for (x = 0; x < _x; x++)
+    /*for (x = 0; x < _x; x++)
     {
         for (y = 0; y < _y; y++)
             std::cout << _map[x][y]->n();
         std::cout << std::endl;
-    }
+    }*/
 }
 
 int HeightMap::changeAlt(int x, int y, int z)
