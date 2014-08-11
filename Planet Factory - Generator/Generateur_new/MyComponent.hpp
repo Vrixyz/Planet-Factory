@@ -20,15 +20,18 @@ public:
     void        component(Component * c);
     void        etat(e_etat);
     void        percent(float p);
+    void        n(int);
 
     //** Getter **//
     e_etat      etat(void)const;
     Component * component(void)const;
     float       percent(void)const;
+    int         n(void)const;
 private:
     Component * _c;
     float       _p;
     e_etat      _etat;
+    int         _n;
 
 
 };

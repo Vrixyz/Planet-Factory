@@ -23,6 +23,7 @@ public:
 
     int         editComponent(Component *c, float percent, e_etat etat);
     float       freeSpace(void);
+    void        loadN();
 
     /** Setter **/
     void        z(int z);

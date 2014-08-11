@@ -57,6 +57,14 @@ float MapInfo::freeSpace(void)
     return libre;
 }
 
+void    MapInfo::loadN()
+{
+    std::list<MyComponent*>::iterator it;
+
+    for (it = _components.begin(); it != _components.end(); ++it)
+        (*it)->n(_n);
+}
+
 /** Setter **/
 void MapInfo::z(int z)
 {

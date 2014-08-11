@@ -254,6 +254,7 @@ int HeightMap::terrain()
     {
         for (int y = 0; y < _y; y++)
         {
+            (_map[x][y])->loadN();
             MapInfo * tmp = _isBorder(x, y);
             if (tmp)
             {
@@ -288,6 +289,10 @@ int HeightMap::terrain()
 
 int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> c2)
 {
+    //plate number
+    int n1 = 0;
+    int n2 = 0;
+
     //Temp lists to calc
     std::list<MyComponent*> solid1;
     std::list<MyComponent*> liquid1;
@@ -302,7 +307,8 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
 
     for (it = c1.begin(); it != c1.end(); ++it)
     {
-        qDebug() << "FOR1 : " << (*it)->component()->getName().c_str() << ".";
+        if (n1 == 0)
+            n1 = (*it)->n();
         if ((*it)->etat() == SOLID)
             solid1.push_back(*it);
         else if ((*it)->etat() == LIQUID)
@@ -313,7 +319,8 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
 
     for (it = c2.begin(); it != c2.end(); ++it)
     {
-        qDebug() << "FOR2" << (*it)->component()->getName().c_str() << ".";
+        if (n2 == 0)
+            n2 = (*it)->n();
         if ((*it)->etat() == SOLID)
             solid2.push_back(*it);
         else if ((*it)->etat() == LIQUID)
@@ -323,10 +330,13 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
     }
 
 
-
     return 0;
 }
 
+e_typemove  HeightMap::_typeMove(int n1, int n2)
+{
+    return 0;
+}
 
 MapInfo * HeightMap::_isBorder(int x, int y)
 {

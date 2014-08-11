@@ -19,6 +19,13 @@
 
 #define RATIO_PLATE 25
 
+enum e_typemove
+{
+    TRANSFORM,
+    DIVERGENT,
+    CONVERGENT
+};
+
 enum e_tectoDirect
 {
     NORTH = 0,
@@ -71,6 +78,7 @@ private:
     e_tectoDirect * _tectoDirect;
     Planet      *_planet;
 
+    e_typemove _typeMove(int, int);
     int _fillComponent(std::map<Component*, int>   *mapCompo);
     int _updateMap(int x, int y, int c);
     int _updateTop(int x, int y, int c);
