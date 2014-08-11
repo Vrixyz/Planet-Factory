@@ -75,8 +75,8 @@ void MapInfo::component(Component * c)
 
 void MapInfo::components(std::map<Component*, int> * mapCompo)
 {
-    std::map<Component*, int>::iterator it = mapCompo->begin();
-    for (it; it != mapCompo->end(); it++)
+    std::map<Component*, int>::iterator it;
+    for (it = mapCompo->begin(); it != mapCompo->end(); it++)
     {
         MyComponent * c = new MyComponent(it->first, 0, SOLID);
         _components.push_back(c);

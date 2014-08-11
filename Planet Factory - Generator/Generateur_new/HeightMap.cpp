@@ -65,8 +65,8 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     //New component system
 
     //For each component
-    std::map<Component*, int>::iterator it = mapCompo->begin();
-    for (it; it != mapCompo->end(); it++)
+    std::map<Component*, int>::iterator it;
+    for (it = mapCompo->begin(); it != mapCompo->end(); it++)
     {
         float totalFree = 0;
         //In each case of the map
@@ -277,7 +277,7 @@ int HeightMap::terrain()
     for (it = borders.begin(); it != borders.end(); it++)
     {
         std::list<MyComponent*> c1 = it->first->components();
-        std::list<MyComponent*> c2 = it->first->components();
+        std::list<MyComponent*> c2 = it->second->components();
         _calcTerrain(c1, c2);
     }
     qDebug() << "Map after...";
@@ -288,63 +288,40 @@ int HeightMap::terrain()
 
 int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> c2)
 {
-    //Look for the best component in each list to calc, SOLID > LIQUID > GAZ
-    std::list<MyComponent*>::iterator i1 = c1.begin();
-    //List of component that will be use
-    std::list<MyComponent*> l1;
-    e_etat maxEtat = GAZ;
-    MyComponent * temp = NULL;
-    qDebug() << "Check states...";
-    for (i1; i1 != c1.end(); i1++)
+    //Temp lists to calc
+    std::list<MyComponent*> solid1;
+    std::list<MyComponent*> liquid1;
+    std::list<MyComponent*> gaz1;
+    std::list<MyComponent*> solid2;
+    std::list<MyComponent*> liquid2;
+    std::list<MyComponent*> gaz2;
+
+    std::list<MyComponent*>::iterator it;
+
+    qDebug() << c1.size();
+
+    for (it = c1.begin(); it != c1.end(); ++it)
     {
-        if (temp == NULL || temp->etat() >= (*i1)->etat())
-        {
-            temp = (*i1);
-            l1.push_back(temp);
-            if (maxEtat > temp->etat())
-                maxEtat = temp->etat();
-        }
+        qDebug() << "FOR1 : " << (*it)->component()->getName().c_str() << ".";
+        if ((*it)->etat() == SOLID)
+            solid1.push_back(*it);
+        else if ((*it)->etat() == LIQUID)
+            liquid1.push_back(*it);
+        else
+            gaz1.push_back(*it);
     }
 
-    //delete component with bad stat
-    i1 = l1.begin();
-    for (i1; i1 != l1.end(); i1++)
+    for (it = c2.begin(); it != c2.end(); ++it)
     {
-        if ((*i1)->etat() > maxEtat)
-            l1.erase(i1);
+        qDebug() << "FOR2" << (*it)->component()->getName().c_str() << ".";
+        if ((*it)->etat() == SOLID)
+            solid2.push_back(*it);
+        else if ((*it)->etat() == LIQUID)
+            liquid2.push_back(*it);
+        else
+            gaz2.push_back(*it);
     }
 
-    std::list<MyComponent*>::iterator i2 = c2.begin();
-    std::list<MyComponent*> l2;
-    maxEtat = GAZ;
-    temp = NULL;
-    for (i2; i2 != c2.end(); i2++)
-    {
-        if (temp == NULL || temp->etat() >= (*i2)->etat())
-        {
-            temp = (*i1);
-            l2.push_back(temp);
-            if (maxEtat > temp->etat())
-                maxEtat = temp->etat();
-        }
-    }
-
-    i2 = l2.begin();
-    for (i2; i2 != l2.end(); i2++)
-    {
-        if ((*i2)->etat() > maxEtat)
-            l2.erase(i2);
-    }
-    qDebug() << "Done.";
-
-
-    //Look the Percent if component have same stade
-
-
-    //Look the mass if component have same percent
-
-
-    //Calc with the second list
 
 
     return 0;
