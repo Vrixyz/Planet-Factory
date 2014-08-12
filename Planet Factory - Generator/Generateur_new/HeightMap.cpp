@@ -335,7 +335,7 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
 
 e_typemove  HeightMap::_typeMove(int n1, int n2)
 {
-    return 0;
+    return NONE;
 }
 
 MapInfo * HeightMap::_isBorder(int x, int y)

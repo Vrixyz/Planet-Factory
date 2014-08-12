@@ -23,7 +23,8 @@ enum e_typemove
 {
     TRANSFORM,
     DIVERGENT,
-    CONVERGENT
+    CONVERGENT,
+    NONE
 };
 
 enum e_tectoDirect
