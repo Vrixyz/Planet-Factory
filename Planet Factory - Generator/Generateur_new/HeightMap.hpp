@@ -80,6 +80,9 @@ private:
     Planet      *_planet;
 
     e_typemove _typeMove(int, int);
+    int _moveSolid(std::list<MyComponent*>, std::list<MyComponent*>, e_typemove);
+    int _moveLiquid(std::list<MyComponent*>, std::list<MyComponent*>, e_typemove);
+    int _moveGaz(std::list<MyComponent*>, std::list<MyComponent*>, e_typemove);
     int _fillComponent(std::map<Component*, int>   *mapCompo);
     int _updateMap(int x, int y, int c);
     int _updateTop(int x, int y, int c);

@@ -329,9 +329,36 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
             gaz2.push_back(*it);
     }
 
+    //Find move type
+    e_typemove type = _typeMove(n1, n2);
+
+    //Move SOLID
+    _moveSolid(solid1, solid2, type);
+
+    //Move LIQUID
+    _moveLiquid(liquid1, liquid2, type);
+
+    //Move GAZ
+    _moveGaz(gaz1, gaz2, type);
 
     return 0;
 }
+
+int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*> solid2, e_typemove type)
+{
+    return 0;
+}
+
+int HeightMap::_moveLiquid(std::list<MyComponent*> liquid1, std::list<MyComponent*> liquid2, e_typemove type)
+{
+    return 0;
+}
+
+int HeightMap::_moveGaz(std::list<MyComponent*> gaz1, std::list<MyComponent*> gaz2, e_typemove type)
+{
+    return 0;
+}
+
 
 e_typemove  HeightMap::_typeMove(int n1, int n2)
 {
