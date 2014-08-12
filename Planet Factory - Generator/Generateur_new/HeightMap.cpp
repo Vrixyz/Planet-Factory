@@ -346,16 +346,62 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
 
 int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*> solid2, e_typemove type)
 {
+    switch (type)
+    {
+        case TRANSFORM: {
+
+        }
+        case DIVERGENT: {
+
+        }
+        case CONVERGENT : {
+
+        }
+        default : {
+
+        }
+    }
+
     return 0;
 }
 
 int HeightMap::_moveLiquid(std::list<MyComponent*> liquid1, std::list<MyComponent*> liquid2, e_typemove type)
 {
+    switch (type)
+    {
+        case TRANSFORM: {
+
+        }
+        case DIVERGENT: {
+
+        }
+        case CONVERGENT : {
+
+        }
+        default : {
+
+        }
+    }
     return 0;
 }
 
 int HeightMap::_moveGaz(std::list<MyComponent*> gaz1, std::list<MyComponent*> gaz2, e_typemove type)
 {
+    switch (type)
+    {
+        case TRANSFORM: {
+
+        }
+        case DIVERGENT: {
+
+        }
+        case CONVERGENT : {
+
+        }
+        default : {
+
+        }
+    }
     return 0;
 }
 
