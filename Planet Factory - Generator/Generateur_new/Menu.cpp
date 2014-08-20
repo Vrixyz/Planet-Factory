@@ -204,7 +204,6 @@ void        Menu::saveConfSystem()
         obj.insert("solid", (*itc_sys)->getSolidTemp());
         obj.insert("gas", (*itc_sys)->getGazeousTemp());
         obj.insert("mass", (*itc_sys)->getMass());
-        obj.insert("hardness", (*itc_sys)->getHardness());
 
         component.append(obj);
     }

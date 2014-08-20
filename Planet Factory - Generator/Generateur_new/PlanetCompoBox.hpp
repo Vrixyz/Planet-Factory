@@ -2,6 +2,7 @@
 #define PLANETCOMPOBOX_HPP
 
 #include <QSignalMapper>
+#include <QColorDialog>
 #include <QMainWindow>
 #include <QPushButton>
 #include <QListWidget>
@@ -41,7 +42,6 @@ public:
     QLineEdit   *_eName;
     QSpinBox    *_eGazeousTemp;
     QSpinBox    *_eSolidTemp;
-    QSlider     *_eHardness;
     QSpinBox    *_eMass;
 
     QPushButton *_add;
@@ -54,6 +54,12 @@ public:
     QPushButton *_winPlaAdd;
     QPushButton *_winPlaCan;
 
+    QPushButton *_bColor1;
+    QPushButton *_bColor2;
+
+    QColorDialog    *_dColor1;
+    QColorDialog    *_dColor2;
+
     QDialog     *_winSys;
     QDialog     *_winPla;
 
@@ -64,6 +70,11 @@ public:
     MainWindow  *_parent;
 
     Component   *_currComponent;
+
+    QLabel      *_lColorHexa1;
+    QLabel      *_lColorHexa2;
+    QLabel      *_lColor1;
+    QLabel      *_lColor2;
 
 private:
 
@@ -89,6 +100,9 @@ public slots:
     void delCompoToSys(void);
     void addCompoToPla(void);
     void delCompoToPla(int);
+
+    void setColor1(void);
+    void setColor2(void);
 
 };
 

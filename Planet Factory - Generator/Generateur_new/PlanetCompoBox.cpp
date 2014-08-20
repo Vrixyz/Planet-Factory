@@ -13,7 +13,7 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QWidget(parent)
     signalMapperSpinBox = new QSignalMapper(this);
     _winSys = new QDialog(_parent);
     _winSys->hide();
-    _winSys->setFixedSize(265, 280);
+    _winSys->setFixedSize(265, 320);
     _winPla = new QDialog(_parent);
     _winPla->hide();
     _winPla->setFixedSize(265, 280);
@@ -60,6 +60,9 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QWidget(parent)
     QObject::connect(_edi, SIGNAL(clicked()), this, SLOT(windowSysEdiCompo()));
     QObject::connect(_del, SIGNAL(clicked()), this, SLOT(delCompoToSys()));
     QObject::connect(_listObjects, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(componentSysSelected()));
+
+    _dColor1 = new QColorDialog();
+    _dColor2 = new QColorDialog();
 
     createWindowSysComponent();
     createWindowPlaComponent();
@@ -268,7 +271,6 @@ void PlanetCompoBox::createWindowSysComponent()
     QLabel      *lName;
     QLabel      *lGazeousTemp;
     QLabel      *lSolidTemp;
-    QLabel      *lHardness;
     QLabel      *lMass;
 
     lName = new QLabel("Name :", _winSys);
@@ -281,8 +283,20 @@ void PlanetCompoBox::createWindowSysComponent()
     lGazeousTemp->setGeometry(10, 125, 100, 15);
     lMass = new QLabel("Mass : (kg/m3)", _winSys);
     lMass->setGeometry(10, 165, 100, 18);
-    lHardness = new QLabel("Hardness :", _winSys);
-    lHardness->setGeometry(10, 205, 100, 15);
+    _lColorHexa1 = new QLabel("#000000", _winSys);
+    _lColorHexa1->setGeometry(10, 235, 85, 30);
+    _lColorHexa1->setStyleSheet("QLabel { background-color : white; color: black; }");
+    _lColorHexa1->setAlignment(Qt::AlignCenter);
+    _lColorHexa2 = new QLabel("#000000", _winSys);
+    _lColorHexa2->setGeometry(135, 235, 85, 30);
+    _lColorHexa2->setStyleSheet("QLabel { background-color : white; color: black; }");
+    _lColorHexa2->setAlignment(Qt::AlignCenter);
+    _lColor1 = new QLabel("", _winSys);
+    _lColor1->setGeometry(95, 235, 30, 30);
+    _lColor1->setStyleSheet("QLabel { background-color : #000000; }");
+    _lColor2 = new QLabel("", _winSys);
+    _lColor2->setGeometry(220, 235, 30, 30);
+    _lColor2->setStyleSheet("QLabel { background-color : #000000; }");
 
     _eName = new QLineEdit(_winSys);
     _eName->setGeometry(100, 40, 150, 30);
@@ -298,18 +312,20 @@ void PlanetCompoBox::createWindowSysComponent()
     _eMass->setGeometry(100, 160, 150, 30);
     _eMass->setMinimum(1);
     _eMass->setMaximum(100000);
-    _eHardness = new QSlider(Qt::Horizontal, _winSys);
-    _eHardness->setGeometry(100, 200, 150, 30);
-    _eHardness->setMinimum(0);
-    _eHardness->setMaximum(50);
 
     _winSysAdd = new QPushButton("Add component", _winSys);
-    _winSysAdd->setGeometry(10, 240, 115, 30);
+    _winSysAdd->setGeometry(10, 280, 115, 30);
     _winSysEdi = new QPushButton("Edit component", _winSys);
-    _winSysEdi->setGeometry(10, 240, 115, 30);
+    _winSysEdi->setGeometry(10, 280, 115, 30);
     _winSysEdi->hide();
+    _bColor1 = new QPushButton("Minimal color", _winSys);
+    _bColor1->setGeometry(10, 200, 115, 30);
+    _bColor2 = new QPushButton("Maximal color", _winSys);
+    _bColor2->setGeometry(135, 200, 115, 30);
     _winSysCan = new QPushButton("Cancel", _winSys);
-    _winSysCan->setGeometry(135, 240, 115, 30);
+    _winSysCan->setGeometry(135, 280, 115, 30);
+    QObject::connect(_bColor1, SIGNAL(clicked()), this, SLOT(setColor1()));
+    QObject::connect(_bColor2, SIGNAL(clicked()), this, SLOT(setColor2()));
     QObject::connect(_winSysAdd, SIGNAL(clicked()), this, SLOT(addCompoToSys()));
     QObject::connect(_winSysEdi, SIGNAL(clicked()), this, SLOT(ediCompoToSys()));
     QObject::connect(_winSysCan, SIGNAL(clicked()), this, SLOT(windowSysCloseAndClean()));
@@ -325,7 +341,6 @@ void PlanetCompoBox::windowSysAddCompo()
         _eName->setText("");
         _eGazeousTemp->setValue(0);
         _eSolidTemp->setValue(0);
-        _eHardness->setValue(0);
         _eMass->setValue(0);
         _winSys->show();
     }
@@ -348,8 +363,11 @@ void PlanetCompoBox::windowSysEdiCompo()
                 _eName->setText(QString((*it)->getName().c_str()));
                 _eGazeousTemp->setValue((*it)->getGazeousTemp());
                 _eSolidTemp->setValue((*it)->getSolidTemp());
-                _eHardness->setValue((*it)->getHardness());
                 _eMass->setValue((*it)->getMass());
+                _lColorHexa1->setText(QString((*it)->getColor1().c_str()));
+                _lColor1->setStyleSheet(QString("QLabel { background-color : %1; }").arg((*it)->getColor1().c_str()));
+                _lColorHexa2->setText(QString((*it)->getColor2().c_str()));
+                _lColor2->setStyleSheet(QString("QLabel { background-color : %1; }").arg((*it)->getColor2().c_str()));
             }
     }
 }
@@ -367,8 +385,11 @@ void PlanetCompoBox::windowSysCloseAndClean()
     _eName->setText("");
     _eGazeousTemp->setValue(0);
     _eSolidTemp->setValue(0);
-    _eHardness->setValue(0);
     _eMass->setValue(0);
+    _lColorHexa1->setText("#000000");
+    _lColor1->setStyleSheet(QString("QLabel { background-color : #000000; }"));
+    _lColorHexa2->setText("#000000");
+    _lColor2->setStyleSheet(QString("QLabel { background-color : #000000; }"));
     if (_winSys->isHidden() == FALSE)
         _winSys->hide();
 }
@@ -378,6 +399,8 @@ void PlanetCompoBox::addCompoToSys()
     std::list<Component*>::iterator it;
     Component*                      toAdd;
 
+    if (_eName->text().toStdString().size() == 0)
+        return;
     for (it = _parent->getSystem()->getComponentList()->begin();
          it != _parent->getSystem()->getComponentList()->end(); ++it)
         if ((*it)->getName() == _eName->text().toStdString())
@@ -388,11 +411,13 @@ void PlanetCompoBox::addCompoToSys()
     toAdd = new Component();
     toAdd->setName(_eName->text().toStdString());
     toAdd->setMass(_eMass->value());
-    toAdd->setHardness(_eHardness->value());
     toAdd->setGazeousTemp(_eGazeousTemp->value());
     toAdd->setSolidTemp(_eSolidTemp->value());
+    toAdd->setColor1(_lColorHexa1->text().toStdString());
+    toAdd->setColor2(_lColorHexa2->text().toStdString());
     _parent->getSystem()->getComponentList()->push_front(toAdd);
     updateListCompoSys();
+    windowSysCloseAndClean();
 }
 
 void PlanetCompoBox::delCompoToSys()
@@ -423,7 +448,8 @@ void PlanetCompoBox::ediCompoToSys()
     _currComponent->setName(_eName->text().toStdString().c_str());
     _currComponent->setGazeousTemp(_eGazeousTemp->value());
     _currComponent->setSolidTemp(_eSolidTemp->value());
-    _currComponent->setHardness(_eHardness->value());
+    _currComponent->setColor1(_lColorHexa1->text().toStdString());
+    _currComponent->setColor2(_lColorHexa2->text().toStdString());
     _currComponent->setMass(_eMass->value());
     _winSys->hide();
 }
@@ -442,4 +468,24 @@ void PlanetCompoBox::componentSysSelected()
             _currComponent = (*it);
     _del->setEnabled(TRUE);
     _edi->setEnabled(TRUE);
+}
+
+void PlanetCompoBox::setColor1()
+{
+    QColor color = QColorDialog::getColor(Qt::green, this);
+    if (color.isValid())
+    {
+        _lColorHexa1->setText(color.name());
+        _lColor1->setStyleSheet(QString("QLabel { background-color : %1; }").arg(color.name()));
+    }
+}
+
+void PlanetCompoBox::setColor2()
+{
+    QColor color = QColorDialog::getColor(Qt::green, this);
+    if (color.isValid())
+    {
+        _lColorHexa2->setText(color.name());
+        _lColor2->setStyleSheet(QString("QLabel { background-color : %1; }").arg(color.name()));
+    }
 }

@@ -134,7 +134,6 @@ void System::initJson(QString path)
         obj.insert("solid", (*itc)->getSolidTemp());
         obj.insert("gas", (*itc)->getGazeousTemp());
         obj.insert("mass", (*itc)->getMass());
-        obj.insert("hardness", (*itc)->getHardness());
         component.insert(name, obj);
     }
 
