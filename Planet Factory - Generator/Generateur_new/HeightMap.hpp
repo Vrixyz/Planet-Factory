@@ -30,13 +30,9 @@ enum e_typemove
 enum e_tectoDirect
 {
     NORTH = 0,
-    NE,
     EAST,
-    SE,
     SOUTH,
-    SW,
-    WEST,
-    NW
+    WEST
 };
 
 class Planet;

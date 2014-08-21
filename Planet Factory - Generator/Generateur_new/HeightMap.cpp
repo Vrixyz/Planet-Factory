@@ -173,7 +173,7 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
     srand(time(0));
     _tectoDirect = new e_tectoDirect[n];
     for (int i = 0; i < n; i++)
-        _tectoDirect[i] = static_cast<e_tectoDirect>(rand() % NW);
+        _tectoDirect[i] = static_cast<e_tectoDirect>(rand() % WEST);
     qDebug() << "Done.";
 
     //Plate init
@@ -408,6 +408,28 @@ int HeightMap::_moveGaz(std::list<MyComponent*> gaz1, std::list<MyComponent*> ga
 
 e_typemove  HeightMap::_typeMove(int n1, int n2)
 {
+    if (_tectoDirect[n1] == _tectoDirect[n2])
+    {
+        qDebug() << "NONE";
+        return NONE;
+    }
+    else if (_tectoDirect[n1] == NORTH && _tectoDirect[n2] == SOUTH
+             ||_tectoDirect[n1] == WEST && _tectoDirect[n2] == EAST)
+    {
+        qDebug() << "TRANSFORM";
+        return TRANSFORM;
+    }
+    else if (_tectoDirect[n1] == SOUTH && _tectoDirect[n2] == NORTH
+             || _tectoDirect[n1] == EAST && _tectoDirect[n2] == WEST)
+    {
+        qDebug() << "CONVERGENT";
+        return CONVERGENT;
+    }
+    else
+    {
+        qDebug() << "DIVERGENT";
+        return DIVERGENT;
+    }
     return NONE;
 }
 
@@ -426,21 +448,6 @@ MapInfo * HeightMap::_isBorder(int x, int y)
                 return _map[nx][y];
             break;
         }
-        case NE: {
-            int nx;
-            if (x - 1 < 0)
-                nx = _x - 1;
-            else
-                nx = x - 1;
-            int ny;
-            if (y + 1 >= _y)
-                ny = 0;
-            else
-                ny = y + 1;
-            if (_map[x][y]->n() != _map[nx][ny]->n())
-                return _map[nx][ny];
-            break;
-        }
         case EAST: {
             int ny;
             if (y + 1 >= _y)
@@ -449,21 +456,6 @@ MapInfo * HeightMap::_isBorder(int x, int y)
                 ny = y + 1;
             if (_map[x][y]->n() != _map[x][ny]->n())
                 return _map[x][ny];
-            break;
-        }
-        case SE: {
-            int nx;
-            if (x + 1 >= _x)
-                nx = 0;
-            else
-                nx = x + 1;
-            int ny;
-            if (y + 1 >= _y)
-                ny = 0;
-            else
-                ny = y + 1;
-            if (_map[x][y]->n() != _map[nx][ny]->n())
-                return _map[nx][ny];
             break;
         }
         case SOUTH: {
@@ -476,21 +468,6 @@ MapInfo * HeightMap::_isBorder(int x, int y)
                 return _map[nx][y];
             break;
         }
-        case SW: {
-            int nx;
-            if (x + 1 >= _x)
-                nx = 0;
-            else
-                nx = x + 1;
-            int ny;
-            if (y - 1 < 0)
-                ny = _y - 1;
-            else
-                ny = y - 1;
-            if (_map[x][y]->n() != _map[nx][ny]->n())
-                return _map[nx][ny];
-            break;
-        }
         case WEST: {
             int ny;
             if (y - 1 < 0)
@@ -499,21 +476,6 @@ MapInfo * HeightMap::_isBorder(int x, int y)
                 ny = y - 1;
             if (_map[x][y]->n() != _map[x][ny]->n())
                 return _map[x][ny];
-            break;
-        }
-        case NW: {
-            int nx;
-            if (x - 1 < 0)
-                nx = _x - 1;
-            else
-                nx = x - 1;
-            int ny;
-            if (y - 1 < 0)
-                ny = _y - 1;
-            else
-                ny = y - 1;
-            if (_map[x][y]->n() != _map[nx][ny]->n())
-                return _map[nx][ny];
             break;
         }
     default: {
