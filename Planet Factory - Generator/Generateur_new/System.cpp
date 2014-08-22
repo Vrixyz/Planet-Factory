@@ -4,6 +4,7 @@ System::System()
 {
     _listPlanet = new std::list<Planet *>;
     _listCompo = new std::list<Component *>;
+    _centralStar = NULL;
 }
 
 
@@ -29,6 +30,16 @@ System::System(QJsonObject json)
 
 System::~System()
 {
+}
+
+void System::setCentralStar(Planet *planet)
+{
+    _centralStar = planet;
+}
+
+Planet  *System::getCentralStar(void)
+{
+    return _centralStar;
 }
 
 void System::setPlanetList(std::list<Planet*> *list)

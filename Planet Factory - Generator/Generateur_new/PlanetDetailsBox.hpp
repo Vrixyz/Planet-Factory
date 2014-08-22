@@ -37,8 +37,10 @@ public:
     QSpinBox *_eDistance;
     QSpinBox *_eTilt;
     QSpinBox *_eRevo;
+    QSpinBox *_eRota;
 
     QRadioButton *_eCentralStar;
+    MainWindow   *_parent;
 
 private:
 

@@ -48,6 +48,11 @@ void                MainWindow::setSystem(System *s)
    _system = s;
 }
 
+Planet*             MainWindow::getCurrPlanet(void)
+{
+    return _currPlanet;
+}
+
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Escape)

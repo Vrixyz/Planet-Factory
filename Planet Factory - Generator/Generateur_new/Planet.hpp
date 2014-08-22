@@ -60,6 +60,8 @@ public:
     int                     getDistance(void);
     void                    setRevo(int);
     int                     getRevo(void);
+    void                    setRota(int);
+    int                     getRota(void);
     void                    setTilt(int);
     int                     getTilt(void);
     void                    setPosition(int, int, int);
@@ -78,6 +80,7 @@ private:
     int                     _distance;
     int                     _tilt;
     int                     _revo;
+    int                     _rota;
     PlanetType              _type;
     int                     _pos[3];
     bool                    _move;

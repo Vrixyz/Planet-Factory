@@ -65,8 +65,6 @@ QPushButton#menu_reset { background-image: url(:/res/reset_button.png); }
 QPushButton#menu_facebook { background-image: url(:/res/facebook.png); }
 QPushButton#menu_twitter { background-image: url(:/res/twitter.png); }
 
-QWidget#planetDetail { background-image: url(:/res/background_planetdetail.png) }
-
 QScrollArea#gen
 {
     background-color: #ffffff;

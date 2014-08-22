@@ -156,6 +156,11 @@ void    Planet::setRevo(int revo)
     _revo = revo;
 }
 
+void    Planet::setRota(int rota)
+{
+    _rota = rota;
+}
+
 void    Planet::setDistance(int distance)
 {
     _distance = distance;
@@ -184,6 +189,11 @@ int Planet::getDistance(void)
 int Planet::getRevo(void)
 {
     return (_revo);
+}
+
+int Planet::getRota(void)
+{
+    return (_rota);
 }
 
 int Planet::getTilt(void)

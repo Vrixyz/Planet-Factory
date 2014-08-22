@@ -38,7 +38,7 @@ public:
     PlanetCompoBox      *getPlanetCompo(void);
     CelestialBox        *getCelestial(void);
     Menu                *getMenu(void);
-
+    Planet              *getCurrPlanet(void);
     System              *getSystem();
     void                setSystem(System *);
 

@@ -60,7 +60,23 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
             _parent->getPlanetDetails()->_eRadius->setValue((*it)->getRadius());
             _parent->getPlanetDetails()->_eDistance->setValue((*it)->getDistance());
             _parent->getPlanetDetails()->_eRevo->setValue((*it)->getRevo());
+            _parent->getPlanetDetails()->_eRota->setValue((*it)->getRota());
             _parent->getPlanetDetails()->_eTilt->setValue((*it)->getTilt());
+            if (_parent->getSystem()->getCentralStar() != NULL)
+            {
+                if (_parent->getSystem()->getCentralStar()->getName() == (*it)->getName())
+                {
+                    _parent->getPlanetDetails()->_eCentralStar->setEnabled(1);
+                    _parent->getPlanetDetails()->_eCentralStar->setChecked(1);
+                }
+                else
+                {
+                    _parent->getPlanetDetails()->_eCentralStar->setChecked(0);
+                    _parent->getPlanetDetails()->_eCentralStar->setEnabled(0);
+                }
+            }
+            else
+                _parent->getPlanetDetails()->_eCentralStar->setChecked(0);
             _parent->getPlanetCompo()->_compoAdd->setEnabled(TRUE);
             _parent->getPlanetCompo()->updateListCompoPla();
             _del->setEnabled(TRUE);
@@ -77,7 +93,11 @@ void CelestialBox::delObject()
         it = _parent->getSystem()->getPlanetList()->begin();
         for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
             if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
+            {
+                if (_parent->getSystem()->getCentralStar() != NULL && _parent->getSystem()->getCentralStar()->getName() == (*it)->getName())
+                    _parent->getSystem()->setCentralStar(NULL);
                 it = _parent->getSystem()->getPlanetList()->erase(it);
+            }
         _listObjects->takeItem(_listObjects->row(_listObjects->currentItem()));
         cleanAllFields();
         _parent->_currPlanet = NULL;
@@ -89,6 +109,7 @@ void CelestialBox::delObject()
 void CelestialBox::addObject()
 {
     std::list<Planet*>::iterator    it;
+    std::string                     toCheck;
     Planet                          *toAdd;
 
     toAdd = new Planet();
@@ -98,14 +119,21 @@ void CelestialBox::addObject()
         qDebug("Un astre ne peut pas être créé sans un nom valide.");
         return;
     }
+    if (_parent->_currPlanet != NULL)
+    {
+        toCheck = _parent->_currPlanet->getName();
+    }
+    else
+        toCheck = toAdd->getName();
     it = _parent->getSystem()->getPlanetList()->begin();
     for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
-        if ((*it)->getName() == toAdd->getName())
+        if ((*it)->getName() == toCheck)
         {
             (*it)->setName(_parent->getPlanetDetails()->_eName->text().toStdString().c_str());
             (*it)->setRadius(_parent->getPlanetDetails()->_eRadius->value());
             (*it)->setDistance(_parent->getPlanetDetails()->_eDistance->value());
             (*it)->setRevo(_parent->getPlanetDetails()->_eRevo->value());
+            (*it)->setRota(_parent->getPlanetDetails()->_eRota->value());
             (*it)->setTilt(_parent->getPlanetDetails()->_eTilt->value());
             if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Star"))
                 (*it)->setType(STAR);
@@ -115,10 +143,25 @@ void CelestialBox::addObject()
                 (*it)->setType(GAZEOUS);
             else if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Asteroid"))
                 (*it)->setType(ASTEROID);
+            if (_parent->getPlanetDetails()->_eCentralStar->isChecked() == 1)
+                _parent->getSystem()->setCentralStar(*it);
+            else if (_parent->getPlanetDetails()->_eCentralStar->isChecked() == 0)
+                if (_parent->getSystem()->getCentralStar() != NULL && _parent->getSystem()->getCentralStar()->getName() == toCheck)
+                _parent->getSystem()->setCentralStar(NULL);
+            _parent->getCelestial()->updateListPlanet();
             cleanAllFields();
             return;
         }
     _parent->getSystem()->getPlanetList()->push_front(toAdd);
+    if (_parent->getPlanetDetails()->_eCentralStar->isChecked() == 1)
+    {
+        std::list<Planet*>::iterator    it;
+
+        it = _parent->getSystem()->getPlanetList()->begin();
+        for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
+            if (toAdd->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
+                _parent->getSystem()->setCentralStar(toAdd);
+    }
     _listObjects->addItem(QString(toAdd->getName().c_str()));
     cleanAllFields();
 }
@@ -131,7 +174,10 @@ void CelestialBox::cleanAllFields()
     _parent->getPlanetDetails()->_eRadius->setValue(1);
     _parent->getPlanetDetails()->_eDistance->setValue(1);
     _parent->getPlanetDetails()->_eRevo->setValue(1);
+    _parent->getPlanetDetails()->_eRota->setValue(1);
     _parent->getPlanetDetails()->_eTilt->setValue(1);
+    _parent->getPlanetDetails()->_eCentralStar->setChecked(0);
     _del->setEnabled(FALSE);
+    _parent->_currPlanet = NULL;
 }
 

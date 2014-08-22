@@ -3,7 +3,8 @@
 
 PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QWidget(parent)
 {
-    setGeometry(538, 42, 442, 241);
+    _parent = parent;
+    setGeometry(538, 22, 442, 270);
 
     QLabel *label_name_planettype = new QLabel(this);
     label_name_planettype->setPixmap(QPixmap(":/res/name_planettype.png"));
@@ -16,7 +17,7 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QWidget(parent)
     label_distance_revolution->setGeometry(0, 140, 435, 14);
     QLabel *label_censtral_star = new QLabel(this);
     label_censtral_star->setPixmap(QPixmap(":/res/central_star.png"));
-    label_censtral_star->setGeometry(0, 209, 435, 11);
+    label_censtral_star->setGeometry(0, 199, 435, 11);
 
     _eName = new QLineEdit(this);
     _eRadius = new QSpinBox(this);
@@ -24,6 +25,7 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QWidget(parent)
     _eDistance = new QSpinBox(this);
     _eTilt = new QSpinBox(this);
     _eRevo = new QSpinBox(this);
+    _eRota = new QSpinBox(this);
     _eCentralStar = new QRadioButton(this);
 
     _eName->setGeometry(0, 40, 215, 25);
@@ -65,7 +67,15 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QWidget(parent)
     for (int i = 0; i < _eType->count(); ++i)
         _eType->setItemData(i, Qt::AlignHCenter, Qt::TextAlignmentRole);
 
-    _eCentralStar->setGeometry(270, 207, 15, 15);
+    _eCentralStar->setGeometry(400, 197, 15, 15);
+    if (parent->getCurrPlanet() != NULL)
+        _eCentralStar->setEnabled(FALSE);
+
+    _eRota->setGeometry(0, 220, 215, 25);
+    _eRota->setMinimum(1);
+    _eRota->setMaximum(1000000);
+    _eRota->setValue(1);
+    _eRota->setAlignment(Qt::AlignHCenter);
 }
 
 PlanetDetailsBox::~PlanetDetailsBox()
@@ -79,6 +89,7 @@ void PlanetDetailsBox::setInfosDetails(Planet* toSet)
     toSet->setDistance(_eDistance->value());
     toSet->setTilt(_eTilt->value());
     toSet->setRevo(_eRevo->value());
+    toSet->setRota(_eRota->value());
     if (_eType->currentText().toStdString() == "Star")
       toSet->setType(STAR);
     else if (_eType->currentText().toStdString() == "Telluric planet")
