@@ -34,7 +34,7 @@ int MapInfo::editComponent(Component *c, float percent, e_etat etat)
 
     for (it = _components.begin(); it != _components.end(); it++)
     {
-        qDebug() << "Component : " << (*it)->component()->getName().c_str() << " <=> " << c->getName().c_str();
+        //qDebug() << "Component : " << (*it)->component()->getName().c_str() << " <=> " << c->getName().c_str();
         if ((*it)->component()->getName() == c->getName())
         {
             (*it)->percent(percent);
@@ -63,6 +63,18 @@ void    MapInfo::loadN()
 
     for (it = _components.begin(); it != _components.end(); ++it)
         (*it)->n(_n);
+}
+
+void    MapInfo::loadXY(int x, int y)
+{
+
+    std::list<MyComponent*>::iterator it;
+
+    for (it = _components.begin(); it != _components.end(); ++it)
+    {
+        (*it)->x(x);
+        (*it)->y(y);
+    }
 }
 
 /** Setter **/

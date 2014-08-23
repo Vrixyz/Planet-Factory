@@ -24,6 +24,7 @@ public:
     int         editComponent(Component *c, float percent, e_etat etat);
     float       freeSpace(void);
     void        loadN();
+    void        loadXY(int, int);
 
     /** Setter **/
     void        z(int z);

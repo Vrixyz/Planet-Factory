@@ -5,6 +5,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
+#include <sstream>
 #include <list>
 #include <map>
 #include <QtDebug>
@@ -18,6 +19,7 @@
 #include "MapInfo.hpp"
 
 #define RATIO_PLATE 25
+#define MODIF 1
 
 enum e_typemove
 {

@@ -205,7 +205,7 @@ void    Planet::init()
 {
     _hm = new HeightMap(_radius, this);
     _hm->PlateTectonic(_radius / RATIO_PLATE + 1, _mapCompo);
-    _hm->printMap();
+    //_hm->printMap();
     //_evolve = true;
 }
 

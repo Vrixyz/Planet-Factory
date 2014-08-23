@@ -91,25 +91,34 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                             if (totalFree + (p / mapSize) > 100)
                                 p = 100 - totalFree;
                         }
-                        qDebug() << "Filling [" << i << ";" << j << "] with " << p << "%. Total : " << totalFree;
-                        if ((_map[i][j]->editComponent(it->first, p, SOLID)) == 0)
-                            qDebug() << "Edit Ok";
+                        //qDebug() << "Filling [" << i << ";" << j << "] with " << p << "%. Total : " << totalFree;
+                        if ((_map[i][j]->editComponent(it->first, p, SOLID)) != 0)
+                            //qDebug() << "Edit KO";
                         totalFree += (p / mapSize);
                     }
                     else
                     {
-                        qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << totalFree;
+                        //qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << totalFree;
                         _map[i][j]->editComponent(it->first, 0, SOLID);
                     }
                 }
                 else
                 {
-                    qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << totalFree;
+                    //qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << totalFree;
                     _map[i][j]->editComponent(it->first, 0, SOLID);
                 }
             }
         }
     }
+
+    for (int i = 0; i <_x; i++)
+    {
+        for (int j = 0; j < _y; j++)
+        {
+           (_map[i][j])->loadXY(i, j);
+        }
+    }
+
 
     //Old component system
     qDebug() << "Filling planet with component... Old";
@@ -128,10 +137,10 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                 std::advance(it, x);
                 if (tmp[x] < it->second) // If componant still ok
                 {
-                    /*qDebug() << "[" << i << "][" << j << "] random: " << x
+                    /**qDebug() << "[" << i << "][" << j << "] random: " << x
                              << " composant: " << it->first->getName().c_str()
                              << " percent: " << it->second
-                             << " actual:" << tmp[x];*/
+                             << " actual:" << tmp[x];**/
                     _map[i][j]->component(it->first);
                     if (coef < 1)
                         tmp[x] += 1.0 * coef;
@@ -303,7 +312,7 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
 
     std::list<MyComponent*>::iterator it;
 
-    qDebug() << c1.size();
+    qDebug() << "Doing temp list...";
 
     for (it = c1.begin(); it != c1.end(); ++it)
     {
@@ -329,8 +338,12 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
             gaz2.push_back(*it);
     }
 
+    qDebug() << "Done.";
+
     //Find move type
+    qDebug() << "Looking for move type...";
     e_typemove type = _typeMove(n1, n2);
+    qDebug() << "Done.";
 
     //Move SOLID
     _moveSolid(solid1, solid2, type);
@@ -346,20 +359,120 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
 
 int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*> solid2, e_typemove type)
 {
+    return 0;
+    std::list<MyComponent*>::iterator it;
+    int x = 0;
+    int y = 0;
     switch (type)
     {
-        case TRANSFORM: {
+    case TRANSFORM: { //This one need to be up
+        qDebug() << "TRANSFORM.";
+        // eg \\
+        it = solid1.begin();
+        x = (*it)->x();
+        y = (*it)->y();
+        _map[x][y]->z(_map[x][y]->z() - (MODIF * 2));
 
-        }
-        case DIVERGENT: {
+        it = solid2.begin();
+        x = (*it)->x();
+        y = (*it)->y();
+        _map[x][y]->z(_map[x][y]->z() - (MODIF * 2));
+        qDebug() << "Done.";
+    }
+    case DIVERGENT: {
+        // eg <-->
+        qDebug() << "DIVERGENT.";
+        it = solid1.begin();
+        x = (*it)->x();
+        y = (*it)->y();
+        qDebug() << "1 X:" << x << " Y:" << y;
+        _map[x][y]->z(_map[x][y]->z() - MODIF);
 
-        }
-        case CONVERGENT : {
+        it = solid2.begin();
+        x = (*it)->x();
+        y = (*it)->y();
+        qDebug() << "2 X:" << x << " Y:" << y;
+        _map[x][y]->z(_map[x][y]->z() - MODIF);
+        qDebug() << "Done.";
+    }
+    case CONVERGENT : {
+        // eg -><-
+        qDebug() << "CONVERGENT.";
+        //calc bigger mass
+        int mass1 = 0;
+        for (it = solid1.begin(); it != solid1.end(); ++it)
+            mass1 += (*it)->component()->getMass();
+        it = solid1.begin();
+        int x1 = (*it)->x();
+        int y1 = (*it)->y();
 
-        }
-        default : {
+        int mass2 = 0;
+        for (it = solid2.begin(); it != solid2.end(); ++it)
+            mass2 += (*it)->component()->getMass();
+        it = solid2.begin();
+        int x2 = (*it)->x();
+        int y2 = (*it)->y();
 
+        if (mass1 > mass2) //heavier go under
+        {
+            if (_map[x1][y1]->z() > (_map[x2][y2]->z() / 2))
+                _map[x1][y1]->z(_map[x1][y1]->z() - MODIF);
+            _map[x2][y2]->z(_map[x2][y2]->z() + MODIF);
         }
+        else
+        {
+            if (_map[x2][y2]->z() > (_map[x1][y1]->z() / 2))
+                _map[x1][y1]->z(_map[x1][y1]->z() + MODIF);
+            _map[x2][y2]->z(_map[x2][y2]->z() - MODIF);
+        }
+        qDebug() << "Done.";
+    }
+    default : {
+        // eg ->->
+        qDebug() << "NONE.";
+        //calc bigger mass
+        int mass1 = 0;
+        for (it = solid1.begin(); it != solid1.end(); ++it)
+            mass1 += (*it)->component()->getMass();
+        it = solid1.begin();
+        int x1 = (*it)->x();
+        int y1 = (*it)->y();
+
+        int mass2 = 0;
+        for (it = solid2.begin(); it != solid2.end(); ++it)
+            mass2 += (*it)->component()->getMass();
+        it = solid2.begin();
+        int x2 = (*it)->x();
+        int y2 = (*it)->y();
+
+        if (mass1 > mass2) //heavier erase lighter
+        {
+            if (_map[x1][y1]->z() > (_map[x2][y2]->z() / 2))
+            {
+                _map[x2][y2]->z(_map[x1][y1]->z());
+                _map[x2][y2]->n(_map[x1][y1]->n());
+            }
+            else
+            {
+                _map[x1][y1]->z(_map[x1][y1]->z() + MODIF);
+                _map[x2][y2]->z(_map[x2][y2]->z() - MODIF);
+            }
+        }
+        else
+        {
+            if (_map[x2][y2]->z() > (_map[x1][y1]->z() / 2))
+            {
+                _map[x1][y1]->z(_map[x2][y2]->z());
+                _map[x1][y1]->n(_map[x2][y2]->n());
+            }
+            else
+            {
+                _map[x2][y2]->z(_map[x2][y2]->z() + MODIF);
+                _map[x1][y1]->z(_map[x1][y1]->z() - MODIF);
+            }
+        }
+        qDebug() << "Done.";
+    }
     }
 
     return 0;
@@ -370,15 +483,19 @@ int HeightMap::_moveLiquid(std::list<MyComponent*> liquid1, std::list<MyComponen
     switch (type)
     {
         case TRANSFORM: {
+            // eg \\
 
         }
         case DIVERGENT: {
+            // eg <-->
 
         }
         case CONVERGENT : {
+            // eg -><-
 
         }
         default : {
+            // eg ->->
 
         }
     }
@@ -389,46 +506,49 @@ int HeightMap::_moveGaz(std::list<MyComponent*> gaz1, std::list<MyComponent*> ga
 {
     switch (type)
     {
-        case TRANSFORM: {
+    case TRANSFORM: {
+        // eg \\
 
-        }
-        case DIVERGENT: {
+    }
+    case DIVERGENT: {
+        // eg <-->
 
-        }
-        case CONVERGENT : {
+    }
+    case CONVERGENT : {
+        // eg -><-
 
-        }
-        default : {
+    }
+    default : {
+        // eg ->->
 
-        }
+    }
     }
     return 0;
 }
-
 
 e_typemove  HeightMap::_typeMove(int n1, int n2)
 {
     if (_tectoDirect[n1] == _tectoDirect[n2])
     {
-        qDebug() << "NONE";
+        //qDebug() << "NONE";
         return NONE;
     }
-    else if (_tectoDirect[n1] == NORTH && _tectoDirect[n2] == SOUTH
-             ||_tectoDirect[n1] == WEST && _tectoDirect[n2] == EAST)
+    else if ((_tectoDirect[n1] == NORTH && _tectoDirect[n2] == SOUTH)
+             ||(_tectoDirect[n1] == WEST && _tectoDirect[n2] == EAST))
     {
-        qDebug() << "TRANSFORM";
-        return TRANSFORM;
+        //qDebug() << "DIVERGENT";
+        return DIVERGENT;
     }
-    else if (_tectoDirect[n1] == SOUTH && _tectoDirect[n2] == NORTH
-             || _tectoDirect[n1] == EAST && _tectoDirect[n2] == WEST)
+    else if ((_tectoDirect[n1] == SOUTH && _tectoDirect[n2] == NORTH)
+             || (_tectoDirect[n1] == EAST && _tectoDirect[n2] == WEST))
     {
-        qDebug() << "CONVERGENT";
+        //qDebug() << "CONVERGENT";
         return CONVERGENT;
     }
     else
     {
-        qDebug() << "DIVERGENT";
-        return DIVERGENT;
+        //qDebug() << "TRANSFORM";
+        return TRANSFORM;
     }
     return NONE;
 }
@@ -554,7 +674,6 @@ int     HeightMap::_updateTop(int x, int y, int c)
     return 1;
 }
 
-
 int     HeightMap::_updateRight(int x, int y, int c)
 {
     int ny;
@@ -600,7 +719,6 @@ int     HeightMap::_updateLeft(int x, int y, int c)
     return 1;
 }
 
-
 void    HeightMap::printMap()
 {
     int x, y;
@@ -611,11 +729,18 @@ void    HeightMap::printMap()
         std::cout << std::endl;
     }*/
 
+    QString tmp;
+
     for (x = 0; x < _x; x++)
     {
+        tmp = "";
         for (y = 0; y < _y; y++)
-            std::cout << _map[x][y]->z() << '\t';
-        std::cout << std::endl;
+        {
+            tmp += QString::number(_map[x][y]->z());
+            tmp += '\t';
+        }
+        qDebug() << tmp;
+        qDebug() << "------------------------------";
     }
 
     /*for (x = 0; x < _x; x++)

@@ -31,6 +31,17 @@ void    MyComponent::n(int n)
     _n = n;
 }
 
+void        MyComponent::x(int x)
+{
+    _x = x;
+}
+
+void        MyComponent::y(int y)
+{
+    _y = y;
+}
+
+
 //** Getter **//
 
 e_etat  MyComponent::etat(void)const
@@ -52,4 +63,14 @@ float MyComponent::percent(void)const
 int MyComponent::n(void) const
 {
     return _n;
+}
+
+int MyComponent::x(void) const
+{
+    return _x;
+}
+
+int MyComponent::y(void) const
+{
+    return _y;
 }
