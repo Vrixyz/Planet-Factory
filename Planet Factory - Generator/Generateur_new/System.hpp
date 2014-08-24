@@ -8,6 +8,7 @@
 #include <QDir>
 
 #include "Planet.hpp"
+#include "HexToRgb.hpp"
 
 class System
 {
@@ -25,10 +26,11 @@ public:
     std::list<Planet*>      *getPlanetList(void);
     std::list<Component*>   *getComponentList(void);
     Component               *getComponentByName(std::string);
+    Planet                  *getPlanetByName(std::string);
     QString                 getJsonPath();
     QString                 getTypeString(Planet *p);
 
-    void                    initJson(QString);
+    void                    initJson(QString, int);
     void                    endJson();
 private:
     QString _path;

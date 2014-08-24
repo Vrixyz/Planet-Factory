@@ -11,6 +11,8 @@ Component::Component(QJsonObject obj)
     _gazeousTemp = obj["gas"].toInt();
     _solidTemp = obj["solid"].toInt();
     _mass = obj["mass"].toInt();
+    _color1 = obj["minColor"].toString().toStdString();
+    _color2 = obj["maxColor"].toString().toStdString();
 }
 
 Component::Component(const std::string & path)

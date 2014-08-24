@@ -28,8 +28,7 @@ class Planet
 {
 
 public:
-
-    Planet();
+    Planet(System *);
     Planet(QJsonObject, System *);
     ~Planet();
     void                        calc_move(int);
@@ -88,6 +87,7 @@ private:
 
     std::map<Component*, int>   *_mapCompo;
     HeightMap *                 _hm;
+    System*                     _system;
 
 };
 

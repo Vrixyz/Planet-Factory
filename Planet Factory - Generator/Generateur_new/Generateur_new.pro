@@ -26,7 +26,8 @@ SOURCES +=  main.cpp \
     Move.cpp \
     MyComponent.cpp \
     Terrain.cpp \
-    GenWin.cpp
+    GenWin.cpp \
+    HexToRgb.cpp
 
 OTHER_FILES +=
 
@@ -47,7 +48,8 @@ HEADERS += \
     Move.hpp \
     MyComponent.hpp \
     Terrain.hpp \
-    GenWin.hpp
+    GenWin.hpp \
+    HexToRgb.hpp
 
 RESOURCES   += \
     resources.qrc

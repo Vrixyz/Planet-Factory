@@ -68,7 +68,7 @@ void GenWin::launch()
 void GenWin::step1()
 {
     appendInfo("Initialize JSON file...");
-    _system->initJson(_path);
+    _system->initJson(_path,_time);
     _progressCurrent->setValue(1);
     step2();
 }
@@ -161,6 +161,8 @@ void GenWin::step3()
         std::list<Terrain*>::iterator itT;
         for(itT = _terrains->begin(); itT != _terrains->end(); ++itT)
         {
+            (*itT)->planet()->addHmToEvo(_path);
+            (*itT)->planet()->addCmToEvo(_path);
             t = *itT;
             t->start();
             _nb_thread ++;

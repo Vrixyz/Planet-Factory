@@ -112,7 +112,7 @@ void CelestialBox::addObject()
     std::string                     toCheck;
     Planet                          *toAdd;
 
-    toAdd = new Planet();
+    toAdd = new Planet(_parent->getSystem());
     _parent->getPlanetDetails()->setInfosDetails(toAdd);
     if (toAdd->getName().size() < 1)
     {

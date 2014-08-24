@@ -184,7 +184,6 @@ void        Menu::saveConfSystem()
     std::map<Component*, int>::iterator itc_pla;
     std::list<Planet*>::iterator itp;
 
-
     //Choose a file to save
     QString path = QFileDialog::getSaveFileName(this, tr("Save File"),"",tr("PlaneteFactory (*.pf)"));
     if (path.isEmpty())
@@ -204,6 +203,8 @@ void        Menu::saveConfSystem()
         obj.insert("solid", (*itc_sys)->getSolidTemp());
         obj.insert("gas", (*itc_sys)->getGazeousTemp());
         obj.insert("mass", (*itc_sys)->getMass());
+        obj.insert("minColor", (*itc_sys)->getColor1().c_str());
+        obj.insert("maxColor", (*itc_sys)->getColor2().c_str());
 
         component.append(obj);
     }
@@ -221,6 +222,7 @@ void        Menu::saveConfSystem()
         obj.insert("tilt", (*itp)->getTilt());
         obj.insert("distance", (*itp)->getDistance());
         obj.insert("period", (*itp)->getRevo());
+        obj.insert("rota", (*itp)->getRota());
 
         //On cree l'array component de la planete
         QJsonArray planete_component;
@@ -240,6 +242,11 @@ void        Menu::saveConfSystem()
     QJsonObject save;
     save.insert("materials", component);
     save.insert("astres", planete);
+    Planet* central = s->getCentralStar();
+    if (central == NULL)
+        save.insert("central", "");
+    else
+        save.insert("central", central->getName().c_str());
 
     QJsonDocument json;
     json.setObject(save);

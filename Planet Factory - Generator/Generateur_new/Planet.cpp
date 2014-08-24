@@ -1,17 +1,18 @@
 #include "Planet.hpp"
 #include "System.hpp"
 
-Planet::Planet()
+Planet::Planet(System* s)
     :_move(false), _evolve(false)
 {
     _mapCompo = new std::map<Component*, int>();
     _mapIteration = 0;
+    _system = s;
 }
 
-Planet::Planet(QJsonObject obj, System * s) :_move(false), _evolve(false)
+Planet::Planet(QJsonObject obj, System* s) :_move(false), _evolve(false)
 {
-    _mapCompo = new std::map<Component*, int>();
-
+    _mapCompo = new std::map<Component*, int>(); 
+    _system = s;
     //On get les infos du fichier Json
     int type = obj["type"].toInt();
     switch (type)
@@ -37,6 +38,7 @@ Planet::Planet(QJsonObject obj, System * s) :_move(false), _evolve(false)
     _tilt = obj["tilt"].toInt();
     _distance = obj["distance"].toInt();
     _revo = obj["period"].toInt();
+    _rota = obj["rota"].toInt();
 
     _mapIteration = 0;
 
