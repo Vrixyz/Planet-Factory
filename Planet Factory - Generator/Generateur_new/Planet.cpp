@@ -83,12 +83,15 @@ void    Planet::calc_move(int duree)
     qreal y =  _distance * qSin(rad);
     setPosition(x, y, 0);
 
-
     //End of calc
     QJsonObject position;
     position.insert("x", _pos[0]);
     position.insert("y", _pos[1]);
     position.insert("z", _pos[2]);
+
+    int rot = duree % _rota;
+    int deg = (360*rot)/_rota;
+
 
     QJsonObject last;
     last = _evo.last().toObject();
@@ -96,6 +99,7 @@ void    Planet::calc_move(int duree)
 
     if (test == duree)
     {
+        last.insert("rotation", deg);
         last.insert("pos", position);
         _evo.pop_back();
         _evo.append(last);
@@ -105,6 +109,8 @@ void    Planet::calc_move(int duree)
         QJsonObject evo;
         evo.insert("pos", position);
         evo.insert("date", duree);
+        evo.insert("pos", position);
+        evo.insert("rotation", deg);
         _evo.append(evo);
     }
 }
