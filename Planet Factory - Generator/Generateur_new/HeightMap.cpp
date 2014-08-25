@@ -1,5 +1,6 @@
 #include "HeightMap.hpp"
 
+//1024 512 ALL TIME
 HeightMap::HeightMap(int radius, Planet *p)
     :_r(radius), _x(radius * 4), _y(radius * 2)
 {
@@ -118,53 +119,15 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
            (_map[i][j])->loadXY(i, j);
         }
     }
-
-
-    //Old component system
-    qDebug() << "Filling planet with component... Old";
-
-    //Adding component
-    for (int i = 0; i < _x; i++)
-    {
-        for (int j = 0; j < _y; j++)
-        {
-            //Choose random component
-            bool find = false;
-            while (find == false)
-            {
-                std::map<Component*, int>::iterator it = mapCompo->begin();
-                int x = rand() % size;
-                std::advance(it, x);
-                if (tmp[x] < it->second) // If componant still ok
-                {
-                    /**qDebug() << "[" << i << "][" << j << "] random: " << x
-                             << " composant: " << it->first->getName().c_str()
-                             << " percent: " << it->second
-                             << " actual:" << tmp[x];**/
-                    _map[i][j]->component(it->first);
-                    if (coef < 1)
-                        tmp[x] += 1.0 * coef;
-                    else
-                        tmp[x] += 1.0 / coef;
-                    find = true;
-                }
-
-                //Check total percent
-                float total = 0;
-                for (x = 0; x < size; x++)
-                    total += tmp[x];
-                if (total >= 100)
-                {
-                    qDebug() << "Done.";
-                    return 0;
-                }
-            }
-        }
-    }
     qDebug() << "Done normaly.";
     return 0;
 }
 
+/*
+ * TODO
+ * A mon avis un changement des fillplate en passant a du recursif augmenterai grandement la rapidite
+ * Donc a voir si c'est possible et si on ne passe pas la limite de recursion avec 1024*512 pixel.
+ */
 int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
 {
     _cmp = mapCompo;
@@ -792,39 +755,6 @@ void HeightMap::exportHeightMap(const std::string & path, const std::string & na
         qDebug() << "IMG save: " << completePath;
 }
 
-void HeightMap::genCompImg(const std::string & name, const std::string & path, const std::string & file)
-{
-    QImage pic(_x, _y, QImage::Format_RGB32);
-
-    for (int x = 0; x < _x; x++)
-    {
-        for (int y = 0; y < _y; y++)
-        {
-            std::string tmp = _map[x][y]->component()->getName();
-            QRgb color;
-            if (tmp == name)
-                color = qRgb(255, 255, 255);
-            else
-                color = qRgb(0, 0, 0);
-            pic.setPixel(x, y, color);
-        }
-    }
-
-    QString completePath = "";
-    QString _path(path.c_str());
-    QString _name(file.c_str());
-
-    completePath += _path;
-    completePath += "/";
-    completePath += _name;
-    completePath += ".png";
-
-    if (!pic.save(completePath))
-        qDebug() << "Error: pics not saved!: " << completePath;
-    else
-        qDebug() << "IMG save: " << completePath;
-}
-
 QJsonObject HeightMap::exportComposentMap(const std::string & path, int iteration, QJsonObject evo, QString folder)
 {
     std::map<Component*, int>::iterator it;
@@ -837,17 +767,16 @@ QJsonObject HeightMap::exportComposentMap(const std::string & path, int iteratio
         QString file = QString("Material") + comp->getName().c_str() + QString::number(iteration);
         QString file_path = folder + "/" + file;
 
-        //obj.insert("name", comp->getName().c_str());
+        obj.insert("name", comp->getName().c_str());
         obj.insert("file", file_path);
         materials.append(obj);
         genCompImg(comp->getName(), path, file.toStdString());
-        genCompImgV2(comp->getName(), path, file.toStdString());
     }
     evo.insert("materials", materials);
     return evo;
 }
 
-void HeightMap::genCompImgV2(const std::string & name, const std::string & path, const std::string & file)
+void HeightMap::genCompImg(const std::string & name, const std::string & path, const std::string & file)
 {
     QImage pic(_x, _y, QImage::Format_RGB32);
     std::list<MyComponent *> comp_list;
@@ -880,7 +809,7 @@ void HeightMap::genCompImgV2(const std::string & name, const std::string & path,
     completePath += _path;
     completePath += "/";
     completePath += _name;
-    completePath += "V2.png";
+    completePath += ".png";
 
     if (!pic.save(completePath))
         qDebug() << "Error: pics not saved!: " << completePath;
