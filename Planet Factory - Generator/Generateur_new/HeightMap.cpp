@@ -51,7 +51,7 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
         }
     }
 
-    float coef = _x *_y / 100;
+    //float coef = _x *_y / 100;
     int mapSize = _x * _y;
     int size = mapCompo->size();
     //qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
@@ -322,7 +322,7 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
 
 int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*> solid2, e_typemove type)
 {
-    return 0;
+    //return 0;
     std::list<MyComponent*>::iterator it;
     int x = 0;
     int y = 0;
@@ -330,7 +330,7 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
     {
     case TRANSFORM: { //This one need to be up
         qDebug() << "TRANSFORM.";
-        // eg \\
+
         it = solid1.begin();
         x = (*it)->x();
         y = (*it)->y();
@@ -340,6 +340,7 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
         x = (*it)->x();
         y = (*it)->y();
         _map[x][y]->z(_map[x][y]->z() - (MODIF * 2));
+
         qDebug() << "Done.";
     }
     case DIVERGENT: {
@@ -348,13 +349,11 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
         it = solid1.begin();
         x = (*it)->x();
         y = (*it)->y();
-        qDebug() << "1 X:" << x << " Y:" << y;
         _map[x][y]->z(_map[x][y]->z() - MODIF);
 
         it = solid2.begin();
         x = (*it)->x();
         y = (*it)->y();
-        qDebug() << "2 X:" << x << " Y:" << y;
         _map[x][y]->z(_map[x][y]->z() - MODIF);
         qDebug() << "Done.";
     }
