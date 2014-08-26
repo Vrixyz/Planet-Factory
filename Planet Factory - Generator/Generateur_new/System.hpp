@@ -25,8 +25,8 @@ public:
     Planet                  *getCentralStar(void);
     std::list<Planet*>      *getPlanetList(void);
     std::list<Component*>   *getComponentList(void);
-    Component               *getComponentByName(std::string);
-    Planet                  *getPlanetByName(std::string);
+    Component               *getComponentByName(QString);
+    Planet                  *getPlanetByName(QString);
     QString                 getJsonPath();
     QString                 getTypeString(Planet *p);
 

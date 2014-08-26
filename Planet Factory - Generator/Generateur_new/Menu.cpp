@@ -197,9 +197,9 @@ void        Menu::saveConfSystem()
     for (itc_sys = s->getComponentList()->begin(); itc_sys != s->getComponentList()->end(); ++itc_sys)
     {
         QJsonObject obj;
-        QString name = (*itc_sys)->getName().c_str();
-        QString minColor = (*itc_sys)->getColor1().c_str();
-        QString maxColor = (*itc_sys)->getColor2().c_str();
+        QString name = (*itc_sys)->getName();
+        QString minColor = (*itc_sys)->getColor1();
+        QString maxColor = (*itc_sys)->getColor2();
 
         obj.insert("name", name);
         obj.insert("solid", (*itc_sys)->getSolidTemp());
@@ -216,7 +216,7 @@ void        Menu::saveConfSystem()
     for (itp = s->getPlanetList()->begin(); itp != s->getPlanetList()->end(); ++itp)
     {
         QJsonObject obj;
-        QString name = (*itp)->getName().c_str();
+        QString name = (*itp)->getName();
 
         obj.insert("name", name);
         obj.insert("type", (*itp)->getType());
@@ -232,7 +232,7 @@ void        Menu::saveConfSystem()
         {
             QJsonObject planete_obj;
 
-            QString name = itc_pla->first->getName().c_str();
+            QString name = itc_pla->first->getName();
             planete_obj.insert("name", name);
             planete_obj.insert("percent", itc_pla->second);
             planete_component.append(planete_obj);
@@ -246,10 +246,10 @@ void        Menu::saveConfSystem()
     save.insert("astres", planete);
     Planet* central = s->getCentralStar();
     if (central == NULL)
-        save.insert("central", "");
+        save.insert("central", QString(""));
     else
     {
-        QString centraltxt = central->getName().c_str();
+        QString centraltxt = central->getName();
         save.insert("central", centraltxt);
     }
 

@@ -122,9 +122,8 @@ void PlanetCompoBox::windowPlaAddCompo()
 
     if (_winPla->isHidden() == TRUE)
     {
-        for (it = _parent->getSystem()->getComponentList()->begin();
-             it != _parent->getSystem()->getComponentList()->end(); ++it)
-            _listCompo->addItem((*it)->getName().c_str());
+        for (it = _parent->getSystem()->getComponentList()->begin(); it != _parent->getSystem()->getComponentList()->end(); ++it)
+            _listCompo->addItem((*it)->getName());
         _winPla->show();
     }
 }
@@ -134,7 +133,7 @@ void PlanetCompoBox::addCompoToPla()
     std::list<Planet*>::iterator    it;
 
     for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
-        if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
+        if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text())
         {
             std::map<Component*, int>::iterator itMapCompo;
             std::list<Component*>::iterator     itListCompo;
@@ -142,13 +141,13 @@ void PlanetCompoBox::addCompoToPla()
             for (itMapCompo = (*it)->getComponentMap()->begin();
                  itMapCompo != (*it)->getComponentMap()->end(); ++itMapCompo)
             {
-                if ((itMapCompo->first)->getName() == _listCompo->currentItem()->text().toStdString())
-                    return; /*  AJOUTER MSG ERREUR  */
+                if ((itMapCompo->first)->getName() == _listCompo->currentItem()->text())
+                    return; /*  TODO AJOUTER MSG ERREUR  */
             }
             for (itListCompo = _parent->getSystem()->getComponentList()->begin();
                  itListCompo != _parent->getSystem()->getComponentList()->end(); ++itListCompo)
             {
-                if ((*itListCompo)->getName() == _listCompo->currentItem()->text().toStdString())
+                if ((*itListCompo)->getName() == _listCompo->currentItem()->text())
                 {
                     Component* compoToAdd = (*itListCompo);
 
@@ -169,7 +168,7 @@ void PlanetCompoBox::delCompoToPla(int pos)
     std::list<Planet*>::iterator    it;
 
     for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
-        if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
+        if ((*it)->getName() == _parent->getPlanetDetails()->_eName->text())
         {
             std::map<Component*, int>::iterator    it_compo;
             int i;
@@ -189,7 +188,7 @@ void PlanetCompoBox::updateListCompoSys()
     _listObjects->clear();
     for (it = _parent->getSystem()->getComponentList()->begin();
          it != _parent->getSystem()->getComponentList()->end(); ++it)
-        _listObjects->addItem((*it)->getName().c_str());
+        _listObjects->addItem((*it)->getName());
 }
 
 void PlanetCompoBox::updateListCompoPla()
@@ -215,7 +214,7 @@ void PlanetCompoBox::updateListCompoPla()
         {
             _compoValue[i]->setValue(it_compo->second);
             _compoValue[i]->show();
-            _compoName[i]->setText(it_compo->first->getName().c_str());
+            _compoName[i]->setText(it_compo->first->getName());
             _compoName[i]->show();
             _compoDel[i]->show();
         }
@@ -354,20 +353,20 @@ void PlanetCompoBox::windowSysEdiCompo()
     {
         for (it = _parent->getSystem()->getComponentList()->begin();
              it != _parent->getSystem()->getComponentList()->end(); ++it)
-            if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
+            if ((*it)->getName() == _listObjects->currentItem()->text())
             {
                 _lTitle->setText("Edit the parameters of the choosen component");
                 _winSysEdi->show();
                 _winSysAdd->hide();
                 _winSys->show();
-                _eName->setText(QString((*it)->getName().c_str()));
+                _eName->setText((*it)->getName());
                 _eGazeousTemp->setValue((*it)->getGazeousTemp());
                 _eSolidTemp->setValue((*it)->getSolidTemp());
                 _eMass->setValue((*it)->getMass());
-                _lColorHexa1->setText(QString((*it)->getColor1().c_str()));
-                _lColor1->setStyleSheet(QString("QLabel { background-color : %1; }").arg((*it)->getColor1().c_str()));
-                _lColorHexa2->setText(QString((*it)->getColor2().c_str()));
-                _lColor2->setStyleSheet(QString("QLabel { background-color : %1; }").arg((*it)->getColor2().c_str()));
+                _lColorHexa1->setText((*it)->getColor1());
+                _lColor1->setStyleSheet(QString("QLabel { background-color : %1; }").arg((*it)->getColor1()));
+                _lColorHexa2->setText((*it)->getColor2());
+                _lColor2->setStyleSheet(QString("QLabel { background-color : %1; }").arg((*it)->getColor2()));
             }
     }
 }
@@ -401,20 +400,19 @@ void PlanetCompoBox::addCompoToSys()
 
     if (_eName->text().toStdString().size() == 0)
         return;
-    for (it = _parent->getSystem()->getComponentList()->begin();
-         it != _parent->getSystem()->getComponentList()->end(); ++it)
-        if ((*it)->getName() == _eName->text().toStdString())
+    for (it = _parent->getSystem()->getComponentList()->begin(); it != _parent->getSystem()->getComponentList()->end(); ++it)
+        if ((*it)->getName() == _eName->text())
             return;
-    /*    FAIRE POP FENETRE ERREUR A LA PLACE DE NE RIEN FAIRE --> FAIRE UNE FONCTION GENERIQUE POUR LES ERREURS    */
+    /*    TODO FAIRE POP FENETRE ERREUR A LA PLACE DE NE RIEN FAIRE --> FAIRE UNE FONCTION GENERIQUE POUR LES ERREURS    */
     if (_winSys->isHidden() == FALSE)
         _winSys->hide();
     toAdd = new Component();
-    toAdd->setName(_eName->text().toStdString());
+    toAdd->setName(_eName->text());
     toAdd->setMass(_eMass->value());
     toAdd->setGazeousTemp(_eGazeousTemp->value());
     toAdd->setSolidTemp(_eSolidTemp->value());
-    toAdd->setColor1(_lColorHexa1->text().toStdString());
-    toAdd->setColor2(_lColorHexa2->text().toStdString());
+    toAdd->setColor1(_lColorHexa1->text());
+    toAdd->setColor2(_lColorHexa2->text());
     _parent->getSystem()->getComponentList()->push_front(toAdd);
     updateListCompoSys();
     windowSysCloseAndClean();
@@ -425,9 +423,8 @@ void PlanetCompoBox::delCompoToSys()
     std::list<Component*>::iterator it;
     std::list<Planet*>::iterator it_pla;
 
-    for (it = _parent->getSystem()->getComponentList()->begin();
-         it != _parent->getSystem()->getComponentList()->end(); ++it)
-        if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
+    for (it = _parent->getSystem()->getComponentList()->begin(); it != _parent->getSystem()->getComponentList()->end(); ++it)
+        if ((*it)->getName() == _listObjects->currentItem()->text())
         {
             for (it_pla = _parent->getSystem()->getPlanetList()->begin();
                  it_pla != _parent->getSystem()->getPlanetList()->end(); ++it_pla)
@@ -448,8 +445,8 @@ void PlanetCompoBox::ediCompoToSys()
     _currComponent->setName(_eName->text().toStdString().c_str());
     _currComponent->setGazeousTemp(_eGazeousTemp->value());
     _currComponent->setSolidTemp(_eSolidTemp->value());
-    _currComponent->setColor1(_lColorHexa1->text().toStdString());
-    _currComponent->setColor2(_lColorHexa2->text().toStdString());
+    _currComponent->setColor1(_lColorHexa1->text());
+    _currComponent->setColor2(_lColorHexa2->text());
     _currComponent->setMass(_eMass->value());
     _winSys->hide();
 }
@@ -464,7 +461,7 @@ void PlanetCompoBox::componentSysSelected()
     std::list<Component*>::iterator it;
 
     for (it = _parent->getSystem()->getComponentList()->begin(); it != _parent->getSystem()->getComponentList()->end(); ++it)
-        if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
+        if ((*it)->getName() == _listObjects->currentItem()->text())
             _currComponent = (*it);
     _del->setEnabled(TRUE);
     _edi->setEnabled(TRUE);

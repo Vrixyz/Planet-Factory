@@ -34,9 +34,8 @@ void CelestialBox::updateListPlanet(void)
     std::list<Planet*>::iterator it;
 
     _listObjects->clear();
-    for (it = _parent->getSystem()->getPlanetList()->begin();
-         it != _parent->getSystem()->getPlanetList()->end(); ++it)
-        _listObjects->addItem((*it)->getName().c_str());
+    for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
+        _listObjects->addItem((*it)->getName());
 }
 
 void CelestialBox::planetSelected(QListWidgetItem* currItem)
@@ -45,9 +44,9 @@ void CelestialBox::planetSelected(QListWidgetItem* currItem)
 
     it = _parent->getSystem()->getPlanetList()->begin();
     for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
-        if ((*it)->getName() == currItem->text().toStdString())
+        if ((*it)->getName() == currItem->text())
         {
-            _parent->getPlanetDetails()->_eName->setText((*it)->getName().c_str());
+            _parent->getPlanetDetails()->_eName->setText((*it)->getName());
             _parent->_currPlanet = (*it);
             if ((*it)->getType() == STAR)
                 _parent->getPlanetDetails()->_eType->setCurrentIndex(0);
@@ -92,7 +91,7 @@ void CelestialBox::delObject()
 
         it = _parent->getSystem()->getPlanetList()->begin();
         for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
-            if ((*it)->getName() == _listObjects->currentItem()->text().toStdString())
+            if ((*it)->getName() == _listObjects->currentItem()->text())
             {
                 if (_parent->getSystem()->getCentralStar() != NULL && _parent->getSystem()->getCentralStar()->getName() == (*it)->getName())
                     _parent->getSystem()->setCentralStar(NULL);
@@ -109,7 +108,7 @@ void CelestialBox::delObject()
 void CelestialBox::addObject()
 {
     std::list<Planet*>::iterator    it;
-    std::string                     toCheck;
+    QString                     toCheck;
     Planet                          *toAdd;
 
     toAdd = new Planet(_parent->getSystem());
@@ -135,13 +134,13 @@ void CelestialBox::addObject()
             (*it)->setRevo(_parent->getPlanetDetails()->_eRevo->value());
             (*it)->setRota(_parent->getPlanetDetails()->_eRota->value());
             (*it)->setTilt(_parent->getPlanetDetails()->_eTilt->value());
-            if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Star"))
+            if (_parent->getPlanetDetails()->_eType->currentText() == "Star")
                 (*it)->setType(STAR);
-            else if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Telluric planet"))
+            else if (_parent->getPlanetDetails()->_eType->currentText() == "Telluric planet")
                 (*it)->setType(TELLURIC);
-            else if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Gazeous planet"))
+            else if (_parent->getPlanetDetails()->_eType->currentText() == "Gazeous planet")
                 (*it)->setType(GAZEOUS);
-            else if (_parent->getPlanetDetails()->_eType->currentText().toStdString() == std::string("Asteroid"))
+            else if (_parent->getPlanetDetails()->_eType->currentText() == "Asteroid")
                 (*it)->setType(ASTEROID);
             if (_parent->getPlanetDetails()->_eCentralStar->isChecked() == 1)
                 _parent->getSystem()->setCentralStar(*it);
@@ -159,10 +158,10 @@ void CelestialBox::addObject()
 
         it = _parent->getSystem()->getPlanetList()->begin();
         for (it = _parent->getSystem()->getPlanetList()->begin(); it != _parent->getSystem()->getPlanetList()->end(); ++it)
-            if (toAdd->getName() == _parent->getPlanetDetails()->_eName->text().toStdString())
+            if (toAdd->getName() == _parent->getPlanetDetails()->_eName->text())
                 _parent->getSystem()->setCentralStar(toAdd);
     }
-    _listObjects->addItem(QString(toAdd->getName().c_str()));
+    _listObjects->addItem(toAdd->getName());
     cleanAllFields();
 }
 

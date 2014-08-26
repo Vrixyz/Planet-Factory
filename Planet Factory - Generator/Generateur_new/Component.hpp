@@ -11,36 +11,36 @@ public:
 
     Component();
     Component(QJsonObject);
-    Component(const std::string &);
+    Component(const QString &);
     Component(Component *c);
-    Component(std::string, int, int, int, const std::string &);
+    Component(QString, int, int, int, const QString &);
     ~Component();
 
-    void setName(std::string);
+    void setName(QString);
     void setSolidTemp(int);
     void setGazeousTemp(int);
     void setMass(int);
-    void path(const std::string &);
-    void setColor1(std::string);
-    void setColor2(std::string);
+    void path(const QString &);
+    void setColor1(QString);
+    void setColor2(QString);
 
-    std::string getName(void);
+    QString getName(void);
     int         getSolidTemp(void);
     int         getGazeousTemp(void);
     int         getMass(void);
-    const std::string & path(void);
-    std::string getColor1(void);
-    std::string getColor2(void);
+    const QString & path(void);
+    QString getColor1(void);
+    QString getColor2(void);
 
 private:
 
-    std::string _name;
-    std::string _color1;
-    std::string _color2;
+    QString _name;
+    QString _color1;
+    QString _color2;
     int         _gazeousTemp;
     int         _solidTemp;
     int         _mass;
-    std::string _path;
+    QString _path;
 
 };
 

@@ -28,7 +28,7 @@ System::System(QJsonObject json)
     }
 
     QString central = json["central"].toString();
-    _centralStar = getPlanetByName(central.toStdString());
+    _centralStar = getPlanetByName(central);
 }
 
 System::~System()
@@ -36,7 +36,7 @@ System::~System()
 }
 
 
-Planet *System::getPlanetByName(std::string toSearch)
+Planet *System::getPlanetByName(QString toSearch)
 {
     std::list<Planet*>::iterator it;
 
@@ -79,7 +79,7 @@ std::list<Component*> *System::getComponentList(void)
     return _listCompo;
 }
 
-Component *System::getComponentByName(std::string toSearch)
+Component *System::getComponentByName(QString toSearch)
 {
     std::list<Component*>::iterator it;
 
@@ -116,7 +116,7 @@ void System::initJson(QString path, int time)
     QJsonArray planete;
     for (itp = _listPlanet->begin(); itp != _listPlanet->end(); ++itp)
     {
-        QString name = (*itp)->getName().c_str();
+        QString name = (*itp)->getName();
 
         QDir dir(path + "/" + name);
         if (!dir.exists())
@@ -156,13 +156,13 @@ void System::initJson(QString path, int time)
     {
         QJsonObject obj;
 
-        QString name = (*itc)->getName().c_str();
+        QString name = (*itc)->getName();
 
         obj.insert("solid", (*itc)->getSolidTemp());
         obj.insert("gas", (*itc)->getGazeousTemp());
         obj.insert("mass", (*itc)->getMass());
-        HexToRgb minColor = HexToRgb((*itc)->getColor1().c_str());
-        HexToRgb maxColor = HexToRgb((*itc)->getColor2().c_str());
+        HexToRgb minColor = HexToRgb((*itc)->getColor1());
+        HexToRgb maxColor = HexToRgb((*itc)->getColor2());
 
         QJsonObject color1;
         color1.insert("r", minColor.r());
@@ -206,7 +206,7 @@ void System::endJson()
 
     for (itp = _listPlanet->begin(); itp != _listPlanet->end(); ++itp)
     {
-        QString name = (*itp)->getName().c_str();
+        QString name = (*itp)->getName();
 
         QJsonObject save;
         save.insert("evolutions", (*itp)->getJson());

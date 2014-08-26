@@ -33,7 +33,7 @@ Planet::Planet(QJsonObject obj, System* s) :_move(false), _evolve(false)
             _type = ASTEROID;
         break;
     }
-    _name = obj["name"].toString().toStdString();
+    _name = obj["name"].toString();
     _radius = obj["radius"].toInt();
     _tilt = obj["tilt"].toInt();
     _distance = obj["distance"].toInt();
@@ -50,7 +50,7 @@ Planet::Planet(QJsonObject obj, System* s) :_move(false), _evolve(false)
     foreach (QJsonValue value, composant)
     {
         QJsonObject comp = value.toObject();
-        Component *c = s->getComponentByName(comp["name"].toString().toStdString());
+        Component *c = s->getComponentByName(comp["name"].toString());
         _mapCompo->insert(std::make_pair(c, comp["percent"].toInt()));
     }
 }
@@ -117,29 +117,29 @@ void    Planet::calc_move(int duree)
 
 void    Planet::addHmToEvo(QString path)
 {
-    QString folder = _name.c_str();
+    QString folder = _name;
     QString file = "Displacement" + QString::number(_mapIteration);
     QJsonObject evo = _evo.last().toObject();
 
     _mapIteration++;
     _evo.pop_back();
-    _hm->exportHeightMap(path.toStdString()+"/"+_name, file.toStdString());
+    _hm->exportHeightMap(path+"/"+_name, file);
     evo.insert("displacement", folder+"/"+file);
     _evo.append(evo);
 }
 
 void    Planet::addCmToEvo(QString path)
 {
-    QString folder = _name.c_str();
+    QString folder = _name;
     QJsonObject evo = _evo.last().toObject();
 
     _evo.pop_back();
-    evo = _hm->exportComposentMap(path.toStdString()+"/"+_name, _mapIteration, evo, folder);
+    evo = _hm->exportComposentMap(path+"/"+_name, _mapIteration, evo, folder);
     _evo.append(evo);
 }
 
 
-void    Planet::setName(std::string name)
+void    Planet::setName(QString name)
 {
     _name = name;
 }
@@ -174,7 +174,7 @@ void    Planet::setDistance(int distance)
     _distance = distance;
 }
 
-std::string Planet::getName(void)
+QString Planet::getName(void)
 {
     return (_name);
 }

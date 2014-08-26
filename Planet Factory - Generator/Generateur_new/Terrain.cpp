@@ -8,7 +8,7 @@ Terrain::Terrain(Planet * planet)
 
 void    Terrain::run()
 {
-    qDebug() << "Running " << _planet->getName().c_str() << "...";
+    qDebug() << "Running " << _planet->getName() << "...";
     if (_init == false)
     {
         //Init Planet

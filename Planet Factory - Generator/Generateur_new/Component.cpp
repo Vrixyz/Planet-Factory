@@ -7,15 +7,15 @@ Component::Component()
 
 Component::Component(QJsonObject obj)
 {
-    _name = obj["name"].toString().toStdString();
+    _name = obj["name"].toString();
     _gazeousTemp = obj["gas"].toInt();
     _solidTemp = obj["solid"].toInt();
     _mass = obj["mass"].toInt();
-    _color1 = obj["minColor"].toString().toStdString();
-    _color2 = obj["maxColor"].toString().toStdString();
+    _color1 = obj["minColor"].toString();
+    _color2 = obj["maxColor"].toString();
 }
 
-Component::Component(const std::string & path)
+Component::Component(const QString & path)
     :_name(""), _gazeousTemp(0), _solidTemp(0), _mass(0), _path(path)
 {
 }
@@ -29,7 +29,7 @@ Component::Component(Component *c)
     _path = c->path();
 }
 
-Component::Component(std::string name, int gazeousTemp, int solidTemp, int mass, const std::string & path)
+Component::Component(QString name, int gazeousTemp, int solidTemp, int mass, const QString & path)
     : _path(path)
 {
     _name = name;
@@ -42,7 +42,7 @@ Component::~Component()
 {
 }
 
-void Component::setName(std::string name)
+void Component::setName(QString name)
 {
     _name = name;
 }
@@ -63,12 +63,12 @@ void Component::setMass(int mass)
     _mass = mass;
 }
 
-void    Component::path(const std::string & path)
+void    Component::path(const QString & path)
 {
     _path = path;
 }
 
-std::string Component::getName(void)
+QString Component::getName(void)
 {
     return (_name);
 }
@@ -88,27 +88,27 @@ int Component::getMass(void)
     return (_mass);
 }
 
-const std::string & Component::path(void)
+const QString & Component::path(void)
 {
     return _path;
 }
 
-void Component::setColor1(std::string color)
+void Component::setColor1(QString color)
 {
     _color1 = color;
 }
 
-void Component::setColor2(std::string color)
+void Component::setColor2(QString color)
 {
     _color2 = color;
 }
 
-std::string Component::getColor1(void)
+QString Component::getColor1(void)
 {
     return _color1;
 }
 
-std::string Component::getColor2(void)
+QString Component::getColor2(void)
 {
     return _color2;
 }

@@ -48,8 +48,8 @@ public:
     void                    evolve(bool);
 
     //
-    void                    setName(std::string);
-    std::string             getName(void);
+    void                    setName(QString);
+    QString             getName(void);
     void                    setType(PlanetType);
     PlanetType              getType(void);
     HeightMap *             getHeightMap(void);
@@ -73,7 +73,7 @@ private:
 
     QMutex                  _mutex;
     QJsonArray              _evo;
-    std::string             _name;
+    QString             _name;
     int                     _mapIteration;
     int                     _radius;
     int                     _distance;

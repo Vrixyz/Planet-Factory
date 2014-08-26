@@ -84,7 +84,7 @@ PlanetDetailsBox::~PlanetDetailsBox()
 
 void PlanetDetailsBox::setInfosDetails(Planet* toSet)
 {
-    toSet->setName(_eName->text().toStdString());
+    toSet->setName(_eName->text());
     toSet->setRadius(_eRadius->value());
     toSet->setDistance(_eDistance->value());
     toSet->setTilt(_eTilt->value());

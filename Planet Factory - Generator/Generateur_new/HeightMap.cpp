@@ -726,7 +726,7 @@ MapInfo *** HeightMap::map(void)const
     return _map;
 }
 
-void HeightMap::exportHeightMap(const std::string & path, const std::string & name)
+void HeightMap::exportHeightMap(const QString & path, const QString & name)
 {
     QImage pic(_x, _y, QImage::Format_RGB32);
 
@@ -741,8 +741,8 @@ void HeightMap::exportHeightMap(const std::string & path, const std::string & na
     }
 
     QString completePath = "";
-    QString _path(path.c_str());
-    QString _name(name.c_str());
+    QString _path(path);
+    QString _name(name);
 
     completePath += _path;
     completePath += "/";
@@ -755,7 +755,7 @@ void HeightMap::exportHeightMap(const std::string & path, const std::string & na
         qDebug() << "IMG save: " << completePath;
 }
 
-QJsonObject HeightMap::exportComposentMap(const std::string & path, int iteration, QJsonObject evo, QString folder)
+QJsonObject HeightMap::exportComposentMap(const QString & path, int iteration, QJsonObject evo, QString folder)
 {
     std::map<Component*, int>::iterator it;
     QJsonArray materials;
@@ -764,19 +764,19 @@ QJsonObject HeightMap::exportComposentMap(const std::string & path, int iteratio
     {
         Component* comp = it->first;
         QJsonObject obj;
-        QString file = QString("Material") + comp->getName().c_str() + QString::number(iteration);
+        QString file = QString("Material") + comp->getName() + QString::number(iteration);
         QString file_path = folder + "/" + file;
 
-        obj.insert("name", comp->getName().c_str());
+        obj.insert("name", comp->getName());
         obj.insert("file", file_path);
         materials.append(obj);
-        genCompImg(comp->getName(), path, file.toStdString());
+        genCompImg(comp->getName(), path, file);
     }
     evo.insert("materials", materials);
     return evo;
 }
 
-void HeightMap::genCompImg(const std::string & name, const std::string & path, const std::string & file)
+void HeightMap::genCompImg(const QString & name, const QString & path, const QString & file)
 {
     QImage pic(_x, _y, QImage::Format_RGB32);
     std::list<MyComponent *> comp_list;
@@ -790,7 +790,7 @@ void HeightMap::genCompImg(const std::string & name, const std::string & path, c
             comp_list = _map[x][y]->components();
             for (std::list<MyComponent *>::iterator it = comp_list.begin(); it != comp_list.end(); ++it)
             {
-                std::string tmp = (*it)->component()->getName();
+                QString tmp = (*it)->component()->getName();
                 if (tmp == name)
                 {
                     int percent = (*it)->percent();
@@ -803,8 +803,8 @@ void HeightMap::genCompImg(const std::string & name, const std::string & path, c
     }
 
     QString completePath = "";
-    QString _path(path.c_str());
-    QString _name(file.c_str());
+    QString _path(path);
+    QString _name(file);
 
     completePath += _path;
     completePath += "/";

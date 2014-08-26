@@ -53,13 +53,12 @@ public:
     int terrain();
 
     // Save the pic
-    bool fillPic(const std::string & path, const std::string & name);
+    bool fillPic(const QString & path, const QString & name);
 
     //export heightmap
-    void        exportHeightMap(const std::string & path, const std::string & name);
-    QJsonObject exportComposentMap(const std::string & path, int iteration, QJsonObject evo, QString name);
-    void        genCompImg(const std::string & name, const std::string & path, const std::string & file);
-    void        genCompImgV2(const std::string & name, const std::string & path, const std::string & file);
+    void        exportHeightMap(const QString & path, const QString & name);
+    QJsonObject exportComposentMap(const QString & path, int iteration, QJsonObject evo, QString name);
+    void        genCompImg(const QString & name, const QString & path, const QString & file);
 
     //Print in qDebug the different heightmap
     void    printMap();
