@@ -248,7 +248,10 @@ void        Menu::saveConfSystem()
     if (central == NULL)
         save.insert("central", "");
     else
-        save.insert("central", central->getName().c_str());
+    {
+        QString centraltxt = central->getName().c_str();
+        save.insert("central", centraltxt);
+    }
 
     QJsonDocument json;
     json.setObject(save);
