@@ -198,13 +198,15 @@ void        Menu::saveConfSystem()
     {
         QJsonObject obj;
         QString name = (*itc_sys)->getName().c_str();
+        QString minColor = (*itc_sys)->getColor1().c_str();
+        QString maxColor = (*itc_sys)->getColor2().c_str();
 
         obj.insert("name", name);
         obj.insert("solid", (*itc_sys)->getSolidTemp());
         obj.insert("gas", (*itc_sys)->getGazeousTemp());
         obj.insert("mass", (*itc_sys)->getMass());
-        obj.insert("minColor", (*itc_sys)->getColor1().c_str());
-        obj.insert("maxColor", (*itc_sys)->getColor2().c_str());
+        obj.insert("minColor", minColor);
+        obj.insert("maxColor", maxColor);
 
         component.append(obj);
     }
