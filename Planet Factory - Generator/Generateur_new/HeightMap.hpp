@@ -11,6 +11,7 @@
 #include <QtDebug>
 #include <QtGui/qimage.h>
 #include <QJsonArray>
+#include <time.h>
 
 //#include <libNoise/include/noise/noise.h>
 //#include <libNoise/noiseutils/noiseutils.h>
@@ -19,7 +20,8 @@
 #include "MapInfo.hpp"
 
 #define RATIO_PLATE 25
-#define MODIF 1
+#define SAFE_COUNTER 1000
+#define MODIF 2
 
 enum e_typemove
 {

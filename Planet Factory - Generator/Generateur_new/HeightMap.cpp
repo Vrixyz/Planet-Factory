@@ -168,18 +168,19 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
     std::list<int> check;
     int counter = 0;
     int nbCase = _x * _y;
-    int countMax = (nbCase / 4);
-    while (counter <= countMax) //check if all the planet if filled
+    int safeCounter = 0;
+    int countMax = (nbCase / 4); //Place 25% of the plate with calc
+    while (counter < countMax) //check if part of the planet if filled
     {
-        for (x = 0; x < _x; x++)
+        for (x = 0; x < _x; ++x)
         {
-            for (y = 0; y < _y; y++)
+            for (y = 0; y < _y; ++y)
             {
                 bool find = false;
                 if (_map[x][y]->n() != 0)//A plate found
                 {
                     std::list<int>::iterator it;
-                    for (it = check.begin(); it != check.end(); it++)
+                    for (it = check.begin(); it != check.end(); ++it)
                     {
                         if ((*it) == _map[x][y]->n())
                         {
@@ -192,14 +193,23 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
                         check.push_back(_map[x][y]->n());
                         //Upate tectonique plate
                         if (_updateMap(x, y, _map[x][y]->n()) == 0)
-                            counter++;
+                        {
+                            //qDebug() << "Counter++" << counter;
+                            ++counter;
+                            safeCounter = 0;
+                        }
+                        else
+                            ++safeCounter;
                     }
                 }
-                if (check.size() == (unsigned int)n) // list full
+                if (check.size() >= (unsigned int)n) // list full
                     check.clear();
             }
         }
+        if (safeCounter > SAFE_COUNTER)
+            break;
     }
+    qDebug() << "Done random.";
         //Finish to fill the planet after the random part
     int last = 0;
     for (int x = 0; x < _x; x++)
@@ -245,16 +255,16 @@ int HeightMap::terrain()
         return 1;
     }
     std::map<MapInfo*, MapInfo*>::iterator it;
-    qDebug() << "Map before...";
-    this->printMap();
+    /*qDebug() << "Map before...";
+    this->printMap();*/
     for (it = borders.begin(); it != borders.end(); it++)
     {
         std::list<MyComponent*> c1 = it->first->components();
         std::list<MyComponent*> c2 = it->second->components();
         _calcTerrain(c1, c2);
     }
-    qDebug() << "Map after...";
-    this->printMap();
+    /*qDebug() << "Map after...";
+    this->printMap();*/
     qDebug() << "Move plates, done.";
     return 0;
 }
@@ -322,15 +332,15 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
 
 int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*> solid2, e_typemove type)
 {
-    //return 0;
+    //TODO : Set boolean
     std::list<MyComponent*>::iterator it;
     int x = 0;
     int y = 0;
     switch (type)
     {
-    case TRANSFORM: { //This one need to be up
-        qDebug() << "TRANSFORM.";
-
+    case TRANSFORM: {
+        //This one need to be up ‼
+        //qDebug() << "TRANSFORM.";
         it = solid1.begin();
         x = (*it)->x();
         y = (*it)->y();
@@ -340,12 +350,11 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
         x = (*it)->x();
         y = (*it)->y();
         _map[x][y]->z(_map[x][y]->z() - (MODIF * 2));
-
-        qDebug() << "Done.";
+        //qDebug() << "Done.";
     }
     case DIVERGENT: {
         // eg <-->
-        qDebug() << "DIVERGENT.";
+        //qDebug() << "DIVERGENT.";
         it = solid1.begin();
         x = (*it)->x();
         y = (*it)->y();
@@ -355,11 +364,11 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
         x = (*it)->x();
         y = (*it)->y();
         _map[x][y]->z(_map[x][y]->z() - MODIF);
-        qDebug() << "Done.";
+        //qDebug() << "Done.";
     }
     case CONVERGENT : {
         // eg -><-
-        qDebug() << "CONVERGENT.";
+        //qDebug() << "CONVERGENT.";
         //calc bigger mass
         int mass1 = 0;
         for (it = solid1.begin(); it != solid1.end(); ++it)
@@ -387,11 +396,11 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
                 _map[x1][y1]->z(_map[x1][y1]->z() + MODIF);
             _map[x2][y2]->z(_map[x2][y2]->z() - MODIF);
         }
-        qDebug() << "Done.";
+        //qDebug() << "Done.";
     }
     default : {
         // eg ->->
-        qDebug() << "NONE.";
+        //qDebug() << "NONE.";
         //calc bigger mass
         int mass1 = 0;
         for (it = solid1.begin(); it != solid1.end(); ++it)
@@ -433,7 +442,7 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
                 _map[x1][y1]->z(_map[x1][y1]->z() - MODIF);
             }
         }
-        qDebug() << "Done.";
+        //qDebug() << "Done.";
     }
     }
 
@@ -571,50 +580,38 @@ MapInfo * HeightMap::_isBorder(int x, int y)
 
 int    HeightMap::_updateMap(int x, int y, int c)
 {
+    srand (time(NULL));
     int i = rand() % 4;
     int n = 0;
 
-    //printMap();
-    while(n < 4)
+    while (n < 4)
     {
-        if(i == 0)//Left
+        switch (i)
         {
+        case 0: {
             if (_updateLeft(x, y, c) == 0)
                 return 0;
-            else
-            {
-                i++;
-                n++;
-            }
+            ++n;
+            ++i;
+
         }
-        else if(i == 1)//Top
-        {
+        case 1: {
             if (_updateTop(x, y, c) == 0)
                 return 0;
-            else
-            {
-                i++;
-                n++;
-            }
+            ++n;
+            ++i;
         }
-        else if(i == 2)//Right
-        {
+        case 2:{
             if (_updateRight(x, y, c) == 0)
                 return 0;
-            else
-            {
-                i++;
-                n++;
-            }
+            ++n;
+            ++i;
         }
-        else if(i == 3)//Bot
-        {
+        default: {
             if (_updateBot(x, y, c) == 0)
                 return 0;
-            else
-            {
-                i = 0;
-                n++;
+            ++n;
+            i = 0;
             }
         }
     }
