@@ -6,7 +6,7 @@ public class updateProgressBar : MonoBehaviour
 
     public GameObject manager;
     static float i = 0;
-    float totalTime = 0;
+    public float totalTime = 0;
     bool pass = false;
     // Use this for initialization
     void Start()

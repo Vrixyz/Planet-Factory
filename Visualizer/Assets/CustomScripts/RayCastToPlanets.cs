@@ -9,12 +9,20 @@ public class RayCastToPlanets : MonoBehaviour {
 	private UIPopupList[] pops;
 	public UIPopupList mat;
 	public UIPopupList astre;
+	public UICheckbox defaultCam;
 	public int x, y;
 	public PlanetUpdater pu;
 	public UILabel Pos;
 	public UILabel materiel;
 	public UILabel planet;
+	public UILabel current;
+	public UILabel total;
 	public GameObject menuInGame;
+
+	private Vector3 positionCamDefault;
+	private Quaternion rotationCamDefault;
+	private Transform transformCamDefault;
+
 
     GameObject priv_indicator;
     float initial_particle_speed;
@@ -23,6 +31,11 @@ public class RayCastToPlanets : MonoBehaviour {
         priv_indicator = (GameObject)GameObject.Instantiate(indicator);
         initial_particle_speed = priv_indicator.GetComponentInChildren<ParticleSystem>().startSpeed;
         priv_indicator.SetActive(false);
+
+		GameObject cam = GameObject.Find("Main Camera");
+		positionCamDefault = cam.transform.position;
+		rotationCamDefault = cam.transform.rotation;
+		transformCamDefault = GameObject.Find ("Main Camera").transform.parent;
     }
 	
 	
@@ -72,6 +85,8 @@ public class RayCastToPlanets : MonoBehaviour {
 	        
             if (val == t.Key)
 			{
+				if (defaultCam.isChecked == true)
+					defaultCam.isChecked = false;
 				Color c = ((Texture2D)t.Value).GetPixel (x, y);
                 print("materiel selectionne : " + c.r + " " + c.g + " " + c.b);
                 materiel.text = t.Key + " : " + ((int)(((c.r + c.g + c.b) / 3.0F) * 100.0F)).ToString() + 'p';
@@ -94,6 +109,16 @@ public class RayCastToPlanets : MonoBehaviour {
 
 	}
 
+	void OnActivate()
+	{
+		astre.selection = "Choose";
+		GameObject cam = GameObject.Find("Main Camera");
+		GameObject.Find("Main Camera").transform.parent = transformCamDefault;
+		cam.transform.position = positionCamDefault;
+		cam.transform.rotation = rotationCamDefault;
+	}
+
+
 	void OnSelectionAstre(string val)
 	{
 		GameObject manager = GameObject.Find ("Manager");
@@ -111,12 +136,19 @@ public class RayCastToPlanets : MonoBehaviour {
 			}
 		}
 
+	}	
+
+	void timer()
+	{
+		GameObject manager = GameObject.Find ("Manager");
+		total.text = manager.GetComponent<UniverseTime> ().totalTime.ToString();
+		current.text = ((int)(manager.GetComponent<UniverseTime> ().getElapsed ())).ToString ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		
-
+		timer();
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			if (menuInGame.GetComponent<UIPanel>().alpha == 0)
