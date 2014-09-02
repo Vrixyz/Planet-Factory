@@ -4,7 +4,7 @@
 
 Menu::Menu(MainWindow *parent) : QWidget(parent)
 {
-    setGeometry(28,330,140,210);
+    setGeometry(28,330,140,250);
     show();
 
     _parent = parent;
@@ -18,9 +18,9 @@ Menu::Menu(MainWindow *parent) : QWidget(parent)
     _reset = new QPushButton(this);
     _reset->setGeometry(0, 120, 140, 35);
     _facebook = new QPushButton(this);
-    _facebook->setGeometry(30, 180, 32, 32);
+    _facebook->setGeometry(30, 190, 32, 32);
     _twitter = new QPushButton(this);
-    _twitter->setGeometry(72, 180, 32, 32);
+    _twitter->setGeometry(72, 190, 32, 32);
     _exit = new QPushButton(_parent);
     _exit->setGeometry(980, 5, 15, 15);
 
