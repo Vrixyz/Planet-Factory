@@ -89,7 +89,7 @@ void    Planet::calc_move(int duree)
     position.insert("y", _pos[1]);
     position.insert("z", _pos[2]);
 
-    int rot = duree % _rota;
+    int rot = duree;// % _rota;
     int deg = (360*rot)/_rota;
 
 
