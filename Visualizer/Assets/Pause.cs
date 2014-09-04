@@ -5,7 +5,7 @@ using System.Diagnostics;
 public class Pause : MonoBehaviour {
 
 	public GameObject manager;
-	
+	public GameObject boutonPlay;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,5 +15,6 @@ public class Pause : MonoBehaviour {
 	void OnClick () {
 		UniverseTime w = manager.GetComponent<UniverseTime>();
 		w.Stop();
+
 	}
 }
