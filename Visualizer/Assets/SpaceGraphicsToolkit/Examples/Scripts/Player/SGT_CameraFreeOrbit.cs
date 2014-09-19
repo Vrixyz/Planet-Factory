@@ -152,7 +152,7 @@ public class SGT_CameraFreeOrbit : SGT_MonoBehaviour
 	{
 		if (Application.isPlaying == true && GUIUtility.hotControl == 0)
 		{
-			if (Input.GetKey(KeyCode.Mouse0) == true)
+			if (Input.GetKey(KeyCode.Mouse1) == true)
 			{
 				var x = SGT_Input.DragY * -rotationSpeed;
 				var y = SGT_Input.DragX *  rotationSpeed;

@@ -9,7 +9,7 @@ public class PlanetUpdater : MonoBehaviour {
 	public Dictionary<string, Texture2D> materials = new Dictionary<string, Texture2D>();
     public Dictionary<string, object> materialsDefinition = null;
 
-	public string folder = "System/1/";
+	public string folder = "System/";
 	// Use this for initialization
 	void Start () {
 
@@ -30,7 +30,7 @@ public class PlanetUpdater : MonoBehaviour {
 				//print ((Texture2D)Resources.Load ( "System/1/" +  current["displacement"]));
                 GameObject manager = GameObject.Find("Manager");
                 SystemLoader sys = manager.GetComponent<SystemLoader>();
-                // TODO : this won't work on linux !
+               
                 var path = "file://" + Application.dataPath + "/Resources/" + sys.resourceFolder + current["displacement"] + ".png";
                 print("path for displacement : " + path);
                 var www = new WWW(path);
@@ -98,25 +98,6 @@ public class PlanetUpdater : MonoBehaviour {
 			if (current.ContainsKey("rotation"))
 				nextRotation = current;
 		}
-        //print("ca va planter !");
-        //Dictionary<string, object> mat_def = materialsDefinition;
-
-        //print(definition["name"]);
-        //if (mat_def == null)
-        //    print("it's null");
-        //print(" mat_def : " + mat_def["rock"]);
-        //Dictionary<string, object> rmat = mat_def["rock"] as Dictionary<string, object>;
-        //print("rock : ");
-        //foreach (var v in rmat)
-        //{
-        //    print(v.Key + " : " + v.Value);
-        //}
-        //return;
-        //Texture2D t = TextureGenerator.generate(materials, mat_def);
-        //// if (t == null)
-        //// WTF ???
-        //print("should be white");
-        //gameObject.GetComponent<SGT_Planet>().SurfaceTextureDay.SetTexture(t, 0);
 
 	}
 }

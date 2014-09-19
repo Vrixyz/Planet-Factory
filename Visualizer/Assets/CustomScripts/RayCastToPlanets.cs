@@ -19,10 +19,10 @@ public class RayCastToPlanets : MonoBehaviour {
 	public UILabel total;
 	public GameObject menuInGame;
 
-	private Vector3 positionCamDefault;
+	/*private Vector3 positionCamDefault;
 	private Quaternion rotationCamDefault;
 	private Transform transformCamDefault;
-
+    */
 
     GameObject priv_indicator;
     float initial_particle_speed;
@@ -31,12 +31,12 @@ public class RayCastToPlanets : MonoBehaviour {
         priv_indicator = (GameObject)GameObject.Instantiate(indicator);
         initial_particle_speed = priv_indicator.GetComponentInChildren<ParticleSystem>().startSpeed;
         priv_indicator.SetActive(false);
-
+        /*
 		GameObject cam = GameObject.Find("Main Camera");
 		positionCamDefault = cam.transform.position;
 		rotationCamDefault = cam.transform.rotation;
 		transformCamDefault = GameObject.Find ("Main Camera").transform.parent;
-    }
+*/    }
 	
 	
 	void ShowInformations(float x, float y, PlanetUpdater pu) {
@@ -112,10 +112,11 @@ public class RayCastToPlanets : MonoBehaviour {
 	void OnActivate()
 	{
 		astre.selection = "Choose";
-		GameObject cam = GameObject.Find("Main Camera");
-		GameObject.Find("Main Camera").transform.parent = transformCamDefault;
-		cam.transform.position = positionCamDefault;
-		cam.transform.rotation = rotationCamDefault;
+		//GameObject cam = GameObject.Find("Main Camera");
+		//GameObject.Find("Main Camera").transform.parent = transformCamDefault;
+		//cam.transform.position = positionCamDefault;
+		// cam.transform.rotation = rotationCamDefault;
+        setCamFree();
 	}
 
 
@@ -127,16 +128,55 @@ public class RayCastToPlanets : MonoBehaviour {
 		{
 			if (val == p.name)
 			{
-				PlanetUpdater po = p.GetComponent<PlanetUpdater>();
-				GameObject cam = GameObject.Find("Main Camera");
-				Transform transform = cam.transform;
-				GameObject.Find("Main Camera").transform.parent = po.gameObject.transform;
-				cam.transform.position = transform.position;
-				cam.transform.rotation = transform.rotation;
+                setCamFree();
+                setCamLookAt(p);
 			}
 		}
 
-	}	
+	}
+    private GameObject planetLookedAt = null;
+
+    public void setCamLookAt(GameObject planet)
+    {
+        if (planetLookedAt == planet)
+            return;
+        if (defaultCam.isChecked == true)
+            defaultCam.isChecked = false;
+        PlanetUpdater po = planet.GetComponent<PlanetUpdater>();
+        GameObject cam = GameObject.Find("Main Camera");
+        //if (cam.transform.parent == po.gameObject.transform)
+           // return;
+//        setCamFree();
+
+        priv_indicator.SetActive(false);
+        cam.GetComponent<SGT_CameraFreeLook>().enabled = false;
+        cam.GetComponent<SGT_CameraFreeOrbit>().enabled = true;
+        cam.transform.LookAt(planet.transform);
+        planetLookedAt = planet;
+//        cam.transform.position = cam.transform.position + (cam.transform.forward * (cam.transform.DistanceTo(planet.transform.position) - 1000));
+        cam.transform.parent.transform.position = planet.transform.position;
+    }
+
+    public void setCamFree()
+    {
+        GameObject cam = GameObject.Find("Main Camera");
+        if (cam.transform.parent != null)
+        {
+            //cam.transform.position = cam.transform.position + cam.transform.parent.position;
+             // cam.transform.rotation.eulerAngles = Vector3(0,0,0)
+            // cam.GetComponent<SGT_CameraFreeLook>().Rotation = cam.GetComponent<SGT_CameraFreeLook>().Rotation * Quaternion.Inverse(cam.transform.parent.rotation);
+            //cam.transform.parent = null;
+        
+        }
+        //Quaternion initialRot = cam.transform.rotation;
+        cam.GetComponent<SGT_CameraFreeOrbit>().enabled = false;
+        cam.GetComponent<SGT_CameraFreeLook>().enabled = true;
+        //cam.GetComponent<SGT_CameraFreeLook>().Update();
+        //cam.transform.rotation = cam.transform.rotation * initialRot;
+        priv_indicator.SetActive(false);
+        cam.transform.LookAt(planetLookedAt.transform);
+        planetLookedAt = null;
+    }
 
 	void timer()
 	{
@@ -147,7 +187,7 @@ public class RayCastToPlanets : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+
 		timer();
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
@@ -201,6 +241,10 @@ public class RayCastToPlanets : MonoBehaviour {
                             {
                                 ShowInformations(x, y, pu);
 
+                                // parent the camera to the object looked at
+                                //setCamFree();
+                                setCamLookAt(p);
+
                                 // update the local indicator
                                 priv_indicator.SetActive(true);
                                 
@@ -220,13 +264,6 @@ public class RayCastToPlanets : MonoBehaviour {
                                 priv_indicator.transform.rotation = quatHit;
                                 print("rotation: " + priv_indicator.transform.rotation);
 
-                                // parent the camera to the object looked at
-
-                                GameObject cam = GameObject.Find("Main Camera");
-                                Transform transform = cam.transform;
-                                GameObject.Find("Main Camera").transform.parent = pu.gameObject.transform;
-                                cam.transform.position = transform.position;
-                                cam.transform.rotation = transform.rotation;
                                 return;
                             }
 					    }
