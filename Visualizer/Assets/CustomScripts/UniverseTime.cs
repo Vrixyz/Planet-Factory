@@ -6,6 +6,7 @@ public class UniverseTime : MonoBehaviour {
 	public float totalTime = 10.0f; // in seconds
 	private bool running = false;
 	private float elapsed = 0.0f; // in seconds
+	private float mult = 1;
 	// Use this for initialization
 	public void Start () {
 		running = true;
@@ -13,7 +14,19 @@ public class UniverseTime : MonoBehaviour {
 	public void Stop () {
 		running = false;
 	}
-	
+
+	public void Acc () {
+		if (mult >= 8)
+			return;
+		mult += 2;
+	}
+
+	public void Desc () {
+		if (mult <= -8)
+			return;
+		mult -= 2;
+	}
+
 	public bool IsRunning () {
 		return running;
 	}
@@ -36,7 +49,10 @@ public class UniverseTime : MonoBehaviour {
 		//print ("time.deltatime: " + Time.deltaTime);
 		if (running && elapsed <= totalTime)
 		{
-			elapsed += Time.deltaTime;
+			if (mult < 0)
+				elapsed += Time.deltaTime / (mult*(-1));
+			else
+				elapsed += Time.deltaTime * mult;
 		}
 		else
 		{
