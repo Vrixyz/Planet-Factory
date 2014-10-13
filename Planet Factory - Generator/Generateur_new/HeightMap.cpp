@@ -1,8 +1,10 @@
 #include "HeightMap.hpp"
 
+#define RADIUS 256
+
 //1024 512 ALL TIME
 HeightMap::HeightMap(int radius, Planet *p)
-    :_r(radius), _x(radius * 4), _y(radius * 2)
+    :_r(RADIUS), _x(RADIUS * 4), _y(RADIUS * 2)
 {
     _map = new MapInfo**[_x];
     _planet = p;

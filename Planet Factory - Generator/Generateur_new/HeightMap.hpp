@@ -20,7 +20,7 @@
 #include "MapInfo.hpp"
 
 #define RATIO_PLATE 25
-#define SAFE_COUNTER 1000
+#define SAFE_COUNTER 2000
 #define MODIF 2
 
 enum e_typemove
