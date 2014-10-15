@@ -39,21 +39,21 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QWidget(parent)
     _eRadius->setValue(1);
 
     _eDistance->setGeometry(0, 160, 215, 25);
-    _eDistance->setMinimum(1);
+    _eDistance->setMinimum(0);
     _eDistance->setMaximum(1000000);
-    _eDistance->setValue(1);
+    _eDistance->setValue(0);
     _eDistance->setAlignment(Qt::AlignHCenter);
 
     _eTilt->setGeometry(220, 100, 215, 25);
-    _eTilt->setMinimum(1);
+    _eTilt->setMinimum(0);
     _eTilt->setMaximum(1000000);
-    _eTilt->setValue(1);
+    _eTilt->setValue(0);
     _eTilt->setAlignment(Qt::AlignHCenter);
 
     _eRevo->setGeometry(220, 160, 215, 25);
-    _eRevo->setMinimum(1);
+    _eRevo->setMinimum(0);
     _eRevo->setMaximum(1000000);
-    _eRevo->setValue(1);
+    _eRevo->setValue(0);
     _eRevo->setAlignment(Qt::AlignHCenter);
 
     _eType->setGeometry(220, 40, 215, 25);
@@ -72,9 +72,9 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QWidget(parent)
         _eCentralStar->setEnabled(FALSE);
 
     _eRota->setGeometry(0, 220, 215, 25);
-    _eRota->setMinimum(1);
+    _eRota->setMinimum(0);
     _eRota->setMaximum(1000000);
-    _eRota->setValue(1);
+    _eRota->setValue(0);
     _eRota->setAlignment(Qt::AlignHCenter);
 }
 

@@ -48,6 +48,7 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QWidget(parent)
     {
         _compoName[i] =  new QLabel("HELLO !", this);
         _compoValue[i] = new QSpinBox(this);
+        _compoValue[i]->setMaximum(100);
         _compoDel[i] = new QPushButton("Delete", this);
         QObject::connect(_compoDel[i], SIGNAL(clicked()), signalMapperButton, SLOT(map()));
         signalMapperButton->setMapping (_compoDel[i], i) ;

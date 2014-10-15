@@ -171,10 +171,10 @@ void CelestialBox::cleanAllFields()
     _parent->getPlanetDetails()->_eName->setText("");
     _parent->getPlanetDetails()->_eType->setCurrentIndex(0);
     _parent->getPlanetDetails()->_eRadius->setValue(1);
-    _parent->getPlanetDetails()->_eDistance->setValue(1);
-    _parent->getPlanetDetails()->_eRevo->setValue(1);
-    _parent->getPlanetDetails()->_eRota->setValue(1);
-    _parent->getPlanetDetails()->_eTilt->setValue(1);
+    _parent->getPlanetDetails()->_eDistance->setValue(0);
+    _parent->getPlanetDetails()->_eRevo->setValue(0);
+    _parent->getPlanetDetails()->_eRota->setValue(0);
+    _parent->getPlanetDetails()->_eTilt->setValue(0);
     _parent->getPlanetDetails()->_eCentralStar->setChecked(0);
     _del->setEnabled(FALSE);
     _parent->_currPlanet = NULL;
