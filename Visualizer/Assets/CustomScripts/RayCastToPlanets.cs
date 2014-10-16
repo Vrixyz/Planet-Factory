@@ -171,10 +171,11 @@ public class RayCastToPlanets : MonoBehaviour {
         //Quaternion initialRot = cam.transform.rotation;
         cam.GetComponent<SGT_CameraFreeOrbit>().enabled = false;
         cam.GetComponent<SGT_CameraFreeLook>().enabled = true;
+        cam.GetComponent<SGT_CameraFreeLook>().camera.transform.rotation = cam.GetComponent<SGT_CameraFreeLook>().camera.transform.rotation;
         //cam.GetComponent<SGT_CameraFreeLook>().Update();
         //cam.transform.rotation = cam.transform.rotation * initialRot;
         priv_indicator.SetActive(false);
-        cam.transform.LookAt(planetLookedAt.transform);
+        //cam.transform.LookAt(planetLookedAt.transform);
         planetLookedAt = null;
     }
 
