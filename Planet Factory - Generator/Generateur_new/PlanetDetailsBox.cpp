@@ -7,17 +7,8 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QWidget(parent)
     setGeometry(538, 22, 442, 270);
 
     QLabel *label_name_planettype = new QLabel(this);
-    label_name_planettype->setPixmap(QPixmap(":/res/name_planettype.png"));
-    label_name_planettype->setGeometry(0, 20, 435, 13);
-    QLabel *label_radius_degrees = new QLabel(this);
-    label_radius_degrees->setPixmap(QPixmap(":/res/radius_degrees.png"));
-    label_radius_degrees->setGeometry(0, 80, 435, 13);
-    QLabel *label_distance_revolution = new QLabel(this);
-    label_distance_revolution->setPixmap(QPixmap(":/res/distance_revolution.png"));
-    label_distance_revolution->setGeometry(0, 140, 435, 14);
-    QLabel *label_censtral_star = new QLabel(this);
-    label_censtral_star->setPixmap(QPixmap(":/res/central_star.png"));
-    label_censtral_star->setGeometry(0, 199, 435, 11);
+    label_name_planettype->setPixmap(QPixmap(":/res/bg-planetdetails.png"));
+    label_name_planettype->setGeometry(0, 0, 435, 260);
 
     _eName = new QLineEdit(this);
     _eRadius = new QSpinBox(this);
@@ -67,7 +58,7 @@ PlanetDetailsBox::PlanetDetailsBox(MainWindow *parent) : QWidget(parent)
     for (int i = 0; i < _eType->count(); ++i)
         _eType->setItemData(i, Qt::AlignHCenter, Qt::TextAlignmentRole);
 
-    _eCentralStar->setGeometry(400, 197, 15, 15);
+    _eCentralStar->setGeometry(385, 201, 15, 15);
     if (parent->getCurrPlanet() != NULL)
         _eCentralStar->setEnabled(FALSE);
 
