@@ -121,14 +121,16 @@ public class RayCastToPlanets : MonoBehaviour {
 
 
 	void OnSelectionAstre(string val)
-	{
+    {
+        print("ONSELECTIONASTRE");
 		GameObject manager = GameObject.Find ("Manager");
 		SystemLoader sys = manager.GetComponent<SystemLoader>();
 		foreach (GameObject p in sys.planets)
 		{
+            print(p);
 			if (val == p.name)
 			{
-                setCamFree();
+                //setCamFree();
                 setCamLookAt(p);
 			}
 		}
@@ -138,8 +140,10 @@ public class RayCastToPlanets : MonoBehaviour {
 
     public void setCamLookAt(GameObject planet)
     {
+        print("setCamLookAt");
         if (planetLookedAt == planet)
             return;
+        print("setCamLookAt does it");
         if (defaultCam.isChecked == true)
             defaultCam.isChecked = false;
         PlanetUpdater po = planet.GetComponent<PlanetUpdater>();
@@ -174,7 +178,8 @@ public class RayCastToPlanets : MonoBehaviour {
         cam.GetComponent<SGT_CameraFreeLook>().camera.transform.rotation = cam.GetComponent<SGT_CameraFreeLook>().camera.transform.rotation;
         //cam.GetComponent<SGT_CameraFreeLook>().Update();
         //cam.transform.rotation = cam.transform.rotation * initialRot;
-        priv_indicator.SetActive(false);
+        if (priv_indicator)
+            priv_indicator.SetActive(false);
         //cam.transform.LookAt(planetLookedAt.transform);
         planetLookedAt = null;
     }
@@ -182,9 +187,12 @@ public class RayCastToPlanets : MonoBehaviour {
 	void timer()
 	{
 		GameObject manager = GameObject.Find ("Manager");
-		total.text = manager.GetComponent<UniverseTime> ().totalTime.ToString();
-		current.text = ((int)(manager.GetComponent<UniverseTime> ().getElapsed ())).ToString ();
-	}
+        if (manager && manager.GetComponent<UniverseTime>())
+        {
+            total.text = manager.GetComponent<UniverseTime>().totalTime.ToString();
+            current.text = ((int)(manager.GetComponent<UniverseTime>().getElapsed())).ToString();
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -257,13 +265,13 @@ public class RayCastToPlanets : MonoBehaviour {
 
                                 
                                 priv_indicator.GetComponentInChildren<ParticleSystem>().startSpeed = initial_particle_speed * priv_indicator.transform.parent.localScale.x;
-                                print(hit.normal);
+                                //print(hit.normal);
                                 Quaternion quatHit = Quaternion.FromToRotation(Vector3.up, hit.point - pu.transform.position);
                      
-                                print("quatHit: " + quatHit);
+                                //print("quatHit: " + quatHit);
 
                                 priv_indicator.transform.rotation = quatHit;
-                                print("rotation: " + priv_indicator.transform.rotation);
+                                //print("rotation: " + priv_indicator.transform.rotation);
 
                                 return;
                             }
