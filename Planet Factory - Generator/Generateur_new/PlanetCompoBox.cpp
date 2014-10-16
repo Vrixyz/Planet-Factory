@@ -96,7 +96,7 @@ void PlanetCompoBox::checkPercentPla()
     if (_parent->_currPlanet == NULL)
     {
         _percentWarning->setStyleSheet("QLabel { color : red; }");
-        _percentWarning->setText("No planet selected.");
+        _percentWarning->setText("NO PLANET SELECTED.");
     }
     else
     {
