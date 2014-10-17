@@ -15,5 +15,7 @@
         <file>res/radius_degrees.png</file>
         <file>res/distance_revolution.png</file>
         <file>res/central_star.png</file>
+        <file>res/bg-planetdetails.png</file>
+        <file>res/bg-planetcompos.png</file>
     </qresource>
 </RCC>

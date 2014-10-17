@@ -19,8 +19,8 @@ PlanetCompoBox::PlanetCompoBox(MainWindow *parent) : QWidget(parent)
     _winPla->setFixedSize(265, 280);
 
     QLabel *infos = new QLabel(this);
-    infos->setPixmap(QPixmap(":/res/label_planet_compo.png"));
-    infos->setGeometry(-17, 0, 362, 24);
+    infos->setPixmap(QPixmap(":/res/bg-planetcompos.png"));
+    infos->setGeometry(0, -3, 362, 24);
 
     _listObjects = new QListWidget(this);
     _listObjects->setGeometry(394, 0, 362, 207);
@@ -96,7 +96,7 @@ void PlanetCompoBox::checkPercentPla()
     if (_parent->_currPlanet == NULL)
     {
         _percentWarning->setStyleSheet("QLabel { color : red; }");
-        _percentWarning->setText("No planet selected.");
+        _percentWarning->setText("NO PLANET SELECTED.");
     }
     else
     {
