@@ -17,5 +17,7 @@ public class Stop : MonoBehaviour {
 		UniverseTime w = manager.GetComponent<UniverseTime>();
        	w.Reset();
        	w.Start();
+		w.Stop();
+		w.mult = 1;
 	}
 }

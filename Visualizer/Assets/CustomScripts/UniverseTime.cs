@@ -6,7 +6,7 @@ public class UniverseTime : MonoBehaviour {
 	public float totalTime = 10.0f; // in seconds
 	private bool running = false;
 	private float elapsed = 0.0f; // in seconds
-	private float mult = 1;
+	public float mult = 1;
 	// Use this for initialization
 	public void Start () {
 		running = true;
