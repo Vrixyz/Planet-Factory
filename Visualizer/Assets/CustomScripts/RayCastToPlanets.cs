@@ -143,6 +143,12 @@ public class RayCastToPlanets : MonoBehaviour {
         print("setCamLookAt");
         if (planetLookedAt == planet)
             return;
+        GameObject manager = GameObject.Find ("Manager");
+        if (manager && manager.GetComponent<UniverseTime>())
+        {
+            UniverseTime time = manager.GetComponent<UniverseTime>();
+            time.Stop();
+        }
         print("setCamLookAt does it");
         if (defaultCam.isChecked == true)
             defaultCam.isChecked = false;
