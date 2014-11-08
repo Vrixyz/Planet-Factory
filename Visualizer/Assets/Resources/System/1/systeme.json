@@ -2,8 +2,9 @@
 	"totalTime": 100,
 	"astres": [
 		"./terre.json",
-		"./moon.json"
-		"./star.json"
+		"./moon.json",
+		"./star.json",
+		"./gazeous.json"
 	],
 	"materials": {
 		"water": {

@@ -1,0 +1,5 @@
+{
+	"name": "Saturn",
+	"type": "gazeous",
+	"evolution":"./gazeousEvolution.json",
+}

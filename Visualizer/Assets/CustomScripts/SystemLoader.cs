@@ -35,7 +35,9 @@ public class SystemLoader : MonoBehaviour {
         GameObject instance;
         if (dictPlanet["type"].Equals("star"))
 		    instance = Instantiate(Resources.Load("Prefabs/Star")) as GameObject;
-		else
+        else if (dictPlanet["type"].Equals("gazeous"))
+            instance = Instantiate(Resources.Load("Prefabs/Gas Giant")) as GameObject;
+        else
             instance = Instantiate(Resources.Load("Prefabs/PlanetSphere")) as GameObject;
 		string evolutionInfo = Load (rootFolder + dictPlanet["evolution"]);
 		var dictEvolutions =  Json.Deserialize (evolutionInfo) as Dictionary<string, object>;
@@ -57,7 +59,7 @@ public class SystemLoader : MonoBehaviour {
         updater.setEvolutions(evolutionList, time);
         updater.definition = dictPlanet;
 
-        if (!dictPlanet["type"].Equals("star"))
+        if (dictPlanet["type"].Equals("planet"))
         {
             //Surface Displacement
 		    SGT_SurfaceDisplacement surfDisp = instance.AddComponent<SGT_SurfaceDisplacement>();
