@@ -5,11 +5,15 @@ using System.Collections;
 public class UniverseTime : MonoBehaviour {
 	public float totalTime = 10.0f; // in seconds
 	private bool running = false;
-	private float elapsed = 0.0f; // in seconds
+	public float elapsed = 0.0f; // in seconds
 	public float mult = 1;
+	private GameObject manager;
+	private UICheckbox[] c;
+
 	// Use this for initialization
 	public void Start () {
 		running = true;
+		manager = GameObject.Find ("Controler");
 	}
 	public void Stop () {
 		running = false;
@@ -46,8 +50,10 @@ public class UniverseTime : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//print ("time.deltatime: " + Time.deltaTime);
-		if (running && elapsed <= totalTime)
+		c = manager.GetComponentsInChildren<UICheckbox>();
+		if ((int)elapsed == (int)totalTime && c[1].isChecked == true)
+			Reset ();
+		if (running && elapsed <= totalTime )
 		{
 			if (mult < 0)
 				elapsed += Time.deltaTime / (mult*(-1));
@@ -58,19 +64,6 @@ public class UniverseTime : MonoBehaviour {
 		{
 			running = false;
 			return;
-		}
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			if (running)
-			{
-				print("Stop !");
-				running = false;
-			}
-			else
-			{
-				print("Start !");
-				running = true;
-			}
 		}
 	}
 }

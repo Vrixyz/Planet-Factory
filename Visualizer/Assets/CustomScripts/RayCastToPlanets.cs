@@ -18,7 +18,7 @@ public class RayCastToPlanets : MonoBehaviour {
 	public UILabel current;
 	public UILabel total;
 	public GameObject menuInGame;
-
+	public UICheckbox b;
 	/*private Vector3 positionCamDefault;
 	private Quaternion rotationCamDefault;
 	private Transform transformCamDefault;
@@ -118,7 +118,6 @@ public class RayCastToPlanets : MonoBehaviour {
 		// cam.transform.rotation = rotationCamDefault;
         setCamFree();
 	}
-
 
 	void OnSelectionAstre(string val)
     {
@@ -228,6 +227,9 @@ public class RayCastToPlanets : MonoBehaviour {
                 print("planet not leaded yet");
                 return;
             }
+
+			UniverseTime w = manager.GetComponent<UniverseTime>();
+		
             if (controler.activeInHierarchy)
             {
 				initPlanetList();
