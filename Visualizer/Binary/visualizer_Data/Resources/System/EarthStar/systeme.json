@@ -1,0 +1,24 @@
+{
+    "totalTime": 100, "astres": [
+        "./Star.json",
+        "./Terre.json"
+    ],
+    "materials": {
+        "Water": {
+			"minColor": {"r": 180, "g": 150, "b": 120},
+			"maxColor": {"r": 20, "g": 100, "b": 200},
+            "gas": 100,
+            "hardness": 0,
+            "mass": 1,
+            "solid": 0
+        },
+        "Rock": {
+			"minColor": {"r": 180, "g": 150, "b": 120},
+			"maxColor": {"r": 180, "g": 150, "b": 120},
+            "gas": 1000,
+            "hardness": 50,
+            "mass": 100,
+            "solid": -1000
+        }
+    }
+}

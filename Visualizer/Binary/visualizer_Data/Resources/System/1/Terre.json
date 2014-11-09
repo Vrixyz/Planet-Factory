@@ -1,0 +1,5 @@
+{
+	"name": "Terre",
+	"type": "planet",
+	"evolution":"./terreEvolution.json",
+}
