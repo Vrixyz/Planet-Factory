@@ -9,7 +9,6 @@ public class RayCastToPlanets : MonoBehaviour {
 	private UIPopupList[] pops;
 	public UIPopupList mat;
 	public UIPopupList astre;
-	public UICheckbox defaultCam;
 	public int x, y;
 	public PlanetUpdater pu;
 	public UILabel Pos;
@@ -85,8 +84,6 @@ public class RayCastToPlanets : MonoBehaviour {
 	        
             if (val == t.Key)
 			{
-				if (defaultCam.isChecked == true)
-					defaultCam.isChecked = false;
 				Color c = ((Texture2D)t.Value).GetPixel (x, y);
                 print("materiel selectionne : " + c.r + " " + c.g + " " + c.b);
                 materiel.text = t.Key + " : " + ((int)(((c.r + c.g + c.b) / 3.0F) * 100.0F)).ToString() + 'p';
@@ -149,8 +146,6 @@ public class RayCastToPlanets : MonoBehaviour {
             time.Stop();
         }
         print("setCamLookAt does it");
-        if (defaultCam.isChecked == true)
-            defaultCam.isChecked = false;
         PlanetUpdater po = planet.GetComponent<PlanetUpdater>();
         GameObject cam = GameObject.Find("Main Camera");
         //if (cam.transform.parent == po.gameObject.transform)
