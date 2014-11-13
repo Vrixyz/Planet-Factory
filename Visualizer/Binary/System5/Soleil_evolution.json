@@ -1,0 +1,141 @@
+{
+    "evolutions": [
+        {
+            "date": 0,
+            "duree": null,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "radius": 500,
+            "rotation": 0
+        },
+        {
+            "date": 1,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 36
+        },
+        {
+            "date": 2,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 72
+        },
+        {
+            "date": 3,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 108
+        },
+        {
+            "date": 4,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 144
+        },
+        {
+            "date": 5,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 180
+        },
+        {
+            "date": 6,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 216
+        },
+        {
+            "date": 7,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 252
+        },
+        {
+            "date": 8,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 288
+        },
+        {
+            "date": 9,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 324
+        },
+        {
+            "date": 10,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 360
+        },
+        {
+            "date": 11,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 396
+        },
+        {
+            "date": 12,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 432
+        },
+        {
+            "date": 13,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 468
+        },
+        {
+            "date": 14,
+            "pos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 504
+        }
+    ]
+}

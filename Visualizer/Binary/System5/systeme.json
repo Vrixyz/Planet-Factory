@@ -1,0 +1,56 @@
+{
+    "astres": [
+        "./Epitechland.json",
+        "./Gazpwet.json",
+        "./EipTopia.json",
+        "./Soleil.json"
+    ],
+    "materials": {
+        "Eau": {
+            "gas": 0,
+            "mass": 1,
+            "maxColor": {
+                "b": 255,
+                "g": 116,
+                "r": 3
+            },
+            "minColor": {
+                "b": 255,
+                "g": 120,
+                "r": 30
+            },
+            "solid": 0
+        },
+        "Roche": {
+            "gas": 0,
+            "mass": 25,
+            "maxColor": {
+                "b": 0,
+                "g": 36,
+                "r": 36
+            },
+            "minColor": {
+                "b": 0,
+                "g": 85,
+                "r": 85
+            },
+            "solid": 0
+        },
+        "Terre": {
+            "gas": 0,
+            "mass": 10,
+            "maxColor": {
+                "b": 32,
+                "g": 68,
+                "r": 84
+            },
+            "minColor": {
+                "b": 4,
+                "g": 99,
+                "r": 147
+            },
+            "solid": 0
+        }
+    },
+    "totalTime": 15
+}
