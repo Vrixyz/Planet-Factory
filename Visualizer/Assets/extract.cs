@@ -12,15 +12,19 @@ public class extract : MonoBehaviour {
 	private string planet;
 	private UniverseTime w;
 	private Vector3 angle;
+	private Vector3 pos;
 	private string disp;
 	private long rad;
-	private List<string> files;
-	private List<string> mats;
+	private List<Dictionary<string, object>>mats;
+	private List<object> res;
+	private float rota;
+	private Dictionary<string, object> collector;
 	// Use this for initialization
 	void Start () {
 		w = manager.GetComponent<UniverseTime>();
-		files = new List<string>();
-		mats = new List<string>();
+		mats = new List<Dictionary<string, object>>();
+		res = new List<object>();
+		collector = new Dictionary<string, object> ();
 	}
 	
 	// Update is called once per frame
@@ -38,6 +42,7 @@ public class extract : MonoBehaviour {
 			{
 				planet = p.name;
 				time = w.elapsed;
+				res.Add(time);
 				PlanetUpdater updater = p.GetComponent<PlanetUpdater>();
 				extraction(planet, time, updater.evolutions);
 			}
@@ -61,10 +66,7 @@ public class extract : MonoBehaviour {
 			for (int i = 0; i < materials.Count; ++i)
 			{
 				Dictionary<string, object> materialEvolution = materials[i] as Dictionary<string, object>;
-				
-
-				files.Add(materialEvolution["file"].ToString());
-				mats.Add(materialEvolution["name"].ToString());
+				mats.Add(materialEvolution);
 			}
 		}
 		for (int i = evolutions.Count - 1; i >= 0; --i) 
@@ -86,8 +88,8 @@ public class extract : MonoBehaviour {
 						currentP.y += ((long)(((Dictionary<string, object>)nextPosition["pos"])["y"]) - currentP.y) * progress;
 						currentP.z += ((long)(((Dictionary<string, object>)nextPosition["pos"])["z"]) - currentP.z) * progress;
 					}
-					UnityEngine.Debug.LogWarning("Pos : "+currentP.x + " "+currentP.y + " "+currentP.z);
 					uPos = true;
+					pos = currentP;
 				}
 				if (uRot == false && current.ContainsKey("rotation"))
 				{
@@ -100,19 +102,35 @@ public class extract : MonoBehaviour {
 						rot += (((long)(nextRotation["rotation"])) - rot) * progress;
 						
 					}
+					rota = rot;
 					angle = new Vector3(0, rot, 0);
 				}
 				
 				uRot = true;
 				if (current.ContainsKey("displacement"))
-				disp = (string)current["displacement"];
+				{
+					disp = (string)current["displacement"];
+				}
 				}
 	          if (current.ContainsKey("pos"))
 	          	nextPosition = current;
 	          if (current.ContainsKey("rotation"))
 	          	nextRotation = current;
+
 		}
-			
+		collector.Add ("time", time);
+		collector.Add ("radius", rad);
+		collector.Add ("rotation", rota);
+		collector.Add ("vectorRotation", angle);
+		collector.Add ("pos", pos);
+		collector.Add ("displacement", disp);	
+		collector.Add ("materials", mats);	
+
+		string resultat =  Json.Serialize(collector);
+		var test = Application.dataPath + "/Resources/" + planet + "Evolution.json";
+		TextWriter tw = new StreamWriter(test);
+		tw.WriteLine(resultat);
+		tw.Close();	
 	}
 	
 }
