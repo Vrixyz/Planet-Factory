@@ -1,0 +1,26 @@
+{
+    "evolutions": [
+        {
+            "date": 0,
+            "displacement": "Mars/Displacement1",
+            "duree": null,
+            "materials": [
+                {
+                    "file": "Mars/MaterialEau2",
+                    "name": "Eau"
+                },
+                {
+                    "file": "Mars/MaterialMineraux2",
+                    "name": "Mineraux"
+                }
+            ],
+            "pos": {
+                "x": 2,
+                "y": 0,
+                "z": 0
+            },
+            "radius": 60,
+            "rotation": 0
+        }
+    ]
+}

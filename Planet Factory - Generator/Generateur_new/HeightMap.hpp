@@ -13,9 +13,8 @@
 #include <QJsonArray>
 #include <time.h>
 
-//#include <libNoise/include/noise/noise.h>
-//#include <libNoise/noiseutils/noiseutils.h>
-
+#include "libnoise/noise.h"
+#include "libnoise/utils/noiseutils.h"
 #include "Component.hpp"
 #include "MapInfo.hpp"
 
