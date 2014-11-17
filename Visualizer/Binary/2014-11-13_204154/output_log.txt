@@ -1,0 +1,2889 @@
+Initialize engine version: 4.5.2f1 (9abb1b59b47c)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.4465]
+    Renderer: NVIDIA GeForce GTX 770
+    Vendor:   NVIDIA
+    VRAM:     1985 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.057 seconds
+desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+The hull has more than 255 polygons. This is invalid.
+ 
+(Filename: ..\..\Cooking\src\ConvexMeshBuilder.cpp Line: 547)
+
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Boo.Lang.dll (this message is harmless)
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1783)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\UnityScript.Lang.dll (this message is harmless)
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{    "astres": [        "./Soleil.json",        "./EipTopia.json",        "./Gazpwet.json",        "./Epitechland.json"    ],    "materials": {        "Eau": {            "gas": 0,            "mass": 1,            "maxColor": {                "b": 255,                "g": 116,                "r": 3            },            "minColor": {                "b": 255,                "g": 120,                "r": 30            },            "solid": 0        },        "Roche": {            "gas": 0,            "mass": 25,            "maxColor": {                "b": 0,                "g": 36,                "r": 36            },            "minColor": {                "b": 0,                "g": 85,                "r": 85            },            "solid": 0        },        "Terre": {            "gas": 0,            "mass": 10,            "maxColor": {                "b": 32,                "g": 68,                "r": 84            },            "minColor": {                "b": 4,                "g": 99,                "r": 147            },            "solid": 0        }    },    "totalTime": 5475}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dict['astres'][0]: ./Soleil.json
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+materialsDefinition is null? False
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{    "evolution": "./Soleil_evolution.json",    "name": "Soleil",    "type": "star"}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dictPlanet['name']: Soleil
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+full position: 0;0;0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{    "evolution": "./EipTopia_evolution.json",    "name": "EipTopia",    "type": "planet"}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dictPlanet['name']: EipTopia
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+full position: 4000;0;0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement1.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement1.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement2.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement2.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement3.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement3.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement4.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement4.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement5.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement5.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement6.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement6.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement7.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement7.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement8.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement8.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement9.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement9.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement10.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement10.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement11.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement11.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement12.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement12.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement13.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement13.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement14.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement14.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement15.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement15.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement16.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement16.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement17.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement17.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement18.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement18.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement19.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement19.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement20.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement20.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement21.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement21.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement22.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement22.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement23.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement23.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement24.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement24.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement25.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement25.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement26.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement26.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement27.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement27.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement28.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement28.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement29.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement29.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement30.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement30.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement31.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement31.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement32.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement32.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement33.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement33.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement34.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement34.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement35.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement35.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement36.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement36.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement37.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement37.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement38.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement38.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement39.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement39.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement40.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement40.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement41.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement41.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement42.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement42.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement43.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement43.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement44.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement44.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement45.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement45.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement46.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement46.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement47.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement47.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement48.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement48.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement49.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement49.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement50.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement50.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement51.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement51.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement52.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement52.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement53.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement53.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement54.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement54.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement55.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement55.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement56.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement56.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement57.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement57.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement58.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement58.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement59.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement59.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement60.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement60.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement61.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement61.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement62.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement62.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement63.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement63.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement64.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement64.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement65.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement65.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement66.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement66.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement67.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement67.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement68.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement68.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement69.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement69.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement70.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement70.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement71.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement71.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement72.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement72.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement73.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement73.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement74.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement74.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement75.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement75.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement76.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement76.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement77.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement77.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement78.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement78.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement79.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement79.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement80.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement80.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement81.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement81.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement82.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement82.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement83.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement83.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement84.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement84.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement85.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement85.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement86.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement86.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement87.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement87.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement88.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement88.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement89.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement89.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement90.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement90.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement91.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement91.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement92.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement92.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement93.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement93.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement94.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement94.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement95.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement95.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement96.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement96.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement97.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement97.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement98.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement98.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement99.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement99.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement100.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement100.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement101.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement101.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement102.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement102.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement103.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement103.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement104.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement104.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement105.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement105.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement106.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement106.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement107.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement107.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement108.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement108.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement109.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement109.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement110.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement110.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement111.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement111.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement112.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement112.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement113.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement113.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement114.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement114.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement115.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement115.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement116.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement116.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement117.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement117.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement118.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement118.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement119.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement119.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement120.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement120.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement121.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement121.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement122.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement122.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement123.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement123.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement124.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement124.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement125.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement125.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement126.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement126.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement127.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement127.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement128.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement128.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement129.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement129.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement130.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement130.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement131.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement131.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement132.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement132.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement133.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement133.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement134.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement134.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement135.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement135.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement136.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement136.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement137.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement137.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement138.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement138.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement139.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement139.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement140.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement140.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement141.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement141.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement142.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement142.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement143.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement143.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement144.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement144.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement145.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement145.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement146.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement146.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement147.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement147.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement148.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement148.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement149.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement149.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement150.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement150.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement152.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement152.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement153.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement153.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement154.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement154.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement155.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement155.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement156.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement156.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement157.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement157.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement158.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement158.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement159.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement159.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement160.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement160.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement161.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement161.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement162.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement162.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement163.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement163.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement164.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement164.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement165.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement165.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement166.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement166.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement168.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement168.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement169.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement169.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement170.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement170.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement171.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement171.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement172.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement172.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement173.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement173.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement174.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement174.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement175.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement175.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement176.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement176.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement177.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement177.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement178.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement178.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement179.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement179.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement180.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement180.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement181.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement181.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement182.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/Displacement182.png
+ 
+(Filename:  Line: 1075)
+
+System.Collections.Generic.List`1[System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+path : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/MaterialRoche2.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/MaterialRoche2.png
+ 
+(Filename:  Line: 1075)
+
+path : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/MaterialEau2.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/MaterialEau2.png
+ 
+(Filename:  Line: 1075)
+
+path : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/MaterialTerre2.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/EipTopia/MaterialTerre2.png
+ 
+(Filename:  Line: 1075)
+
+generating a texture...
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+number of textures : 3
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+blending one material: Roche
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+painting : Roche
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+width : 8
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+height : 8
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+color: 36 36 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+blending one material: Eau
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+painting : Eau
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+width : 8
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+height : 8
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+color: 3 116 255
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+blending one material: Terre
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+painting : Terre
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+width : 8
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+height : 8
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+color: 84 68 32
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{    "evolution": "./Gazpwet_evolution.json",    "name": "Gazpwet",    "type": "gazeous"}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dictPlanet['name']: Gazpwet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+full position: 8000;0;0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{    "evolution": "./Epitechland_evolution.json",    "name": "Epitechland",    "type": "planet"}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dictPlanet['name']: Epitechland
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+full position: 10000;0;0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement1.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement1.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement2.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement2.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement3.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement3.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement4.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement4.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement5.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement5.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement6.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement6.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement7.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement7.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement8.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement8.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement9.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement9.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement10.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement10.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement11.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement11.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement12.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement12.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement13.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement13.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement14.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement14.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement15.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement15.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement17.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement17.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement18.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement18.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement19.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement19.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement20.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement20.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement21.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement21.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement22.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement22.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement23.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement23.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement24.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement24.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement25.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement25.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement26.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement26.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement27.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement27.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement28.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement28.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement29.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement29.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement30.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement30.png
+ 
+(Filename:  Line: 1075)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement31.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+You are trying to load data from a www stream which had the following error when downloading.
+Couldn't open file /Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/nts/GitHub/Planet-Factory/Visualizer/Binary/System4/Epitechland/Displacement31.png
+ 
+(Filename:  Line: 1075)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[System.String,System.Object].get_Item (System.String key) [0x00000] in <filename unknown>:0 
+  at SystemLoader.loadFromAstralInfo (System.Collections.Generic.Dictionary`2 dictPlanet) [0x00000] in <filename unknown>:0 
+  at SystemLoader.initialize () [0x00000] in <filename unknown>:0 
+  at FileBroswer.OpenFile (System.String pathToFile) [0x00000] in <filename unknown>:0 
+  at UniFileBrowser+$SelectFile$44+$.MoveNext () [0x00000] in <filename unknown>:0 
+UnityEngine.MonoBehaviour:StartCoroutine_Auto(IEnumerator)
+UniFileBrowser:DrawFileWindow()
+CompilerGenerated.$adaptor$__UniFileBrowser_closeWindowFunction$callable2$118_35__$WindowFunction$0:Invoke(Int32)
+UnityEngine.GUI:CallWindowDelegate(WindowFunction, Int32, GUISkin, Int32, Single, Single, GUIStyle)
+ 
+(Filename:  Line: -1)
+
+ONSELECTIONASTRE
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Soleil (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+EipTopia (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Gazpwet (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+ONSELECTIONASTRE
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Soleil (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+EipTopia (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Gazpwet (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at UpdateClick.OnSliderChange () [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+UISlider:Set(Single, Boolean)
+UISlider:Start()
+ 
+(Filename:  Line: -1)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Crash!!!
+SymInit: Symbol-SearchPath: '.;D:\Documents\GitHub\Planet-Factory\Visualizer\Binary;D:\Documents\GitHub\Planet-Factory\Visualizer\Binary;C:\WINDOWS;C:\WINDOWS\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 530, UserName: 'Sylvain'
+OS-Version: 6.2.9200 () 0x100-0x1
+D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer.exe:visualizer.exe (002B0000), size: 12201984 (result: 0), SymType: '-exported-', PDB: 'D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer.exe', fileVersion: 4.5.2.26843
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (77E10000), size: 1470464 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ntdll.dll', fileVersion: 6.3.9600.17278
+C:\WINDOWS\SYSTEM32\KERNEL32.DLL:KERNEL32.DLL (76240000), size: 1310720 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\KERNEL32.DLL', fileVersion: 6.3.9600.17056
+C:\WINDOWS\SYSTEM32\KERNELBASE.dll:KERNELBASE.dll (75AB0000), size: 851968 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\KERNELBASE.dll', fileVersion: 6.3.9600.17278
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (74D90000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\HID.DLL', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\WS2_32.dll:WS2_32.dll (778D0000), size: 315392 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WS2_32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\USER32.dll:USER32.dll (75BC0000), size: 1372160 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\USER32.dll', fileVersion: 6.3.9600.17238
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (755D0000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\VERSION.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\ole32.dll:ole32.dll (77AE0000), size: 1097728 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ole32.dll', fileVersion: 6.3.9600.17042
+C:\WINDOWS\SYSTEM32\SHLWAPI.dll:SHLWAPI.dll (77CF0000), size: 266240 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\SHLWAPI.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\ADVAPI32.dll:ADVAPI32.dll (759A0000), size: 491520 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ADVAPI32.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\GDI32.dll:GDI32.dll (75ED0000), size: 1077248 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\GDI32.dll', fileVersion: 6.3.9600.17246
+C:\WINDOWS\SYSTEM32\SHELL32.dll:SHELL32.dll (765B0000), size: 18575360 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\SHELL32.dll', fileVersion: 6.3.9600.17278
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (6A740000), size: 868352 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\OPENGL32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (74D30000), size: 131072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINMM.dll', fileVersion: 6.3.9600.17078
+C:\WINDOWS\SYSTEM32\OLEAUT32.dll:OLEAUT32.dll (760D0000), size: 552960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\OLEAUT32.dll', fileVersion: 6.3.9600.16506
+C:\WINDOWS\SYSTEM32\MSACM32.dll:MSACM32.dll (74CF0000), size: 86016 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSACM32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\IMM32.dll:IMM32.dll (76210000), size: 151552 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\IMM32.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (75230000), size: 507904 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DNSAPI.dll', fileVersion: 6.3.9600.17039
+C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (756B0000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\WINHTTP.dll:WINHTTP.dll (756D0000), size: 606208 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINHTTP.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\msvcrt.dll:msvcrt.dll (75850000), size: 778240 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\msvcrt.dll', fileVersion: 7.0.9600.16384
+C:\WINDOWS\SYSTEM32\NSI.dll:NSI.dll (75EC0000), size: 28672 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\NSI.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\RPCRT4.dll:RPCRT4.dll (76020000), size: 720896 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\RPCRT4.dll', fileVersion: 6.3.9600.17216
+C:\WINDOWS\SYSTEM32\combase.dll:combase.dll (763E0000), size: 1368064 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\combase.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\sechost.dll:sechost.dll (761D0000), size: 253952 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\sechost.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (6A710000), size: 147456 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\GLU32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\DDRAW.dll:DDRAW.dll (6A620000), size: 946176 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DDRAW.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\WINMMBASE.dll:WINMMBASE.dll (74B00000), size: 131072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINMMBASE.dll', fileVersion: 6.3.9600.17080
+C:\WINDOWS\SYSTEM32\MSCTF.dll:MSCTF.dll (77BF0000), size: 1011712 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSCTF.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\WINNSI.DLL:WINNSI.DLL (756A0000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINNSI.DLL', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\SspiCli.dll:SspiCli.dll (75830000), size: 118784 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\SspiCli.dll', fileVersion: 6.3.9600.16408
+C:\WINDOWS\SYSTEM32\DCIMAN32.dll:DCIMAN32.dll (6A610000), size: 28672 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DCIMAN32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\cfgmgr32.dll:cfgmgr32.dll (77920000), size: 237568 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\cfgmgr32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\DEVOBJ.dll:DEVOBJ.dll (746F0000), size: 126976 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DEVOBJ.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\CRYPTBASE.dll:CRYPTBASE.dll (75820000), size: 36864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CRYPTBASE.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll:bcryptPrimitives.dll (757C0000), size: 335872 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll', fileVersion: 6.3.9600.17120
+C:\WINDOWS\SYSTEM32\shcore.dll:shcore.dll (75620000), size: 483328 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\shcore.dll', fileVersion: 6.3.9600.17238
+D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Mono\mono.dll:mono.dll (10000000), size: 2289664 (result: 0), SymType: '-exported-', PDB: 'D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Mono\mono.dll'
+C:\WINDOWS\SYSTEM32\PSAPI.DLL:PSAPI.DLL (75B90000), size: 24576 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\PSAPI.DLL', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\MSWSOCK.dll:MSWSOCK.dll (75770000), size: 282624 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSWSOCK.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (751B0000), size: 36864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\kernel.appcore.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (754F0000), size: 897024 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\uxtheme.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\system32\dwmapi.dll:dwmapi.dll (754D0000), size: 98304 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\dwmapi.dll', fileVersion: 6.3.9600.17238
+C:\WINDOWS\SYSTEM32\d3d9.dll:d3d9.dll (6A860000), size: 1802240 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\d3d9.dll', fileVersion: 6.3.9600.17095
+C:\WINDOWS\SYSTEM32\nvd3dum.dll:nvd3dum.dll (632E0000), size: 16850944 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\nvd3dum.dll', fileVersion: 9.18.13.4465
+C:\WINDOWS\system32\nvspcap.dll:nvspcap.dll (05DA0000), size: 2199552 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\nvspcap.dll', fileVersion: 16.13.65.2
+C:\WINDOWS\system32\powrprof.dll:powrprof.dll (721B0000), size: 253952 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\powrprof.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\MMDevAPI.DLL:MMDevAPI.DLL (6D1A0000), size: 303104 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MMDevAPI.DLL', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\wdmaud.drv:wdmaud.drv (6A5B0000), size: 212992 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\wdmaud.drv', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\ksuser.dll:ksuser.dll (6A5A0000), size: 28672 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ksuser.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\AVRT.dll:AVRT.dll (6CF20000), size: 36864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AVRT.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\AUDIOSES.DLL:AUDIOSES.DLL (6AA20000), size: 348160 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AUDIOSES.DLL', fileVersion: 6.3.9600.17090
+C:\WINDOWS\SYSTEM32\msacm32.drv:msacm32.drv (6A590000), size: 36864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\msacm32.drv', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\midimap.dll:midimap.dll (6A580000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\midimap.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\dsound.dll:dsound.dll (6FBC0000), size: 495616 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dsound.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\clbcatq.dll:clbcatq.dll (76530000), size: 512000 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\clbcatq.dll', fileVersion: 2001.12.10530.16384
+C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17031_none_a9efdb8b01377ea7\comctl32.dll:comctl32.dll (74500000), size: 1990656 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17031_none_a9efdb8b01377ea7\comctl32.dll', fileVersion: 6.10.9600.17031
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (742A0000), size: 73728 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL', fileVersion: 6.3.9600.17111
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (74280000), size: 77824 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL', fileVersion: 6.3.9600.17111
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (6AAD0000), size: 1343488 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dbghelp.dll', fileVersion: 6.3.9600.16520
+
+========== OUTPUTING STACK TRACE ==================
+
+(0x006E985B) (visualizer): (filename not available): AnimationEvent::Transfer<StreamedBinaryRead<1> > + 0xf4a3b
+(0x006E9DBD) (visualizer): (filename not available): AnimationEvent::Transfer<StreamedBinaryRead<1> > + 0xf4f9d
+(0x002B4318) (visualizer): (filename not available): (function-name not available) + 0x0
+(0x002B5196) (visualizer): (filename not available): (function-name not available) + 0x0
+(0x002B1CA9) (visualizer): (filename not available): (function-name not available) + 0x0
+(0x002B1CFB) (visualizer): (filename not available): (function-name not available) + 0x0
+(0x003FC601) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x5f111
+(0x003F9AD8) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x5c5e8
+(0x004A3785) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106295
+(0x004A3A79) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106589
+(0x75BC7834) (USER32): (filename not available): CallNextHookEx + 0x97
+(0x75BC7A9A) (USER32): (filename not available): CallNextHookEx + 0x2fd
+(0x75BC7BED) (USER32): (filename not available): CallNextHookEx + 0x450
+(0x75BC7D81) (USER32): (filename not available): CallNextHookEx + 0x5e4
+(0x77E4C692) (ntdll): (filename not available): KiUserCallbackDispatcher + 0x2e
+(0x75BCA493) (USER32): (filename not available): GetGUIThreadInfo + 0x99
+(0x754F1814) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x754F17AA) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x754F1DDF) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x75BCA42A) (USER32): (filename not available): GetGUIThreadInfo + 0x30
+(0x004A3C75) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106785
+(0x75BC7834) (USER32): (filename not available): CallNextHookEx + 0x97
+(0x75BC930F) (USER32): (filename not available): GetWindowThreadProcessId + 0x3e5
+(0x75BC7BED) (USER32): (filename not available): CallNextHookEx + 0x450
+(0x75BC7D81) (USER32): (filename not available): CallNextHookEx + 0x5e4
+(0x77E4C692) (ntdll): (filename not available): KiUserCallbackDispatcher + 0x2e
+(0x75BCA493) (USER32): (filename not available): GetGUIThreadInfo + 0x99
+(0x754F1814) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x754F17AA) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x754F1DDF) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x75BCA42A) (USER32): (filename not available): GetGUIThreadInfo + 0x30
+(0x004A3C75) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106785
+(0x75BC7834) (USER32): (filename not available): CallNextHookEx + 0x97
+(0x75BC7A9A) (USER32): (filename not available): CallNextHookEx + 0x2fd
+(0x75BC988E) (USER32): (filename not available): GetMessageW + 0x330
+(0x75BD8857) (USER32): (filename not available): DispatchMessageA + 0x10
+(0x004A3D60) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106870
+(0x004A566B) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x10817b
+(0x0070E948) (visualizer): (filename not available): AnimationEvent::Transfer<StreamedBinaryRead<1> > + 0x119b28
+(0x00743830) (visualizer): (filename not available): AnimationEvent::Transfer<StreamedBinaryRead<1> > + 0x14ea10
+(0x7625919F) (KERNEL32): (filename not available): BaseThreadInitThunk + 0xe
+(0x77E60BBB) (ntdll): (filename not available): RtlInitializeExceptionChain + 0x84
+(0x77E60B91) (ntdll): (filename not available): RtlInitializeExceptionChain + 0x5a
+
+========== END OF STACKTRACE ===========
+
+**** Crash! ****

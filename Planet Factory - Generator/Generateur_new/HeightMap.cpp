@@ -163,7 +163,7 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
         else
             i--;
     }
-    qDebug() << "Done.";
+    //qDebug() << "Done.";
 
     //Fill all planet with plate with random
     qDebug() << "Starting to fill the planet with plate...";
@@ -211,7 +211,7 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
         if (safeCounter > SAFE_COUNTER)
             break;
     }
-    qDebug() << "Done random.";
+    //qDebug() << "Done random.";
         //Finish to fill the planet after the random part
     int last = 0;
     for (int x = 0; x < _x; x++)
@@ -224,7 +224,7 @@ int HeightMap::PlateTectonic(int n, std::map<Component*, int> * mapCompo)
                 _map[x][y]->n(last);
         }
     }
-    qDebug() << "Done.";
+    //qDebug() << "Done.";
     return 0;
 }
 
@@ -247,7 +247,7 @@ int HeightMap::terrain()
             }
         }
     }
-    qDebug() << "Checking border, done, " << nb << " borders found.";
+    //qDebug() << "Checking border, done, " << nb << " borders found.";
 
     //Influer le mouvement des plaques
     qDebug() << "Move plates...";
@@ -267,7 +267,7 @@ int HeightMap::terrain()
     }
     /*qDebug() << "Map after...";
     this->printMap();*/
-    qDebug() << "Move plates, done.";
+    //qDebug() << "Move plates, done.";
     return 0;
 }
 
@@ -287,7 +287,7 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
 
     std::list<MyComponent*>::iterator it;
 
-    qDebug() << "Doing temp list...";
+    //qDebug() << "Doing temp list...";
 
     for (it = c1.begin(); it != c1.end(); ++it)
     {
@@ -313,21 +313,21 @@ int HeightMap::_calcTerrain(std::list<MyComponent*> c1, std::list<MyComponent*> 
             gaz2.push_back(*it);
     }
 
-    qDebug() << "Done.";
+    //qDebug() << "Done.";
 
     //Find move type
-    qDebug() << "Looking for move type...";
+    //qDebug() << "Looking for move type...";
     e_typemove type = _typeMove(n1, n2);
-    qDebug() << "Done.";
+    //qDebug() << "Done.";
 
     //Move SOLID
     _moveSolid(solid1, solid2, type);
 
     //Move LIQUID
-    _moveLiquid(liquid1, liquid2, type);
+    //_moveLiquid(liquid1, liquid2, type);
 
     //Move GAZ
-    _moveGaz(gaz1, gaz2, type);
+    //_moveGaz(gaz1, gaz2, type);
 
     return 0;
 }
@@ -346,12 +346,13 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
         it = solid1.begin();
         x = (*it)->x();
         y = (*it)->y();
-        _map[x][y]->z(_map[x][y]->z() - (MODIF * 2));
+        _map[x][y]->z(_map[x][y]->z() - ((rand() % MODIF) * 2));
 
         it = solid2.begin();
         x = (*it)->x();
         y = (*it)->y();
-        _map[x][y]->z(_map[x][y]->z() - (MODIF * 2));
+        _map[x][y]->z(_map[x][y]->z() - ((rand() % MODIF) * 2));
+        break;
         //qDebug() << "Done.";
     }
     case DIVERGENT: {
@@ -360,12 +361,13 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
         it = solid1.begin();
         x = (*it)->x();
         y = (*it)->y();
-        _map[x][y]->z(_map[x][y]->z() - MODIF);
+        _map[x][y]->z(_map[x][y]->z() - (rand() % MODIF));
 
         it = solid2.begin();
         x = (*it)->x();
         y = (*it)->y();
-        _map[x][y]->z(_map[x][y]->z() - MODIF);
+        _map[x][y]->z(_map[x][y]->z() - (rand() % MODIF));
+        break;
         //qDebug() << "Done.";
     }
     case CONVERGENT : {
@@ -389,15 +391,16 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
         if (mass1 > mass2) //heavier go under
         {
             if (_map[x1][y1]->z() > (_map[x2][y2]->z() / 2))
-                _map[x1][y1]->z(_map[x1][y1]->z() - MODIF);
-            _map[x2][y2]->z(_map[x2][y2]->z() + MODIF);
+                _map[x1][y1]->z(_map[x1][y1]->z() - (rand() % MODIF));
+            _map[x2][y2]->z(_map[x2][y2]->z() + (rand() % MODIF));
         }
         else
         {
             if (_map[x2][y2]->z() > (_map[x1][y1]->z() / 2))
-                _map[x1][y1]->z(_map[x1][y1]->z() + MODIF);
-            _map[x2][y2]->z(_map[x2][y2]->z() - MODIF);
+                _map[x1][y1]->z(_map[x1][y1]->z() + (rand() % MODIF));
+            _map[x2][y2]->z(_map[x2][y2]->z() - (rand() % MODIF));
         }
+        break;
         //qDebug() << "Done.";
     }
     default : {
@@ -422,28 +425,29 @@ int HeightMap::_moveSolid(std::list<MyComponent*> solid1, std::list<MyComponent*
         {
             if (_map[x1][y1]->z() > (_map[x2][y2]->z() / 2))
             {
-                _map[x2][y2]->z(_map[x1][y1]->z());
+                _map[x2][y2]->z(_map[x1][y1]->z() - (rand() % MODIF));
                 _map[x2][y2]->n(_map[x1][y1]->n());
             }
             else
             {
-                _map[x1][y1]->z(_map[x1][y1]->z() + MODIF);
-                _map[x2][y2]->z(_map[x2][y2]->z() - MODIF);
+                _map[x1][y1]->z(_map[x1][y1]->z() + (rand() % MODIF));
+                _map[x2][y2]->z(_map[x2][y2]->z() - (rand() % MODIF));
             }
         }
         else
         {
             if (_map[x2][y2]->z() > (_map[x1][y1]->z() / 2))
             {
-                _map[x1][y1]->z(_map[x2][y2]->z());
+                _map[x1][y1]->z(_map[x2][y2]->z() + (rand() % MODIF));
                 _map[x1][y1]->n(_map[x2][y2]->n());
             }
             else
             {
-                _map[x2][y2]->z(_map[x2][y2]->z() + MODIF);
-                _map[x1][y1]->z(_map[x1][y1]->z() - MODIF);
+                _map[x2][y2]->z(_map[x2][y2]->z() + (rand() % MODIF));
+                _map[x1][y1]->z(_map[x1][y1]->z() - (rand() % MODIF));
             }
         }
+        break;
         //qDebug() << "Done.";
     }
     }

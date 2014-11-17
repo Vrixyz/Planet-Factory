@@ -1,0 +1,99 @@
+{
+    "astres": [
+        {
+            "composant": [
+                {
+                    "name": "Terre",
+                    "percent": 35
+                },
+                {
+                    "name": "Roche",
+                    "percent": 50
+                },
+                {
+                    "name": "Eau",
+                    "percent": 15
+                }
+            ],
+            "distance": 7500,
+            "name": "Epitechland",
+            "period": 1520,
+            "radius": 120,
+            "rota": 50,
+            "tilt": 85,
+            "type": 0
+        },
+        {
+            "composant": [
+            ],
+            "distance": 3500,
+            "name": "Gazpwet",
+            "period": 1000,
+            "radius": 250,
+            "rota": 600,
+            "tilt": 10,
+            "type": 2
+        },
+        {
+            "composant": [
+                {
+                    "name": "Terre",
+                    "percent": 33
+                },
+                {
+                    "name": "Roche",
+                    "percent": 35
+                },
+                {
+                    "name": "Eau",
+                    "percent": 33
+                }
+            ],
+            "distance": 2000,
+            "name": "EipTopia",
+            "period": 365,
+            "radius": 80,
+            "rota": 7,
+            "tilt": 5,
+            "type": 1
+        },
+        {
+            "composant": [
+            ],
+            "distance": 0,
+            "name": "Soleil",
+            "period": 0,
+            "radius": 500,
+            "rota": 10,
+            "tilt": 2,
+            "type": 0
+        }
+    ],
+    "central": "Soleil",
+    "materials": [
+        {
+            "gas": 0,
+            "mass": 25,
+            "maxColor": "#242400",
+            "minColor": "#555500",
+            "name": "Roche",
+            "solid": 0
+        },
+        {
+            "gas": 0,
+            "mass": 1,
+            "maxColor": "#0374ff",
+            "minColor": "#1e78ff",
+            "name": "Eau",
+            "solid": 0
+        },
+        {
+            "gas": 0,
+            "mass": 10,
+            "maxColor": "#544420",
+            "minColor": "#936304",
+            "name": "Terre",
+            "solid": 0
+        }
+    ]
+}

@@ -1,0 +1,246 @@
+{
+    "evolutions": [
+        {
+            "date": 0,
+            "displacement": "EipTopia/Displacement1",
+            "duree": null,
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre2",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche2",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau2",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "radius": 80,
+            "rotation": 0
+        },
+        {
+            "date": 365,
+            "displacement": "EipTopia/Displacement2",
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre3",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche3",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau3",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 18771
+        },
+        {
+            "date": 730,
+            "displacement": "EipTopia/Displacement3",
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre4",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche4",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau4",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 37542
+        },
+        {
+            "date": 1095,
+            "displacement": "EipTopia/Displacement4",
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre5",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche5",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau5",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 56314
+        },
+        {
+            "date": 1460,
+            "displacement": "EipTopia/Displacement5",
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre6",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche6",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau6",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 75085
+        },
+        {
+            "date": 1825,
+            "displacement": "EipTopia/Displacement6",
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre7",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche7",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau7",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 93857
+        },
+        {
+            "date": 2190,
+            "displacement": "EipTopia/Displacement7",
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre8",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche8",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau8",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 112628
+        },
+        {
+            "date": 2555,
+            "displacement": "EipTopia/Displacement8",
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre9",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche9",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau9",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 131400
+        },
+        {
+            "date": 2920,
+            "displacement": "EipTopia/Displacement9",
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre10",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche10",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau10",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 150171
+        },
+        {
+            "date": 3285,
+            "displacement": "EipTopia/Displacement10",
+            "materials": [
+                {
+                    "file": "EipTopia/MaterialTerre11",
+                    "name": "Terre"
+                },
+                {
+                    "file": "EipTopia/MaterialRoche11",
+                    "name": "Roche"
+                },
+                {
+                    "file": "EipTopia/MaterialEau11",
+                    "name": "Eau"
+                }
+            ],
+            "pos": {
+                "x": 2000,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": 168942
+        }
+    ]
+}

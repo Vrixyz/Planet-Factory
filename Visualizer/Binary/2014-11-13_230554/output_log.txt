@@ -1,0 +1,531 @@
+Initialize engine version: 4.5.2f1 (9abb1b59b47c)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.4465]
+    Renderer: NVIDIA GeForce GTX 770
+    Vendor:   NVIDIA
+    VRAM:     1985 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.056 seconds
+desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+The hull has more than 255 polygons. This is invalid.
+ 
+(Filename: ..\..\Cooking\src\ConvexMeshBuilder.cpp Line: 547)
+
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\Boo.Lang.dll (this message is harmless)
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1783)
+
+Platform assembly: D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Managed\UnityScript.Lang.dll (this message is harmless)
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+planet not leaded yet
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{	"totalTime": 100,	"astres": [		"./terre.json",		"./moon.json",		"./star.json",		"./gazeous.json"	],	"materials": {		"water": {			"solid": 0,			"gas": 100,			"minColor": {"r": 180, "g": 150, "b": 120},			"maxColor": {"r": 20, "g": 100, "b": 200},			"mass": 5,			"hardness": 100,		}		"rock": {			"solid": 0,			"gas": 100,			"minColor": {"r": 180, "g": 150, "b": 120},			"maxColor": {"r": 180, "g": 150, "b": 120},			"mass": 5,			"hardness": 100,		}	}}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dict['astres'][0]: ./terre.json
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+materialsDefinition is null? False
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{	"name": "Terre",	"type": "planet",	"evolution":"./terreEvolution.json",}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dictPlanet['name']: Terre
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+full position: 0;0;0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/System/1/Maps/terreDisplacement1.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+path for displacement : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/System/1/Maps/terreDisplacement2.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.List`1[System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+path : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/System/1/Maps/terreMaterialRock1.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+path : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/System/1/Maps/terreMaterialWater1.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+generating a texture...
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+number of textures : 2
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+blending one material: rock
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+painting : rock
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+width : 1024
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+height : 512
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+color: 180 150 120
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+blending one material: water
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+painting : water
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+width : 1024
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+height : 512
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+color: 20 100 200
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{	"name": "Moon",	"type": "planet",	"evolution":"./moonEvolution.json",}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dictPlanet['name']: Moon
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+full position: 250;0;0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.List`1[System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+path : file://D:/Documents/GitHub/Planet-Factory/Visualizer/Binary/visualizer_Data/Resources/System/1/Maps/moonMaterialRock1.png
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+generating a texture...
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+number of textures : 1
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+blending one material: rock
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+painting : rock
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+width : 1024
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+height : 512
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+color: 180 150 120
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{	"name": "Star",	"type": "star",	"sunType": "G",	"evolution":"./starEvolution.json",}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dictPlanet['name']: Star
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+full position: 100;100;0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+{	"name": "Saturn",	"type": "gazeous",	"evolution":"./gazeousEvolution.json",}
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+dictPlanet['name']: Saturn
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+reading file
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+file has been read
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+full position: 0;0;200
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+System loaded
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+ONSELECTIONASTRE
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Terre (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Moon (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Star (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Saturn (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+ONSELECTIONASTRE
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Terre (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Moon (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Star (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Saturn (UnityEngine.GameObject)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at UpdateClick.OnSliderChange () [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+UISlider:Set(Single, Boolean)
+UISlider:Start()
+ 
+(Filename:  Line: -1)
+
+Crash!!!
+SymInit: Symbol-SearchPath: '.;D:\Documents\GitHub\Planet-Factory\Visualizer\Binary;D:\Documents\GitHub\Planet-Factory\Visualizer\Binary;C:\WINDOWS;C:\WINDOWS\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 530, UserName: 'Sylvain'
+OS-Version: 6.2.9200 () 0x100-0x1
+D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer.exe:visualizer.exe (002B0000), size: 12201984 (result: 0), SymType: '-exported-', PDB: 'D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer.exe', fileVersion: 4.5.2.26843
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (77E10000), size: 1470464 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ntdll.dll', fileVersion: 6.3.9600.17278
+C:\WINDOWS\SYSTEM32\KERNEL32.DLL:KERNEL32.DLL (76240000), size: 1310720 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\KERNEL32.DLL', fileVersion: 6.3.9600.17056
+C:\WINDOWS\SYSTEM32\KERNELBASE.dll:KERNELBASE.dll (75AB0000), size: 851968 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\KERNELBASE.dll', fileVersion: 6.3.9600.17278
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (74FA0000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\HID.DLL', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\WS2_32.dll:WS2_32.dll (778D0000), size: 315392 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WS2_32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\USER32.dll:USER32.dll (75BC0000), size: 1372160 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\USER32.dll', fileVersion: 6.3.9600.17238
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (755D0000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\VERSION.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\ole32.dll:ole32.dll (77AE0000), size: 1097728 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ole32.dll', fileVersion: 6.3.9600.17042
+C:\WINDOWS\SYSTEM32\SHLWAPI.dll:SHLWAPI.dll (77CF0000), size: 266240 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\SHLWAPI.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\ADVAPI32.dll:ADVAPI32.dll (759A0000), size: 491520 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ADVAPI32.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\GDI32.dll:GDI32.dll (75ED0000), size: 1077248 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\GDI32.dll', fileVersion: 6.3.9600.17246
+C:\WINDOWS\SYSTEM32\SHELL32.dll:SHELL32.dll (765B0000), size: 18575360 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\SHELL32.dll', fileVersion: 6.3.9600.17278
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (6A740000), size: 868352 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\OPENGL32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (74D30000), size: 131072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINMM.dll', fileVersion: 6.3.9600.17078
+C:\WINDOWS\SYSTEM32\OLEAUT32.dll:OLEAUT32.dll (760D0000), size: 552960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\OLEAUT32.dll', fileVersion: 6.3.9600.16506
+C:\WINDOWS\SYSTEM32\MSACM32.dll:MSACM32.dll (74CF0000), size: 86016 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSACM32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\IMM32.dll:IMM32.dll (76210000), size: 151552 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\IMM32.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (75230000), size: 507904 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DNSAPI.dll', fileVersion: 6.3.9600.17039
+C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (756B0000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\WINHTTP.dll:WINHTTP.dll (756D0000), size: 606208 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINHTTP.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\msvcrt.dll:msvcrt.dll (75850000), size: 778240 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\msvcrt.dll', fileVersion: 7.0.9600.16384
+C:\WINDOWS\SYSTEM32\NSI.dll:NSI.dll (75EC0000), size: 28672 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\NSI.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\RPCRT4.dll:RPCRT4.dll (76020000), size: 720896 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\RPCRT4.dll', fileVersion: 6.3.9600.17216
+C:\WINDOWS\SYSTEM32\combase.dll:combase.dll (763E0000), size: 1368064 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\combase.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\sechost.dll:sechost.dll (761D0000), size: 253952 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\sechost.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (6A710000), size: 147456 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\GLU32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\DDRAW.dll:DDRAW.dll (6A620000), size: 946176 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DDRAW.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\WINMMBASE.dll:WINMMBASE.dll (74B00000), size: 131072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINMMBASE.dll', fileVersion: 6.3.9600.17080
+C:\WINDOWS\SYSTEM32\MSCTF.dll:MSCTF.dll (77BF0000), size: 1011712 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSCTF.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\WINNSI.DLL:WINNSI.DLL (756A0000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINNSI.DLL', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\SspiCli.dll:SspiCli.dll (75830000), size: 118784 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\SspiCli.dll', fileVersion: 6.3.9600.16408
+C:\WINDOWS\SYSTEM32\DCIMAN32.dll:DCIMAN32.dll (6A610000), size: 28672 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DCIMAN32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\cfgmgr32.dll:cfgmgr32.dll (77920000), size: 237568 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\cfgmgr32.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\DEVOBJ.dll:DEVOBJ.dll (746F0000), size: 126976 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DEVOBJ.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\CRYPTBASE.dll:CRYPTBASE.dll (75820000), size: 36864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CRYPTBASE.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll:bcryptPrimitives.dll (757C0000), size: 335872 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll', fileVersion: 6.3.9600.17120
+C:\WINDOWS\SYSTEM32\shcore.dll:shcore.dll (75620000), size: 483328 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\shcore.dll', fileVersion: 6.3.9600.17238
+D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Mono\mono.dll:mono.dll (10000000), size: 2289664 (result: 0), SymType: '-exported-', PDB: 'D:\Documents\GitHub\Planet-Factory\Visualizer\Binary\visualizer_Data\Mono\mono.dll'
+C:\WINDOWS\SYSTEM32\PSAPI.DLL:PSAPI.DLL (75B90000), size: 24576 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\PSAPI.DLL', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\MSWSOCK.dll:MSWSOCK.dll (75770000), size: 282624 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSWSOCK.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (751B0000), size: 36864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\kernel.appcore.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (754F0000), size: 897024 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\uxtheme.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\system32\dwmapi.dll:dwmapi.dll (754D0000), size: 98304 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\dwmapi.dll', fileVersion: 6.3.9600.17238
+C:\WINDOWS\SYSTEM32\d3d9.dll:d3d9.dll (6A860000), size: 1802240 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\d3d9.dll', fileVersion: 6.3.9600.17095
+C:\WINDOWS\SYSTEM32\nvd3dum.dll:nvd3dum.dll (632E0000), size: 16850944 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\nvd3dum.dll', fileVersion: 9.18.13.4465
+C:\WINDOWS\system32\nvspcap.dll:nvspcap.dll (05D70000), size: 2199552 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\nvspcap.dll', fileVersion: 16.13.65.2
+C:\WINDOWS\system32\powrprof.dll:powrprof.dll (721B0000), size: 253952 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\powrprof.dll', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\MMDevAPI.DLL:MMDevAPI.DLL (6D1A0000), size: 303104 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MMDevAPI.DLL', fileVersion: 6.3.9600.17031
+C:\WINDOWS\SYSTEM32\wdmaud.drv:wdmaud.drv (6A5B0000), size: 212992 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\wdmaud.drv', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\ksuser.dll:ksuser.dll (6A5A0000), size: 28672 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ksuser.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\AVRT.dll:AVRT.dll (6CF20000), size: 36864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AVRT.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\AUDIOSES.DLL:AUDIOSES.DLL (6AA20000), size: 348160 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AUDIOSES.DLL', fileVersion: 6.3.9600.17090
+C:\WINDOWS\SYSTEM32\msacm32.drv:msacm32.drv (6A590000), size: 36864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\msacm32.drv', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\midimap.dll:midimap.dll (6A580000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\midimap.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\dsound.dll:dsound.dll (6FBC0000), size: 495616 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dsound.dll', fileVersion: 6.3.9600.16384
+C:\WINDOWS\SYSTEM32\clbcatq.dll:clbcatq.dll (76530000), size: 512000 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\clbcatq.dll', fileVersion: 2001.12.10530.16384
+C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17031_none_a9efdb8b01377ea7\comctl32.dll:comctl32.dll (74500000), size: 1990656 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17031_none_a9efdb8b01377ea7\comctl32.dll', fileVersion: 6.10.9600.17031
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (742A0000), size: 73728 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL', fileVersion: 6.3.9600.17111
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (74280000), size: 77824 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL', fileVersion: 6.3.9600.17111
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (6AAD0000), size: 1343488 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dbghelp.dll', fileVersion: 6.3.9600.16520
+
+========== OUTPUTING STACK TRACE ==================
+
+(0x006E985B) (visualizer): (filename not available): AnimationEvent::Transfer<StreamedBinaryRead<1> > + 0xf4a3b
+(0x006E9DBD) (visualizer): (filename not available): AnimationEvent::Transfer<StreamedBinaryRead<1> > + 0xf4f9d
+(0x002B4318) (visualizer): (filename not available): (function-name not available) + 0x0
+(0x002B5196) (visualizer): (filename not available): (function-name not available) + 0x0
+(0x002B1CA9) (visualizer): (filename not available): (function-name not available) + 0x0
+(0x002B1CFB) (visualizer): (filename not available): (function-name not available) + 0x0
+(0x003FC601) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x5f111
+(0x003F9AD8) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x5c5e8
+(0x004A3785) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106295
+(0x004A3A79) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106589
+(0x75BC7834) (USER32): (filename not available): CallNextHookEx + 0x97
+(0x75BC7A9A) (USER32): (filename not available): CallNextHookEx + 0x2fd
+(0x75BC7BED) (USER32): (filename not available): CallNextHookEx + 0x450
+(0x75BC7D81) (USER32): (filename not available): CallNextHookEx + 0x5e4
+(0x77E4C692) (ntdll): (filename not available): KiUserCallbackDispatcher + 0x2e
+(0x75BCA493) (USER32): (filename not available): GetGUIThreadInfo + 0x99
+(0x754F1814) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x754F17AA) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x754F1DDF) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x75BCA42A) (USER32): (filename not available): GetGUIThreadInfo + 0x30
+(0x004A3C75) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106785
+(0x75BC7834) (USER32): (filename not available): CallNextHookEx + 0x97
+(0x75BC930F) (USER32): (filename not available): GetWindowThreadProcessId + 0x3e5
+(0x75BC7BED) (USER32): (filename not available): CallNextHookEx + 0x450
+(0x75BC7D81) (USER32): (filename not available): CallNextHookEx + 0x5e4
+(0x77E4C692) (ntdll): (filename not available): KiUserCallbackDispatcher + 0x2e
+(0x75BCA493) (USER32): (filename not available): GetGUIThreadInfo + 0x99
+(0x754F1814) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x754F17AA) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x754F1DDF) (uxtheme): (filename not available): (function-name not available) + 0x0
+(0x75BCA42A) (USER32): (filename not available): GetGUIThreadInfo + 0x30
+(0x004A3C75) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106785
+(0x75BC7834) (USER32): (filename not available): CallNextHookEx + 0x97
+(0x75BC7A9A) (USER32): (filename not available): CallNextHookEx + 0x2fd
+(0x75BC988E) (USER32): (filename not available): GetMessageW + 0x330
+(0x75BD8857) (USER32): (filename not available): DispatchMessageA + 0x10
+(0x004A3D60) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x106870
+(0x004A566B) (visualizer): (filename not available): Behaviour::Transfer<SafeBinaryRead> + 0x10817b
+(0x0070E948) (visualizer): (filename not available): AnimationEvent::Transfer<StreamedBinaryRead<1> > + 0x119b28
+(0x00743830) (visualizer): (filename not available): AnimationEvent::Transfer<StreamedBinaryRead<1> > + 0x14ea10
+(0x7625919F) (KERNEL32): (filename not available): BaseThreadInitThunk + 0xe
+(0x77E60BBB) (ntdll): (filename not available): RtlInitializeExceptionChain + 0x84
+(0x77E60B91) (ntdll): (filename not available): RtlInitializeExceptionChain + 0x5a
+
+========== END OF STACKTRACE ===========
+
+**** Crash! ****
