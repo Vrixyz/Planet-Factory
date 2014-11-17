@@ -80,6 +80,7 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                         }
                     val = 100-percent;
                     _map[x][y]->editComponent(list_comp[i]->component(), val, SOLID);
+                    break;
                 }
         }
 

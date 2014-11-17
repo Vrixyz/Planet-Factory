@@ -13,7 +13,7 @@ NoiseComp::NoiseComp(Component *c, double range_s, double range_e)
 
 bool NoiseComp::contain(double val)
 {
-    if (val > _range_s && val < _range_e)
+    if (val >= _range_s && val <= _range_e)
         return true;
     return false;
 }
