@@ -1,0 +1,77 @@
+{
+    "astres": [
+        {
+            "composant": [
+            ],
+            "distance": 1,
+            "name": "Soleil",
+            "period": 1,
+            "radius": 60,
+            "rota": 0,
+            "tilt": 67,
+            "type": 0
+        },
+        {
+            "composant": [
+                {
+                    "name": "Eau",
+                    "percent": 60
+                },
+                {
+                    "name": "Mineraux",
+                    "percent": 40
+                }
+            ],
+            "distance": 1,
+            "name": "Terre",
+            "period": 365,
+            "radius": 60,
+            "rota": 0,
+            "tilt": 23,
+            "type": 1
+        }
+    ],
+    "central": "",
+    "materials": [
+        {
+            "gas": -80,
+            "mass": 2,
+            "maxColor": "",
+            "minColor": "",
+            "name": "Hélium",
+            "solid": -9999
+        },
+        {
+            "gas": -80,
+            "mass": 2,
+            "maxColor": "",
+            "minColor": "",
+            "name": "Hydrgoene",
+            "solid": -9999
+        },
+        {
+            "gas": 9999,
+            "mass": 2500,
+            "maxColor": "",
+            "minColor": "",
+            "name": "Fer",
+            "solid": 900
+        },
+        {
+            "gas": 100,
+            "mass": 1000,
+            "maxColor": "",
+            "minColor": "",
+            "name": "Eau",
+            "solid": 0
+        },
+        {
+            "gas": 9999,
+            "mass": 1500,
+            "maxColor": "",
+            "minColor": "",
+            "name": "Mineraux",
+            "solid": 900
+        }
+    ]
+}

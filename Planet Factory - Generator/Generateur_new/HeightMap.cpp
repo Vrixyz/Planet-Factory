@@ -1,4 +1,5 @@
 #include "HeightMap.hpp"
+#include "NoiseComp.hpp"
 
 #define RADIUS 256
 
@@ -8,24 +9,7 @@ HeightMap::HeightMap(int radius, Planet *p)
 {
     _map = new MapInfo**[_x];
     _planet = p;
-    //test libnoise
-    /*noise::module::Perlin perlin;
-    noise::utils::NoiseMap noiseMap;
-    noise::utils::NoiseMapBuilderPlane heightMapBuilder;
 
-    heightMapBuilder.SetSourceModule(perlin);
-    heightMapBuilder.SetDestNoiseMap(noiseMap);
-    heightMapBuilder.SetDestSize (_x, _y);
-    heightMapBuilder.SetBounds(0, _x, 0, _y);
-    heightMapBuilder.Build();
-
-    for (int x = 0; x < _x; x++)
-    {
-        for (int y = 0; y < _y; y++)
-        {
-            _map[x][y]->z(perlin.GetValue(x, y, 0.5));
-        }
-    }*/
     for (int i = 0; i < _x; i++)
     {
         _map[i] = new MapInfo*[_y];
@@ -42,78 +26,65 @@ HeightMap::HeightMap(int radius, Planet *p)
 int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
 {
     qDebug() << "Filling planet with component...";
-    srand(time(0));
 
-    //Set componentn list in mapInfo
-    for (int i = 0; i < _x; i++)
-    {
-        for (int j = 0; j < _y; j++)
-        {
-            _map[i][j]->components(mapCompo);
-        }
-    }
-
-    //float coef = _x *_y / 100;
-    int mapSize = _x * _y;
-    int size = mapCompo->size();
-    //qDebug() << "_x: " << _x << "_y: " << _y << " size: " << size << "coef:" << coef;
-
-    //Temp component array to check percent
-    float* tmp = (float*)malloc(size * sizeof(tmp));
-
-    //Temp component array to check percent
-    for (int i = 0; i < size; i++)
-        tmp[i] = 0;
-
-    //New component system
-
-    //For each component
+    noise::module::Perlin noise;
     std::map<Component*, int>::iterator it;
+    std::vector<NoiseComp *> list_comp;
+
+    for (int i = 0; i < _x; i++)
+        for (int j = 0; j < _y; j++)
+            _map[i][j]->components(mapCompo);
+
+    double s_val = -1;
+
+    //Create tempo list
     for (it = mapCompo->begin(); it != mapCompo->end(); it++)
     {
-        float totalFree = 0;
-        //In each case of the map
-        for (int i = 0; i <_x; i++)
-        {
-            for (int j = 0; j < _y; j++)
-            {
-                // If we can still put some of this component on the planet
-                if (totalFree != 100)
-                {
-                    //Calc a random percent, can't > 100% for case and total > 100%
-                    float free = _map[i][j]->freeSpace();
-                    float p = 0;
-                    if (free > 0)
-                    {
-                        //if it is the last component of the list p = all the free space
-                        if (it == mapCompo->end())
-                            p = free;
-                        else
-                        {
-                            p = static_cast <float> (rand()) / static_cast <float> (RAND_MAX / free);
-                            if (totalFree + (p / mapSize) > 100)
-                                p = 100 - totalFree;
-                        }
-                        //qDebug() << "Filling [" << i << ";" << j << "] with " << p << "%. Total : " << totalFree;
-                        if ((_map[i][j]->editComponent(it->first, p, SOLID)) != 0)
-                            //qDebug() << "Edit KO";
-                        totalFree += (p / mapSize);
-                    }
-                    else
-                    {
-                        //qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << totalFree;
-                        _map[i][j]->editComponent(it->first, 0, SOLID);
-                    }
-                }
-                else
-                {
-                    //qDebug() << "Filling [" << i << ";" << j << "] with 0%. Total : " << totalFree;
-                    _map[i][j]->editComponent(it->first, 0, SOLID);
-                }
-            }
-        }
+        double value = it->second*2.0/100;
+        NoiseComp* comp = new NoiseComp(it->first, s_val, s_val + value);
+        list_comp.push_back(comp);
+        s_val += value;
     }
 
+    srand(time(0));
+    int z = rand()%10;
+    double value;
+    int percent;
+    int mod;
+
+
+    double tx;
+    double ty;
+    double tz;
+    int val;
+
+    mod = int(40/list_comp.size());
+    tz = z/10.0;
+    for (int x = 0; x < _x; x++)
+        for (int y = 0; y < _y; y++)
+        {
+            tx = x/100.0;
+            ty = y/100.0;
+            value = noise.GetValue(tx, ty, z);
+
+            percent = 0;
+            for (int i = 0; i < list_comp.size(); i++)
+                if(list_comp[i]->contain(value))
+                {
+                    for (int j = 0; j < list_comp.size(); j++)
+                        if (i != j)
+                        {
+                            val = rand()%mod;
+                            percent += val;
+                            _map[x][y]->editComponent(list_comp[j]->component(), val, SOLID);
+                        }
+                    val = 100-percent;
+                    _map[x][y]->editComponent(list_comp[i]->component(), val, SOLID);
+                    break;
+                }
+        }
+
+    //USE??
     for (int i = 0; i <_x; i++)
     {
         for (int j = 0; j < _y; j++)
