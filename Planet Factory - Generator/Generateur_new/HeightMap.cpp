@@ -30,13 +30,27 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     noise::module::Perlin noise;
     std::map<Component*, int>::iterator it;
     std::vector<NoiseComp *> list_comp;
+    int idx_maj;
+    int per_maj;
+    int idx;
+    double value;
+    int percent;
+    int mod;
+    bool found;
+    int sx;
+    int sy;
+    double tx;
+    double ty;
+    double tz;
 
     for (int i = 0; i < _x; i++)
         for (int j = 0; j < _y; j++)
             _map[i][j]->components(mapCompo);
 
     double s_val = -1;
-
+    idx_maj = 0;
+    per_maj = 0;
+    idx = 0;
     //Create tempo list
     for (it = mapCompo->begin(); it != mapCompo->end(); it++)
     {
@@ -44,18 +58,18 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
         NoiseComp* comp = new NoiseComp(it->first, s_val, s_val + value);
         list_comp.push_back(comp);
         s_val += value;
+        if (it->second > per_maj)
+        {
+            idx_maj = idx;
+            per_maj = it->second;
+        }
+        idx++;
     }
 
     srand(time(0));
     int z = rand()%10;
-    double value;
-    int percent;
-    int mod;
-
-
-    double tx;
-    double ty;
-    double tz;
+    sx = rand()%1000;
+    sy = rand()%1000;
     int val;
 
     mod = int(40/list_comp.size());
@@ -63,14 +77,16 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     for (int x = 0; x < _x; x++)
         for (int y = 0; y < _y; y++)
         {
-            tx = x/100.0;
-            ty = y/100.0;
+            tx = sx + x/100.0;
+            ty = sy + y/100.0;
             value = noise.GetValue(tx, ty, z);
 
             percent = 0;
+            found = false;
             for (int i = 0; i < list_comp.size(); i++)
                 if(list_comp[i]->contain(value))
                 {
+                    found = true;
                     for (int j = 0; j < list_comp.size(); j++)
                         if (i != j)
                         {
@@ -82,6 +98,18 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
                     _map[x][y]->editComponent(list_comp[i]->component(), val, SOLID);
                     break;
                 }
+            if (!found)
+            {
+                for (int j = 0; j < list_comp.size(); j++)
+                    if (idx_maj != j)
+                    {
+                        val = rand()%mod;
+                        percent += val;
+                        _map[x][y]->editComponent(list_comp[j]->component(), val, SOLID);
+                    }
+                val = 100-percent;
+                _map[x][y]->editComponent(list_comp[idx_maj]->component(), val, SOLID);
+            }
         }
 
     //USE??
