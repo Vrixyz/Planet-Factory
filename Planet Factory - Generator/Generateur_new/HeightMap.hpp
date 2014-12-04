@@ -59,7 +59,7 @@ public:
     //export heightmap
     void        exportHeightMap(const QString & path, const QString & name);
     QJsonObject exportComposentMap(const QString & path, int iteration, QJsonObject evo, QString name);
-    void        genCompImg(const QString & name, const QString & path, const QString & file);
+    bool        genCompImg(const QString & name, const QString & path, const QString & file);
 
     //Print in qDebug the different heightmap
     void    printMap();
@@ -68,6 +68,7 @@ public:
     MapInfo *** map(void) const;
     Planet*     planet(void) const;
 private:
+    bool        _comp_change;
     int         _n;
     int         _r;
     int         _x;

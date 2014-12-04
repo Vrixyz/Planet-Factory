@@ -122,6 +122,7 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
     }
     qDebug() << "Done normaly.";
     return 0;
+    _comp_change = true;
 }
 
 /*
@@ -761,6 +762,8 @@ QJsonObject HeightMap::exportComposentMap(const QString & path, int iteration, Q
     std::map<Component*, int>::iterator it;
     QJsonArray materials;
 
+    if (_comp_change == false)
+        return evo;
     for(it = _cmp->begin(); it != _cmp->end(); it++)
     {
         Component* comp = it->first;
@@ -770,14 +773,15 @@ QJsonObject HeightMap::exportComposentMap(const QString & path, int iteration, Q
 
         obj.insert("name", comp->getName());
         obj.insert("file", file_path);
-        materials.append(obj);
-        genCompImg(comp->getName(), path, file);
+        if (genCompImg(comp->getName(), path, file))
+            materials.append(obj);
     }
+    _comp_change = false;
     evo.insert("materials", materials);
     return evo;
 }
 
-void HeightMap::genCompImg(const QString & name, const QString & path, const QString & file)
+bool HeightMap::genCompImg(const QString & name, const QString & path, const QString & file)
 {
     QImage pic(_x, _y, QImage::Format_RGB32);
     std::list<MyComponent *> comp_list;
@@ -813,9 +817,9 @@ void HeightMap::genCompImg(const QString & name, const QString & path, const QSt
     completePath += ".png";
 
     if (!pic.save(completePath))
-        qDebug() << "Error: pics not saved!: " << completePath;
+        return false;
     else
-        qDebug() << "IMG save: " << completePath;
+        return true;
 }
 
 Planet* HeightMap::planet(void)const

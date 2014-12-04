@@ -1,0 +1,100 @@
+{
+    "astres": [
+        {
+            "composant": [
+                {
+                    "name": "Plante",
+                    "percent": 20
+                },
+                {
+                    "name": "Eau",
+                    "percent": 70
+                },
+                {
+                    "name": "Terre",
+                    "percent": 10
+                }
+            ],
+            "distance": 300,
+            "name": "Terre",
+            "period": 69,
+            "radius": 80,
+            "rota": 3,
+            "tilt": 0,
+            "type": 1
+        },
+        {
+            "composant": [
+            ],
+            "distance": 1,
+            "name": "Soleil",
+            "period": 1,
+            "radius": 60,
+            "rota": 0,
+            "tilt": 67,
+            "type": 0
+        },
+        {
+            "composant": [
+                {
+                    "name": "Mineraux",
+                    "percent": 10
+                },
+                {
+                    "name": "Sulfure",
+                    "percent": 90
+                }
+            ],
+            "distance": 140,
+            "name": "Mars",
+            "period": 80,
+            "radius": 40,
+            "rota": 5,
+            "tilt": 23,
+            "type": 1
+        }
+    ],
+    "central": "",
+    "materials": [
+        {
+            "gas": 1000,
+            "mass": 1,
+            "maxColor": "#550000",
+            "minColor": "#550000",
+            "name": "Sulfure",
+            "solid": 0
+        },
+        {
+            "gas": 100,
+            "mass": 2,
+            "maxColor": "#4a9500",
+            "minColor": "#6d6d00",
+            "name": "Plante",
+            "solid": 0
+        },
+        {
+            "gas": 9999,
+            "mass": 2500,
+            "maxColor": "#6b4631",
+            "minColor": "#552519",
+            "name": "Terre",
+            "solid": 0
+        },
+        {
+            "gas": 100,
+            "mass": 1000,
+            "maxColor": "#00007f",
+            "minColor": "#00007f",
+            "name": "Eau",
+            "solid": 0
+        },
+        {
+            "gas": 9999,
+            "mass": 1500,
+            "maxColor": "#1b1b1b",
+            "minColor": "#000000",
+            "name": "Mineraux",
+            "solid": 900
+        }
+    ]
+}
