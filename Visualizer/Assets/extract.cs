@@ -127,7 +127,7 @@ public class extract : MonoBehaviour {
 		collector.Add ("materials", mats);	
 
 		string resultat =  Json.Serialize(collector);
-		var test = Application.dataPath + "/Resources/" + planet + "Evolution.json";
+		var test = Application.dataPath + "/Resources/" + planet + "Evolution"+time+".json";
 		TextWriter tw = new StreamWriter(test);
 		tw.WriteLine(resultat);
 		tw.Close();	

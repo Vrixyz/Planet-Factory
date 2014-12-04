@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\extract.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CustomScripts\RayCastToPlanets.cs">
     <Files>
-      <File FileName="Assets\extract.cs" Line="100" Column="4" />
+      <File FileName="Assets\CustomScripts\RayCastToPlanets.cs" Line="216" Column="1" />
+      <File FileName="Assets\CustomScripts\UniverseTime.cs" Line="1" Column="1" />
+      <File FileName="Assets\extract.cs" Line="1" Column="1" />
       <File FileName="Assets\CustomScripts\PlanetUpdater.cs" Line="1" Column="1" />
       <File FileName="Assets\CustomScripts\SystemLoader.cs" Line="1" Column="1" />
-      <File FileName="Assets\FileBroswer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Plugins\UniFileBrowser\UniFileBrowser.js" Line="299" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

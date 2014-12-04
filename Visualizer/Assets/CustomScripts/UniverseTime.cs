@@ -51,7 +51,7 @@ public class UniverseTime : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		c = manager.GetComponentsInChildren<UICheckbox>();
-		if ((int)elapsed == (int)totalTime && c[1].isChecked == true)
+		if ((int)elapsed == (int)totalTime && c[0].isChecked == true)
 			Reset ();
 		if (running && elapsed <= totalTime )
 		{

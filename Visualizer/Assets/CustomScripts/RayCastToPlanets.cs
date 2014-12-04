@@ -18,6 +18,7 @@ public class RayCastToPlanets : MonoBehaviour {
 	public UILabel total;
 	public GameObject menuInGame;
 	public UICheckbox b;
+	public GameObject extractOK; 
 	/*private Vector3 positionCamDefault;
 	private Quaternion rotationCamDefault;
 	private Transform transformCamDefault;
@@ -211,6 +212,9 @@ public class RayCastToPlanets : MonoBehaviour {
 			}
 		}
 		if (Input.GetButton("Fire1")) {
+
+			extractOK.SetActive(false);
+
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 			
