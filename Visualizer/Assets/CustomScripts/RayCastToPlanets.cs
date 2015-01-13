@@ -189,6 +189,11 @@ public class RayCastToPlanets : MonoBehaviour {
         priv_indicator.SetActive(false);
         cam.GetComponent<SGT_CameraFreeLook>().enabled = false;
         cam.GetComponent<SGT_CameraFreeOrbit>().enabled = true;
+        float avgScale = (float)((planet.gameObject.transform.localScale.x + planet.gameObject.transform.localScale.y + planet.gameObject.transform.localScale.z) / 3.0);
+        cam.GetComponent<SGT_CameraFreeOrbit>().Distance = (float)(avgScale + avgScale);
+        print(cam.GetComponent<SGT_CameraFreeOrbit>().Distance);
+        cam.GetComponent<SGT_CameraFreeOrbit>().DistanceMin = cam.GetComponent<SGT_CameraFreeOrbit>().Distance;
+        cam.GetComponent<SGT_CameraFreeOrbit>().DistanceMax = cam.GetComponent<SGT_CameraFreeOrbit>().Distance;
         cam.transform.LookAt(planet.transform);
         planetLookedAt = planet;
 //        cam.transform.position = cam.transform.position + (cam.transform.forward * (cam.transform.DistanceTo(planet.transform.position) - 1000));
