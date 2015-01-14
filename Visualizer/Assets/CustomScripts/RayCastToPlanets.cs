@@ -14,11 +14,13 @@ public class RayCastToPlanets : MonoBehaviour {
 	public UILabel Pos;
 	public UILabel materiel;
 	public UILabel planet;
+	public UIPopupList res;
 	public UILabel current;
 	public UILabel total;
 	public GameObject menuInGame;
 	public UICheckbox b;
 	public GameObject extractOK; 
+	public UICheckbox screen;
 	/*private Vector3 positionCamDefault;
 	private Quaternion rotationCamDefault;
 	private Transform transformCamDefault;
@@ -28,6 +30,7 @@ public class RayCastToPlanets : MonoBehaviour {
     float initial_particle_speed;
 	// Use this for initialization
 	void Start () {
+
         priv_indicator = (GameObject)GameObject.Instantiate(indicator);
         initial_particle_speed = priv_indicator.GetComponentInChildren<ParticleSystem>().startSpeed;
         priv_indicator.SetActive(false);
@@ -107,6 +110,14 @@ public class RayCastToPlanets : MonoBehaviour {
 
 	}
 
+	void initRes()
+	{
+		foreach (var r in Screen.resolutions)
+		{
+			res.items.Add(r.height+" x "+r.width);
+		}
+	}
+
 	void OnActivate()
 	{
 		astre.selection = "Choose";
@@ -117,22 +128,44 @@ public class RayCastToPlanets : MonoBehaviour {
         setCamFree();
 	}
 
+	void OnSreenMode()
+	{
+		if (!screen.isChecked)
+			Screen.fullScreen = !Screen.fullScreen;
+	}
+
 	void OnSelectionAstre(string val)
-    {
-        print("ONSELECTIONASTRE");
+	{
+		print("ONSELECTIONASTRE");
 		GameObject manager = GameObject.Find ("Manager");
 		SystemLoader sys = manager.GetComponent<SystemLoader>();
 		foreach (GameObject p in sys.planets)
 		{
-            print(p);
+			print(p);
 			if (val == p.name)
 			{
-                //setCamFree();
-                setCamLookAt(p);
+				//setCamFree();
+				setCamLookAt(p);
+			}
+		}
+		
+	}
+
+	void OnSelectionRes(string val)
+    {
+		foreach (Resolution r in Screen.resolutions)
+		{
+			if (r.ToString() == val)
+			{
+				if (screen.isChecked)
+					Screen.SetResolution(r.height, r.width, true);
+				else
+					Screen.SetResolution(r.height, r.width, false);
 			}
 		}
 
 	}
+
     private GameObject planetLookedAt = null;
 
     public void setCamLookAt(GameObject planet)
@@ -197,7 +230,7 @@ public class RayCastToPlanets : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+		initRes();
 		timer();
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
