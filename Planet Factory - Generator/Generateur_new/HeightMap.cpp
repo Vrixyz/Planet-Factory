@@ -121,8 +121,8 @@ int HeightMap::_fillComponent(std::map<Component*, int> * mapCompo)
         }
     }
     qDebug() << "Done normaly.";
-    return 0;
     _comp_change = true;
+    return 0;
 }
 
 /*
