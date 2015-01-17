@@ -30,7 +30,7 @@ public class RayCastToPlanets : MonoBehaviour {
     float initial_particle_speed;
 	// Use this for initialization
 	void Start () {
-
+		initRes();
         priv_indicator = (GameObject)GameObject.Instantiate(indicator);
         initial_particle_speed = priv_indicator.GetComponentInChildren<ParticleSystem>().startSpeed;
         priv_indicator.SetActive(false);
@@ -114,7 +114,8 @@ public class RayCastToPlanets : MonoBehaviour {
 	{
 		foreach (var r in Screen.resolutions)
 		{
-			res.items.Add(r.height+" x "+r.width);
+			if (r.width >= 1024)
+				res.items.Add(r.width+" x "+r.height);
 		}
 	}
 
@@ -155,12 +156,12 @@ public class RayCastToPlanets : MonoBehaviour {
     {
 		foreach (Resolution r in Screen.resolutions)
 		{
-			if (r.ToString() == val)
+			if (r.width+" x "+r.height == val)
 			{
 				if (screen.isChecked)
-					Screen.SetResolution(r.height, r.width, true);
+					Screen.SetResolution(r.width, r.height, true);
 				else
-					Screen.SetResolution(r.height, r.width, false);
+					Screen.SetResolution(r.width, r.height, false);
 			}
 		}
 
@@ -235,7 +236,6 @@ public class RayCastToPlanets : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		initRes();
 		timer();
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
