@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine;
 using System.Collections;
 
 public class RayCastToPlanets : MonoBehaviour {
@@ -21,6 +20,7 @@ public class RayCastToPlanets : MonoBehaviour {
 	public UICheckbox b;
 	public GameObject extractOK; 
 	public UICheckbox screen;
+	public Camera cam;
 	/*private Vector3 positionCamDefault;
 	private Quaternion rotationCamDefault;
 	private Transform transformCamDefault;
@@ -166,6 +166,12 @@ public class RayCastToPlanets : MonoBehaviour {
 		}
 
 	}
+
+	void OnVolumeChange(float val)
+	{
+		cam.audio.volume = val;
+	}
+
 
     private GameObject planetLookedAt = null;
 
